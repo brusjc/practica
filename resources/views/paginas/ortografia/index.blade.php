@@ -1,0 +1,62 @@
+@extends('layouts.app')
+
+@section('contentheader_title')
+	{{ html_entity_decode(trans('ortografia.ortografia_titulo1') )}}
+@endsection
+
+@section('contentheader_h1')
+	{{ html_entity_decode(trans('ortografia.ortografia_titulo1') )}}
+@endsection
+
+@section('descripcion')
+    {{ html_entity_decode(trans('ortografia.ortografia_descripcion') )}}
+@endsection
+
+@section('keywords')
+    {{ html_entity_decode(trans('ortografia.ortografia_keywords') )}}
+@endsection
+
+@section('main_content')
+
+	<div class="comment-text">
+		<p>{{ html_entity_decode(trans('ortografia.ortografia_texto1') )}}</p>
+		<p>{{ html_entity_decode(trans('ortografia.ortografia_texto2') )}}</p>
+	</div>
+
+
+	<div class="row mb-2">			
+		<div class="col-lg-3 col-md-3">
+			<a class="mb-2 btn btn-block btn-info" href="/vocalisme">{{ trans('ortografia.vocalisme_breadcrumb') }}</a>
+		</div>				
+		<div class="col-lg-3 col-md-3">
+			<a class="mb-2 btn btn-block btn-info" href="/byv">{{ trans('ortografia.byv_breadcrumb') }}</a>
+		</div>		
+		<div class="col-lg-3 col-md-3">
+			<a class="mb-2 btn btn-block btn-info" href="/acentuacion">{{ trans('ortografia.acentuacion_breadcrumb') }}</a>
+		</div>		
+		<div class="col-lg-3 col-md-3">
+			<a class="mb-2 btn btn-block btn-info" href="/eio">{{ trans('ortografia.eio_breadcrumb') }}</a>
+		</div>
+	</div>	
+
+	<div class="row mb-2">			
+		<div class="col-lg-3 col-md-3">
+			<a class="mb-2 btn btn-block btn-info" href="/dieresis">{{ trans('ortografia.dieresis_breadcrumb') }}</a>
+		</div>				
+		<div class="col-lg-3 col-md-3">
+			<a class="mb-2 btn btn-block btn-info" href="/diftong">{{ trans('ortografia.diptongos_breadcrumb') }}</a>
+		</div>		
+		<div class="col-lg-3 col-md-3">
+			<a class="mb-2 btn btn-block btn-info" href="/diacritic">{{ trans('ortografia.diacritic_breadcrumb') }}</a>
+		</div>		
+		<div class="col-lg-3 col-md-3">
+			<a class="mb-2 btn btn-block btn-info" href="/apostrof">{{ trans('ortografia.apostrof_breadcrumb') }}</a>
+		</div>
+	</div>	
+
+	<div class="row mb-2">			
+		<div class="col-lg-3 col-md-3">
+			<a class="mb-2 btn btn-block btn-info" href="contraccio">{{ trans('ortografia.contraccio_breadcrumb') }}</a>
+		</div>
+	</div>	
+@endsection

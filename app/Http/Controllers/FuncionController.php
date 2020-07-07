@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class FuncionController extends Controller
+{
+    public function porcentaje($contestadas, $total)
+    {
+		if($total==0){
+			$resultado=0.0;
+    	} else {
+	        $resultado = intdiv(1000*$contestadas, $total)/10;
+	    }
+        return $resultado;
+    }
+    
+}
