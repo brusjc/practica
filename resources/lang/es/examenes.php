@@ -165,18 +165,24 @@ return [
 
 
 
-'A2_breadcrumb' => "Examen A2",
-'A2_title' => "Examen A2 de la JQCV", 
-'A2_h1' => "Examen A2 de la JQCV", 
-'A2_descripcion' => "Examen A2 de la JQCV: practica el Examen A2 de la JQCV. Puedes realizar el examen del nivell A2 de la JQCV como si estuvieras en la misma prueba.",
-'A2_keywords' => "Examen A2 de la JQCV, Exàmens de valencià, Exàmens JQCV, probas JQCV, exàmens anteriors JQCV, Examenes de la JQCV, Examenes de la JQCV, pruebas JQCV, examenes de la JQCV de anteriores convocatorias",
-'A2_titulo1' => "Examen A2", 
-'A2_texto1' => "En Examen A2 de la JQCV (Junta Qualificadora de Coneixements de Valencià), puedes realizar el examen del nivel A2 como si estuvieras en la misma prueba.",
-'A2_texto2' => "Para que no encuentres diferencias con el examen real, nuestra página www.practicavalenciano.es, estructuramos el examen A2 de la misma manera que los exámenes de la JQCV (Junta Qualificadora de Coneixements de Valencià), es decir, tres respuestas con una verdadera. Además, con la novedad de nuestro sistema de autoevaluación por el cual, el usuario de nuestra página, , estudiante de los exámenes de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV), pueda saber al instante su puntuación respecto al examen, en este caso, el examen del nivel A2 de la JQCV.",
-'A2_texto3' => "Ya que el Examen A2 de la JQCV (Junta Qualificadora de Coneixements de Valencià) cuenta con las mismas preguntas que el examen real y en el mismo orden, te aconsejamos que utilices esta opción únicamente cuando hayas practicado con nuestros ejercicios.",
-'A2_texto4' => "Te animamos al estudio de las lecciones incluidas en nuestro curso para adquirir confianza, eficacia y conseguir resolver satisfactoriamente el examen A2 de la JQCV.",
-'A2_texto5' => "El examen B1 es equivalente al nivel Oral pero adaptado al ",
-'A2_texto6' => "Marco Común Europeo de Referencia para las Lenguas",
+'A1_breadcrumb' => "Nivel A1",
+'A1_title' => "Nivel A1 de la JQCV", 
+'A1_h1' => "Nivel A1 de la JQCV", 
+'A1_descripcion' => "El Nivel A1 de la JQCV se obtiene mediante un curso de 60 horas impartido en centros públicos.",
+'A1_keywords' => "Nivel A1 de la JQCV, Exàmens de valencià, Exàmens JQCV, probas JQCV, exàmens anteriors JQCV, Niveles de la JQCV, Niveles de la JQCV, pruebas JQCV, Niveles de la JQCV de anteriores convocatorias",
+'A1_titulo1' => "Nivel A1", 
+'A1_texto1' => "El Nivel A1 de la JQCV (Junta Qualificadora de Coneixements de Valencià), puedes obtenerlo realizando un curso de 60 horas en uno de los siguientes centros públicos:",
+'A1_texto2' => "Los centros públicos de formación de personas adultas dependientes de la Conselleria d'Educació,",
+'A1_texto3' => "Los ayuntamientos",
+'A1_texto4' => "Las universidades públicas valencianas.",
+'A1_texto5' => "Los cursos de Nivel A1 tienen carácter gratuito y su duración será de 60 horas.",
+'A1_texto6' => "El certificación de nivel A1 acredita un dominio muy básico de la lengua, que permite atender las necesidades comunicativas más elementales en situaciones muy cotidianas.",
+'A1_texto7' => "La persona que opte a este certificación debe ser capaz:",
+'A1_texto8' => "De comprender y utilizar expresiones cotidianas y familiares y frases muy sencillas encaminadas a satisfacer sus primeras necesidades.",
+'A1_texto9' => "De presentarse y presentar una tercera persona.",
+'A1_texto10' => "De formular preguntas sobre detalles personales, como donde vivo, la gente que conoce y las cosas que tiene, y de responder a estas preguntas.",
+'A1_texto11' => "De interactuar de una manera sencilla, a condición de que la otra persona hable poco a poco y con claridad y que esté dispuesta a ayudarla.",
+'A1_texto12' => "De hacer una mediación muy básica.",
 
 
 

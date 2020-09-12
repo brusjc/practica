@@ -5,7 +5,7 @@
 @endsection
 
 @section('contentheader_h1')
-	{{ html_entity_decode(trans('vocabulario.lletres_titulo1') )}}
+	{{ html_entity_decode(trans('vocabulario.lletres_h1') )}}
 @endsection
 
 @section('breadcrumb1')

@@ -198,7 +198,9 @@ class PruebaController extends Controller
         $codigo=0;
 
         //url de vuelta
-        session(['BC2' => '/examenB2']);
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examenb2']);
         session(['BC2texto' => 'Exàmens B2']);
 
         //Paso 3: Redirigimos a la vista
@@ -281,6 +283,10 @@ class PruebaController extends Controller
 		//return $datos;
 
         //url de vuelta
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examena2']);
+        session(['BC2texto' => 'Exàmens A2']);
         session(['BC3' => '/examen_a2/'.$codigo]);
         session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
 
@@ -312,7 +318,9 @@ class PruebaController extends Controller
         $codigo=0;
 
         //url de vuelta
-        session(['BC2' => '/examenB1']);
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examenb1']);
         session(['BC2texto' => 'Exàmens B1']);
 
         //Paso 3: Redirigimos a la vista
@@ -395,6 +403,10 @@ class PruebaController extends Controller
 		//return $datos;
 
         //url de vuelta
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examenb1']);
+        session(['BC2texto' => 'Exàmens B1']);
         session(['BC3' => '/examen_b1/'.$codigo]);
         session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
 
@@ -426,7 +438,9 @@ class PruebaController extends Controller
         $codigo=0;
 
         //url de vuelta
-        session(['BC2' => '/examenB2']);
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examenb2']);
         session(['BC2texto' => 'Exàmens B2']);
 
         //Paso 3: Redirigimos a la vista
@@ -509,6 +523,10 @@ class PruebaController extends Controller
 		//return $datos;
 
         //url de vuelta
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examenb2']);
+        session(['BC2texto' => 'Exàmens B2']);
         session(['BC3' => '/examen_b2/'.$codigo]);
         session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
 
@@ -540,7 +558,9 @@ class PruebaController extends Controller
         $codigo=0;
 
         //url de vuelta
-        session(['BC2' => '/examenC1']);
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examenc1']);
         session(['BC2texto' => 'Exàmens C1']);
 
         //Paso 3: Redirigimos a la vista
@@ -588,6 +608,10 @@ class PruebaController extends Controller
 		//return $mes;
 
         //url de vuelta
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examenc1']);
+        session(['BC2texto' => 'Exàmens C1']);
         session(['BC3' => '/examen_c1/'.$codigo]);
         session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
 
@@ -618,7 +642,9 @@ class PruebaController extends Controller
         $codigo=0;
 
         //url de vuelta
-        session(['BC2' => '/examenC2']);
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examenc2']);
         session(['BC2texto' => 'Exàmens C2']);
 
         //Paso 3: Redirigimos a la vista
@@ -666,6 +692,10 @@ class PruebaController extends Controller
 		//return $mes;
 
         //url de vuelta
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examenc2']);
+        session(['BC2texto' => 'Exàmens C2']);
         session(['BC3' => '/examen_c2/'.$codigo]);
         session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
 
@@ -699,6 +729,8 @@ class PruebaController extends Controller
         $codigo=0;
 
         //url de vuelta
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
         session(['BC2' => '/examenelemental']);
         session(['BC2texto' => 'Exàmens Elemental']);
 
@@ -747,6 +779,10 @@ class PruebaController extends Controller
 		//return $mes;
 
         //url de vuelta
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examenelemental']);
+        session(['BC2texto' => 'Exàmens Elemental']);
         session(['BC3' => '/examen_elemental/'.$codigo]);
         session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
 
@@ -763,6 +799,8 @@ class PruebaController extends Controller
         $codigo=0;
 
         //url de vuelta
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
         session(['BC2' => '/examenoral']);
         session(['BC2texto' => 'Exàmens Oral']);
 
@@ -812,6 +850,10 @@ class PruebaController extends Controller
 		//return $mes;
 
         //url de vuelta
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examenoral']);
+        session(['BC2texto' => 'Exàmens Oral']);
         session(['BC3' => '/examen_oral/'.$codigo]);
         session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
         
@@ -850,7 +892,6 @@ class PruebaController extends Controller
 
 		if(Auth::guest())
 		{
-			return 'estamos aqui';
 			$examenes=null;  //Si no está registrado no se visualizan exámenes
 		} else {
 			$usu = $this->usuarioActual();
@@ -876,6 +917,10 @@ class PruebaController extends Controller
 		}
 		
         //url de vuelta
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examenmitja']);
+        session(['BC2texto' => 'Exàmens Mitjà']);
         session(['BC3' => '/examen_mitja/'.$codigo]);
         session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
         
@@ -892,6 +937,8 @@ class PruebaController extends Controller
         $codigo=0;
 
         //url de vuelta
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
         session(['BC2' => '/examensuperior']);
         session(['BC2texto' => 'Exàmens Superior']);
 
@@ -941,6 +988,10 @@ class PruebaController extends Controller
 		//return $mes;
 		
         //url de vuelta
+        session(['BC1' => '/examenes-jqcv']);
+        session(['BC1texto' => 'Exàmens JQCV']);
+        session(['BC2' => '/examensuperior']);
+        session(['BC2texto' => 'Exàmens Superior']);
         session(['BC3' => '/examen_superior/'.$codigo]);
         session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
         

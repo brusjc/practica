@@ -190,6 +190,28 @@ return [
 
 
 
+'A1_breadcrumb' => "nivell A1",
+'A1_title' => "nivell A1 de la JQCV", 
+'A1_h1' => "nivell A1 de la JQCV", 
+'A1_descripcion' => "El Nivell A1 de la JQCV s'obté per mitjà d'un curs de 60 hores impartit en centres públics.",
+'A1_keywords' => "Nivell A1 de la JQCV, Exàmens de valencià, Exàmens JQCV, probes JQCV, exàmens anteriors JQCV, Exàmens de la JQCV, Exàmens de la JQCV, proves JQCV, exàmens de la JQCV d'anteriors convocatòries",
+'A1_titulo1' => "Nivell A1", 
+'A1_texto1' => "El Nivell A1 de la JQCV (Junta Qualificadora de Coneixements de Valencià) , pots obtindre-ho realitzant un curs de 60 hores en un dels següents centres públics:",
+'A1_texto2' => "Els centres públics de formació de persones adultes dependents de la Conselleria d'Educació",
+'A1_texto3' => "Els ajuntaments.",
+'A1_texto4' => "Les universitats públiques valencianes.",
+'A1_texto5' => "Els cursos de Nivell A1 tenen caràcter gratuït i la seua duració serà de 60 hores.",
+'A1_texto6' => "El certificat de nivell A1 acredita un domini molt bàsic d’ús de la llengua, que permet atendre les necessitats comunicatives més elementals en situacions molt quotidianes.",
+'A1_texto7' => "La persona que opte a aquest certificat ha de ser capaç:",
+'A1_texto8' => "De comprendre i utilitzar expressions quotidianes i familiars i frases molt senzilles encaminades a satisfer les seues primeres necessitats.",
+'A1_texto9' => "De presentar-se i presentar una tercera persona.",
+'A1_texto10' => "De formular preguntes sobre detalls personals, com on viu, la gent que coneix i les coses que té, i de respondre a aquestes preguntes.",
+'A1_texto11' => "D’interactuar d’una manera senzilla, a condició que l’altra persona parle a poc a poc i amb claredat i que estiga disposada a ajudar-la.",
+'A1_texto12' => "De fer una mediació molt bàsica.",
+
+
+
+
 'A2_breadcrumb' => "Examen A2",
 'A2_title' => "Examen A2 de la JQCV", 
 'A2_h1' => "Examen A2 de la JQCV", 

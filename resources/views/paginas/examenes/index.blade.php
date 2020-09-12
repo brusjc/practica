@@ -5,7 +5,7 @@
 @endsection
 
 @section('contentheader_h1')
-    {{ trans('examenes.jqcv_titulo1') }}
+    {{ trans('examenes.jqcv_h1') }}
 @endsection
 
 @section('descripcion')
@@ -40,7 +40,7 @@
 <div class="row">			
 	@foreach($respuesta['data'] as $grado)
 		<div class="col-lg-3 col-md-3 mb-2 text-capitalize">
-			<a class="btn btn-block  btn-info btn-lg  color-palette" href="examen{{str_replace('à', 'a', utf8_decode($grado['nombre']))}}">{{utf8_decode($grado['nombre'])}}</a>
+			<a class="btn btn-block  btn-info btn-lg  color-palette" href="examen{{strtolower(str_replace('à', 'a', $grado['nombre']))}}">{{$grado['nombre']}}</a>
 		</div>
 	@endforeach
 </div>		
@@ -62,7 +62,7 @@
 	<div class="col-6">
 		<ul>
 			@foreach($respuesta['data'] as $grado)
-				<li><a href="examen{{str_replace('à', 'a', $grado['nombre'])}}">Examen {{$grado['nombre']}}</a></li>
+				<li><a href="examen{{strtolower(str_replace('à', 'a', $grado['nombre']))}}">Examen {{$grado['nombre']}}</a></li>
 			@endforeach
 		</ul>
 	</div>

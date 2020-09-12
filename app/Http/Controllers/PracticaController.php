@@ -27,13 +27,13 @@ class PracticaController extends Controller
                 ->with('Practicanombre')
                 ->get();
         } catch (\Exception $e) {
-            return response()->json(["status" =>['error'=>1, "message"=>"Error al consultar practicas"], 'data'=>null]);
+            return response()->json(["status" =>['error'=>1, "message"=>"Error al obtener datos"], 'data'=>null]);
         }
         //return $datos;
 
         //Paso 3: enviamos el json
         if(count($datos)==0){
-            return response()->json(['status'=>['error'=>2, 'message'=>'pracxid02: Error al obtener las prácticas'], 'data'=>null]);
+            return response()->json(['status'=>['error'=>2, 'message'=>'No hay datos'], 'data'=>null]);
         } else {
             return response()->json(['status'=>['error'=>0, 'message'=>''], 'data'=>$datos]);
         } 
@@ -53,13 +53,13 @@ class PracticaController extends Controller
                 ->with('Practicanombre')
                 ->get();
         } catch (\Exception $e) {
-            return response()->json(["status" =>['error'=>1, "message"=>"Error al consultar practicas"], 'data'=>null]);
+            return response()->json(["status" =>['error'=>1, "message"=>"Error al obtener datos"], 'data'=>null]);
         }
         //return $datos;
 
         //Paso 3: enviamos el json
         if(count($datos)==0){
-            return response()->json(['status'=>['error'=>2, 'message'=>'pracxid02: Error al obtener las prácticas'], 'data'=>null]);
+            return response()->json(['status'=>['error'=>2, 'message'=>'No hay datos'], 'data'=>null]);
         } else {
             return response()->json(['status'=>['error'=>0, 'message'=>''], 'data'=>$datos]);
         } 
@@ -79,10 +79,9 @@ class PracticaController extends Controller
         }
         //return $pagina;
 
-        //Paso 2: Obtenemos las contestadas por area y subarea
+        //Paso 2: Obtenemos todas las preguntas de esa página
         $datos = $this->showXPagina($pagina);
         $datos = @json_decode(json_encode($datos), true);
-        //return $datos;
         $datos = $datos['original']['data'];
         //return $datos;
 

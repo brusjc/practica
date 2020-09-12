@@ -32,7 +32,7 @@
 	</div>
 	<div class="box-body pad table-responsive">
 		<div class="col-md-2">
-			<a href="/{{$datos['pagina']['enlace']}}"><button type="button" class="btn btn-block btn-primary btn-lg">Volver</button></a>
+			<a href="{{$datos['pagina']['url']}}"><button type="button" class="btn btn-block btn-primary btn-lg">Volver</button></a>
 		</div>
 	</div>
 @endsection

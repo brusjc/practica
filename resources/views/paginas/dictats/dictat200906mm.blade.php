@@ -9,7 +9,7 @@
 @endsection
 
 @section('breadcrumb1')
-	<a href="/dictatcs">{{ trans('dictats.dictat200906mm_breadcrumb') }}</a>
+	<a href="/dictats">{{ trans('dictats.dictats_breadcrumb') }}</a>
 @endsection
 
 @section('descripcion')
@@ -22,10 +22,24 @@
 
 @section('main_content')
 
-<div class="comment-text">
-	<p>{{ html_entity_decode(trans('dictats.dictat200906mm_texto1') )}}</p>
-	<p>{{ html_entity_decode(trans('dictats.dictat200906mm_texto2') )}}</p>
-	<p>{{ html_entity_decode(trans('dictats.dictat200906mm_texto3') )}}</p>
+<div class="row">
+	<div class="col-7">
+		<p>{{ html_entity_decode(trans('dictats.dictat200906mm_texto1') )}}</p>
+		<p>{{ html_entity_decode(trans('dictats.dictat200906mm_texto2') )}}</p>
+		<p>{{ html_entity_decode(trans('dictats.dictat200906mm_texto3') )}}</p>
+	</div>
+	<div class="col-5">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-7412986561454436"
+		     data-ad-slot="6463281785"
+		     data-ad-format="auto"
+		     data-full-width-responsive="true"></ins>
+		<script>
+		     (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
 </div>
 
 <div class="comment-text">
@@ -38,7 +52,7 @@
 </div>
 
 <div class="comment-text">
-	<h2>{{ html_entity_decode(trans('dictats.dictat200906mm_titulo2') )}}</h2>
+	<h2>{{ html_entity_decode(trans('dictats.dictat200906mm_titulo1') )}}</h2>
 </div>
 
 <div class="comment-text">
@@ -58,7 +72,12 @@
 	<p>{{ html_entity_decode(trans('dictats.dictat200906mm_texto13') )}}</p>
 </div>
 
-
-
+<div class="row">
+	<div class="col-lg-4 col-md-4">
+	</div>
+	<div class="col-lg-4 col-md-4">
+		<a class="btn btn-block btn-primary btn-lg" href="/dictat200906mm_comprobador">{{ html_entity_decode(trans('dictats.dictats_comprovaElTeuDictat') )}}</a>
+	</div>
+</div>
 
 @endsection

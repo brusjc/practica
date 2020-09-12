@@ -96,7 +96,7 @@
 		<a class="mb-2 btn btn-block btn-info" href="/dictat200906mm">Dictat examen juny 2009 mitjà matí</a>
 	</div>				
 	<div class="col-lg-4 col-md-4">
-		<a class="mb-2 btn btn-block btn-info" href="https://www.practicavalenciano.es/dictados/dictados200906mv.php">Dictat examen juny 2009 mitjà vesprada</a>
+		<a class="mb-2 btn btn-block btn-info" href="/dictat200906mv">Dictat examen juny 2009 mitjà vesprada</a>
 	</div>		
 	<div class="col-lg-4 col-md-4">
 		<a class="mb-2 btn btn-block btn-info" href="https://www.practicavalenciano.es/dictados/dictados200906sm.php">Dictat examen juny 2009 superior</a>

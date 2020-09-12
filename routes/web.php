@@ -35,6 +35,7 @@ Route::get('/les-hores', function(){ return view('paginas.vocabulario.les-hores'
 Route::get('/les-relacions-convencionals-i-de-parentiu', function(){ return view('paginas.vocabulario.les-relacions-convencionals-i-de-parentiu'); });
 Route::get('/cos-huma', function(){ return view('paginas.vocabulario.cos-huma'); });
 Route::get('/avui-qui-cuina', function(){ return view('paginas.vocabulario.avui-qui-cuina'); });
+Route::get('/avui-qui-cuina-videos', function(){ return view('paginas.vocabulario.avui-qui-cuina-videos'); });
 Route::get('/parem-taula', function(){ return view('paginas.vocabulario.parem-taula'); });
 Route::get('/entre-teles', function(){ return view('paginas.vocabulario.entre-teles'); });
 Route::get('/ciutat', function(){ return view('paginas.vocabulario.ciutat'); });
@@ -62,6 +63,7 @@ Route::get('/contraccio', function(){ return view('paginas.ortografia.contraccio
 //***********
 Route::get('/dictats', function(){ return view('paginas.dictats.index'); });
 Route::get('/dictat200906mm', function(){ return view('paginas.dictats.dictat200906mm'); });
+Route::get('/dictat200906mv', function(){ return view('paginas.dictats.dictat200906mv'); });
 
 
 //********
@@ -79,11 +81,12 @@ Route::get('/examenelemental', 'PruebaController@pruebaselemental')->name('Exame
 Route::get('/examenoral', 'PruebaController@pruebasoral')->name('ExamenOral');
 Route::get('/examenmitja', 'PruebaController@pruebasmitja')->name('ExamenMitja');
 Route::get('/examensuperior', 'PruebaController@pruebassuperior')->name('ExamenSuperior');
-Route::get('/examenA2', 'PruebaController@pruebasa2')->name('ExamenA2');
-Route::get('/examenB1', 'PruebaController@pruebasb1')->name('ExamenB1');
-Route::get('/examenB2', 'PruebaController@pruebasb2')->name('ExamenB2');
-Route::get('/examenC1', 'PruebaController@pruebasc1')->name('ExamenC1');
-Route::get('/examenC2', 'PruebaController@pruebasc2')->name('ExamenC2');
+Route::get('/examena1', function(){ return view('paginas.examenes.examena1'); });
+Route::get('/examena2', 'PruebaController@pruebasa2')->name('ExamenA2');
+Route::get('/examenb1', 'PruebaController@pruebasb1')->name('ExamenB1');
+Route::get('/examenb2', 'PruebaController@pruebasb2')->name('ExamenB2');
+Route::get('/examenc1', 'PruebaController@pruebasc1')->name('ExamenC1');
+Route::get('/examenc2', 'PruebaController@pruebasc2')->name('ExamenC2');
 
 Route::get('/examen_elemental/{codigo}', 'PruebaController@prueba_elemental')->name('Examen_Elemental');
 Route::get('/examen_oral/{codigo}', 'PruebaController@prueba_oral')->name('Examen_Oral');

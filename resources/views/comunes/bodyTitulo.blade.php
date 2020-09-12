@@ -8,8 +8,7 @@
     <div class="row mb-2">
       <div class="col-sm-12">
         <h1 class="m-0 text-dark">
-            @yield('contentheader_title', 'Page Header here')
-            <small>@yield('contentheader_description')</small>
+            @yield('contentheader_h1', 'Page Header here')
         </h1>
       </div>
       <div class="col-sm-12">

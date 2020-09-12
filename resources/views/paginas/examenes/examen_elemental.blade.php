@@ -5,7 +5,7 @@
 @endsection
 
 @section('contentheader_h1')
-    {{trans('examenes.exaElemental_titulo1')}} {{$datos['mes']}} {{$datos['ano']}} de la JQCV
+    {{trans('examenes.exaElemental_h1')}} {{$datos['mes']}} {{$datos['ano']}} de la JQCV
 @endsection
 
 @section('breadcrumb1')

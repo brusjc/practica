@@ -5,11 +5,11 @@
 @endsection
 
 @section('contentheader_h1')
-    {{ trans('examenes.B1_titulo1') }}
+    {{ trans('examenes.B1_h1') }}
 @endsection
 
 @section('breadcrumb1')
-	<a href="/examenes-jqcv">{{ trans('examenes.jqcv_breadcrumb') }}</a>
+	<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>
 @endsection
 
 @section('descripcion')
@@ -114,6 +114,18 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="row">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Examenes - Bajo Introduccion - 728x90 -->
+	<ins class="adsbygoogle"
+	     style="display:inline-block;width:728px;height:90px"
+	     data-ad-client="ca-pub-7412986561454436"
+	     data-ad-slot="1171860113"></ins>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
 </div>
 
 @endsection

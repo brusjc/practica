@@ -16,7 +16,8 @@ class EjercicioController extends Controller
 
     public function usuarioActual()
     {
-        $usuario = Auth::user()->id;
+        $user = Auth::user();
+        $usuario = Auth::id();
         return $usuario;
     }
 
@@ -33,7 +34,7 @@ class EjercicioController extends Controller
         $ejercicio['contestadas']=0;
         $ejercicio['nota']=0.00;
         if($ejercicio['pagina_id']==0 || $ejercicio['user']==0){
-            return response()->json(['status' =>['error'=>3, 'message'=>'Error en datos iniciales1'], 'data'=>null]);
+            return response()->json(['status' =>['error'=>3, 'message'=>'Error en datos iniciales'], 'data'=>null]);
         }
 
         //Paso2: ejecutamos la consulta
@@ -46,12 +47,12 @@ class EjercicioController extends Controller
             $newejercicio->save();
             $registrofinal= Ejercicio::latest('id')->first();
         } catch (\Exception $e) {
-            return response()->json(['status'=>['error'=>1, 'message'=>'Error al crear el ejercicio'], 'data'=>null]);
+            return response()->json(['status'=>['error'=>1, 'message'=>'Error al obtener datos'], 'data'=>null]);
         }        
 
         //Paso 3: enviamos el json
         if(!$registrofinal){
-            return response()->json(['status'=>['error'=>1, 'message'=>'Error al crear el ejercicio'], 'data'=>null]);
+            return response()->json(['status'=>['error'=>1, 'message'=>'No hay datos'], 'data'=>null]);
         } else {
             return response()->json(['status'=>['error'=>0, 'message'=>''], 'data'=>$registrofinal]);
         } 

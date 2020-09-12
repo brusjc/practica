@@ -5,11 +5,11 @@
 @endsection
 
 @section('contentheader_h1')
-    {{ trans('examenes.A2_titulo1') }}
+    {{ trans('examenes.A2_h1') }}
 @endsection
 
-@section('breadcrumb2')
-	<a href="/examenes-jqcv">{{ trans('examenes.jqcv_breadcrumb') }}</a>
+@section('breadcrumb1')
+	<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>
 @endsection
 
 @section('descripcion')
@@ -53,7 +53,7 @@
 		@if($pruebas['original']['status']['error']==0)
 			@foreach($pruebas['original']['data'] as $key=>$nivel)
 				<div class="col-lg-4 col-md-4">
-					<a class="mb-2 btn btn-block btn-info" href="examen_b2/{{$nivel['codigo']}}">{{$nivel['nombre']}}</a>
+					<a class="mb-2 btn btn-block btn-info" href="examen_a2/{{$nivel['codigo']}}">{{$nivel['nombre']}}</a>
 				</div>
 			@endforeach
 		@endif

@@ -5,15 +5,15 @@
 @endsection
 
 @section('contentheader_h1')
-    {{trans('examenes.exaC2_titulo1')}} {{$datos['mes']}} {{$datos['ano']}} de la JQCV
+    {{trans('examenes.exaC2_h1')}} {{$datos['mes']}} {{$datos['ano']}} de la JQCV
 @endsection
 
 @section('breadcrumb1')
-	<a href="/examenes-jqcv">{{trans('examenes.jqcv_breadcrumb')}}</a>
+	<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>
 @endsection
 
 @section('breadcrumb2')
-	<a href="/examenC2">{{trans('examenes.C2_breadcrumb')}}</a>
+	<a href="{{session('BC2')}}">{{ session('BC2texto') }}</a>
 @endsection
 
 @section('descripcion')

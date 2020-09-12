@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('contentheader_title')
-	{{ html_entity_decode(trans('vocabulario.lletres_titulo1') )}}
+	{{ html_entity_decode(trans('vocabulario.partsDia_titulo1') )}}
 @endsection
 
 @section('contentheader_h1')
-	{{ html_entity_decode(trans('vocabulario.lletres_titulo1') )}}
+	{{ html_entity_decode(trans('vocabulario.partsDia_h1') )}}
 @endsection
 
 @section('breadcrumb1')

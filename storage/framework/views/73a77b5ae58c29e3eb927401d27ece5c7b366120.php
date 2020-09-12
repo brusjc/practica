@@ -6,7 +6,7 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('contentheader_h1'); ?>
-    <?php echo e(trans('examenes.jqcv_titulo1')); ?>
+    <?php echo e(trans('examenes.jqcv_h1')); ?>
 
 <?php $__env->stopSection(); ?>
 
@@ -44,7 +44,7 @@
 <div class="row">			
 	<?php $__currentLoopData = $respuesta['data']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $grado): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 		<div class="col-lg-3 col-md-3 mb-2 text-capitalize">
-			<a class="btn btn-block  btn-info btn-lg  color-palette" href="examen<?php echo e(str_replace('à', 'a', utf8_decode($grado['nombre']))); ?>"><?php echo e(utf8_decode($grado['nombre'])); ?></a>
+			<a class="btn btn-block  btn-info btn-lg  color-palette" href="examen<?php echo e(strtolower(str_replace('à', 'a', $grado['nombre']))); ?>"><?php echo e($grado['nombre']); ?></a>
 		</div>
 	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </div>		
@@ -66,7 +66,7 @@
 	<div class="col-6">
 		<ul>
 			<?php $__currentLoopData = $respuesta['data']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $grado): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-				<li><a href="examen<?php echo e(str_replace('à', 'a', $grado['nombre'])); ?>">Examen <?php echo e($grado['nombre']); ?></a></li>
+				<li><a href="examen<?php echo e(strtolower(str_replace('à', 'a', $grado['nombre']))); ?>">Examen <?php echo e($grado['nombre']); ?></a></li>
 			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</ul>
 	</div>

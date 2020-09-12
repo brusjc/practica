@@ -5,7 +5,7 @@
 @endsection
 
 @section('contentheader_h1')
-    {{ trans('examenes.oral_titulo1') }}
+    {{ trans('examenes.oral_h1') }}
 @endsection
 
 @section('breadcrumb1')

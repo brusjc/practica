@@ -5,11 +5,11 @@
 @endsection
 
 @section('contentheader_h1')
-    {{ trans('examenes.B2_titulo1') }}
+    {{ trans('examenes.B2_h1') }}
 @endsection
 
-@section('breadcrumb2')
-	<a href="/examenes-jqcv">{{ trans('examenes.jqcv_breadcrumb') }}</a>
+@section('breadcrumb1')
+	<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>
 @endsection
 
 @section('descripcion')
