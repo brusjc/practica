@@ -1,16 +1,10 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-	Todos los exámenes
-@endsection
+@section('contentheader_title')Todos los exámenes@endsection
 
-@section('descripcion')
-    "Todos los examenes"
-@endsection
+@section('descripcion')"Todos los examenes"@endsection
 
-@section('keywords')
-    "Examenes"
-@endsection
+@section('keywords')"Examenes"@endsection
 
 @section('main_content')
 

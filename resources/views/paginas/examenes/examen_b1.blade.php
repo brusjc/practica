@@ -1,28 +1,19 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-    {{trans('examenes.exaB1_title')}} {{$datos['mes']}} {{$datos['ano']}} de la JQCV
-@endsection
+@section('contentheader_title'){{trans('examenes.exaB1_title')}} {{$datos['mes']}} {{$datos['ano']}} de la JQCV</a>@endsection
 
 @section('contentheader_h1')
-    {{trans('examenes.exaB1_h1')}} {{$datos['mes']}} {{$datos['ano']}} de la JQCV
-@endsection
+    {{trans('examenes.exaB1_h1')}} {{$datos['mes']}} {{$datos['ano']}} de la JQCV</a>@endsection
 
 @section('breadcrumb1')
-	<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>
-@endsection
+	<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a></a>@endsection
 
 @section('breadcrumb2')
-	<a href="{{session('BC2')}}">{{ session('BC2texto') }}</a>
-@endsection
+	<a href="{{session('BC2')}}">{{ session('BC2texto') }}</a></a>@endsection
 
-@section('descripcion')
-    {{trans('examenes.exaB1_descripcion1')}} {{$datos['mes']}} {{$datos['ano']}} {{trans('examenes.exaB1_descripcion2')}} {{$datos['mes']}} {{$datos['ano']}} {{trans('examenes.exaB1_descripcion3')}} {{$datos['mes']}} {{$datos['ano']}} {{trans('examenes.exaB1_descripcion4')}}
-@endsection
+@section('descripcion'){{trans('examenes.exaB1_descripcion1')}} {{$datos['mes']}} {{$datos['ano']}} {{trans('examenes.exaB1_descripcion2')}} {{$datos['mes']}} {{$datos['ano']}} {{trans('examenes.exaB1_descripcion3')}} {{$datos['mes']}} {{$datos['ano']}} {{trans('examenes.exaB1_descripcion4')}}</a>@endsection
 
-@section('keywords')
-    {{trans('examenes.exaB1_keywords1')}} {{$datos['mes']}} {{$datos['ano']}} {{trans('examenes.exaB1_keywords2')}}
-@endsection
+@section('keywords'){{trans('examenes.exaB1_keywords1')}} {{$datos['mes']}} {{$datos['ano']}} {{trans('examenes.exaB1_keywords2')}}</a>@endsection
 
 @section('main_content')
 
@@ -97,5 +88,4 @@
 		</div>
 	</div>
 </div>
-
-@endsection
+</a>@endsection

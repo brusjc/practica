@@ -1,24 +1,14 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-	{{ html_entity_decode(trans('ortografia.diptongos_titulo1') )}}
-@endsection
+@section('contentheader_title'){{ html_entity_decode(trans('ortografia.diptongos_titulo1') )}}@endsection
 
-@section('contentheader_h1')
-	{{ html_entity_decode(trans('ortografia.diptongos_h1') )}}
-@endsection
+@section('contentheader_h1'){{ html_entity_decode(trans('ortografia.diptongos_h1') )}}@endsection
 
-@section('breadcrumb1')
-	<a href="/ortografia">{{ trans('ortografia.ortografia_breadcrumb') }}</a>
-@endsection
+@section('breadcrumb1')<a href="/ortografia">{{ trans('ortografia.ortografia_breadcrumb') }}</a>@endsection
 
-@section('descripcion')
-    {{ html_entity_decode(trans('ortografia.diptongos_descripcion') )}}
-@endsection
+@section('descripcion'){{ html_entity_decode(trans('ortografia.diptongos_descripcion') )}}@endsection
 
-@section('keywords')
-    {{ html_entity_decode(trans('ortografia.diptongos_keywords') )}}
-@endsection
+@section('keywords'){{ html_entity_decode(trans('ortografia.diptongos_keywords') )}}@endsection
 
 @section('main_content')
 

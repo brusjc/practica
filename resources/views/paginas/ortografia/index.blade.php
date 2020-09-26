@@ -1,20 +1,12 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-	{{ html_entity_decode(trans('ortografia.ortografia_titulo1') )}}
-@endsection
+@section('contentheader_title'){{ html_entity_decode(trans('ortografia.ortografia_titulo1') )}}@endsection
 
-@section('contentheader_h1')
-	{{ html_entity_decode(trans('ortografia.ortografia_titulo1') )}}
-@endsection
+@section('contentheader_h1'){{ html_entity_decode(trans('ortografia.ortografia_titulo1') )}}@endsection
 
-@section('descripcion')
-    {{ html_entity_decode(trans('ortografia.ortografia_descripcion') )}}
-@endsection
+@section('descripcion'){{ html_entity_decode(trans('ortografia.ortografia_descripcion') )}}@endsection
 
-@section('keywords')
-    {{ html_entity_decode(trans('ortografia.ortografia_keywords') )}}
-@endsection
+@section('keywords'){{ html_entity_decode(trans('ortografia.ortografia_keywords') )}}@endsection
 
 @section('main_content')
 	<div class="row">

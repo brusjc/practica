@@ -1,20 +1,12 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-	{{ html_entity_decode(trans('vocabulario.vocabulario_titulo1') )}}
-@endsection
+@section('contentheader_title'){{ html_entity_decode(trans('vocabulario.vocabulario_titulo1') )}}@endsection
 
-@section('contentheader_h1')
-	{{ html_entity_decode(trans('vocabulario.vocabulario_h1') )}}
-@endsection
+@section('contentheader_h1'){{ html_entity_decode(trans('vocabulario.vocabulario_h1') )}}@endsection
 
-@section('descripcion')
-    {{ html_entity_decode(trans('vocabulario.vocabulario_descripcion') )}}
-@endsection
+@section('descripcion'){{ html_entity_decode(trans('vocabulario.vocabulario_descripcion') )}}@endsection
 
-@section('keywords')
-    {{ html_entity_decode(trans('vocabulario.vocabulario_keywords') )}}
-@endsection
+@section('keywords'){{ html_entity_decode(trans('vocabulario.vocabulario_keywords') )}}@endsection
 
 @section('main_content')
 

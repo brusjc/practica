@@ -1,20 +1,12 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-    {{trans('privacidad.privacidad_title')}}
-@endsection
+@section('contentheader_title'){{trans('privacidad.privacidad_title')}}@endsection
 
-@section('contentheader_h1')
-    {{trans('privacidad.privacidad_titulo1')}}
-@endsection
+@section('contentheader_h1'){{trans('privacidad.privacidad_titulo1')}}@endsection
 
-@section('descripcion')
-    {{trans('privacidad.privacidad_descripcion')}}
-@endsection
+@section('descripcion'){{trans('privacidad.privacidad_descripcion')}}@endsection
 
-@section('keywords')
-    {{trans('privacidad.privacidad_keywords')}}
-@endsection
+@section('keywords'){{trans('privacidad.privacidad_keywords')}}@endsection
 
 @section('main_content')
 

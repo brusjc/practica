@@ -1,24 +1,14 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-    Realizando un examen
-@endsection
+@section('contentheader_title')Realizando un examen@endsection
 
-@section('contentheader_h1')
-    Realizando un examen
-@endsection
+@section('contentheader_h1')Realizando un examen@endsection
 
-@section('breadcrumb1')
-	<a href="/vocabulario">{{ trans('vocabulario.vocabulario_breadcrumb') }}</a>
-@endsection
+@section('breadcrumb1')<a href="/vocabulario">{{ trans('vocabulario.vocabulario_breadcrumb') }}</a>@endsection
 
-@section('descripcion')
-    "Realizando un examen práctico"
-@endsection
+@section('descripcion')Realizando un examen práctico@endsection
 
-@section('keywords')
-    "Realizando examen, realizando una práctica"
-@endsection
+@section('keywords')Realizando examen, realizando una práctica@endsection
 
 @section('main_content')
 	<div class="row">

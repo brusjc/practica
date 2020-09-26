@@ -76,12 +76,40 @@
 	<p><?php echo e(html_entity_decode(trans('dictats.dictat200906mm_texto13') )); ?></p>
 </div>
 
+<h2>Comprueba tu dictado</h2>
 
 <div class="row">
-	<div class="col-lg-4 col-md-4">
-	</div>
-	<div class="col-lg-4 col-md-4">
-		<a class="btn btn-block btn-primary btn-lg" href="/dictat200906mm_comprobador"><?php echo e(html_entity_decode(trans('dictats.dictats_comprovaElTeuDictat') )); ?></a>
+	<div class="col-md-12">
+		<div class="box box-info">
+			<form action='<?php echo e(action("DictatController@comprovaDictat")); ?>' method="POST" class="form-horizontal">
+				<?php echo e(csrf_field()); ?>
+
+
+				<input type="hidden" name="_method" value="PUT">
+
+				<div class="box-body">
+					<div class="col-md-12">
+						<div class="box box-solid">
+							<div class="box-body">
+								<div class="form-group">
+				                  <textarea class="form-control" id="textoalumno" name="textoalumno" rows="3" placeholder="Escribe aqui el texto del dictado"></textarea>
+				                </div>
+							</div>
+						</div>
+					</div>						
+				</div>
+
+				<input id="dictado_id" type="hidden" name="dictado_id" value="1">
+				<div class="box-footer row invoice-info">
+					<div class="col-sm-6 invoice-col">
+						<button type="submit" class="btn btn-info pull-right">Enviar</button>
+					</div>
+					<div class="col-sm-6 invoice-col">
+						<a href="<?php echo e(session('BC4')); ?>">Go Back</button></a>
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
 </div>
 

@@ -1,30 +1,22 @@
 <?php
 
 return [
-
 //Tablas
 'Examen' => 'Examen',
 'Fecha' => 'Data',
 'Progreso' => 'Progrés',
 'Area' => 'Área',
 'Subarea' => 'Subárea',
-
-
 'jqcv_breadcrumb' => "Exàmens JQCV",
-'jqcv_title' => "Exàmens JQCV", 
 'jqcv_h1' => "Exàmens de la JQCV d'anteriors convocatòries", 
-'jqcv_descripcion' => "Exàmens de la JQCV: practica els exàmens de la JQCV d anteriors convocatòries para poder evaluar tus conocimientos.",
+'jqcv_title' => "Exàmens JQCV", 
+'jqcv_descripcion' =>"Exàmens de la JQCV: practica els exàmens de la JQCV d anteriors convocatòries para poder evaluar tus conocimientos.",
 'jqcv_keywords' => "Exàmens de la JQCV, Exàmens valencia, Exàmens de convocatorias anteriores",
 'jqcv_titulo1' => "Exàmens JQCV", 
-
 'jqcv_texto1' => "Exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià) és la pàgina en què anirem recopilant els exàmens de la JQCV que s’han realitzat fins ara i atenent a la nova estructura d’examen, de manera que podeu avaluar els vostres coneixements.",
-
 'jqcv_texto2' => "Des de la nostra web pots realitzar els exàmens de la JQCV com si estigueres en la mateixa prova. Els diferents nivells (Oral, Elemental, Mitjà i Superior) estan estructurats de la mateixa manera que els exàmens de la JQCV perquè el nostre usuari estudiant s’habitue a la prova i no trobe dificultats, de tres respostes ha de triar una que és la resposta verdadera. A l’instant l’usuari sabrà la seua puntuació dels exàmens de la JQCV d’anteriors convocatòries gràcies al nostre sistema d’autoavaluació.",
-
 'jqcv_texto3' => "Així, doncs, exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià) és una part de la nostra web que destinem a la teua pròpia autoavalución. Et recomanem que utilitzes esta opció únicament quan hages practicat prou sobre els nostres exercicis pràctics i la teua puntuació siga elevada, de manera que els exàmens de la JQCV seran nous i desconeguts encara que assumibles per al teu nivell de coneixements.",
-
 'jqcv_texto4' => "En el nostre apartat d’Exàmens de la JQCV pretenem ajudar-te, facilitar el teu aprenentatge per a assimilar el nivell de coneixements necessaris i superar els distints nivells. Gràcies al nostre projecte de pràctica prendràs o recuperaràs la confiança per a afrontar qualsevol nivell dels exàmens de la JQCV, per Mitjà de les proves d’anteriors convocatòries.",
-
 'jqcv_texto5' => "T’animem així, a l’estudi detallat de les lliçons incloses en el nostre curs com a millor preparació possible per a resoldre satisfactòriament els exàmens. Ànim!",
 
 
@@ -35,19 +27,18 @@ return [
 'elemental_h1' => "Examen Elemental de la JQCV", 
 'elemental_descripcion' => "Examen Elemental de la JQCV: practica el Examen Elemental de la JQCV. Pots realitzar l examen del nivell Elemental de la JQCV com si estigueres en la mateixa prova.",
 'elemental_keywords' => "Examen Elemental de la JQCV, Exàmens de valencià, Exàmens JQCV, provas JQCV, exàmens anteriors JQCV, Examenes de la JQCV, Examenes de la JQCV, pruebas JQCV, examenes de la JQCV de anteriores convocatorias",
+
 'elemental_titulo1' => "Examen Elemental", 
 
 'elemental_texto1' => "En Examen Elemental de la JQCV (Junta Qualificadora de Coneixements de Valencià), pots realitzar l'examen del nivell Elemental com si estigueres en la mateixa prova.",
-
 'elemental_texto2' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'Examen Elemental de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià), és a dir, tres respostes a triar una com verdadera. A més a més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV), puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el nivell Elemental de la JQCV.",
-
 'elemental_texto3' => "Ja que l'Examen Elemental de la JQCV (Junta Qualificadora de Coneixements de Valencià) conté les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
-
 'elemental_texto4' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a prendre confiança, eficàcia i aconseguir resoldre satisfactòriament l'examen Elemental de la JQCV.",
 
 
 
 
+'exaelemental_breadcrumb' => "Examen Elemental convocatoria",
 'exaElemental_title' => "Examen Elemental convocatoria ", 
 'exaElemental_h1' => "Examen Elemental de la JQCV convocatoria ", 
 'exaElemental_descripcion1' => "Examen Elemental ",
@@ -78,11 +69,8 @@ return [
 'oral_titulo1' => "Examen Oral", 
 
 'oral_texto1' => "En Examen Oral de la JQCV (Junta Qualificadora de Coneixements de Valencià), pots realitzar l'examen del nivell Oral com si estigueres en la mateixa prova.",
-
 'oral_texto2' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'examen Oral de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià), és a dir, tres respostes a triar una com verdadera. A més a més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV), puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el nivell Oral de la JQCV.",
-
 'oral_texto3' => "Ja que l'Examen Oral de la JQCV (Junta Qualificadora de Coneixements de Valencià) conté les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
-
 'oral_texto4' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a prendre confiança, eficàcia i aconseguir resoldre satisfactòriament l'examen Oral de la JQCV.",
 
 
@@ -118,11 +106,8 @@ return [
 'mitja_titulo1' => "Examen Mitjà", 
 
 'mitja_texto1' => "En Examen Mitjà de la JQCV (Junta Qualificadora de Coneixements de Valencià), pots realitzar l'examen del nivell Mitjà com si estigueres en la mateixa prova.",
-
 'mitja_texto2' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'examen Mitjà de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià), és a dir, tres respostes a triar una com verdadera. A més a més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV), puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el nivell Mitjà de la JQCV.",
-
 'mitja_texto3' => "Ja que l'Examen Mitjà de la JQCV (Junta Qualificadora de Coneixements de Valencià) conté les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
-
 'mitja_texto4' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a prendre confiança, eficàcia i aconseguir resoldre satisfactòriament l'examen Mitjà de la JQCV.",
 
 
@@ -158,11 +143,8 @@ return [
 'superior_titulo1' => "Examen Superior", 
 
 'superior_texto1' => "En Examen Superior de la JQCV (Junta Qualificadora de Coneixements de Valencià), pots realitzar l'examen del nivell Superior com si estigueres en la mateixa prova.",
-
 'superior_texto2' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'examen Superior de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià), és a dir, tres respostes a triar una com verdadera. A més a més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV), puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el nivell Superior de la JQCV.",
-
 'superior_texto3' => "Ja que l'Examen Superior de la JQCV (Junta Qualificadora de Coneixements de Valencià) conté les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
-
 'superior_texto4' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a prendre confiança, eficàcia i aconseguir resoldre satisfactòriament l'examen Superior de la JQCV.",
 
 
@@ -401,22 +383,6 @@ return [
 'exaC2_texto8' => " de la JQCV.",
 'exaC2_texto9' => "L'examen C2 és equivalent al nivell Superior però adaptat al ",
 'exaC2_texto10' => "Marco Comú Europeu de Referència per a les Llengües",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

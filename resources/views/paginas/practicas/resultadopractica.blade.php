@@ -1,24 +1,14 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-    Resultado de la práctica
-@endsection
+@section('contentheader_title')Resultado de la práctica@endsection
 
-@section('contentheader_h1')
-    Resultado de la práctica
-@endsection
+@section('contentheader_h1')Resultado de la práctica@endsection
 
-@section('breadcrumb1')
-	<a href="/vocabulario">{{ trans('vocabulario.vocabulario_breadcrumb') }}</a>
-@endsection
+@section('breadcrumb1')<a href="/vocabulario">{{ trans('vocabulario.vocabulario_breadcrumb') }}</a>@endsection
 
-@section('descripcion')
-    "Resultado de la práctica"
-@endsection
+@section('descripcion')Resultado de la práctica@endsection
 
-@section('keywords')
-    "Realizando examen, realizando una práctica"
-@endsection
+@section('keywords')Realizando examen, realizando una práctica@endsection
 
 @section('main_content')
 	<div class="callout callout-info">

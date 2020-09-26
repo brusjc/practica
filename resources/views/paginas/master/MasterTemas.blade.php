@@ -1,24 +1,14 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-	{{trans('message.informacion_examen_master')}}
-@endsection
+@section('contentheader_title'){{trans('message.informacion_examen_master')}}@endsection
 
-@section('contentheader_h1')
-	{{trans('message.informacion_examen_master')}}
-@endsection
+@section('contentheader_h1'){{trans('message.informacion_examen_master')}}@endsection
 
-@section('breadcrumb1')
-	<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>
-@endsection
+@section('breadcrumb1')<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>@endsection
 
-@section('descripcion')
-    "Todos los examenes"
-@endsection
+@section('descripcion')"Todos los examenes"@endsection
 
-@section('keywords')
-    "Examenes"
-@endsection
+@section('keywords')"Examenes"@endsection
 
 @section('main_content')
 	<h3>{{$miprueba['original']['data'][0]['prueba']['nombre']}} - {{$miprueba['original']['data'][0]['prueba']['codigo']}}</h3>

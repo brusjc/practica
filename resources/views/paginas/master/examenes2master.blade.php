@@ -1,16 +1,10 @@
 @extends("themes.lte.plantillatemamaster2")
 
-@section('titulo')
-	Todos los exámenes
-@endsection
+@section('titulo')Todos los exámenes@endsection
 
-@section('descripcion')
-    "Todos los examenes"
-@endsection
+@section('descripcion')"Todos los examenes"@endsection
 
-@section('keywords')
-    "Examenes"
-@endsection
+@section('keywords')"Examenes"@endsection
 
 @section('content')
 hola

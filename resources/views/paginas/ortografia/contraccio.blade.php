@@ -1,24 +1,14 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-	{{ html_entity_decode(trans('ortografia.contraccio_title') )}}
-@endsection
+@section('contentheader_title'){{ html_entity_decode(trans('ortografia.contraccio_title') )}}@endsection
 
-@section('contentheader_h1')
-	{{ html_entity_decode(trans('ortografia.contraccio_h1') )}}
-@endsection
+@section('contentheader_h1'){{ html_entity_decode(trans('ortografia.contraccio_h1') )}}@endsection
 
-@section('breadcrumb1')
-	<a href="/ortografia">{{ trans('ortografia.ortografia_breadcrumb') }}</a>
-@endsection
+@section('breadcrumb1')<a href="/ortografia">{{ trans('ortografia.ortografia_breadcrumb') }}</a>@endsection
 
-@section('descripcion')
-    {{ html_entity_decode(trans('ortografia.contraccio_descripcion') )}}
-@endsection
+@section('descripcion'){{ html_entity_decode(trans('ortografia.contraccio_descripcion') )}}@endsection
 
-@section('keywords')
-    {{ html_entity_decode(trans('ortografia.contraccio_keywords') )}}
-@endsection
+@section('keywords'){{ html_entity_decode(trans('ortografia.contraccio_keywords') )}}@endsection
 
 @section('main_content')
 
@@ -67,5 +57,20 @@
 <div class="comment-text">
 	<p>{{ html_entity_decode(trans('ortografia.contraccio_texto2') )}}</p>
 	<p>{{ html_entity_decode(trans('ortografia.contraccio_texto3') )}}</p>
+</div>
+
+<div class="row">
+	<div class="col-12">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<ins class="adsbygoogle"
+		     style="display:block; text-align:center;"
+		     data-ad-layout="in-article"
+		     data-ad-format="fluid"
+		     data-ad-client="ca-pub-7412986561454436"
+		     data-ad-slot="3142885157"></ins>
+		<script>
+		     (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
 </div>
 @endsection

@@ -1,9 +1,24 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <a href="/" class="brand-link">
-    <span class="brand-text font-weight-light">Practicavalenciano.es</span>
+    <div class="row mt-0 mb-0">
+      <div class="col-lg-12 text-center">
+        <center>
+          <img width="100" height="100" class="img-responsive img-fluid img-circle" src="/img/practicav/logotipo.png" />
+        </center>
+      </div>
+    </div> 
+    <div class="row mt-0 mb-0">
+      <div class="col-lg-12 text-center">
+        <center>
+          <span class="brand-text font-weight-light">Practicavalenciano.es</span>
+        </center>
+      </div>
+    </div> 
+
+    
   </a>
 
-  <div class="sidebar">
+  <div class="sidebar" style="margin-top: calc(7.5rem + 1px);">
     
     <nav class="mt-5">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">

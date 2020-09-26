@@ -1,20 +1,12 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-	{{ html_entity_decode(trans('noms.noms_title') )}}
-@endsection
+@section('contentheader_title'){{ html_entity_decode(trans('noms.noms_title') )}}@endsection
 
-@section('contentheader_h1')
-	{{ html_entity_decode(trans('noms.noms_titulo1') )}}
-@endsection
+@section('contentheader_h1'){{ html_entity_decode(trans('noms.noms_titulo1') )}}@endsection
 
-@section('descripcion')
-    {{ html_entity_decode(trans('noms.noms_descripcion') )}}
-@endsection
+@section('descripcion'){{ html_entity_decode(trans('noms.noms_descripcion') )}}@endsection
 
-@section('keywords')
-    {{ html_entity_decode(trans('noms.noms_keywords') )}}
-@endsection
+@section('keywords'){{ html_entity_decode(trans('noms.noms_keywords') )}}@endsection
 
 @section('main_content')
 

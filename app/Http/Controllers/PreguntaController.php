@@ -39,7 +39,7 @@ class PreguntaController extends Controller
 
         //Paso 3: enviamos el json
         return response()->json(["status" =>['error'=>0, "message"=>""], 'data'=>$preguntas]);
-    }//
+    }
 
     public function showXSubarea($subarea)
     {

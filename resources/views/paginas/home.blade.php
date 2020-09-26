@@ -1,20 +1,12 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-    {{ trans('examenes.jqcv_title') }}
-@endsection
+@section('contentheader_title'){{ trans('examenes.jqcv_title') }}@endsection
 
-@section('contentheader_h1')
-    {{ trans('examenes.jqcv_titulo1') }}
-@endsection
+@section('contentheader_h1'){{ trans('examenes.jqcv_titulo1') }}@endsection
 
-@section('descripcion')
-    {{ trans('examenes.jqcv_descripcion') }}
-@endsection
+@section('descripcion'){{ trans('examenes.jqcv_descripcion') }}@endsection
 
-@section('keywords')
-    {{ trans('examenes.jqcv_keywords') }}
-@endsection
+@section('keywords'){{ trans('examenes.jqcv_keywords') }}@endsection
 
 @section('main_content')
 

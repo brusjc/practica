@@ -1,20 +1,17 @@
 <?php
 
 return [
-
 //Tablas
 'Examen' => 'Examen',
 'Fecha' => 'Fecha',
 'Progreso' => 'Progreso',
 'Area' => 'Área',
 'Subarea' => 'Subárea',
-
-
 'jqcv_breadcrumb' => "Exámenes JQCV",
-'jqcv_title' => "Exámenes JQCV", 
 'jqcv_h1' => "Exámenes de la JQCV de convocatorias anteriores", 
-'jqcv_descripcion' => "Exámenes de la JQCV: practica los exámenes de la JQCV de convocatorias anteriores para poder evaluar tus conocimientos.",
-'jqcv_keywords' => "Exámenes de la JQCV, Exámenes valencia, Exámenes de convocatorias anteriores",
+'jqcv_title' => "Exámenes JQCV", 
+'jqcv_descripcion' =>"Exámenes de la JQCV: practica los exámenes de la JQCV de convocatorias anteriores para poder evaluar tus conocimientos.",
+'jqcv_keywords' =>"Exámenes de la JQCV, Exámenes valencia, Exámenes de convocatorias anteriores",
 'jqcv_titulo1' => "Exámenes JQCV", 
 'jqcv_texto1' => "Exámenes de la JQCV (Junta Qualificadora de Coneixements de Valencià) es la página en la que iremos recopilando las exámenes de la JQCV que se han realizado hasta la fecha de forma que podáis evaluar vuestros conocimientos.",
 'jqcv_texto2' => "Desde nuestra web puedes realizar los exámenes de la JQCV como si estuvieras en la misma prueba. Los diferentes niveles (oral, elemental, mitjà i superior) están estructurados de la misma manera que los exámenes de la JQCV para que nuestro usuario estudiante se habitúe a la prueba y no encuentre dificultades, de tres respuestas debe elegir una que es la respuesta verdadera. Al instante el usuario sabrá su puntuación de los exámenes de la JQCV de anteriores convocatorias gracias a nuestro sistema de autoevaluación.",
@@ -183,6 +180,22 @@ return [
 'A1_texto10' => "De formular preguntas sobre detalles personales, como donde vivo, la gente que conoce y las cosas que tiene, y de responder a estas preguntas.",
 'A1_texto11' => "De interactuar de una manera sencilla, a condición de que la otra persona hable poco a poco y con claridad y que esté dispuesta a ayudarla.",
 'A1_texto12' => "De hacer una mediación muy básica.",
+
+
+
+
+'A2_breadcrumb' => "Examen A2",
+'A2_title' => "Examen A2 de la JQCV", 
+'A2_h1' => "Examen A2 de la JQCV", 
+'A2_descripcion' => "Examen A2 de la JQCV: practica el Examen A2 de la JQCV. Puedes realizar el examen del nivel A2 de la JQCV como si estuvieras en la misma prueba.",
+'A2_keywords' => "Examen A2 de la JQCV, Exámenes de valenciano, Exàmens JQCV, probes JQCV, exàmens anteriors JQCV, Exàmens de la JQCV, Exàmens de la JQCV, proves JQCV, exàmens de la JQCV d'anteriors convocatòries",
+'A2_titulo1' => "Examen A2", 
+'A2_texto1' => "En Examen A2 de la JQCV (Junta Qualificadora de Coneixements de Valencià) , puedes realizar el examen del nivel A2 como si estuvieras en la misma prueba.",
+'A2_texto2' => "Para que no notes diferencias con el examen real, nuestra página www.practicavalenciano.es, estructura e examen A2 de la misma manera que los exámenes de la JQCV (Junta Qualificadora de Coneixements de Valencià) , es decir, tres respuestas y solo una verdadera. Además, con la novedad de nuestro sistema de autoavaluación, por el cual, el usuario de nuestra página, , estudiando los exámenes de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV) , puuede sabe al instante su puntuación del examen, en este caso, el examen del nivel A2 de la JQCV.",
+'A2_texto3' => "Ya que el Examen A2 de la JQCV (Junta Qualificadora de Coneixements de Valencià) cuenta con las mismas preguntas que el examen real y en el mismo orden, te aconsejamos que utilices esta opción únicamente cuando hayas practicadp con nuestros ejercicios.",
+'A2_texto4' => "Te animamos al estudio de las lecciones incluidas en nuestro curso para adquirir confianza, eficácia y consegur resolver satisfactoriamente el examen A2 de la JQCV.",
+'A2_texto5' => "El examen A2 es equivalente al nivell Oral pero adaptado al ",
+'A2_texto6' => "Marco Común Europeo de Referencia para las Lenguas",
 
 
 

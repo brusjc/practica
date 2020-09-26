@@ -7,8 +7,7 @@ return [
 
 
 
-'dictats_url' => "Dictats",
-'dictats_breadcrumb' => "Dictats de valencià",
+'dictats_breadcrumb' => "Dictats",
 'dictats_title' => "Dictats de valencià",
 'dictats_h1' => "Dictats de valencià",
 'dictats_descripcion' => "El fenòmen de la contracció es dona quan les preposicions a, de, per es contrauen davant els articles masculins el, els.",

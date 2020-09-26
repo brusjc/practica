@@ -1,24 +1,14 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-	{{ html_entity_decode(trans('dictats.dictat200906mv_titulo1') )}}
-@endsection
+@section('contentheader_title'){{ html_entity_decode(trans('dictats.dictat200906mv_titulo1') )}}@endsection
 
-@section('contentheader_h1')
-	{{ html_entity_decode(trans('dictats.dictat200906mm_h1') )}}
-@endsection
+@section('contentheader_h1'){{ html_entity_decode(trans('dictats.dictat200906mm_h1') )}}@endsection
 
-@section('breadcrumb1')
-	<a href="/dictats">{{ trans('dictats.dictats_breadcrumb') }}</a>
-@endsection
+@section('breadcrumb1')<a href="/dictats">{{ trans('dictats.dictats_breadcrumb') }}</a>@endsection
 
-@section('descripcion')
-    {{ html_entity_decode(trans('dictats.dictat200906mv_descripcion') )}}
-@endsection
+@section('descripcion'){{ html_entity_decode(trans('dictats.dictat200906mv_descripcion') )}}@endsection
 
-@section('keywords')
-    {{ html_entity_decode(trans('dictats.dictat200906mv_keywords') )}}
-@endsection
+@section('keywords'){{ html_entity_decode(trans('dictats.dictat200906mv_keywords') )}}@endsection
 
 @section('main_content')
 

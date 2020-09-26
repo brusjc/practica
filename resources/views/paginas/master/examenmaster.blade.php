@@ -1,23 +1,14 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-    Estructura del {{$examen['original']['data'][0]['prueba']['nombre']}}
-@endsection
+@section('contentheader_title')Estructura del {{$examen['original']['data'][0]['prueba']['nombre']}}@endsection
 
-@section('breadcrumb_nombre_1')
-    Examenes JQCV
-@endsection
-@section('breadcrumb_enlace_1')
-   /examenes-jqcv
-@endsection
+@section('breadcrumb_nombre_1')Examenes JQCV@endsection
 
-@section('descripcion')
-    "Realizando un examen"
-@endsection
+@section('breadcrumb_enlace_1')/examenes-jqcv@endsection
 
-@section('keywords')
-    "Realizando examen"
-@endsection
+@section('descripcion')"Realizando un examen"@endsection
+
+@section('keywords')"Realizando examen"@endsection
 
 @section('main_content')
 @endsection

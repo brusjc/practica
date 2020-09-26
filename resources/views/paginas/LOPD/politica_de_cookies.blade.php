@@ -1,20 +1,12 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-    {{trans('privacidad.cookies_title')}}
-@endsection
+@section('contentheader_title'){{trans('privacidad.cookies_title')}}@endsection
 
-@section('contentheader_h1')
-    {{trans('privacidad.cookies_titulo1')}}
-@endsection
+@section('contentheader_h1'){{trans('privacidad.cookies_titulo1')}}@endsection
 
-@section('descripcion')
-    {{trans('privacidad.cookies_descripcion')}}
-@endsection
+@section('descripcion'){{trans('privacidad.cookies_descripcion')}}@endsection
 
-@section('keywords')
-    {{trans('privacidad.cookies_keywords')}}
-@endsection
+@section('keywords'){{trans('privacidad.cookies_keywords')}}@endsection
 
 @section('main_content')
 

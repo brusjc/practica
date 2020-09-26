@@ -1,16 +1,10 @@
 @extends('layouts.app')
 
-@section('contentheader_title')
-	Curs de valencià online
-@endsection
+@section('contentheader_title')Curs de valencià online@endsection
 
-@section('descripcion')
-    En aquest curs de valencià pretenem, amb exercicis i explicacions introduir-te de manera entretinguda en la llengua valenciana seguint el programa de la Junta Qualificadora de Coneixements de Valencià (JQCV). Vocabulari, ortografia, gramàtica, curiositats, …, són les nostres propostes educatives perquè pugues superar els exàmens de nivell oral, nivell elemental, nivell mitjà, i nivell superior
-@endsection
+@section('descripcion')En aquest curs de valencià pretenem, amb exercicis i explicacions introduir-te de manera entretinguda en la llengua valenciana seguint el programa de la Junta Qualificadora de Coneixements de Valencià (JQCV). Vocabulari, ortografia, gramàtica, curiositats, …, són les nostres propostes educatives perquè pugues superar els exàmens de nivell oral, nivell elemental, nivell mitjà, i nivell superior@endsection
 
-@section('keywords')
-    Examen Elemental de la JQCV, Exàmens de valencià, Exàmens JQCV, probas JQCV, exàmens anteriors JQCV, Examenes de la JQCV, Examenes de la JQCV, pruebas JQCV, examenes de la JQCV de anteriores convocatoria
-@endsection
+@section('keywords')Examen Elemental de la JQCV, Exàmens de valencià, Exàmens JQCV, probas JQCV, exàmens anteriors JQCV, Examenes de la JQCV, Examenes de la JQCV, pruebas JQCV, examenes de la JQCV de anteriores convocatoria@endsection
 
 @section('main_content')
 	

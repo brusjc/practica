@@ -62,6 +62,7 @@ Route::get('/contraccio', function(){ return view('paginas.ortografia.contraccio
 //* Dictats *
 //***********
 Route::get('/dictats', function(){ return view('paginas.dictats.index'); });
+Route::put('/comprovadictat', 'DictatController@comprovaDictat');
 Route::get('/dictat200906mm', function(){ return view('paginas.dictats.dictat200906mm'); });
 Route::get('/dictat200906mv', function(){ return view('paginas.dictats.dictat200906mv'); });
 
@@ -164,7 +165,8 @@ Route::group(['middleware' => 'auth'], function () {
 	//* Pruebas *
 	//***********
 	//Route::get('/enpruebas/{subarea}', 'PreguntaController@showXSubarea');
-	Route::get('/enpruebas', 'PreguntaController@pruebaemail');
+	//Route::get('/enpruebas', 'PreguntaController@pruebaemail');
+	//Route::get('/enpruebas1/{id}', function(){ return view('paginas.dictats.comprovadictat'); });
 
 
 });
