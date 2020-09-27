@@ -4,8 +4,7 @@
 
 @section('contentheader_h1'){{ html_entity_decode(trans('vocabulario.partsDia_h1') )}}@endsection
 
-@section('breadcrumb1')<a href="/vocabulario">{{ trans('vocabulario.vocabulario_breadcrumb') }}</a>
-@endsection
+@section('breadcrumb1')<a href="/vocabulario">{{ trans('vocabulario.vocabulario_breadcrumb') }}</a>@endsection
 
 @section('descripcion'){{ html_entity_decode(trans('vocabulario.parentesco_descripcion') )}}@endsection
 

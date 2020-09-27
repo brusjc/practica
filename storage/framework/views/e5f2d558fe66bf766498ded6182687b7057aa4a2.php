@@ -1,36 +1,24 @@
 
 
-<?php $__env->startSection('contentheader_title'); ?>
-    <?php echo e(trans('examenes.jqcv_title')); ?>
+<?php $__env->startSection('contentheader_title'); ?><?php echo e(trans('home.home_title')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('contentheader_h1'); ?><?php echo e(trans('home.home_h1')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('contentheader_h1'); ?>
-    <?php echo e(trans('examenes.jqcv_titulo1')); ?>
+<?php $__env->startSection('descripcion'); ?><?php echo e(trans('home.home_descripcion')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('descripcion'); ?>
-    <?php echo e(trans('examenes.jqcv_descripcion')); ?>
-
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('keywords'); ?>
-    <?php echo e(trans('examenes.jqcv_keywords')); ?>
-
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('keywords'); ?><?php echo e(trans('home.home_keywords')); ?><?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_content'); ?>
 
 	<div class="row">
 		<div class="col-lg-6 col-md-6">
 			<div class="callout callout-info">
-                <p><?php echo e(html_entity_decode(trans('examenes.jqcv_texto1') )); ?></p>
+                <p><?php echo e(html_entity_decode(trans('home.home_texto1') )); ?></p>
 			</div>
 		</div>
 		<div class="col-lg-6 col-md-6">
 			<div class="callout callout-info">
-				<p><?php echo e(html_entity_decode(trans('examenes.jqcv_texto2') )); ?></p>
+				<p><?php echo e(html_entity_decode(trans('home.home_texto2') )); ?></p>
 			</div>
 		</div>
 	</div>
@@ -44,14 +32,22 @@
 	<div class="row">
 		<div class="col-lg-12 col-md-12">
 			<div class="callout callout-info">
-				<p><?php echo e(html_entity_decode(trans('examenes.jqcv_texto3') )); ?></p>
+				<p><?php echo e(html_entity_decode(trans('home.home_texto3') )); ?></p>
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-lg-12 col-md-12">
 			<div class="callout callout-info">
-				<p><?php echo e(html_entity_decode(trans('examenes.jqcv_texto4') )); ?></p>
+				<p><?php echo e(html_entity_decode(trans('home.home_texto4') )); ?></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12 col-md-12">
+			<div class="callout callout-info">
+				<p><?php echo e(html_entity_decode(trans('home.home_texto5') )); ?></p>
 			</div>
 		</div>
 	</div>	
@@ -59,7 +55,7 @@
 	<div class="row">
 		<div class="col-lg-12 col-md-12">
 			<div class="callout callout-info">
-				<p><?php echo e(html_entity_decode(trans('examenes.jqcv_texto5') )); ?></p>
+				<p><?php echo e(html_entity_decode(trans('home.home_texto6') )); ?></p>
 			</div>
 		</div>
 	</div>	
@@ -98,7 +94,7 @@
 		</div>		
 		<div class="col-lg-3 col-md-3">
 			<a class="mb-2 btn btn-block btn-info" href="http://www.practicavalenciano.es/pobles/pobles.php"><i class="fa fa-edit"></i> Practica pobles</a>
-		</div>		
+		</div>
 		<div class="col-lg-3 col-md-3">
 			<a class="mb-2 btn btn-block btn-info" href="http://www.practicavalenciano.es/noms/noms.php"><i class="fa fa-edit"></i> Practica els noms de persones</a>
 		</div>

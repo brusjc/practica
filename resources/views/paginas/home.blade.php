@@ -1,24 +1,24 @@
 @extends('layouts.app')
 
-@section('contentheader_title'){{ trans('examenes.jqcv_title') }}@endsection
+@section('contentheader_title'){{ trans('home.home_title') }}@endsection
 
-@section('contentheader_h1'){{ trans('examenes.jqcv_titulo1') }}@endsection
+@section('contentheader_h1'){{ trans('home.home_h1') }}@endsection
 
-@section('descripcion'){{ trans('examenes.jqcv_descripcion') }}@endsection
+@section('descripcion'){{ trans('home.home_descripcion') }}@endsection
 
-@section('keywords'){{ trans('examenes.jqcv_keywords') }}@endsection
+@section('keywords'){{ trans('home.home_keywords') }}@endsection
 
 @section('main_content')
 
 	<div class="row">
 		<div class="col-lg-6 col-md-6">
 			<div class="callout callout-info">
-                <p>{{ html_entity_decode(trans('examenes.jqcv_texto1') )}}</p>
+                <p>{{ html_entity_decode(trans('home.home_texto1') )}}</p>
 			</div>
 		</div>
 		<div class="col-lg-6 col-md-6">
 			<div class="callout callout-info">
-				<p>{{ html_entity_decode(trans('examenes.jqcv_texto2') )}}</p>
+				<p>{{ html_entity_decode(trans('home.home_texto2') )}}</p>
 			</div>
 		</div>
 	</div>
@@ -32,14 +32,22 @@
 	<div class="row">
 		<div class="col-lg-12 col-md-12">
 			<div class="callout callout-info">
-				<p>{{ html_entity_decode(trans('examenes.jqcv_texto3') )}}</p>
+				<p>{{ html_entity_decode(trans('home.home_texto3') )}}</p>
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-lg-12 col-md-12">
 			<div class="callout callout-info">
-				<p>{{ html_entity_decode(trans('examenes.jqcv_texto4') )}}</p>
+				<p>{{ html_entity_decode(trans('home.home_texto4') )}}</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12 col-md-12">
+			<div class="callout callout-info">
+				<p>{{ html_entity_decode(trans('home.home_texto5') )}}</p>
 			</div>
 		</div>
 	</div>	
@@ -47,7 +55,7 @@
 	<div class="row">
 		<div class="col-lg-12 col-md-12">
 			<div class="callout callout-info">
-				<p>{{ html_entity_decode(trans('examenes.jqcv_texto5') )}}</p>
+				<p>{{ html_entity_decode(trans('home.home_texto6') )}}</p>
 			</div>
 		</div>
 	</div>	
@@ -86,7 +94,7 @@
 		</div>		
 		<div class="col-lg-3 col-md-3">
 			<a class="mb-2 btn btn-block btn-info" href="http://www.practicavalenciano.es/pobles/pobles.php"><i class="fa fa-edit"></i> Practica pobles</a>
-		</div>		
+		</div>
 		<div class="col-lg-3 col-md-3">
 			<a class="mb-2 btn btn-block btn-info" href="http://www.practicavalenciano.es/noms/noms.php"><i class="fa fa-edit"></i> Practica els noms de persones</a>
 		</div>

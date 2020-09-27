@@ -3,7 +3,7 @@
     <div class="row mt-0 mb-0">
       <div class="col-lg-12 text-center">
         <center>
-          <img width="100" height="100" class="img-responsive img-fluid img-circle" src="/img/practicav/logotipo.png" />
+          <img width="100" height="100" class="img-responsive img-fluid img-circle" src="/img/practicav/logo150.png" />
         </center>
       </div>
     </div> 
