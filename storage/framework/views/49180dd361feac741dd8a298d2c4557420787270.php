@@ -1,52 +1,37 @@
 
 
-<?php $__env->startSection('contentheader_title'); ?>
-	<?php echo e(html_entity_decode(trans('vocabulario.numeros_titulo1') )); ?>
+<?php $__env->startSection('contentheader_title'); ?><?php echo e(trans('vocabulario.numeros_title')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('contentheader_h1'); ?><?php echo e(trans('vocabulario.numeros_h1')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('contentheader_h1'); ?>
-	<?php echo e(html_entity_decode(trans('vocabulario.numeros_h1') )); ?>
+<?php $__env->startSection('breadcrumb0'); ?><a href="/<?php echo e(session('lang')); ?>/">Inicio</a><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('breadcrumb1'); ?><a href="<?php echo e(session('BC1')); ?>"><?php echo e(session('BC1texto')); ?></a><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('breadcrumb1'); ?>
-	<a href="/vocabulario"><?php echo e(trans('vocabulario.vocabulario_breadcrumb')); ?></a>
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('breadcrumb2'); ?><?php echo e(session('BC2texto')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('descripcion'); ?>
-    <?php echo e(html_entity_decode(trans('vocabulario.numeros_descripcion') )); ?>
+<?php $__env->startSection('descripcion'); ?><?php echo e(trans('vocabulario.numeros_descripcion')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('keywords'); ?>
-    <?php echo e(html_entity_decode(trans('vocabulario.numeros_keywords') )); ?>
-
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('keywords'); ?><?php echo e(trans('vocabulario.numeros_keywords')); ?><?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_content'); ?>
 
-<div class="row">
-	<div class="col-5">
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-7412986561454436"
-		     data-ad-slot="6463281785"
-		     data-ad-format="auto"
-		     data-full-width-responsive="true"></ins>
-		<script>
-		     (adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 order-1 order-md-2 centraimg" data-aos="fade-left">
+				<?php echo $__env->make('paginas.vocabulario.publi.superior50', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+			</div>
+		</div>
+		<div class="col-7">
+			<p><?php echo e(trans('vocabulario.numeros_texto1')); ?></p>
+			<p><?php echo e(trans('vocabulario.numeros_texto2')); ?></p>
+			<p><?php echo e(trans('vocabulario.numeros_texto3')); ?></p>
+			<p><?php echo e(trans('vocabulario.numeros_texto4')); ?></p>
+			<p><?php echo e(trans('vocabulario.numeros_texto5')); ?></p>
+		</div>
 	</div>
-	<div class="col-7">
-		<p><?php echo e(html_entity_decode(trans('vocabulario.numeros_texto1') )); ?></p>
-		<p><?php echo e(html_entity_decode(trans('vocabulario.numeros_texto2') )); ?></p>
-		<p><?php echo e(html_entity_decode(trans('vocabulario.numeros_texto3') )); ?></p>
-		<p><?php echo e(html_entity_decode(trans('vocabulario.numeros_texto4') )); ?></p>
-		<p><?php echo e(html_entity_decode(trans('vocabulario.numeros_texto5') )); ?></p>
-	</div>
-</div>
+</section>
 
 <div class="row">
 	<div class="col-5">
@@ -436,4 +421,4 @@
 </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/numeros.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/numeros.blade.php ENDPATH**/ ?>

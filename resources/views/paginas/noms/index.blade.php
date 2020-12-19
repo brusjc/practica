@@ -1,50 +1,48 @@
-@extends('layouts.app')
+@extends('frontend.layouts.frontend')
 
-@section('contentheader_title'){{ html_entity_decode(trans('noms.noms_title') )}}@endsection
+@section('contentheader_title'){{ trans('noms.noms_title') }}@endsection
 
-@section('contentheader_h1'){{ html_entity_decode(trans('noms.noms_titulo1') )}}@endsection
+@section('contentheader_h1'){{ trans('noms.noms_h1') }}@endsection
 
-@section('descripcion'){{ html_entity_decode(trans('noms.noms_descripcion') )}}@endsection
+@section('descripcion'){{ trans('noms.noms_descripcion') }}@endsection
 
-@section('keywords'){{ html_entity_decode(trans('noms.noms_keywords') )}}@endsection
+@section('keywords'){{ trans('noms.noms_keywords') }}@endsection
 
 @section('main_content')
 
-<div class="row">
-	<div class="col-4">
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- Adaptable - Cuadrado -->
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-7412986561454436"
-		     data-ad-slot="6463281785"
-		     data-ad-format="auto"
-		     data-full-width-responsive="true"></ins>
-		<script>
-		     (adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-	</div>
-	<div class="col-8">
-		<p>{{ html_entity_decode(trans('noms.noms_texto1') )}}</p>
-		<p>{{ html_entity_decode(trans('noms.noms_texto2') )}}</p>
-		<p>{{ html_entity_decode(trans('noms.noms_texto3') )}}</p>
-		<p>{{ html_entity_decode(trans('noms.noms_texto4') )}}</p>
-	</div>
-</div>
-
-
-<div class="row">
-	<div class="col-12">
-		<p>{{ html_entity_decode(trans('noms.noms_texto5') )}}</p>
-		<p>{{ html_entity_decode(trans('noms.noms_texto6') )}}</p>
-	</div>
-</div>
-
+<section id="about" class="about">
+    <div class="container-fluid">
+	    <div class="row content">
+	        <div class="col-md-5 order-2 order-md-2" data-aos="fade-left">
+				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- Adaptable - Cuadrado -->
+				<ins class="adsbygoogle"
+				     style="display:block"
+				     data-ad-client="ca-pub-7412986561454436"
+				     data-ad-slot="6463281785"
+				     data-ad-format="auto"
+				     data-full-width-responsive="true"></ins>
+				<script>
+				     (adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+	        </div>
+	        <div class="col-md-7 pt-5 order-1 order-md-1" data-aos="fade-up">
+				<p>{{ trans('noms.noms_texto1') }}</p>
+				<p>{{ trans('noms.noms_texto2') }}</p>
+				<p>{{ trans('noms.noms_texto3') }}</p>
+				<p>{{ trans('noms.noms_texto4') }}</p>
+				<p>{{ trans('noms.noms_texto5') }}</p>
+				<p>{{ trans('noms.noms_texto6') }}</p>
+				<p>{{ trans('noms.noms_texto7') }}</p>
+	        </div>
+        </div>
+    </div>
+</section>
 
 <div class="col-md-12">
 	<div class="card">
 		<div class="card-header">
-			<h3 class="card-title">{{ html_entity_decode(trans('noms.noms_titulo1') )}}</h3>
+			<h3 class="card-title">{{ trans('noms.noms_titulo1') }}</h3>
 		</div>
 		<div class="card-body">
 			<a href="#a" class="btn btn-info">A</a>
@@ -73,10 +71,6 @@
 			<a href="#z" class="btn btn-info">Z</a>
 		</div>
 	</div>		
-</div>
-
-<div class="comment-text">
-	<p>{{ html_entity_decode(trans('noms.noms_texto7') )}}</p>
 </div>
 
 <a name="a" id="a"></a>

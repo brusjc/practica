@@ -1,94 +1,190 @@
 
 
-<?php $__env->startSection('contentheader_title'); ?>
-	<?php echo e(html_entity_decode(trans('vocabulario.lletres_titulo1') )); ?>
+<?php $__env->startSection('contentheader_title'); ?><?php echo e(trans('vocabulario.lletres_title')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('contentheader_h1'); ?><?php echo e(trans('vocabulario.lletres_h1')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('contentheader_h1'); ?>
-	<?php echo e(html_entity_decode(trans('vocabulario.lletres_h1') )); ?>
+<?php $__env->startSection('breadcrumb0'); ?><a href="/<?php echo e(session('lang')); ?>/">Inicio</a><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('breadcrumb1'); ?><a href="<?php echo e(session('BC1')); ?>"><?php echo e(session('BC1texto')); ?></a><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('breadcrumb1'); ?>
-	<a href="/vocabulario"><?php echo e(trans('vocabulario.vocabulario_breadcrumb')); ?></a>
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('breadcrumb2'); ?><?php echo e(session('BC2texto')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('descripcion'); ?>
-    <?php echo e(html_entity_decode(trans('vocabulario.lletres_descripcion') )); ?>
+<?php $__env->startSection('descripcion'); ?><?php echo e(trans('vocabulario.lletres_descripcion')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('keywords'); ?>
-    <?php echo e(html_entity_decode(trans('vocabulario.lletres_keywords') )); ?>
-
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('keywords'); ?><?php echo e(trans('vocabulario.lletres_keywords')); ?><?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_content'); ?>
 
-<div class="row">
-	<div class="col-6">
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-7412986561454436"
-		     data-ad-slot="6463281785"
-		     data-ad-format="auto"
-		     data-full-width-responsive="true"></ins>
-		<script>
-		     (adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-	</div>
-	<div class="col-6">
-		<p><?php echo e(html_entity_decode(trans('vocabulario.lletres_texto1') )); ?></p>
-		<p><?php echo e(html_entity_decode(trans('vocabulario.lletres_texto2') )); ?></p>
-		<p><?php echo e(html_entity_decode(trans('vocabulario.lletres_texto3') )); ?></p>
-		<p><?php echo e(html_entity_decode(trans('vocabulario.lletres_texto4') )); ?></p>
-	</div>
-</div>
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-5 order-1 order-md-2 centraimg" data-aos="fade-left">
+				<?php echo $__env->make('paginas.vocabulario.publi.superior50', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+	        </div>
+	        <div class="col-md-7 pt-5 order-1 order-md-1" data-aos="fade-up">
+				<p><?php echo e(trans('vocabulario.lletres_texto1')); ?></p>
+				<p><?php echo e(trans('vocabulario.lletres_texto2')); ?></p>
+				<p><?php echo e(trans('vocabulario.lletres_texto3')); ?></p>
+				<p><?php echo e(trans('vocabulario.lletres_texto4')); ?></p>
+	        </div>
+        </div>
+    </div>
+</section>
 
-	<div class="box">
-		<div class="box-header">
-			<h3 class="box-title">El nom de les lletres</h3>
-		</div>
-
-		<div class="box-body no-padding">
-			<table class="table table-condensed" summary="tabla con las letras del abecedario, su nombre en valenciano y un ejemplo de cada una de ellas.">
-				<tr>
-					<th>Lletra</th>
-					<th>Nom</th>
-					<th>Exemple</th>
-				</tr>
-				<tr><td>A, a</td><td>a</td><td>anar</td></tr>
-				<tr><td>B, b</td><td>be (alta)</td><td>balan&ccedil;a</td></tr>
-				<tr><td>C, c</td><td>ce</td><td>cantar</td></tr>
-				<tr><td>D, d</td><td>de</td><td>dit</td></tr>
-				<tr><td>E, e</td><td>e</td><td>elegant</td></tr>
-				<tr><td>F, f</td><td>efe, efa, ef</td><td>favorit</td></tr>
-				<tr><td>G, g</td><td>ge</td><td>gat</td></tr>
-				<tr><td>H, h</td><td>hac</td><td>habilitat</td></tr>
-				<tr><td>I, i</td><td>i llatina</td><td>iaia</td></tr>
-				<tr><td>J, j</td><td>jota</td><td>jacuzzi</td></tr>
-				<tr><td>K, k</td><td>ca</td><td>karate</td></tr>
-				<tr><td>L, l</td><td>ele, ela o el</td><td>laberint</td></tr>
-				<tr><td>M, m</td><td>eme, ema o em</td><td>mare</td></tr>
-				<tr><td>N, n</td><td>ene o ena o en</td><td>nas</td></tr>
-				<tr><td>O, o</td><td>o</td><td>orella</td></tr>
-				<tr><td>P, p</td><td>pe</td><td>ploure</td></tr>
-				<tr><td>Q, q</td><td>cu</td><td>qüestió</td></tr>
-				<tr><td>R, r</td><td>erre, erra o er</td><td>rialla</td></tr>
-				<tr><td>S, s</td><td>esse, essa o es</td><td>sucre</td></tr>
-				<tr><td>T, t</td><td>te</td><td>tabal</td></tr>
-				<tr><td>U, u</td><td>u</td><td>udolar</td></tr>
-				<tr><td>V, v</td><td>ve (baixa)</td><td>veritat</td></tr>
-				<tr><td>W, w</td><td>ve (doble)</td><td>walkman</td></tr>
-				<tr><td>X, x</td><td>ics o xeix</td><td>xica</td></tr>
-				<tr><td>Y, y</td><td>i grega</td><td>espanya</td></tr>
-				<tr><td>Z, z</td><td>zeta</td><td>zebra</td></tr>
-			</table>
-		</div>
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 order-1 order-md-2 centraimg" data-aos="fade-left">
+	           <img class="img-fluid" src="/img/practicav/vocabulario/nom-de-les-lletres.svg" width="300px" title="<?php echo e(trans('vocabulario.lletres_imgtitle20')); ?>" alt="<?php echo e(trans('vocabulario.lletres_imgalt20')); ?>">
+	        </div>
+	        <div class="col-xl-8 col-lg-7 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
+	            <h2><?php echo e(trans('vocabulario.lletres_titulo20')); ?></h2>
+				<table class="table table-bordered" summary="tabla de <?php echo e(trans('vocabulario.lletres_titulo20')); ?>">
+					<thead>
+						<tr>
+						<th><?php echo e(trans('vocabulario.lletres_titulo21')); ?></th>
+						<th><?php echo e(trans('vocabulario.lletres_titulo22')); ?></th>
+						<th><?php echo e(trans('vocabulario.lletres_titulo23')); ?></th>
+					</tr>
+					</thead>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto20')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto21')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto22')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto23')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto24')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto25')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto26')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto27')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto28')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto29')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto30')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto31')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto32')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto33')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto34')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto35')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto36')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto37')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto38')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto39')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto40')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto41')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto42')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto43')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto44')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto45')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto46')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto47')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto48')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto49')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto50')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto51')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto52')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto53')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto54')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto55')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto56')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto57')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto58')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto59')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto60')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto61')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto62')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto63')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto64')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto65')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto66')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto67')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto68')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto69')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto70')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto71')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto72')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto73')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto74')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto75')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto76')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto77')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto78')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto79')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto80')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto81')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto82')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto83')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto84')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto85')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto86')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto87')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto88')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto89')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto90')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto91')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto92')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto93')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto94')); ?></td>
+					</tr>
+					<tr>
+						<td><?php echo e(trans('vocabulario.lletres_texto95')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto96')); ?></td>
+						<td><?php echo e(trans('vocabulario.lletres_texto97')); ?></td>
+					</tr>
+				</table>
+            </div>
+        </div>
 	</div>
+</section>
+
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/el-nom-de-les-lletres.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/el-nom-de-les-lletres.blade.php ENDPATH**/ ?>

@@ -1,505 +1,1697 @@
-@extends('layouts.app')
+@extends('frontend.layouts.frontend')
 
-@section('contentheader_title'){{ html_entity_decode(trans('vocabulario.cuina_titulo1') )}}@endsection
+@section('contentheader_title'){{ trans('vocabulario.cuina_title') }}@endsection
 
-@section('contentheader_h1'){{ html_entity_decode(trans('vocabulario.cuina_h1') )}}@endsection
+@section('contentheader_h1'){{ trans('vocabulario.cuina_h1') }}@endsection
 
-@section('breadcrumb1')<a href="/vocabulario">{{ trans('vocabulario.vocabulario_breadcrumb') }}</a>@endsection
+@section('breadcrumb0')<a href="/{{session('lang')}}/">Inicio</a>@endsection
 
-@section('descripcion'){{ html_entity_decode(trans('vocabulario.cuina_descripcion') )}}@endsection
+@section('breadcrumb1')<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>@endsection
 
-@section('keywords'){{ html_entity_decode(trans('vocabulario.cuina_keywords') )}}@endsection
+@section('breadcrumb2'){{ session('BC2texto') }}@endsection
+
+@section('descripcion'){{ trans('vocabulario.cuina_descripcion') }}@endsection
+
+@section('keywords'){{ trans('vocabulario.cuina_keywords') }}@endsection
 
 @section('main_content')
 
-	<div class="comment-text">
-		<p>{{ html_entity_decode(trans('vocabulario.cuina_texto1') )}}</p>
-	</div>
+<section id="about" class="about">
+    <div class="container-fluid">
+	    <div class="row content">
+	        <div class="col-md-6 pt-5 order-2">
+				@include('paginas.vocabulario.publi.superior50')
+	        </div>
+	        <div class="col-md-6 pt-5 order-1">
+				<p>{{ trans('vocabulario.cuina_texto1') }}</p>
+	        </div>
+        </div>
+    </div>
+</section>
 
-	<div class="row">
-		<div class="col-11">
-			<div class="card">
-				<div class="card-header  with-border">
-					<h2 class="box-title">{{ trans('vocabulario.cuina_titulo2') }}</h2>
-				</div>
-				<div class="box-body">
-					<table class="table table-bordered" summary="{{ trans('vocabulario.cuina_titulo2') }}">
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+            <div class="col-md-4" data-aos="fade-right">
+				<img class="img-fluid d-none d-sm-block" src="/img/practicav/vocabulario/fruta.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle20') }}" alt="{{ trans('vocabulario.cuina_imgalt20') }}">
+			</div>
+			<div class="col-md-8 pt-5 order-2">
+				<h2>{{ trans('vocabulario.cuina_titulo20') }}</h2>
+				<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo20')}}">
 					<thead>
-						<tr>
-							<th scope="col-3">{{ trans('vocabulario.vocabulario_comun1') }}</th>
-							<th scope="col-3">{{ trans('vocabulario.vocabulario_comun2') }}</th>
-							<th scope="col-6">{{ trans('vocabulario.vocabulario_comun3') }}</th>
-						</tr>
+						<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
 					</thead>
-						<tr><td>caqui</td><td>caqui</td><td> Fruit comestible del caquier, d'aparença exterior paregut a la tomaca.</td></tr>
-						<tr><td>coco</td><td>coco</td><td>Fruit comestible del cocoter.</td></tr>
-						<tr><td>codony</td><td>membrillo</td><td>Fruit del codonyer.</td></tr>
-						<tr><td>dàtil</td><td>dátil</td><td>Fruit de la palmera datilera</td></tr>
-						<tr><td>gínjol</td><td>azufaifa</td><td>Fruit del ginjoler. El gínjol és de color rogenc i té la grandària d'una oliva.</td></tr>
-						<tr><td>kiwi</td><td>kiwi</td><td>Fruit de l'actinídia, de forma oblonga i color verd, recoberta per una pell marró fina, rasposa i amb borrissol, que té un gust fresc i lleugerament àcid.</td></tr>
-						<tr><td>mango</td><td>mango</td><td>Fruit del mango. Arbre perennifoli de la família de les anacardiàcies (Mangifera indica), de fulles lanceolades coriàcies, flors rosades en panícules terminals i fruits comestibles (mangos).</td></tr>
-						<tr><td>meló d'aigua</td><td>sandía</td><td>Fruit de la planta Cucumis citrullus, varietat jace, gros, redó, de carn dolça i molt refrescant.</td></tr>
-						<tr><td>meló d'olor</td><td>melón</td><td>Varietat del meló ovalat que es conserva molts mesos sense podrir-se.</td></tr>
-						<tr><td>perelló</td><td>pero</td><td>Fruit del perelloner. D'aspecte globós.</td></tr>
-						<tr><td>plàtan</td><td>plátano</td><td>Banana. Fruit comestible</td></tr>
-						<tr><td>pomelo</td><td>pomelo</td><td>Fruit d'este arbre, paregut a la taronja, amb la corfa de color groc pàl·lid i la polpa àcida i un poc amargant.</td></tr>
-						<tr><td>raïm</td><td>uva</td><td>Fruita comestible de la vinya (Vitis vinifera), constituïda per una panícula de fruits en baia (els grans de raïm), de diversos colors, formats per una pellorfa, la polpa i unes quantes llavors.</td></tr>
-						<tr><td>bacora</td><td>breva</td><td>Figa primerenca que certes varietats de figuera fan pel juny o pel juliol.</td></tr>
-						<tr><td>bresquilla</td><td>melocotón</td><td>Fruit de la bresquillera. D'aspecte globós, vellutat, groguenc o rogenc, comestible.</td></tr>
-						<tr><td>bresquilla de rotllet</td><td>durazno</td><td></td></tr>
-						<tr><td>carabassa</td><td>calabaza</td><td>Fruit en pepònide de la carabassera, del qual poden distingir-se les varietats.</td></tr>
-						<tr><td>castanya</td><td>castaña</td><td>Llavor comestible del castanyer. Fruit del castanyer.</td></tr>
-						<tr><td>cirera</td><td>cereza</td><td>Fruit del cirerer</td></tr>
-						<tr><td>cirera cruixalenca</td><td>picota</td><td></td></tr>
-						<tr><td>figa</td><td>higo</td><td>Siconi de la figuera, de forma de pera, i amb la pell verdosa, morada o negra, segons les varietats.</td></tr>
-						<tr><td>figa de pala</td><td>higo chumbo</td><td>Fruit de la palera.</td></tr>
-						<tr><td>llima</td><td>limón</td><td>Fruit de la llimera.</td></tr>
-						<tr><td>maduixa</td><td>fresa</td><td>Infructescència comestible de la maduixera, constituïda pel receptacle floral, carnós i aromàtic, sobre el qual s'inserixen els fruits, menuts i aqueniformes.</td></tr>
-						<tr><td>magrana</td><td>granada</td><td>Fruit del magraner.</td></tr>
-						<tr><td>mandarina</td><td>mandarina</td><td>Fruit del mandariner, comestible, semblant a la taronja, però més menut, deprimit, de pela prima i de bon pelar i d'un gust més suau.</td></tr>
-						<tr><td>móra</td><td>mora</td><td>Pluridrupa de l'esbarzer.Fosc, negre o roja.</td></tr>
-						<tr><td>móra roja</td><td>frambuesa</td><td>Gerd.</td></tr>
-						<tr><td>nespra</td><td>níspero</td><td>Fruit del nisprer. Fruits bruns comestibles.</td></tr>
-						<tr><td>nou</td><td>nuez</td><td>Fruit de l'anouer. Fruit indehiscent unilocular i monosperm, de pericarpi llenyós.</td></tr>
-						<tr><td>papaia</td><td>papaya</td><td>Fruits bacciformes del papaier.</td></tr>
-						<tr><td>pera</td><td>pera</td><td>Fruit de la perera. Fruit comestible cultivat a totes les zones temperades.</td></tr>
-						<tr><td>pinya</td><td>piña</td><td>Ananàs. Planta herbàcia biennal de la família de les bromeliàcies (Ananas comosus), originària de l'Amèrica tropical, de fulles llargues i agudes, disposades en roseta, i flors en inflorescències que donen lloc a una infructescència comestible anomenada pinya tropical o d'Amèrica.</td></tr>
-						<tr><td>poma</td><td>manzana</td><td>Fruit comestible de la pomera.</td></tr>
-						<tr><td>pruna</td><td>ciruelo</td><td>Fruit comestible de la prunera.</td></tr>
-						<tr><td>taronja</td><td>naranja</td><td>Fruit comestible del taronger.</td></tr>
-						<tr><td>xirimoia</td><td>chirimoya</td><td>Fruit comestible del xirimoier. </td></tr>
-						<tr><td>albercoc</td><td>albaricoque</td><td> Fruit comestible de l'albercoquer.</td></tr>
-						<tr><td>alvocat</td><td>aguacate</td><td>Fruit de l'alvocater.</td></tr>
-						<tr><td>ametla</td><td>almendra</td><td>Llavor comestible de l'ametler.</td></tr>
-						<tr><td>arboç</td><td>madroño</td><td>Fruit de l'alborcer.</td></tr>
-						<tr><td>avellana</td><td>avellana</td><td>Fruit de l'avellaner.</td></tr>
-					</table>
-				</div>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto21') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto22') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto23') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto24') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto25') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto26') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto27') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto28') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto29') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto30') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto31') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto32') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto33') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto34') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto35') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto36') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto37') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto38') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto39') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto40') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto41') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto42') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto43') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto44') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto45') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto46') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto47') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto48') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto49') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto50') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto51') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto52') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto53') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto54') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto55') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto56') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto57') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto58') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto59') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto60') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto61') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto62') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto63') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto64') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto65') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto66') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto67') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto68') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto69') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto70') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto71') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto72') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto73') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto74') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto75') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto76') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto77') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto78') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto79') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto80') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto81') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto82') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto83') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto84') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto85') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto86') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto87') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto88') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto89') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto90') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto91') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto92') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto93') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto94') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto95') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto96') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto97') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto98') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto99') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto100') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto101') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto102') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto103') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto104') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto105') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto106') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto107') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto108') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto109') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto110') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto111') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto112') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto113') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto114') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto115') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto116') }}</td>
+					</tr>
+				</table>
+			</div>	
+		</div>
+	</div>
+</section>
+
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 order-2 order-md-2" data-aos="fade-left">
+				<img class="img-fluid" src="/img/practicav/vocabulario/hortalizas.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle140') }}" alt="{{ trans('vocabulario.cuina_imgalt140') }}">
+			</div>
+			<div class="col-md-8 pt-5 order-1">
+				<h2>{{ trans('vocabulario.cuina_titulo140') }}</h2>
+				<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo140')}}">
+					<thead>
+						<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+					</thead>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto140') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto141') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto142') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto143') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto144') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto145') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto146') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto147') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto148') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto149') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto150') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto151') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto152') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto153') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto154') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto155') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto156') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto157') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto158') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto159') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto160') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto161') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto162') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto163') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto164') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto165') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto166') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto167') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto168') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto169') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto170') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto171') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto172') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto173') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto174') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto175') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto176') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto177') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto178') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto179') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto180') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto181') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto182') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto183') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto184') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto185') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto186') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto187') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto188') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto189') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto190') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto191') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto192') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto193') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto194') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto195') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto196') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto197') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto198') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto199') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto200') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto201') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto202') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto203') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto204') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto205') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto206') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto207') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto208') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto209') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto210') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto211') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto212') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto213') }}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>	
+</section>
+
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+				<img class="img-fluid" src="/img/practicav/vocabulario/cereal.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle240') }}" alt="{{ trans('vocabulario.cuina_imgalt240') }}">
+			</div>	
+			<div class="col-md-8 pt-5 order-2">
+				<h2>{{ trans('vocabulario.cuina_titulo240') }}</h2>
+				<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo240')}}">
+					<thead>
+						<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+					</thead>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto240') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto241') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto242') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto243') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto244') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto245') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto246') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto247') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto248') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto249') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto250') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto251') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto252') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto253') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto254') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto255') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto256') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto257') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto258') }}</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</div>
+</section>
 
-	<h3 class="box-title">{{ trans('vocabulario.cuina_titulo14') }}</h3>
-	<div class="row mb-5">
-		<div class="col-4">
-		</div>	
-		<div class="col-md-4">
-			<a class="btn btn-block btn-primary btn-lg" href="/practicainicio/14">{{ trans('vocabulario.cuina_titulo14') }}</a>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-11">
-			<div class="card">
-				<div class="card-header  with-border">
-					<h2 class="box-title">{{ trans('vocabulario.cuina_titulo3') }}</h2>
-				</div>
-				<div class="box-body">
-					<table class="table table-bordered" summary="{{ trans('vocabulario.cuina_titulo3') }}">
-						<thead>
-							<tr>
-							<th scope="col-3">{{ trans('vocabulario.vocabulario_comun1') }}</th>
-							<th scope="col-3">{{ trans('vocabulario.vocabulario_comun2') }}</th>
-							<th scope="col-6">{{ trans('vocabulario.vocabulario_comun3') }}</th>
-							</tr>
-						</thead>
-						<tr><td>lletuga</td><td>lechuga</td><td>Planta herbàcia de la família de les compostes (Lactuca sativa), de fulles basals grans i blanes.</td></tr>
-						<tr><td>cogombre</td><td>pepino</td><td>Fruit d'una planta herbàcia de la família de les cucurbitàcies (Cucumis sativus), ajaguda, proveïda de circells, de flors grogues axil·lars. És fruits en pepònide.</td></tr>
-						<tr><td>jolivert</td><td>perejil</td><td>Planta herbàcia biennal de la família de les umbel·líferes (Petroselinum crispum), de fulles tripinnades (emprades com a condiment), flors d'un verd groguenc i fruits en diaqueni.</td></tr>
-						<tr><td>moniato</td><td>boniato</td><td>Tubèrcul del moniato.</td></tr>
-						<tr><td>nap</td><td>nabo</td><td>Planta herbàcia anual o biennal de la família de les crucíferes (Brassica napus), d'arrel carnosa, flors grogues en inflorescències racemoses i fruits en síliqua, cultivada per les seues arrels, comestibles, i les llavors, oleíferes.</td></tr>
-						<tr><td>rave</td><td>rabano</td><td>Arrel comestible de la ravenera.</td></tr>
-						<tr><td>xampinyó</td><td>champiñón</td><td>Planta herbàcia vivaç de la família de les liliàcies (Allium sativum), d'olor forta, tija culminada per una umbel·la de flors blanques o roges, i bulb arredonit i comestible.</td></tr>
-						<tr><td>all</td><td>ajo</td><td>Planta herbàcia vivaç de la família de les liliàcies (Allium sativum), d'olor forta, tija culminada per una umbel·la de flors blanques o roges, i bulb arredonit i comestible.</td></tr>
-						<tr><td>alls tendres</td><td>ajos tiernos</td><td></td></tr>
-						<tr><td>bolets</td><td>setas</td><td>Gènere de basidiomicets de la família de les boletàcies (Boletus sp), carnosos, amb diversos subgèneres i amb moltes espècies comestibles.</td></tr>
-						<tr><td>espinacs</td><td>espinacas</td><td>Planta herbàcia anual de la família de les quenopodiàcies (Spinacia oleracea), de tija dreta i ramificada, amb fulles sagitades que es menja com a verdura.</td></tr>
-						<tr><td>bleda</td><td>acelga</td><td>Planta herbàcia anual de la família de les quenopodiàcies (Beta vulgaris varietat cicla), de grans fulles glabres, lluentes i ondulades, fent roseta basal.</td></tr>
-						<tr><td>carabasseta</td><td>calabacín</td><td>Varietat de carabassera de la família de les cucurbitàcies (Cucurbitat pepo varietat oblonga), que forma una mata erecta, amb fruits allargats (les carabassetes)</td></tr>
-						<tr><td>carxofa</td><td>alcachofa</td><td>Capítol immatur de la carxofera, carnós, cobert de bràctees imbricades i carnoses en la base, comestibles.</td></tr>
-						<tr><td>ceba</td><td>cebolla</td><td>Planta herbàcia bulbosa de la família de les liliàcies (Allium cepa), de fulles cilíndriques fistuloses i de tija florífera fistulosa, fusiforme, que du en l'àpex una umbel·la globulosa de flors blanques llargament pedicel·lades.</td></tr>
-						<tr><td>col</td><td>col</td><td>Planta herbàcia de la família de les crucíferes (Brassica oleracea), de tija grossa (el caluix o tronxo), de fulles grans, a vegades apinyades (el cabdell o capça), i de flors grogues o blanques disposades en raïms llargs.</td></tr>
-						<tr><td>col de Brussel·les</td><td>col de bruselas</td><td>Col caracteritzada pels xicotets brots en forma de diminutes cols que ixen de les axil·les de les fulles (Brassica oleracea gemmifera).</td></tr>
-						<tr><td>creïlla</td><td>patata</td><td>Tubèrcul comestible de la creïllera, nutritiu i molt feculent, ric en midó i en vitamina C, molt utilitzat en alimentació, en l'obtenció de fècules i d'alcohols i com a farratge, segons la varietat.</td></tr>
-						<tr><td>fava</td><td>haba</td><td>Llavor i fruit de la favera.</td></tr>
-						<tr><td>floricol</td><td>floricol</td><td>Varietat botrytis, subvarietat cauliflora, de cultiu de la col (Brassica oleracea, família de les crucíferes).</td></tr>
-						<tr><td>fulla de roure</td><td>hoja de roble</td><td></td></tr>
-						<tr><td>nyora</td><td>ñora</td><td>Varietat de pimentonera molt semblant al vitet.</td></tr>
-						<tr><td>pebrera</td><td>pimiento</td><td>Fruit de la pimentonera.</td></tr>
-						<tr><td>penca</td><td>penca</td><td>Terme que s'aplica a les fulles, tiges, branques i pecíols grossos i carnosos de certes plantes.</td></tr>
-						<tr><td>safanòria</td><td>zanahoria</td><td>Planta herbàcia biennal de la família de les umbel·líferes (Daucus carota), de fulles bipinnatisectes, flors blanques o roses, fruits en diaqueni i d'arrel grossa i ataronjada, mengívola i molt nutritiva.</td></tr>
-						<tr><td>tomaca</td><td>tomate</td><td> Fruit en baia de la tomaquera.Sucosa, de figura globosa, ovoide, deprimida o piriforme, i comestibles apreciats,</td></tr>
-						<tr><td>xirivia</td><td>chirivía</td><td>Planta herbàcia biennal, de la família de les umbel·líferes (Pastinaca sativa), pubescent, de fulles pinnaticompostes i flors grogues disposades en umbel·les, d'arrel comestible. La xirivia silvestre és de tija cilíndrica i de folíols obtusos i creix en herbassars nitròfils.</td></tr>
-						<tr><td>api</td><td>àpio</td><td>Planta herbàcia biennal de la família de les umbel·líferes (Apium graveolens), molt olorosa, de tija fistulosa, flors blanquinoses i arrel grossa.</td></tr>
-						<tr><td>arbergínia</td><td>berenjena</td><td>Fruit comestible de l'alberginera, morat i carnós.</td></tr>
-						<tr><td>endívia</td><td>endívia</td><td>Varietat de xicòria, de la família de les compostes (Cichorium intybus, varietat folicaum), de fulles en disposició fusiforme, de color blanquinós, cultivada per al consum.</td></tr>
-						<tr><td>escarola</td><td>escarola</td><td>Planta herbàcia anual o biennal de la família de les compostes (Cichorium endivia), de fulles basals arrissades i retallades que es mengen en ensalada.</td></tr>
-						<tr><td>esclata-sangs</td><td>níscalo</td><td>Rovelló. Bolet de la família de les russulàcies (Lactarius sanguifluus), de capell convex i després deprimit, lleugerament viscós, de color roig vinós amb taques verdoses, molt apreciat i consumit.</td></tr>
-						<tr><td>espàrrec</td><td>espárrago</td><td>Turió comestible de l'esparreguera.</td></tr>
-					</table>
-				</div>
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 order-2 order-md-2" data-aos="fade-left">
+				<img class="img-fluid" src="/img/practicav/vocabulario/carne.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle280') }}" alt="{{ trans('vocabulario.cuina_imgalt280') }}">
+			</div>
+			<div class="col-md-8 pt-5 order-1">
+				<h2>{{ trans('vocabulario.cuina_titulo280') }}</h2>
+				<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo280')}}">
+					<thead>
+						<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+					</thead>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto280') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto281') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto282') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto283') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto284') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto285') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto286') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto287') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto288') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto289') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto290') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto291') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto292') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto293') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto294') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto295') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto296') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto297') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto298') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto299') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto300') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto301') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto302') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto303') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto304') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto305') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto306') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto307') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto308') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto309') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto310') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto311') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto312') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto313') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto314') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto315') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto316') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto317') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto318') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto319') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto320') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto321') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto322') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto323') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto324') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto325') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto326') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto327') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto328') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto329') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto330') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto331') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto332') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto333') }}</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</div>
+</section>
 
-	<div class="row">
-		<div class="col-11">
-			<div class="card">
-				<div class="card-header  with-border">
-					<h2 class="box-title">{{ trans('vocabulario.cuina_titulo4') }}</h2>
-				</div>
-				<div class="box-body">
-					<table class="table table-bordered" summary="{{ trans('vocabulario.cuina_titulo4') }}">
-						<thead>
-							<tr>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun1') }}</th>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun2') }}</th>
-								<th scope="col-6">{{ trans('vocabulario.vocabulario_comun3') }}</th>
-							</tr>
-						</thead>
-							<tr><td>blat</td><td>trigo</td><td>Gra del blat. Gènere de plantes herbàcies anuals de la família de les gramínies (Triticum sp), de fulles linears, de tija erecta, fistulosa o plena, i de flors agrupades en espigues terminals, representades especialment pel blat comú (o candial, o blancal, o xeixa) (Triticum aestivum o Triticum vulgare), cultivades pel seu gra, que constituïx la base de la fabricació del pa.</td></tr>
-							<tr><td>cigró</td><td>garbanzo</td><td>Llavor comestible de la cigronera.</td></tr>
-							<tr><td>fesol</td><td>alubia</td><td>Fruit de la fesolera. Aptes per a l'alimentació humana.</td></tr>
-							<tr><td>pèsol</td><td>guisante</td><td>Llavor de la pesolera.</td></tr>
-							<tr><td>dacsa</td><td>maíz</td><td>Gra de la dacsa. Gran planta herbàcia anual de la família de les gramínies (Zea mays), de tija o canya dreta i nuosa acabada en un plomall i de fulles alternes lanceolades d'un verd intens.</td></tr>
-							<tr><td>fava</td><td>haba</td><td>Llavor i fruit de la favera.</td></tr>
-							<tr><td>llentilla</td><td>lenteja</td><td>Llavor de la llentilla, saborosa, alimentosa i rica en ferro.</td></tr>
-							<tr><td>arròs</td><td>arroz</td><td>Gra d'arròs. Planta herbàcia anual de la família de les gramínies (Oryza sativa), que es cultiva extensament en climes càlids i terrenys molt humits, el fruit de la qual és un gra ric en midó i altament nutritiu.</td></tr>
-							<tr><td>bajoques</td><td>judías</td><td>Fesol tendre que es consumix amb tavella.</td></tr>
-					</table>
-				</div>
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+				<img class="img-fluid" src="/img/practicav/vocabulario/peces.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle360') }}" alt="{{ trans('vocabulario.cuina_imgalt360') }}">
+			</div>
+			<div class="col-md-8 pt-5 order-2">
+				<h2>{{ trans('vocabulario.cuina_titulo360') }}</h2>
+				<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo360')}}">
+					<thead>
+						<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+					</thead>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto360') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto361') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto362') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto363') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto364') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto365') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto366') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto367') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto368') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto369') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto370') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto371') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto372') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto373') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto374') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto375') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto376') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto377') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto378') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto379') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto380') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto381') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto382') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto383') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto384') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto385') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto386') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto387') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto388') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto389') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto390') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto391') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto392') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto393') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto394') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto395') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto396') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto397') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto398') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto399') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto400') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto401') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto402') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto403') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto404') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto405') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto406') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto407') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto408') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto409') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto410') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto411') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto412') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto413') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto414') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto415') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto416') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto417') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto418') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto419') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto420') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto421') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto422') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto423') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto424') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto425') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto426') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto427') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto428') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto429') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto430') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto431') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto432') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto433') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto434') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto435') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto436') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto437') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto438') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto439') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto440') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto441') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto442') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto443') }}</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</div>
+</section>
 
-	<div class="row">
-		<div class="col-11">
-			<div class="card">
-				<div class="card-header  with-border">
-					<h2 class="box-title">{{ trans('vocabulario.cuina_titulo5') }}</h2>
-				</div>
-				<div class="box-body">
-					<table class="table table-bordered" summary="{{ trans('vocabulario.cuina_titulo5') }}">
-						<thead>
-							<tr>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun1') }}</th>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun2') }}</th>
-								<th scope="col-6">{{ trans('vocabulario.vocabulario_comun3') }}</th>
-							</tr>
-						</thead>
-							<tr><td>bacó</td><td>bacon</td><td>Penca de porc salada, cansalada.</td></tr>
-							<tr><td>conill</td><td>conejo</td><td>Mamífer lagomorf de la família dels lepòrids (Oryctolagus coniculus), més menut que la llebre i d'orelles i potes més curtes, el qual en estat silvestre és anomenat conill de bosc, boscà, fer o de camp, i d'este deriven les races domèstiques (conill de casa, casolà o de corral).</td></tr>
-							<tr><td>corder</td><td>cordero</td><td> Fill de l'ovella fins a l'edat d'un any.</td></tr>
-							<tr><td>llom</td><td>lomo</td><td>Llomello. Peça de carn, magra i gustosa, molt apreciada de l'esquena del porc, sobretot de les parts davantera i mitjana.</td></tr>
-							<tr><td>pernil</td><td>jamón</td><td>Cuixa o espatla de porc o de senglar salada, i posteriorment dessecada perquè es conserve.</td></tr>
-							<tr><td>pernil dolç</td><td>jamón york</td><td>Pernil de porc, desossat, assaonat, nitrificat i cuit, emmotlat amb cobertes o en llanda.</td></tr>
-							<tr><td>pollastre</td><td>pollo</td><td>Gall domèstic, especialment quan és jove. Pollastre rostit (o a l'ast).</td></tr>
-							<tr><td>porc</td><td>cerdo</td><td>Varietat domèstica del porc senglar (Sus scrofa), de cos rabassut i potes curtes, amb quatre dits, cap voluminós i morro llarg, pell grossa, apreciat des de l'antiguitat per la seua carn i el seu cuiro.</td></tr>
-							<tr><td>titot</td><td>pavo</td><td>Au de l'orde dels fasianiformes, de la família dels meleagrídids (Meleagris gallopavo), amb el plomatge bru bronzejat amb taques blanques, i el cap i el coll coberts de carúncules roges.</td></tr>
-							<tr><td>xoriço</td><td>chorizo</td><td>Llonganissa prima, feta especialment de llom de porc. De color roig característic, fet amb carn picada, generalment de porc, adobada amb sal i pebre roig dolç i picant en diverses proporcions.</td></tr>
-							<tr><td>botifarra</td><td>morcilla</td><td>Embotit elaborat farcint un budell o un fragment de budell de porc o de boví amb una mescla de carn de porc convenientment picolada, espècies i sal. Botifarra negra. Botifarra blanca. Botifarra de sang.</td></tr>
-							<tr><td>cansalada</td><td>tocino</td><td>Gras del porc, situat entre la pell i la carn. La cansalada del pernil. Cansalada premsada.</td></tr>
-							<tr><td>guatla</td><td>codorniz</td><td>Au de l'orde dels gal·liformes i de la família dels fasiànids (Coturnix coturnix), de formes arredonides i de color terrós llistat d'ocre i de negre.</td></tr>
-							<tr><td>llonganissa</td><td>longaniza</td><td>Embotit elaborat farcint un budell llarg i prim amb carn magra de porc picada i adobada amb pebre i altres espècies.</td></tr>
-							<tr><td>mortadel·la</td><td>mortadela</td><td>Embotit gros fet amb carn de porc i de bou, picades i mesclades amb xicotets daus de sagí.</td></tr>
-							<tr><td>perdiu</td><td>perdiz</td><td>Au de l'orde dels gal·liformes i de la família dels fasiànids (Alectoris rufa), de plomatge conspicu, de colors gris rogenc, blanc, negre i roig, gregària, sedentària i apreciadíssima com a peça culinària de caça.</td></tr>
-							<tr><td>salsitxa</td><td>salchicha</td><td>Embotit tou, cru, roig o blanc (segons que continga pebre roig o blanc), fet amb carn de porc, a vegades mesclada amb carn de boví, picada i mesclada amb greix de porc, i d'un diàmetre entre 2 i 3 centímetres.</td></tr>
-							<tr><td>sobrassada</td><td>sobrasada</td><td>Embotit cru, fet amb carn de porc, adobat amb sal, pebre roig i altres espècies, típic de les illes Balears i Pitiüses.</td></tr>
-							<tr><td>vedella</td><td>ternera</td><td> Bou, vaca, que no té més d'un any d'edat.</td></tr>
-							<tr><td>xulla</td><td>chuleta</td><td>Costella de cabrit, de bou, de corder o de porc, cuinada. Em vaig menjar mitja dotzena de xulles de corder amb allioli.</td></tr>
-							<tr><td>ànec</td><td>pato</td><td> Terme que s'aplica a diverses aus de la família dels anàtids, excel·lents nadadores, de potes curtes i de bec aplanat.</td></tr>
-							<tr><td>embotit</td><td>embutido</td><td>Budell, una altra part del cos (bufeta, etc.) o embolcall sintètic farcit de carn de porc picada, espècies i, a vegades, altres ingredients.</td></tr>
-					</table>
-				</div>
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 order-2 order-md-2" data-aos="fade-left">
+				<img class="img-fluid" src="/img/practicav/vocabulario/dulces.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle460') }}" alt="{{ trans('vocabulario.cuina_imgalt460') }}">
+			</div>
+			<div class="col-md-8 pt-5 order-1">
+				<h2>{{ trans('vocabulario.cuina_titulo460') }}</h2>
+				<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo460')}}">
+					<thead>
+						<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+					</thead>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto460') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto461') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto462') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto463') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto464') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto465') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto466') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto467') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto468') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto469') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto470') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto471') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto472') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto473') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto474') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto475') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto476') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto477') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto478') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto479') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto480') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto481') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto482') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto483') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto484') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto485') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto486') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto487') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto488') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto489') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto490') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto491') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto492') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto493') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto494') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto495') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto496') }}</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</div>
+</section>
 
-	<div class="row">
-		<div class="col-11">
-			<div class="card">
-				<div class="card-header  with-border">
-					<h2 class="box-title">{{ trans('vocabulario.cuina_titulo6') }}</h2>
-				</div>
-				<div class="box-body">
-					<table class="table table-bordered" summary="{{ trans('vocabulario.cuina_titulo6') }}">
-						<thead>
-							<tr>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun1') }}</th>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun2') }}</th>
-								<th scope="col-6">{{ trans('vocabulario.vocabulario_comun3') }}</th>
-							</tr>
-						</thead>
-						<tr><td>bacallà</td><td>bacalao</td><td>Abadejo. Peix de la classe dels osteïctis, de l'orde dels gadiformes (Gadus callarias), de color variable i cos cilíndric, amb tres aletes dorsals i dos d'anals, que arriba a tindre més d'un metre de llarg i és molt apreciat com a aliment.</td></tr>
-						<tr><td>calamar</td><td>calamar</td><td>Gènere de mol·luscs cefalòpodes dibranquis de l'orde dels decàpodes (Loligo sp), de cos afusat i de mida mitjana o gran, de carn saborosa i apreciada com a aliment.</td></tr>
-						<tr><td>calamarsó</td><td>chipirón</td><td>Cefalòpode dibranqui de l'orde dels decàpodes (Alloteuthis subulata), semblant al calamar, però més menut, de color roig o rosat, transparent i fosforescent.</td></tr>
-						<tr><td>cranc</td><td>cangrejo</td><td>Terme genèric que s'aplica als crustacis decàpodes pertanyents a la secció dels braquiürs i a algunes espècies pertanyents a la dels anomurs, amb el cefalotòrax molt més ample i aparent que l'abdomen i amb el primer parell de potes de grans dimensions i en forma de pinça.</td></tr>
-						<tr><td>lluç</td><td>merluza</td><td>Peix de l'orde dels gadiformes i de la família dels gàdids (Merluccius merluccius), de forma esvelta, boca fesa i de color gris terrós al dors i platejat als flancs i al ventre.</td></tr>
-						<tr><td>llucet</td><td>merluza</td><td>Cria de lluç que encara no s'ha desenrotllat totalment.</td></tr>
-						<tr><td>marisc</td><td>marisco</td><td>Qualsevol animal marí invertebrat i proveït d'exosquelet, especialment els crustacis i els mol·luscs comestibles.</td></tr>
-						<tr><td>mero</td><td>mero</td><td>Peix de la família dels serrànids (Epinephelus guaza), de cos voluminós i de colors foscs amb taques clares.</td></tr>
-						<tr><td>moll</td><td>salmonete</td><td>Terme que s'aplica a les dos espècies d'este gènere de peixos de l'orde dels perciformes, de la família dels múl·lids (Mullus sp), que té dos aletes dorsals i la caudal molt escotada, de coloració variable amb una franja roja i de carn molt apreciada: el moll de fang (Mullus barbatus) i el moll de roca (Mullus surmuletus).</td></tr>
-						<tr><td>polp</td><td>pulpo</td><td>Terme genèric que s'aplica als mol·luscs artròpodes de la família dels octopòdids, bentònics, lleugers, amb huit braços caçadors i ambulatoris, que canvien de color i expulsen núvols de tinta com a defensa, comestibles i molt apreciats per la seua carn; entre els quals destaca el polp comú o polp roquer (Octopus vulgaris), depredador ferotge que habita en fons de roca o d'arena.</td></tr>
-						<tr><td>rap</td><td>rape</td><td>Gènere de peixos de l'orde dels lofiformes, família dels lòfids (Lophius sp), de cap voluminós i aplanat, ulls grans i pell nua, que s'enterra en els fons d'arena i fang, comestible molt apreciat i amb un agulló darrere de cada aleta pectoral.</td></tr>
-						<tr><td>anxova</td><td>anchoa</td><td>Aladroc adobat amb sal.</td></tr>
-						<tr><td>cavalla</td><td>caballa</td><td>Gènere de peixos teleostis de l'ordre dels perciformes, de la família dels escòmbrids (Scomber sp), amb l'aleta caudal molt escotada i dos aletes corporals dorsals, molt apreciats per la carn. </td></tr>
-						<tr><td>cigala</td><td>cigala</td><td>Crustaci macrur de l'orde dels decàpodes (Scyllarides latus), comestible, de closca rugosa plena de xicotets tubèrculs i de color marró.</td></tr>
-						<tr><td>cloïssa</td><td>almeja</td><td>Mol·lusc lamel·libranqui marí de la subclasse dels eulamel·libranquis (Tapes decussatus), de valves ovals amb unes fines estries radials que s'entrecreuen amb unes altres de concèntriques, molt apreciat com a aliment.</td></tr>
-						<tr><td>clòtxina</td><td>mejillón</td><td>Mol·lusc lamel·libranqui de l'orde dels filibranquis de la família dels mitílids (Mytillus sp), de color negre, que forma colònies sobre les roques, s'alimenta de plàncton i és molt apreciat com a comestible.</td></tr>
-						<tr><td>galera</td><td>galera</td><td></td></tr>
-						<tr><td>gamba</td><td>gamba</td><td>Terme que s'aplica a diversos crustacis de la família dels peneids, de l'orde dels decàpodes macrurs, de colors rosats o rojos i carn molt saborosa.</td></tr>
-						<tr><td>gambeta</td><td>quisquilla</td><td></td></tr>
-						<tr><td>nècora</td><td>nécora</td><td>Carranc de l'orde dels decàpodes branquiürs, de la família dels portúnids (Macropipus arcuatus), de front llis, sense dents ni lòbuls i comestible.</td></tr>
-						<tr><td>sardina</td><td>sardina</td><td>Peix de l'orde dels clupeïformes, de la família dels clupeids (Sardina pilchardus), de color blavós, amb els flancs i el ventre de color platejat brillant, que habita les zones costaneres i que es captura i es consumix en grans quantitats pel seu gran valor nutritiu.</td></tr>
-						<tr><td>sèpia</td><td>sepia</td><td>Mol·lusc cefalòpode de l'orde dels decàpodes, de la família dels sèpids (Sepia officinalis), de color gris verdós i el dors negre, cos oval i dos expansions contràctils, i una conquilla interna calcària i ampla. Posseïx ventoses, una glàndula de tinta i es mimetitza molt amb el fons. És molt apreciada com a aliment.</td></tr>
-						<tr><td>tellina</td><td>chirla</td><td>Mol·lusc de la subclasse dels eulamel·libranquis, de la família dels tel·línids (Tellina nitida), de valves oblongoallargades, blanques i rosades, apreciat per la seua carn.</td></tr>
-						<tr><td>tonyina</td><td>atún</td><td>Teleosti de l'orde dels perciformes, de la família dels túnids (Thunnus thynnus), amb el dors blau fosc i el ventre platejat, de cos poderós, depredador actiu i amb la carn agradable i nutritiva que es consumix fresca o en conserva.</td></tr>
-						<tr><td>aladroc</td><td>boquerón</td><td>Peix de l'orde dels clupeïformes, de la família dels engràulids (Engraulis encrasicholus), que té el dors blavós, els flancs platejats i el morro prominent, que es pesca en grans quantitats per a consumir-lo fresc o sovint salat.</td></tr>
-						<tr><td>emperador</td><td>emperador</td><td>Peix espasa. Peix serra.</td></tr>
-						<tr><td>escopinya</td><td>berberecho</td><td>Gènere de mol·luscs lamel·libranquis de l'orde dels eulamel·libranquis, de la família dels cardítids (Cardium sp), caracteritzat per dos valves iguals que formen una closca en forma de cor; entre els quals destaquen l'escopinya de gallet (Cardium edule), l'escopinya de costelles amples (Cardium panticoslatum), l'escopinya gran (Cardium echiratum), l'escopinya punxenca (Cardium aculeatum) i l'escopinya verrucosa (Cardium tuberculatum), totes elles comestibles.</td></tr>
-					</table>
-				</div>
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+				<img class="img-fluid" src="/img/practicav/vocabulario/pan.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle520') }}" alt="{{ trans('vocabulario.cuina_imgalt520') }}">
 			</div>
 		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-11">
-			<div class="card">
-				<div class="card-header  with-border">
-					<h2 class="box-title">{{ trans('vocabulario.cuina_titulo7') }}</h2>
-				</div>
-				<div class="box-body">
-					<table class="table table-bordered" summary="{{ trans('vocabulario.cuina_titulo7') }}">
-						<thead>
-							<tr>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun1') }}</th>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun2') }}</th>
-								<th scope="col-6">{{ trans('vocabulario.vocabulario_comun3') }}</th>
-							</tr>
-						</thead>
-						<tr><td>bescuit</td><td>bizcocho</td><td>Pa de motle fet amb farina, matèries grasses com els greixos vegetals, sucre, rent i sal i posteriorment assecat i torrat. També, pastís fet amb flor de farina, ous i sucre.</td></tr>
-						<tr><td>bombó</td><td>bombón</td><td>Dolç xicotet, fi, confeccionat a base de xocolate, fondant, caramel.</td></tr>
-						<tr><td>caramel</td><td>caramelo</td><td>Líquid pastós de color marró fosc i olor de sucre cremat obtingut per calfament de sacarosa o glucosa amb addició de xicotetes quantitats d'un àlcali. Coure, posar el sucre a punt de caramel.</td></tr>
-						<tr><td>codonyat</td><td>membrillo</td><td>Confitura de codony.</td></tr>
-						<tr><td>flam</td><td>flan</td><td>Dolç gelatinós fet amb llet, sucre, ous i a vegades també farina que es posa en un bany maria dins d'un motle en forma de tronc de con, perquè es prenga.</td></tr>
-						<tr><td>gelat</td><td>helado</td><td>Producte obtingut en batre i congelar una mescla pasteuritzada i homogeneïtzada de llet o derivats lactis i altres aliments amb additius.</td></tr>
-						<tr><td>pastís</td><td>pastel</td><td>Qualsevol producte fet a base de massa de farina, mantega i sucre, aromatitzat i cuit al forn. Menjar de confiteria, com ara els bescuits, les coques, les ensaïmades, els melindros, els púdings, les rosquilles, etc.</td></tr>
-						<tr><td>torró</td><td>turrón</td><td>Massa feta d'ametles pelades i mel, eventualment amb clara d'ou, albúmina o gelatina. Les ametles poden ser substituïdes per unes altres fruites seques (pinyons, avellanes, cacauets, anous, etc.), rovell d'ou, coco i fruites confitades. Torró d'Alacant. Torró de Xixona. Torró de gema, de massapà. Torró d'Agramunt.</td></tr>
-						<tr><td>xocolate</td><td>chocolate</td><td>Producte alimentari obtingut mesclant cacau refinat en pols i sucre finament polvoritzat, als quals se sol afegir canella o vainilla.</td></tr>
-						<tr><td>xurro</td><td>churro</td><td>Peça de pasta de bunyol de forma allargada i estriada.</td></tr>
-						<tr><td>rotllets</td><td>rollos</td><td>Dolç de forma redona i amb un forat enmig.</td></tr>
-						<tr><td>crema</td><td>crema</td><td>Plat dolç de consistència semisòlida elaborat amb ous, llet, sucre, fècula o farina i canella, bullit fins a un cert punt.</td></tr>
-						<tr><td>galeta</td><td>galleta</td><td>Cada un dels xicotets trossos de formes diverses en què es dividix la pasta elaborada amb farina de blat tendre, greix i sucre, productes aromàtics i altres ingredients.</td></tr>
-						<tr><td>llepolia</td><td>golosinas</td><td>Menjar fi, delicat, fet més per plaure el paladar que per nodrir, especialment dolços, confitures, etc.</td></tr>
-						<tr><td>magdalena</td><td>madalena</td><td>Pastís menut, generalment ovalat, de massa bastant esponjosa, fet amb farina, rent, llet, sucre, ou i oli cuit en motle.</td></tr>
-						<tr><td>mel</td><td>miel</td><td>Producte natural molt dolç, fluid, pastós o cristal·litzat, elaborat per les abelles a partir del nèctar de les flors i d'altres exsudacions ensucrades de les plantes.</td></tr>
-						<tr><td>melmelada</td><td>mermelada</td><td>Menjar fet amb fruita reduïda a polpa i sucre obtingut per mescla íntima i cocció.</td></tr>
-						<tr><td>ensaïmada</td><td>ensaimada</td><td>Dolç en forma d'espiral, fet amb farina, rent, ou i sucre, cuit amb sagí o amb oli, i recobert de sucre en pols.</td></tr>
-					</table>
-				</div>
-			</div>
+		<div class="col-md-8 pt-5 order-2">
+			<h2>{{ trans('vocabulario.cuina_titulo520') }}</h2>
+			<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo520')}}">
+				<thead>
+					<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+				</thead>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto520') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto521') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto522') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto523') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto524') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto525') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto526') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto527') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto528') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto529') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto530') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto531') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto532') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto533') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto534') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto535') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto536') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto537') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto538') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto539') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto540') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto541') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto542') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto543') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto544') }}</td>
+					<td>{{ trans('vocabulario.cuina_texto545') }}</td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto546') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto547') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto548') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto549') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto550') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto551') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto552') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto553') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto554') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto555') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto556') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto557') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto558') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto559') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto560') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto561') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto562') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto563') }}</td>
+					<td>{{ trans('vocabulario.cuina_texto564') }}</td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto565') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto566') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto567') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto568') }}</td>
+					<td>{{ trans('vocabulario.cuina_texto569') }}</td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto570') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto571') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto572') }}</td>
+				</tr>
+			</table>
 		</div>
 	</div>
+</section>
 
-	<div class="row">
-		<div class="col-11">
-			<div class="card">
-				<div class="card-header  with-border">
-					<h2 class="box-title">{{ trans('vocabulario.cuina_titulo8') }}</h2>
-				</div>
-				<div class="box-body">
-					<table class="table table-bordered" summary="{{ trans('vocabulario.cuina_titulo8') }}">
-						<thead>
-							<tr>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun1') }}</th>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun2') }}</th>
-								<th scope="col-6">{{ trans('vocabulario.vocabulario_comun3') }}</th>
-							</tr>
-						</thead>
-						<tr><td>caldo</td><td>caldo</td><td>Líquid resultant de l'ebullició prolongada en aigua de diferents productes alimentaris.</td></tr>
-						<tr><td>formatge</td><td>queso</td><td>Producte elaborat a partir de la quallada de la llet pura o bé de la desnatada o de l'enriquida amb nata (greix de la llet).</td></tr>
-						<tr><td>pa</td><td>pan</td><td>Producte resultant de la cocció d'una massa constituïda per una mescla de farina de blat, aigua, sal i rent, després de sotmetre-la a un procés de fermentació per a aconseguir una certa esponjositat. </td></tr>
-						<tr><td>pinyol</td><td>hueso de una fruta o aceituna</td><td>Part interna llenyosa d'un fruit carnós. Un pinyol de bresquilla. Pinyol d'oliva.</td></tr>
-						<tr><td>rovell</td><td>yema</td><td>Massa esferoïdal groga que hi ha en l'interior dels ous de les aus i dels rèptils; gema.</td></tr>
-						<tr><td>sandvitx</td><td>sandwich</td><td>Conjunt de dos llesques o més de pa de motle entre les quals es col·loca pernil, embotit, formatge o altre aliment, i que es consumix cru o torrat a la planxa.</td></tr>
-						<tr><td>fideus</td><td>fideos</td><td>Pasta alimentària de farina en forma de fils prims.</td></tr>
-						<tr><td>clara</td><td>clara</td><td> Matèria albuminosa transparent que, en solució col·loïdal, volta el rovell de l'ou.</td></tr>
-						<tr><td>llet</td><td>leche</td><td> Líquid secretat per les glàndules mamàries de les femelles mamíferes, després del part, per a alimentar el nounat.</td></tr>
-						<tr><td>polpa</td><td>pulpa</td><td>Part carnosa dels fruits o altres òrgans vegetals.</td></tr>
-						<tr><td>truita</td><td>tortilla</td><td>Ou o ous batuts i fregits en la paella, sols o amb altres menjars.</td></tr>
-						<tr><td>xufa</td><td>chufa</td><td>Tubèrcul comestible de la xufera, ingredient bàsic en l'elaboració de l'orxata.</td></tr>
-						<tr><td>amanida</td><td>ensalada</td><td>Plat compost principalment de verdura adobada amb sal, oli, vinagre, etc.</td></tr>
-						<tr><td>entrepà</td><td>bocadillo</td><td>Tros de pa partit longitudinalment en dos mitats i farcit amb algun aliment.</td></tr>
-						<tr><td>postres</td><td>postres</td><td>Fruita, dolços o altres menjars amb què s'acaba el dinar i el sopar.</td></tr>
-						<tr><td>oliva</td><td>aceituna</td><td>Fruit en drupa de l'olivera.</td></tr>
-						<tr><td>ou</td><td>huevo</td><td>Cèl·lula que resulta de la fecundació d'un gàmeta femení per un de masculí, totipotent per a desenrotllar un nou organisme que reproduïx els caràcters genètics dels seus progenitors.</td></tr>
-					</table>
-				</div>
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 order-2 order-md-2" data-aos="fade-left">
+				<img class="img-fluid" src="/img/practicav/vocabulario/beber.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle600') }}" alt="{{ trans('vocabulario.cuina_imgalt600') }}">
 			</div>
 		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-11">
-			<div class="card">
-				<div class="card-header  with-border">
-					<h2 class="box-title">{{ trans('vocabulario.cuina_titulo9') }}</h2>
-				</div>
-				<div class="box-body">
-					<table class="table table-bordered" summary="{{ trans('vocabulario.cuina_titulo9') }}">
-						<thead>
-							<tr>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun1') }}</th>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun2') }}</th>
-								<th scope="col-6">{{ trans('vocabulario.vocabulario_comun3') }}</th>
-							</tr>
-						</thead>
-						<tr><td>beure</td><td>beber</td><td>Engolir (un líquid).</td></tr>
-						<tr><td>coure</td><td>cocer</td><td>Preparar (un aliment) usant un procés tèrmic.</td></tr>
-						<tr><td>cuinar</td><td>cocinar</td><td>Coure i preparar (menjar).</td></tr>
-						<tr><td>fregir</td><td>freir</td><td>Coure en oli, en sagí o en mantega bullent.</td></tr>
-						<tr><td>guisar</td><td>guisar</td><td>Cuinar. Preparar un menjar coent-lo amb suc i diversos condiments.</td></tr>
-						<tr><td>menjar</td><td>comer</td><td>Ingerir aliments sòlids o semisòlids. Allò que una persona menja per nodrir-se.</td></tr>
-						<tr><td>prendre</td><td>tomar</td><td>Absorbir un aliment, un medicament. </td></tr>
-						<tr><td>rostir</td><td>asar</td><td>Coure (un aliment, sobretot carn,) a foc viu en un ast o en aire calent en un forn, a vegades untant-lo amb greix o oli. </td></tr>
-						<tr><td>torrar</td><td>tostar</td><td>Calfar al foc (una substància) fins a canviar-ne el color o la textura, fins a fer-ne separar els elements volàtils.  Cremar superficialment (una substància orgànica). Torrar castanyes.</td></tr>
-					</table>
-				</div>
-			</div>
+		<div class="col-md-8 pt-5 order-1">
+			<h2>{{ trans('vocabulario.cuina_titulo600') }}</h2>
+			<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo600')}}">
+				<thead>
+					<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+				</thead>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto600') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto601') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto602') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto603') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto604') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto605') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto606') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto607') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto608') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto609') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto610') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto611') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto612') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto613') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto614') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto615') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto616') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto617') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto618') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto619') }}</td>
+				</tr>
+			</table>
 		</div>
 	</div>
+</section>
 
-	<div class="row">
-		<div class="col-11">
-			<div class="card">
-				<div class="card-header  with-border">
-					<h2 class="box-title">{{ trans('vocabulario.cuina_titulo10') }}</h2>
-				</div>
-				<div class="box-body">
-					<table class="table table-bordered" summary="{{ trans('vocabulario.cuina_titulo10') }}">
-						<thead>
-							<tr>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun1') }}</th>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun2') }}</th>
-								<th scope="col-6">{{ trans('vocabulario.vocabulario_comun3') }}</th>
-							</tr>
-						</thead>
-						<tr><td>pebre</td><td>pimienta</td><td>Fruit del pebrer</td></tr>
-						<tr><td>safrà</td><td>azafrán</td><td>Planta herbàcia vivaç de la família de les iridàcies (Crocus sativus), de flors grans amb sis tèpals i tres estigmes, els quals dessecats constituïxen una espècia molt estimada com a condiment.</td></tr>
-						<tr><td>sagí</td><td>saín</td><td>Greix d'un animal.</td></tr>
-						<tr><td>sucre</td><td>azúcar</td><td>Substància dolça, cristal·lina, soluble en aigua, blanca o incolora quan és pura, que és present en el suc de moltes plantes.</td></tr>
-						<tr><td>canyella</td><td>canela</td><td>Corfa aromàtica del caneller, usada principalment en confiteria.</td></tr>
-						<tr><td>farina</td><td>harina</td><td>Producte en forma de pols resultant de la mòlta del gra dels cereals, especialment del blat.</td></tr>
-						<tr><td>mantega</td><td>manteca</td><td>Producte gras, sòlid i homogeni, obtingut mecànicament en batre i amassar la llet o la seua crema.</td></tr>
-						<tr><td>margarina</td><td>margarina</td><td>Emulsió plàstica de greixos i olis que no procedixen de la llet o que només en procedixen en part, usada amb les mateixes finalitats que la mantega.</td></tr>
-						<tr><td>mostassa</td><td>mostaza</td><td>Planta herbàcia anual de la família de les crucíferes (Sinapis alba), de fulles lirades o pinnatipartides, flors grogues arraïmades i fruits en síliqua curta; les llavors, grogues, tenen propietats revulsives.</td></tr>
-						<tr><td>nou moscada</td><td>nuez moscada</td><td>Llavor de l'arbre més representatiu de la família les miristicàcies, d'origen hindú, usada sobretot com a condiment. </td></tr>
-						<tr><td>sal</td><td>sal</td><td>Clorur de sodi, substància blanca, cristal·lina, que abunda en la naturalesa formant masses sòlides o en solució, principalment en l'aigua de mar, i s'utilitza com a condiment, per a conservar els aliments, en l'obtenció del sodi i composts de sodi, etc. Sal fina. Sal de cuina.</td></tr>
-						<tr><td>espècia</td><td>especie</td><td>Substància aromàtica i, a vegades, de tast picant, utilitzada per a condimentar el menjar, com ara pebre, canella, claus i safrà.</td></tr>
-						<tr><td>l'oli</td><td>aceite</td><td>Greix de procedència animal o vegetal, que es fa líquid a la temperatura de 20°C., etc. </td></tr>
-						<tr><td>orenga</td><td>oregano</td><td>Planta herbàcia perenne de la família de les labiades (Origanum vulgare), de fulles ovades i flors de color violaci rosat en ramells i amb qualitats tòniques i digestives i utilitzada també com a condiment.</td></tr>
-					</table>
-				</div>
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+				<img class="img-fluid" src="/img/practicav/vocabulario/condimentos.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle640') }}" alt="{{ trans('vocabulario.cuina_imgalt640') }}">
 			</div>
 		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-11">
-			<div class="card">
-				<div class="card-header  with-border">
-					<h2 class="box-title">{{ trans('vocabulario.cuina_titulo11') }}</h2>
-				</div>
-				<div class="box-body">
-					<table class="table table-bordered" summary="{{ trans('vocabulario.cuina_titulo11') }}">
-						<thead>
-							<tr>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun1') }}</th>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun2') }}</th>
-								<th scope="col-6">{{ trans('vocabulario.vocabulario_comun3') }}</th>
-							</tr>
-						</thead>
-						<tr><td>cava</td><td>cava</td><td>Xampany.</td></tr>
-						<tr><td>còctel</td><td>cóctel</td><td> Beguda obtinguda per la mescla de diferents begudes alcohòliques, preparada agitant tots els ingredients amb trossets de gel dins d'un receptacle adequat.</td></tr>
-						<tr><td>conyac</td><td>coñac</td><td>Brandi elaborat amb vi procedent de la regió francesa de la Charente, centrada per la ciutat de Cognac.</td></tr>
-						<tr><td>gel</td><td>hielo</td><td>Aigua en estat sòlid.</td></tr>
-						<tr><td>rom</td><td>ron</td><td>Aiguardent d'origen antillà que s'obté fermentant i destil·lant els sucs i les melasses de canya de sucre (més o menys diluïts).</td></tr>
-						<tr><td>suc</td><td>zumo</td><td>Líquid que es desprén d'un cos, comparable als sucs dels animals i de les plantes i de les fruites. </td></tr>
-						<tr><td>vi</td><td>vino</td><td>Beguda alcohòlica obtinguda per fermentació del most de raïm. </td></tr>
-						<tr><td>xarop</td><td>jarabe</td><td>Líquid espés i viscós, constituït per una solució de sucre en aigua, a la qual se sol afegir suc de fruites, decoccions vegetals, etc.</td></tr>
-						<tr><td>cervesa</td><td>cerveza</td><td>Beguda fermentada preparada amb ordi germinat i aromatitzada amb llúpol.</td></tr>
-						<tr><td>gasosa</td><td>gaseosa</td><td>Beguda refrescant preparada amb aigua, anhídrid carbònic, amb l'addició eventual d'àcid tartàric o làctic, aromes de fruita cítrica i edulcorants</td></tr>
-						<tr><td>llimonada</td><td>limonada</td><td>Beguda refrescant, de gust àcid, feta amb suc de llima i, a vegades, amb sucre i aigua.</td></tr>
-						<tr><td>aigua</td><td>agua</td><td>Líquid incolor, inodor i insípid, compost d'hidrogen i d'oxigen, i de fórmula H2O. </td></tr>
-						<tr><td>anís</td><td>anís</td><td>Aiguardent aromatitzat amb essència d'anís. Planta herbàcia anual de la família de les umbel·líferes (Pimpinella anisum), de flors blanques petites i llavors molt aromàtiques.</td></tr>
-						<tr><td>orxata</td><td>horchata</td><td>Beguda refrescant que és una emulsió feta amb xufes o ametles, etc., pelades i xafades, sucre i aigua.</td></tr>
-					</table>
-				</div>
-			</div>
+		<div class="col-md-8 pt-5 order-2">
+			<h2>{{ trans('vocabulario.cuina_titulo640') }}</h2>
+			<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo640')}}">
+				<thead>
+					<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+				</thead>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto640') }}</td>
+					<td>{{ trans('vocabulario.cuina_texto641') }}</td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto642') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto643') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto644') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto645') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto646') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto647') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto648') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto649') }}</td>
+					<td>{{ trans('vocabulario.cuina_texto650') }}</td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto651') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto652') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto653') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto654') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto655') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto656') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto657') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto658') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto659') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto660') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto661') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto662') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto663') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto664') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto665') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto666') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto667') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto668') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto669') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto670') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto671') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto672') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto673') }}</td>
+				</tr>
+			</table>
 		</div>
 	</div>
+</section>
 
-	<div class="row">
-		<div class="col-11">
-			<div class="card">
-				<div class="card-header  with-border">
-					<h2 class="box-title">{{ trans('vocabulario.cuina_titulo12') }}</h2>
-				</div>
-				<div class="box-body">
-					<table class="table table-bordered" summary="{{ trans('vocabulario.cuina_titulo12') }}">
-						<thead>
-							<tr>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun1') }}</th>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun2') }}</th>
-								<th scope="col-6">{{ trans('vocabulario.vocabulario_comun3') }}</th>
-							</tr>
-						</thead>
-						<tr><td>poliol</td><td>poleo</td><td>Planta herbàcia perenne de la família de les labiades (Mentha pulegium), molt aromàtica, de fulles ovals i de flors rosades o liles, que creix en vores de torrents i té nombroses virtuts remeieres.</td></tr>
-						<tr><td>te</td><td>té</td><td>Arbust de la família de les teàcies (Thea sinensis), de fulles coriàcies i dentades, flors blanques o rosades i fruits en càpsula, utilitzat per a preparar el producte del mateix nom.</td></tr>
-						<tr><td>timó</td><td>tomillo</td><td>Mata de la família de les labiades (Thymus vulgaris), molt aromàtica, de fulles linears xicotetes i flors blanquinoses en inflorescències capituliformes.</td></tr>
-						<tr><td>camomil·la</td><td>manzanilla</td><td>Planta herbàcia anual de la família de les compostes (Matricaria chamomilla), de flors oloroses agrupades en capítols grocs de lígules blanques.</td></tr>
-						<tr><td>menta</td><td>menta</td><td>Gènere de plantes herbàcies perennes de la família de les labiades (Mentha sp), rizomatoses i molt aromàtiques, de fulles ovalades i flors reunides en verticil·lastres; moltes espècies són remeieres i són la base dels licors de menta</td></tr>
-						<tr><td>sàlvia</td><td>salvia</td><td>Mata de la família de les labiades (Salvia officinalis), de fulles oblongues o lanceolades i flors d'un color blau violaci, molt utilitzada com a planta medicinal.</td></tr>
-						<tr><td>til·la</td><td>tila</td><td>Flor del til·ler. Preparat de fulles de til·ler, molt utilitzat en infusió.</td></tr>
-						<tr><td>regalíssia</td><td>regaliz</td><td>Planta herbàcia perenne de la família de les fabàcies (Glycyrrhiza glabra), de soca llenyosa i dolcenca, fulles imparipinnades, flors blaves o violàcies, fruits en llegum i d'arrel masticatòria i amb propietats pectorals.</td></tr>
-					</table>
-				</div>
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 order-2 order-md-2" data-aos="fade-left">
+				<img class="img-fluid" src="/img/practicav/vocabulario/bebidas.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle700') }}" alt="{{ trans('vocabulario.cuina_imgalt700') }}">
 			</div>
 		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-11">
-			<div class="card">
-				<div class="card-header  with-border">
-					<h2 class="box-title">{{ trans('vocabulario.cuina_titulo13') }}</h2>
-				</div>
-				<div class="box-body">
-					<table class="table table-bordered" summary="{{ trans('vocabulario.cuina_titulo13') }}">
-						<thead>
-							<tr>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun1') }}</th>
-								<th scope="col-3">{{ trans('vocabulario.vocabulario_comun2') }}</th>
-								<th scope="col-6">{{ trans('vocabulario.vocabulario_comun3') }}</th>
-							</tr>
-						</thead>
-						<tr><td>tramús</td><td>altramuz</td><td>Llavor del tramús, lenticular, groguenca i comestible.</td></tr>
-						<tr><td>paté</td><td>paté</td><td>Pasta, cuita, feta amb fetge d'aviram -d'oca i d'ànec sobretot-, o bé de porc o de conill, o de peix, carn, greix, ous, espècies i herbes aromàtiques.</td></tr>
-						<tr><td>bonítol</td><td>bonito</td><td>Peix de l'orde dels perciformes, de la família dels escòmbrids (Sarda sarda), de cos fusiforme, amb el dors de color blau fosc i el ventre blanc, que forma grans bancs que s'acosten a la costa per fresar.</td></tr>
-						<tr><td>braó de porc</td><td>lacón</td><td>Part de la cama que va des del turmell fins a un quart de la cuixa del porc.</td></tr>
-						<tr><td>salmó</td><td>salmón</td><td>Peix de la família dels salmònids l'espècie més coneguda de la qual, el salmó europeu (Salmo salar), és molt apreciada com a comestible, amb una carn rogenca característica.</td></tr>
-						<tr><td>hamburguesa</td><td>hamburguesa</td><td>Massa de carn de bou o de vedella picolada, de forma plana i ovalada, sovint assaonada amb mantega, all, jolivert, ceba i ous.</td></tr>
-						<tr><td>fetge</td><td>hígado</td><td>Òrgan glandular que realitza importants funcions en l'organisme, com la secreció de la bilis o la síntesi dels enzims i de les proteïnes, i que en els ser humans ocupa la regió superior dreta de la cavitat abdominal.</td></tr>
-						<tr><td>batre</td><td>batir</td><td>Operar mecànicament (sobre aliments líquids o pastosos) a fi de provocar la incorporació d'aire o d'un altre gas a la massa, la formació d'una emulsió, com maionesa, margarina, etc., o la cristal·lització fina d'una solució saturada.</td></tr>
-						<tr><td>porro</td><td>puerro</td><td>Planta herbàcia perenne de la família de les liliàcies (Allium porrum), d'olor característica, amb el bulb simple i allargat, fulles estretes i planes i flors blanques o rosades, comestible i cultivat des de molt antigament.</td></tr>
-						<tr><td>galló</td><td>gajo</td><td>Cada una de les parts separades per membranes de què consten certs fruits, com la taronja o l'anou.</td></tr>
-						<tr><td>bocí</td><td>pedazo</td><td>Tros (de menjar), un poc (de menjar). Part d'una cosa separada de la resta, fragment. </td></tr>
-						<tr><td>vinagre</td><td>vinagre</td><td>Líquid obtingut per fermentació acètica del vi i dels seus subproductes (brisa), bé que també pot procedir d'altres productes (com sidra i malt).</td></tr>
-					</table>
-				</div>
-			</div>
+		<div class="col-md-8 pt-5 order-1">
+			<h2>{{ trans('vocabulario.cuina_titulo700') }}</h2>
+			<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo700')}}">
+				<thead>
+					<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+				</thead>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto700') }}</td>
+					<td>{{ trans('vocabulario.cuina_texto701') }}</td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto702') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto703') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto704') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto705') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto706') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto707') }}</td>
+					<td>{{ trans('vocabulario.cuina_texto708') }}</td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto709') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto710') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto711') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto712') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto713') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto714') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto715') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto716') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto717') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto718') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto719') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto720') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto721') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto722') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto723') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto724') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto725') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto726') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto727') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto728') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto729') }}</td>
+				</tr>
+			</table>
 		</div>
 	</div>
+</section>
+
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+				<img class="img-fluid" src="/img/practicav/vocabulario/infusiones.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle760') }}" alt="{{ trans('vocabulario.cuina_imgalt760') }}">
+			</div>
+		</div>
+		<div class="col-md-8 pt-5 order-2">
+			<h2>{{ trans('vocabulario.cuina_titulo760') }}</h2>
+			<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo760')}}">
+				<thead>
+					<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+					<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+				</thead>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto760') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto761') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto762') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto763') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto764') }}</td>
+					<td>{{ trans('vocabulario.cuina_texto765') }}</td>
+					<td>{{ trans('vocabulario.cuina_texto766') }}</td>
+					<td>{{ trans('vocabulario.cuina_texto767') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto768') }}</td>
+					<td>{{ trans('vocabulario.cuina_texto769') }}</td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto770') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto771') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto772') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto773') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto774') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto775') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto776') }}</td>
+				</tr>
+				<tr>
+					<td>{{ trans('vocabulario.cuina_texto777') }}</td>
+					<td></td>
+					<td></td>
+					<td>{{ trans('vocabulario.cuina_texto778') }}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</section>
+
+<div class="row mt-5 mb-5 h-100">
+	<div class="box-body pad table-responsive">
+		<a href="/practicainicio/11"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
+	</div>
+</div>
 
 @endsection

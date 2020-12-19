@@ -1,11 +1,12 @@
-<div class="js-cookie-consent cookie-consent alert-danger m-3 p-4 rounded-lg">
+<div class="js-cookie-consent cookie-consent alert-danger m-3 p-4 rounded-lg" style="z-index: 1070">
 
     <span class="cookie-consent__message">
-        <?php echo trans('cookieConsent::texts.message'); ?> <a href="/politica_de_privacidad"><?php echo trans('message.politicaprivacidad'); ?></a>.
+        <?php echo trans('privacidad.consentimiento_texto1'); ?> <a class="enlacesCookies" href="/politica-de-cookies"><?php echo trans('message.politicacookies'); ?></a>
+        <?php echo trans('privacidad.consentimiento_texto2'); ?> <a class="enlacesCookies" href="/politica-de-privacidad"><?php echo trans('message.politicaprivacidad'); ?></a>
     </span>
 
-    <button class="js-cookie-consent-agree cookie-consent__agree">
-        <?php echo e(trans('cookieConsent::texts.agree')); ?>
+    <button class="js-cookie-consent-agree cookie-consent__agree btn btn-success">
+        <?php echo trans('privacidad.consentimiento_texto3'); ?>
 
     </button>
 

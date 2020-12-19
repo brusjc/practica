@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('frontend.layouts.frontend')
 
 @section('contentheader_title'){{ trans('home.home_title') }}@endsection
 
@@ -10,96 +10,106 @@
 
 @section('main_content')
 
-	<div class="row">
-		<div class="col-lg-6 col-md-6">
-			<div class="callout callout-info">
-                <p>{{ html_entity_decode(trans('home.home_texto1') )}}</p>
-			</div>
-		</div>
-		<div class="col-lg-6 col-md-6">
-			<div class="callout callout-info">
-				<p>{{ html_entity_decode(trans('home.home_texto2') )}}</p>
-			</div>
-		</div>
-	</div>
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-6 col-lg-7 justify-content-center align-items-stretch" data-aos="fade-right">
+                <img class="img-fluid " src="/img/practicav/graduacion300.svg" title="{{ trans('home.home_imgtitle1') }}" alt="{{ trans('home.home_imgalt1') }}">
+            </div>
+            <div class="col-xl-6 col-lg-5 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
+                <p>{{ trans('home.home_texto1') }}</p>
+                <p>{{ trans('home.home_texto2') }}</p>
+                <p>{{ trans('home.home_texto3') }}</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-	<div class="row mb-3">
-		<div class="col-lg-12 col-md-12">
-			<img style="width: 100%;" class="img-fluid img-thumbnail" src="/img/practicav/prepara-els-nivells-de-valencia.jpg" alt="Attachment">
-		</div>
-	</div>	
+<section>
+    <div class="row content">
+        <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+            <img src="/img/practicav/propuestacurso.svg" class="img-fluid" title="{{ trans('home.home_imgtitle2') }}" alt="{{ trans('home.home_imgalt2') }}">
+        </div>
+        <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-up">
+            <h2>{{ trans('home.home_titulo2') }}</h2>
+            <p>{{ trans('home.home_texto4') }}</p>
+            <p>{{ trans('home.home_texto5') }}</p>
+            <p>{{ trans('home.home_texto6') }}</p>
+        </div>
+    </div>
+</section>
 
-	<div class="row">
-		<div class="col-lg-12 col-md-12">
-			<div class="callout callout-info">
-				<p>{{ html_entity_decode(trans('home.home_texto3') )}}</p>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-12 col-md-12">
-			<div class="callout callout-info">
-				<p>{{ html_entity_decode(trans('home.home_texto4') )}}</p>
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-lg-12 col-md-12">
-			<div class="callout callout-info">
-				<p>{{ html_entity_decode(trans('home.home_texto5') )}}</p>
-			</div>
-		</div>
-	</div>	
-
-	<div class="row">
-		<div class="col-lg-12 col-md-12">
-			<div class="callout callout-info">
-				<p>{{ html_entity_decode(trans('home.home_texto6') )}}</p>
-			</div>
-		</div>
-	</div>	
-
-	<div class="row">			
-		<div class="col-lg-12 col-md-12 mt-5">
-			<h2>Practica valencià</h2>
-		</div>
-	</div>
-
-	<div class="row mb-2">			
-		<div class="col-lg-3 col-md-3">
-			<a class="mb-2 btn btn-block btn-info" href="/examenes-jqcv">
-				<i class="fa fa-edit"></i> Practica exàmens JQCV 
-			</a>
-		</div>				
-		<div class="col-lg-3 col-md-3">
-			<a class="mb-2 btn btn-block btn-info" href="http://www.practicavalenciano.es/vocabulario/vocabulario.php">
-				<i class="fa fa-edit"></i> Practica vocabulari </a>
-		</div>		
-		<div class="col-lg-3 col-md-3">
-			<a class="mb-2 btn btn-block btn-info" href="http://www.practicavalenciano.es/ortografia/ortografia.php"><i class="fa fa-edit"></i> Practica ortografia </a>
-		</div>		
-		<div class="col-lg-3 col-md-3">
-			<a class="mb-2 btn btn-block btn-info" href="http://www.practicavalenciano.es/dictados/dictados.php"><i class="fa fa-edit"></i> Practica dictats</a>
-		</div>
-	</div>	
+<section class="pricing mt-5">
+    <div class="container">
+        <h2>{{ trans('home.home_titulo1') }}</h2>
+        <div class="row" data-aos="fade-left">
+            <div class="col-lg-3 col-md-6">
+                <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                    <span class="advanced">JQCV</span>
+                    <h3><a class="mb-2 btn btn-block btn-info font-weight-bold" href="/examenes-jqcv">{{ html_entity_decode(trans('home.home_titulo7') )}}</a></h3>
+                    <p><a class="mb-2 btn btn-block btn-info" href="/examenes-jqcv">{{ html_entity_decode(trans('home.home_texto7') )}}</a></p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                    <h3><a class="mb-2 btn btn-block btn-info font-weight-bold" href="/vocabulario">{{ html_entity_decode(trans('home.home_titulo8') )}}</a></h3>
+                    <p><a class="mb-2 btn btn-block btn-info" href="/vocabulario">{{ html_entity_decode(trans('home.home_texto8') )}}</a></p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                    <h3><a class="mb-2 btn btn-block btn-info font-weight-bold" href="/ortografia">{{ html_entity_decode(trans('home.home_titulo9') )}}</a></h3>
+                    <p><a class="mb-2 btn btn-block btn-info" href="/ortografia">{{ html_entity_decode(trans('home.home_texto9') )}}</a></p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                    <h3><a class="mb-2 btn btn-block btn-info font-weight-bold" href="/dictats">{{ html_entity_decode(trans('home.home_titulo10') )}}</a></h3>
+                    <p><a class="mb-2 btn btn-block btn-info" href="/dictats">{{ html_entity_decode(trans('home.home_texto10') )}}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
-	<div class="row">			
-		<div class="col-lg-3 col-md-3">
-			<a class="mb-2 btn btn-block btn-info" href="http://www.practicavalenciano.es/cuina/cuina.php"><i class="fa fa-edit"></i> Practica cuina</a>
-		</div>				
-		<div class="col-lg-3 col-md-3">
-			<a class="mb-2 btn btn-block btn-info" href="http://www.practicavalenciano.es/gent/gent.php"><i class="fa fa-edit"></i> Practica gent</a>
-		</div>		
-		<div class="col-lg-3 col-md-3">
-			<a class="mb-2 btn btn-block btn-info" href="http://www.practicavalenciano.es/pobles/pobles.php"><i class="fa fa-edit"></i> Practica pobles</a>
-		</div>
-		<div class="col-lg-3 col-md-3">
-			<a class="mb-2 btn btn-block btn-info" href="http://www.practicavalenciano.es/noms/noms.php"><i class="fa fa-edit"></i> Practica els noms de persones</a>
-		</div>
-	</div>		
-	
-	
+<section id="counts" class="counts">
+    <div class="container">
+        <div class="row" data-aos="fade-up">
+            <div class="col-lg-3 col-md-6">
+                <div class="count-box">
+                    <i class="icofont-simple-smile"></i>
+                    <span data-toggle="counter-up">40</span>
+                    <p>{{ trans('home.home_titulo20') }}</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                <div class="count-box">
+                    <i class="icofont-document-folder"></i>
+                    <span data-toggle="counter-up">5</span>
+                    <p>{{ trans('home.home_titulo21') }}</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                <div class="count-box">
+                    <i class="icofont-live-support"></i>
+                    <span data-toggle="counter-up">10</span>
+                    <p>{{ trans('home.home_titulo22') }}</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                <div class="count-box">
+                    <i class="icofont-users-alt-5"></i>
+                    <span data-toggle="counter-up">178</span>
+                    <p>{{ trans('home.home_titulo23') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 @endsection

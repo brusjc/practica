@@ -23,7 +23,7 @@ return [
     "terms"                   => "Estoy d'acord amb las",
     "conditions"              => "Términos i Condiciones",
     "register"                => "Registro",
-    "login"                   => "Iniciar Sesión",
+    "login"                   => "Iniciar sessió",
     "membership"              => "Ya sóc miembro",
     "passwordclickreset"      => "Haga clic ací per a restablir la contraseña:",
     "signGithub"              => "Entra amb Github",
@@ -138,11 +138,18 @@ return [
 
 
 
-    "examenes_JQCV"             => "Exàmens JQCV",
+    "examenes_JQCV"             => "Exàmens",
     "vocabulario"               => "Vocabulario",
-    "ortografia"                => "Ortografía",
+    "ortografia"                => "Ortografia",
     "dictados"                  => "Dictados",
+    "nombres"                   => "Noms",
+    "usuario"                   => "Usuari",
     "master"                    => "Master",
+    'politicacookies'           => 'política de cookies',
+    'politicaprivacidad'        => 'política de privacitat',
+    'volver'                    => 'Tornar',
+    'pueden_interesar'          => 'Pàgines que et poden interessar',
+
 
     'vocalismo' => '    Vocalisme',
     'byv' => '    B i V',

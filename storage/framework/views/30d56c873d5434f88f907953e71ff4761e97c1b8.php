@@ -1,55 +1,35 @@
 
 
-<?php $__env->startSection('contentheader_title'); ?>
-    <?php echo e(trans('examenes.B1_title')); ?>
+<?php $__env->startSection('contentheader_title'); ?><?php echo e(trans('examenes.B1_title')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('contentheader_h1'); ?><?php echo e(trans('examenes.B1_h1')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('contentheader_h1'); ?>
-    <?php echo e(trans('examenes.B1_h1')); ?>
+<?php $__env->startSection('breadcrumb1'); ?><a href="<?php echo e(session('BC1')); ?>"><?php echo e(session('BC1texto')); ?></a><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('descripcion'); ?><?php echo e(trans('examenes.B1_descripcion')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('breadcrumb1'); ?>
-	<a href="<?php echo e(session('BC1')); ?>"><?php echo e(session('BC1texto')); ?></a>
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('descripcion'); ?>
-    <?php echo e(trans('examenes.B1_descripcion')); ?>
-
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('keywords'); ?>
-    <?php echo e(trans('examenes.B1_keywords')); ?>
-
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('keywords'); ?><?php echo e(trans('examenes.B1_keywords')); ?><?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_content'); ?>
 
 <div class="row">
 	<div class="col-5">
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-7412986561454436"
-		     data-ad-slot="6463281785"
-		     data-ad-format="auto"
-		     data-full-width-responsive="true"></ins>
-		<script>
-		     (adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+		<ins class="adsbygoogle"	     style="display:block"	     data-ad-client="ca-pub-7412986561454436"	     data-ad-slot="6463281785"	     data-ad-format="auto"	     data-full-width-responsive="true"></ins>
+		<script>	     (adsbygoogle = window.adsbygoogle || []).push({});	</script>
 	</div>
 	<div class="col-7">
 		<div class="comment-text">
-			<p><?php echo e(html_entity_decode(trans('examenes.B1_texto1') )); ?></p>
-			<p><?php echo e(html_entity_decode(trans('examenes.B1_texto2') )); ?></p>
-			<p><?php echo e(html_entity_decode(trans('examenes.B1_texto3') )); ?></p>
+			<p><?php echo trans('examenes.B1_texto1'); ?></p>
+			<p><?php echo e(trans('examenes.B1_texto2')); ?></p>
+			<p><?php echo e(trans('examenes.B1_texto3')); ?></p>
 		</div>
 	</div>
 </div>
+
 <div class="comment-text">
-	<p><?php echo e(html_entity_decode(trans('examenes.B1_texto4') )); ?></p>
-	<p><?php echo e(html_entity_decode(trans('examenes.B1_texto5') )); ?> <a href="https://cvc.cervantes.es/ensenanza/biblioteca_ele/marco/" target="_blank"><?php echo e(html_entity_decode(trans('examenes.B1_texto6') )); ?></a></p>
+	<p><?php echo e(trans('examenes.B1_texto4')); ?></p>
+	<p><?php echo e(trans('examenes.B1_texto5')); ?> <a href="https://cvc.cervantes.es/ensenanza/biblioteca_ele/marco/" target="_blank"><?php echo e(trans('examenes.B1_texto6')); ?></a></p>
 </div>
 
 <div class="row mt-5">
@@ -108,9 +88,11 @@
 													</div>
 												</div>
 											</td>
-											<td><span class="badge bg-primary text-center"><?php echo e($examen['porcentaje']); ?>%</span></td>
+											<td>
+												<span class="badge bg-primary text-center"><?php echo e($examen['porcentaje']); ?>%</span>
+											</td>
 										</tr>
-									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>					
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 							<?php endif; ?>
 						<?php endif; ?>
@@ -124,15 +106,9 @@
 <div class="row">
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<!-- Examenes - Bajo Introduccion - 728x90 -->
-	<ins class="adsbygoogle"
-	     style="display:inline-block;width:728px;height:90px"
-	     data-ad-client="ca-pub-7412986561454436"
-	     data-ad-slot="1171860113"></ins>
-	<script>
-	     (adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
+	<ins class="adsbygoogle"     style="display:inline-block;width:728px;height:90px"     data-ad-client="ca-pub-7412986561454436"     data-ad-slot="1171860113"></ins>
+	<script>     (adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-
 <?php $__env->stopSection(); ?>
 
 

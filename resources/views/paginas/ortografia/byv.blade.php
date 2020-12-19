@@ -1,86 +1,106 @@
-@extends('layouts.app')
+@extends('frontend.layouts.frontend')
 
-@section('contentheader_title'){{ html_entity_decode(trans('ortografia.byv_titulo1') )}}@endsection
+@section('contentheader_title'){{ trans('ortografia.byv_title') }}@endsection
 
-@section('contentheader_h1'){{ html_entity_decode(trans('ortografia.byv_titulo1') )}}@endsection
+@section('contentheader_h1'){{ trans('ortografia.byv_h1') }}@endsection
 
-@section('breadcrumb1')<a href="/ortografia">{{ trans('ortografia.ortografia_breadcrumb') }}</a>@endsection
+@section('breadcrumb0')<a href="/{{session('lang')}}/">Inicio</a>@endsection
 
-@section('descripcion'){{ html_entity_decode(trans('ortografia.byv_descripcion') )}}@endsection
+@section('breadcrumb1')<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>@endsection
 
-@section('keywords'){{ html_entity_decode(trans('ortografia.byv_keywords') )}}@endsection
+@section('breadcrumb2'){{ session('BC2texto') }}@endsection
+
+@section('descripcion'){{ trans('ortografia.byv_descripcion') }}@endsection
+
+@section('keywords'){{ trans('ortografia.byv_keywords') }}@endsection
 
 @section('main_content')
 
-<div class="row">
-	<div class="col-6">
-		<p>{{ html_entity_decode(trans('ortografia.byv_texto1') )}}</p>
-		<p>{{ html_entity_decode(trans('ortografia.byv_texto2') )}}</p>
-	</div>
-	<div class="col-6">
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-7412986561454436"
-		     data-ad-slot="6463281785"
-		     data-ad-format="auto"
-		     data-full-width-responsive="true"></ins>
-		<script>
-		     (adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-	</div>
-</div>
-
-<div class="row mt-3">
-	<div class="col-8">
-		<div class="card">
-			<div class="card-header  with-border">
-				<h2 class="box-title">{{trans('ortografia.byv_titulo2')}}</h2>
-			</div>
-			<div class="box-body">
-				<table class="table table-bordered" summary="tabla de {{trans('ortografia.byv_titulo2')}}">
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 pt-5 order-2 centraimg">
+	           <img class="img-fluid" src="/img/practicav/ortografia/b.svg" width="250px" title="{{ trans('ortografia.byv_imgtitle20') }}" alt="{{ trans('ortografia.byv_imgalt20') }}">
+	        </div>
+	        <div class="col-md-8 pt-5 order-2">
+	            <h2>{{ trans('ortografia.byv_titulo20') }}</h2>
+				<table class="table table-bordered" summary="tabla de {{trans('ortografia.byv_titulo20')}}">
 					<thead>
 						<tr>
-							<th>Escrivin B</th>
-							<th>Example</th>
-						</tr>
+						<th>{{ trans('ortografia.byv_titulo1') }}</th>
+						<th>{{ trans('ortografia.byv_titulo3') }}</th>
+					</tr>
 					</thead>
-					<tr><td>Darrere de m</td>	<td>bomber</td></tr>
-					<tr><td>Davant de l y r</td>	<td>semblar / arbre</td></tr>
-					<tr><td>En paraules de la mateixa família en què la b alterna en la p</td>	<td>llop - lloba</td></tr>
+					<tr>
+						<td>{{ trans('ortografia.byv_texto20') }}</td>
+						<td>{{ trans('ortografia.byv_texto21') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('ortografia.byv_texto22') }}</td>
+						<td>{{ trans('ortografia.byv_texto23') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('ortografia.byv_texto24') }}</td>
+						<td>{{ trans('ortografia.byv_texto25') }}</td>
+					</tr>
 				</table>
-			</div>
-		</div>
+				<p>{{ trans('ortografia.byv_titulo4') }}: {{ trans('ortografia.byv_texto26') }}</p> 
+            </div>
+        </div>
 	</div>
-</div>
+</section>
 
-<div class="row">
-	<div class="col-8">
-		<div class="card">
-			<div class="card-header  with-border">
-				<h2 class="box-title">{{trans('ortografia.byv_titulo3')}}</h2>
-			</div>
-			<div class="box-body">
-				<table class="table table-bordered" summary="tabla de {{trans('ortografia.byv_titulo3')}}">
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 pt-5 order-2 centraimg">
+	           <img class="img-fluid" src="/img/practicav/ortografia/v.svg" width="250px" title="{{ trans('ortografia.byv_imgtitle40') }}" alt="{{ trans('ortografia.byv_imgalt40') }}">
+	        </div>
+	        <div class="col-md-8 pt-5 order-1">
+	            <h2>{{ trans('ortografia.byv_titulo40') }}</h2>
+				<table class="table table-bordered" summary="tabla de {{trans('ortografia.byv_titulo40')}}">
 					<thead>
-						<tr>	<th>Escrivin V</th>
-								<th>Example</th>
-						</tr>
+						<tr>
+						<th>{{ trans('ortografia.byv_titulo1') }}</th>
+						<th>{{ trans('ortografia.byv_titulo3') }}</th>
+					</tr>
 					</thead>
-					<tr><td>Darrere de n</td>	<td>convidar</td></tr>
-					<tr><td>En les desinències de l’imperfet d’indicatiu dels verbs de la 1a conjugació.</td>	<td>ballava</td></tr>
-					<tr><td>En les paraules de la mateixa família en què la u alterna amb la v.</td>	<td>blau - blava</td></tr>
+					<tr>
+						<td>{{ trans('ortografia.byv_texto40') }}</td>
+						<td>{{ trans('ortografia.byv_texto41') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('ortografia.byv_texto42') }}</td>
+						<td>{{ trans('ortografia.byv_texto43') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('ortografia.byv_texto44') }}</td>
+						<td>{{ trans('ortografia.byv_texto45') }}</td>
+					</tr>
 				</table>
-			</div>	
-		</div>
-	</div>
-</div>
+				<p>{{ trans('ortografia.byv_titulo4') }}: {{ trans('ortografia.byv_texto46') }}</p> 
+	        </div>
+	    </div>
+    </div>
+</section>
 
+<section>
+    <div class="container-fluid mt-5">
+        <div class="row content ml-2 mr-2">
+         	<p>{{ trans('ortografia.byv_texto60') }}</p> 
+        </div>
+	</div>
+</section>
+
+
+<div class="row mt-5 mb-5">
 	<div class="box-body pad table-responsive">
 		<div class="col-md-3">
-			<a href="/practicainicio/14"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
+			<a href="/practicainicio/13"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
 		</div>
 	</div>
+</div>
 
+@include('paginas.ortografia.comunes.enlaces')
 
 @endsection

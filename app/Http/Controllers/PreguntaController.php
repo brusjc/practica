@@ -101,12 +101,15 @@ class PreguntaController extends Controller
 //* Resto de métodos *
 //********************
 
-    public function preguntaxsubarea($subarea)
+    public function preguntaxsubarea($id, $subarea)
     {
-        //Función que se ejecuta con la url /examen
+        //id es el número de examen
+        //Subarea es el número del subarea
         
         //Sanitizamos la variable
+        $id=(int)$id;
         $subarea=(int)$subarea;
+        //return $subarea;
         
         //Paso 1: Obtenemos los datos del subarea
         $ressubarea = app('App\Http\Controllers\SubareaController')->show($subarea);
@@ -161,18 +164,22 @@ class PreguntaController extends Controller
         //Comprobamos si se ha llegado al final de las preguntas
         if($respreguntassin['original']['status']['error']==2)
         {
-            return redirect()->action('PruebaController@pruebasjqcv');
+            return redirect('/exameninicio/'.$id);
+            //return redirect()->action('PruebaController@pruebasjqcv');
         }
         $pregunta=$respreguntassin['original']['data'][0];
         //return $pregunta;
         //return $subarea;
         
-        return view('paginas.examenes.examen', compact('subarea', 'ressubarea', 'pregunta'));
+        return view('paginas.examenes.examen', compact('$id', 'subarea', 'ressubarea', 'pregunta'));
     }
-    public function preguntaXSubareaz($subarea)
+
+
+    public function preguntaXSubareaz($id, $subarea)
     {
         //Función que se ejecuta con la url /examen
         //Sanitizamos la variable
+        $id=(int)$id;
         $subarea=(int)$subarea;
         
         //Paso 1: Obtenemos los datos del subarea
@@ -185,9 +192,9 @@ class PreguntaController extends Controller
         $preguntas=$this->showXSubtema($ressubarea['original']['data'][0]['subtema_id']);
         $preguntas = @json_decode(json_encode($preguntas), true);
         $preguntas=$preguntas['original']['data'];
-        return $preguntas;
+        //return $preguntas;
         
-        return view('paginas.examenes.examenz', compact('subarea', 'ressubarea', 'preguntas'));
+        return view('paginas.examenes.examenz', compact('id', 'subarea', 'ressubarea', 'preguntas'));
     }
 
     public function preguntasXSubtema($subtema)

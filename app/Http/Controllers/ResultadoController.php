@@ -240,8 +240,8 @@ class ResultadoController extends Controller
         if($id==0 || $request->pregunta_id==0 || $request->subarea_id==0) {
             return response()->json(['status' =>['error'=>1, 'message'=>'Error en datos iniciales'], 'data'=>null]);
         }
-		//return $request->mirespuesta;
-		
+        //return $request->mirespuesta;
+        
         $request->mirespuesta=(int)$request->mirespuesta;
         if($request->mirespuesta!=(int)$request->mirespuesta){
             return response()->json(['status' =>['error'=>1, 'message'=>'Error en datos iniciales'], 'data'=>null]);
@@ -257,20 +257,69 @@ class ResultadoController extends Controller
         $respuesta = app('App\Http\Controllers\RespuestaController')->showXId($request->mirespuesta);
         $respuesta = @json_decode(json_encode($respuesta), true);
         $respuesta=$respuesta['original']['data'][0];
-        //return $respuesta;
+        //return $respuesta['acierto'];
 
-		//Paso 4: Analizamos los resultados
-		$resultado['contestada']=1;
+        //Paso 4: Analizamos los resultados
+        $resultado['contestada']=1;
         $resultado['acierto']=0;
-		$resultado['puntos']=$respuesta['pregunta']['error'];
+        if($respuesta['acierto']==1){
+            $resultado['puntos']=$respuesta['pregunta']['error'];
+            $resultado['acierto']=1;
+        }
+        //return $resultado;
+        
+        //Paso 5: Actualizamos las notas e todas las tablas
+        $examen=$this->actualizaNotas($resultado);
+        //return $examen;
+
+        //Paso 6: Redireccionamos a la página examen
+        return redirect()->back();
+    }
+    
+    public function examen2anterior(Request $request, $id)
+    {
+        //$respuesta=$request->all();
+        //return $respuesta;
+        //return $request;
+
+        //Paso 1: Sanitizamos las variables
+        $id=(int)$id;
+        $request->pregunta_id=(int)$request->pregunta_id;
+        $request->subarea_id=(int)$request->subarea_id;
+        if($id==0 || $request->pregunta_id==0 || $request->subarea_id==0) {
+            return response()->json(['status' =>['error'=>1, 'message'=>'Error en datos iniciales'], 'data'=>null]);
+        }
+        //return $request->mirespuesta;
+        
+        $request->mirespuesta=(int)$request->mirespuesta;
+        if($request->mirespuesta!=(int)$request->mirespuesta){
+            return response()->json(['status' =>['error'=>1, 'message'=>'Error en datos iniciales'], 'data'=>null]);
+        }
+
+        //Paso 2: Obtenemos datos de resultados
+        $resultado=$this->showXId($id);
+        $resultado = @json_decode(json_encode($resultado), true);
+        $resultado=$resultado['original']['data'][0];
+        //return $resultado;
+
+        //Paso 3: Obtenemos datos de la respuesta
+        $respuesta = app('App\Http\Controllers\RespuestaController')->showXId($request->mirespuesta);
+        $respuesta = @json_decode(json_encode($respuesta), true);
+        $respuesta=$respuesta['original']['data'][0];
+        return $respuesta;
+
+        //Paso 4: Analizamos los resultados
+        $resultado['contestada']=1;
+        $resultado['acierto']=0;
+        $resultado['puntos']=$respuesta['pregunta']['error'];
         if($respuesta['acierto']==1){
             $resultado['acierto']=1;
         }
-		//return $resultado;
-		
-		//Paso 5: Actualizamos las notas e todas las tablas
-		$examen=$this->actualizaNotas($resultado);
-		//return $examen;
+        //return $resultado;
+        
+        //Paso 5: Actualizamos las notas e todas las tablas
+        $examen=$this->actualizaNotas($resultado);
+        //return $examen;
 
         //Paso 6: Redireccionamos a la página examen
         return redirect()->back();

@@ -133,7 +133,6 @@ return [
     'registered'              => 'Usuario registrado!',
 	'solo usuarios registrados' => 'solo usuarios registrados',
     'aceptola'                => 'Acepto la',
-    'politicaprivacidad'      => 'política de privacidad',
     'apellido1'               => 'Primer apellido',
     'apellido2'               => 'Segundo apellido',
 
@@ -142,11 +141,19 @@ return [
     
 
 
-    'examenes_JQCV'             => 'Exámenes JQCV',
-    "vocabulario"               => "Vocabulario",
-    "ortografia"                => "Ortografía",
-    "dictados"                  => "Dictados",
-    'master'                    => 'Master',
+    'examenes_JQCV'         => 'Exámenes',
+    "vocabulario"           => "Vocabulario",
+    "ortografia"            => "Ortografía",
+    "dictados"              => "Dictados",
+    "nombres"               => "Nombres",
+    "usuario"               => "Usuario",
+    'idiomas'               => 'Idiomas',
+    'master'                => 'Máster',
+    'politicacookies'       => 'política de cookies',
+    'politicaprivacidad'    => 'política de privacidad',
+    'volver'                => 'Volver',
+    'pueden_interesar'      => 'Páginas que te pueden interesar',
+
 
     'vocalismo' => 'Vocalismo',
     'byv' => 'B y V',

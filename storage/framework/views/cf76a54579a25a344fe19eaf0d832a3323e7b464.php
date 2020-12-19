@@ -1,62 +1,48 @@
 
 
-<?php $__env->startSection('contentheader_title'); ?>
-	<?php echo e(html_entity_decode(trans('noms.noms_title') )); ?>
+<?php $__env->startSection('contentheader_title'); ?><?php echo e(trans('noms.noms_title')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('contentheader_h1'); ?><?php echo e(trans('noms.noms_h1')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('contentheader_h1'); ?>
-	<?php echo e(html_entity_decode(trans('noms.noms_titulo1') )); ?>
+<?php $__env->startSection('descripcion'); ?><?php echo e(trans('noms.noms_descripcion')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('descripcion'); ?>
-    <?php echo e(html_entity_decode(trans('noms.noms_descripcion') )); ?>
-
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('keywords'); ?>
-    <?php echo e(html_entity_decode(trans('noms.noms_keywords') )); ?>
-
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('keywords'); ?><?php echo e(trans('noms.noms_keywords')); ?><?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_content'); ?>
 
-<div class="row">
-	<div class="col-4">
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- Adaptable - Cuadrado -->
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-7412986561454436"
-		     data-ad-slot="6463281785"
-		     data-ad-format="auto"
-		     data-full-width-responsive="true"></ins>
-		<script>
-		     (adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-	</div>
-	<div class="col-8">
-		<p><?php echo e(html_entity_decode(trans('noms.noms_texto1') )); ?></p>
-		<p><?php echo e(html_entity_decode(trans('noms.noms_texto2') )); ?></p>
-		<p><?php echo e(html_entity_decode(trans('noms.noms_texto3') )); ?></p>
-		<p><?php echo e(html_entity_decode(trans('noms.noms_texto4') )); ?></p>
-	</div>
-</div>
-
-
-<div class="row">
-	<div class="col-12">
-		<p><?php echo e(html_entity_decode(trans('noms.noms_texto5') )); ?></p>
-		<p><?php echo e(html_entity_decode(trans('noms.noms_texto6') )); ?></p>
-	</div>
-</div>
-
+<section id="about" class="about">
+    <div class="container-fluid">
+	    <div class="row content">
+	        <div class="col-md-5 order-2 order-md-2" data-aos="fade-left">
+				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- Adaptable - Cuadrado -->
+				<ins class="adsbygoogle"
+				     style="display:block"
+				     data-ad-client="ca-pub-7412986561454436"
+				     data-ad-slot="6463281785"
+				     data-ad-format="auto"
+				     data-full-width-responsive="true"></ins>
+				<script>
+				     (adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+	        </div>
+	        <div class="col-md-7 pt-5 order-1 order-md-1" data-aos="fade-up">
+				<p><?php echo e(trans('noms.noms_texto1')); ?></p>
+				<p><?php echo e(trans('noms.noms_texto2')); ?></p>
+				<p><?php echo e(trans('noms.noms_texto3')); ?></p>
+				<p><?php echo e(trans('noms.noms_texto4')); ?></p>
+				<p><?php echo e(trans('noms.noms_texto5')); ?></p>
+				<p><?php echo e(trans('noms.noms_texto6')); ?></p>
+				<p><?php echo e(trans('noms.noms_texto7')); ?></p>
+	        </div>
+        </div>
+    </div>
+</section>
 
 <div class="col-md-12">
 	<div class="card">
 		<div class="card-header">
-			<h3 class="card-title"><?php echo e(html_entity_decode(trans('noms.noms_titulo1') )); ?></h3>
+			<h3 class="card-title"><?php echo e(trans('noms.noms_titulo1')); ?></h3>
 		</div>
 		<div class="card-body">
 			<a href="#a" class="btn btn-info">A</a>
@@ -85,10 +71,6 @@
 			<a href="#z" class="btn btn-info">Z</a>
 		</div>
 	</div>		
-</div>
-
-<div class="comment-text">
-	<p><?php echo e(html_entity_decode(trans('noms.noms_texto7') )); ?></p>
 </div>
 
 <a name="a" id="a"></a>
@@ -1888,4 +1870,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/noms/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/noms/index.blade.php ENDPATH**/ ?>

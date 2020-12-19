@@ -1,55 +1,34 @@
 
 
-<?php $__env->startSection('contentheader_title'); ?>
-    <?php echo e(trans('examenes.B2_title')); ?>
+<?php $__env->startSection('contentheader_title'); ?><?php echo e(trans('examenes.B2_title')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('contentheader_h1'); ?><?php echo e(trans('examenes.B2_h1')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('contentheader_h1'); ?>
-    <?php echo e(trans('examenes.B2_h1')); ?>
+<?php $__env->startSection('breadcrumb1'); ?><a href="<?php echo e(session('BC1')); ?>"><?php echo e(session('BC1texto')); ?></a><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('descripcion'); ?><?php echo e(trans('examenes.B2_descripcion')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('breadcrumb1'); ?>
-	<a href="<?php echo e(session('BC1')); ?>"><?php echo e(session('BC1texto')); ?></a>
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('descripcion'); ?>
-    <?php echo e(trans('examenes.B2_descripcion')); ?>
-
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('keywords'); ?>
-    <?php echo e(trans('examenes.B2_keywords')); ?>
-
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('keywords'); ?><?php echo e(trans('examenes.B2_keywords')); ?><?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_content'); ?>
 
 <div class="row">
 	<div class="col-5">
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-7412986561454436"
-		     data-ad-slot="6463281785"
-		     data-ad-format="auto"
-		     data-full-width-responsive="true"></ins>
-		<script>
-		     (adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+		<ins class="adsbygoogle"	     style="display:block"	     data-ad-client="ca-pub-7412986561454436"	     data-ad-slot="6463281785"	     data-ad-format="auto"	     data-full-width-responsive="true"></ins>
+		<script>	     (adsbygoogle = window.adsbygoogle || []).push({});	</script>
 	</div>
 	<div class="col-7">
 		<div class="comment-text">
-			<p><?php echo e(html_entity_decode(trans('examenes.B2_texto1') )); ?></p>
-			<p><?php echo e(html_entity_decode(trans('examenes.B2_texto2') )); ?></p>
-			<p><?php echo e(html_entity_decode(trans('examenes.B2_texto3') )); ?></p>
+			<p><?php echo e(trans('examenes.B2_texto1')); ?></p>
+			<p><?php echo e(trans('examenes.B2_texto2')); ?></p>
+			<p><?php echo trans('examenes.B2_texto3'); ?></p>
 		</div>
 	</div>
 </div>
 
 <div class="comment-text">
-	<p><?php echo e(html_entity_decode(trans('examenes.B2_texto4') )); ?></p>
+	<p><?php echo e(trans('examenes.B2_texto4')); ?></p>
 </div>
 
 <div class="row mt-5">
@@ -110,7 +89,7 @@
 											</td>
 											<td><span class="badge bg-red"><?php echo e($examen['porcentaje']); ?>%</span></td>
 										</tr>
-									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>					
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 							<?php endif; ?>
 						<?php endif; ?>
@@ -120,7 +99,6 @@
 		</div>
 	</div>
 </div>
-
 <?php $__env->stopSection(); ?>
 
 

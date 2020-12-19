@@ -1,55 +1,64 @@
-@extends('layouts.app')
+@extends('frontend.layouts.frontend')
 
-@section('contentheader_title'){{ html_entity_decode(trans('vocabulario.partsDia_titulo1') )}}@endsection
+@section('contentheader_title'){{ trans('vocabulario.partsdía_title') }}@endsection
 
-@section('contentheader_h1'){{ html_entity_decode(trans('vocabulario.partsDia_h1') )}}@endsection
+@section('contentheader_h1'){{ trans('vocabulario.partsdía_h1') }}@endsection
 
-@section('breadcrumb1')<a href="/vocabulario">{{ trans('vocabulario.vocabulario_breadcrumb') }}</a>@endsection
+@section('breadcrumb0')<a href="/{{session('lang')}}/">Inicio</a>@endsection
 
-@section('descripcion'){{ html_entity_decode(trans('vocabulario.parentesco_descripcion') )}}@endsection
+@section('breadcrumb1')<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>@endsection
 
-@section('keywords'){{ html_entity_decode(trans('vocabulario.parentesco_keywords') )}}@endsection
+@section('breadcrumb2'){{ session('BC2texto') }}@endsection
+
+@section('descripcion'){{ trans('vocabulario.parentesco_descripcion') }}@endsection
+
+@section('keywords'){{ trans('vocabulario.parentesco_keywords') }}@endsection
 
 @section('main_content')
-<div class="row">
-	<div class="col-5">
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-7412986561454436"
-		     data-ad-slot="6463281785"
-		     data-ad-format="auto"
-		     data-full-width-responsive="true"></ins>
-		<script>
-		     (adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-	</div>
-	<div class="col-7">
-		<div class="box">
-			<div class="box-header">
-				<h3 class="box-title">Parts del dia</h3>
-			</div>
 
-			<div class="box-body no-padding">
-				<table class="table table-condensed" summary="tabla con las letras del abecedario, su nombre en valenciano y un ejemplo de cada una de ellas.">
-					<tr><td>Dia (día)</td>					<td>Les hores de llum del sol</td></tr>
-					<tr><td>Matinada (madrugada)</td>		<td>Abans de fer-se de dia</td></tr>
-					<tr><td>Matí (mañana)</td>				<td>Des que es fa de dia fins les dotze (12:00h)</td></tr>
-					<tr><td>Migdia (mediodía)</td>			<td>Les dotze (12:00h)</td></tr>
-					<tr><td>Vesprada (tarde)</td>			<td>Deprés de migdia fins que s’amaga el sol</td></tr>
-					<tr><td>Poqueta nit (anochecer)</td>	<td>Quan està amagant-se el sol</td></tr>
-					<tr><td>Nit (noche)</td>				<td>Hores sense llum del sol</td></tr>
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-5 order-2 order-md-2 centraimg" data-aos="fade-left">
+				@include('paginas.vocabulario.publi.superior50')
+	        </div>
+	        <div class="col-md-7 pt-5 order-1 order-md-1" data-aos="fade-up">
+				<table class="table table-bordered" summary="tabla de {{trans('vocabulario.partsdía_titulo1')}}">
+					<thead>
+							<th colspan="2"><h2>{{ trans('vocabulario.partsdía_titulo1') }}</h2></th>
+					</thead>
+					<tr>
+						<td>{{ trans('vocabulario.partsdía_texto1') }}</td>
+						<td>{{ trans('vocabulario.partsdía_texto2') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.partsdía_texto3') }}</td>
+						<td>{{ trans('vocabulario.partsdía_texto4') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.partsdía_texto5') }}</td>
+						<td>{{ trans('vocabulario.partsdía_texto6') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.partsdía_texto7') }}</td>
+						<td>{{ trans('vocabulario.partsdía_texto8') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.partsdía_texto9') }}</td>
+						<td>{{ trans('vocabulario.partsdía_texto10') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.partsdía_texto11') }}</td>
+						<td>{{ trans('vocabulario.partsdía_texto12') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.partsdía_texto13') }}</td>
+						<td>{{ trans('vocabulario.partsdía_texto14') }}</td>
+					</tr>
 				</table>
-			</div>
-		</div>
-
-		<div class="box-body pad table-responsive">
-			<p>Various types of buttons. Using the base class</p>
-			<div class="col-md-3">
-				<a href="/practicainicio/14"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
-			</div>
-		</div>
+            </div>
+        </div>
 	</div>
-</div>
+</section>
 
 @endsection

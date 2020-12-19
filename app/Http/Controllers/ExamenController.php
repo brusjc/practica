@@ -194,135 +194,135 @@ class ExamenController extends Controller
 //* Web *
 //*******
 
-    public function crear($codigo)
+    public function es_crear($codigo)
     {
-		//return DB::transaction(function() use($codigo)		{
-			try { 
-		
-			   //Generamos variables
-				$totalExamen=0;
-				$ordensubarea=0;
-				$usu = $this->usuarioActual();
-				
-				//PASO 1: Buscamos el id del código de la prueba
-				$resPrueba = app('App\Http\Controllers\PruebaController')->showXCodigo($codigo);
-				$resPrueba = @json_decode(json_encode($resPrueba), true);
-				//return $resPrueba;
+        //return DB::transaction(function() use($codigo)        {
+            try { 
+        
+               //Generamos variables
+                $totalExamen=0;
+                $ordensubarea=0;
+                $usu = $this->usuarioActual();
+                
+                //PASO 1: Buscamos el id del código de la prueba
+                $resPrueba = app('App\Http\Controllers\PruebaController')->showXCodigo($codigo);
+                $resPrueba = @json_decode(json_encode($resPrueba), true);
+                //return $resPrueba;
 
-				//PASO 2: Creamos el registro en la tabla examenes
-				$resExamen=$this->store($resPrueba['original']['data'][0]['id']);
-				$resExamen = @json_decode(json_encode($resExamen), true);
-				$examen = $resExamen['original']['data']; 
-				//return $examen;
-				//return $examen['original']['data']['id'];
+                //PASO 2: Creamos el registro en la tabla examenes
+                $resExamen=$this->store($resPrueba['original']['data'][0]['id']);
+                $resExamen = @json_decode(json_encode($resExamen), true);
+                $examen = $resExamen['original']['data']; 
+                //return $examen;
+                //return $examen['original']['data']['id'];
 
-				//*********
-				//* Areas *
-				//*********
-				//PASO 3: Buscamos los temas
-				$resTemas = app('App\Http\Controllers\TemaController')->temasxpruebaapi($resPrueba['original']['data'][0]['id']);
-				$resTemas = @json_decode(json_encode($resTemas), true);
-				//return $resTemas;
-
-
-				//PASO 4: Creamos los registros de la tabla areas
-				foreach($resTemas['original']['data'] as $key1=>$tema)
-				{
-					$totalArea=0;
-					$resArea = app('App\Http\Controllers\AreaController')->store($resExamen['original']['data']['id'], $tema['id'], $tema['temanombre_id'], 0);
-					$resArea = @json_decode(json_encode($resArea), true);
-					$area = $resArea['original']['data'];
-					//return $resArea;
-					//return $resArea['original']['data']['id'];
-
-					//************
-					//* Subareas *
-					//************
-					//PASO 5: Buscamos los subtemas
-					$resSubtemas = app('App\Http\Controllers\SubtemaController')->showXArea($tema['id']);
-					$resSubtemas = @json_decode(json_encode($resSubtemas), true);
-					//return $resSubtemas;
-					//return $resSubtemas['original']['data'];
-
-					//PASO 6: Creamos los registros en la tabla subareas
-					foreach($resSubtemas['original']['data'] as $key2=>$subtema)
-					{
-						//return $resSubtemas;
-						$ordensubarea=$ordensubarea+1;
-
-						$resSubarea = app('App\Http\Controllers\SubareaController')->store
-						(
-							$resArea['original']['data']['id'], 
-							$subtema['id'], 
-							$subtema['subtemanombre']['id'],
-							0,
-							0,
-							$ordensubarea,
-							0
-						);
-						$resSubarea = @json_decode(json_encode($resSubarea), true);
-						$subarea=$resSubarea['original']['data'];
-						//return $resSubarea;
-						//return $resSubarea['original']['data']['subtema_id'];
+                //*********
+                //* Areas *
+                //*********
+                //PASO 3: Buscamos los temas
+                $resTemas = app('App\Http\Controllers\TemaController')->temasxpruebaapi($resPrueba['original']['data'][0]['id']);
+                $resTemas = @json_decode(json_encode($resTemas), true);
+                //return $resTemas;
 
 
-						//**************
-						//* Resultados *
-						//**************
-						//PASO 7: Buscamos las preguntas del subarea
-						$resPreguntas = app('App\Http\Controllers\PreguntaController')->showXSubtema($resSubarea['original']['data']['subtema_id']);
-						$resPreguntas = @json_decode(json_encode($resPreguntas), true);
-						//return $resPreguntas;
+                //PASO 4: Creamos los registros de la tabla areas
+                foreach($resTemas['original']['data'] as $key1=>$tema)
+                {
+                    $totalArea=0;
+                    $resArea = app('App\Http\Controllers\AreaController')->store($resExamen['original']['data']['id'], $tema['id'], $tema['temanombre_id'], 0);
+                    $resArea = @json_decode(json_encode($resArea), true);
+                    $area = $resArea['original']['data'];
+                    //return $resArea;
+                    //return $resArea['original']['data']['id'];
 
-						//Paso 8: Creamos el registro en la tabla resultados
-						$totalSubarea=0;
-						foreach ($resPreguntas['original']['data'] as $key3=>$pregunta)
-						{
-							$totalSubarea++;
-							$resResultado = app('App\Http\Controllers\ResultadoController')->store($resSubarea['original']['data']['id'], $pregunta['id']);
-							$resResultado = @json_decode(json_encode($resResultado), true);
-							//return $resResultado;
-						}
+                    //************
+                    //* Subareas *
+                    //************
+                    //PASO 5: Buscamos los subtemas
+                    $resSubtemas = app('App\Http\Controllers\SubtemaController')->showXArea($tema['id']);
+                    $resSubtemas = @json_decode(json_encode($resSubtemas), true);
+                    //return $resSubtemas;
+                    //return $resSubtemas['original']['data'];
 
-						//Paso 9: Actualizamos el total de preguntas del subarea
-						$subarea['total']=$totalSubarea;
-						$subarea = app('App\Http\Controllers\SubareaController')->update($subarea);
-						$subarea = @json_decode(json_encode($subarea), true);
-						//return $subarea;
+                    //PASO 6: Creamos los registros en la tabla subareas
+                    foreach($resSubtemas['original']['data'] as $key2=>$subtema)
+                    {
+                        //return $resSubtemas;
+                        $ordensubarea=$ordensubarea+1;
 
-						//Paso 10: Actualizamos las preguntas del area
-						$totalArea=$totalArea + $totalSubarea;
-						//return $totalSubarea;
-					}
+                        $resSubarea = app('App\Http\Controllers\SubareaController')->store
+                        (
+                            $resArea['original']['data']['id'], 
+                            $subtema['id'], 
+                            $subtema['subtemanombre']['id'],
+                            0,
+                            0,
+                            $ordensubarea,
+                            0
+                        );
+                        $resSubarea = @json_decode(json_encode($resSubarea), true);
+                        $subarea=$resSubarea['original']['data'];
+                        //return $resSubarea;
+                        //return $resSubarea['original']['data']['subtema_id'];
 
-					  
-					//Paso 10: Actualizamos el total de preguntas del área
-					$area['total']=$totalArea;
-					$area = app('App\Http\Controllers\AreaController')->update($area);
-					$area = @json_decode(json_encode($area), true);
-					//return $area;
 
-					$totalExamen=$totalExamen + $totalArea;
-				}
+                        //**************
+                        //* Resultados *
+                        //**************
+                        //PASO 7: Buscamos las preguntas del subarea
+                        $resPreguntas = app('App\Http\Controllers\PreguntaController')->showXSubtema($resSubarea['original']['data']['subtema_id']);
+                        $resPreguntas = @json_decode(json_encode($resPreguntas), true);
+                        //return $resPreguntas;
 
-				//Paso 11: Actualizamos el total de preguntas del examen
-				$examen['total']=$totalExamen;
-				//return $examen['total'];
-				$examen = app('App\Http\Controllers\ExamenController')->update($examen);
-				$examen = @json_decode(json_encode($examen), true);
-				//return $examen;
+                        //Paso 8: Creamos el registro en la tabla resultados
+                        $totalSubarea=0;
+                        foreach ($resPreguntas['original']['data'] as $key3=>$pregunta)
+                        {
+                            $totalSubarea++;
+                            $resResultado = app('App\Http\Controllers\ResultadoController')->store($resSubarea['original']['data']['id'], $pregunta['id']);
+                            $resResultado = @json_decode(json_encode($resResultado), true);
+                            //return $resResultado;
+                        }
 
-				return redirect()->action('ExamenController@examenXId', ['id'=>$examen['original']['data']['id']]);
-				//return view('paginas.examenes.exameninicio', compact('examen'));
+                        //Paso 9: Actualizamos el total de preguntas del subarea
+                        $subarea['total']=$totalSubarea;
+                        $subarea = app('App\Http\Controllers\SubareaController')->update($subarea);
+                        $subarea = @json_decode(json_encode($subarea), true);
+                        //return $subarea;
 
-			} catch(\Exception $e){
-				return back();
-			} 
-		//});
+                        //Paso 10: Actualizamos las preguntas del area
+                        $totalArea=$totalArea + $totalSubarea;
+                        //return $totalSubarea;
+                    }
+
+                      
+                    //Paso 10: Actualizamos el total de preguntas del área
+                    $area['total']=$totalArea;
+                    $area = app('App\Http\Controllers\AreaController')->update($area);
+                    $area = @json_decode(json_encode($area), true);
+                    //return $area;
+
+                    $totalExamen=$totalExamen + $totalArea;
+                }
+
+                //Paso 11: Actualizamos el total de preguntas del examen
+                $examen['total']=$totalExamen;
+                //return $examen['total'];
+                $examen = app('App\Http\Controllers\ExamenController')->update($examen);
+                $examen = @json_decode(json_encode($examen), true);
+                //return $examen;
+
+                return redirect()->action('ExamenController@es_examenXId', ['id'=>$examen['original']['data']['id']]);
+                //return view('paginas.examenes.exameninicio', compact('examen'));
+
+            } catch(\Exception $e){
+                return back();
+            } 
+        //});
     }
 
     //Datos de un examen por id
-    public function examenXId($id)
+    public function es_examenXId($id)
     {
         //Paso 1: Sanitizamos la variable
         $id=(int)$id;
@@ -333,30 +333,30 @@ class ExamenController extends Controller
         //Paso 2: Obtenemos las contestadas por area y subarea
         $examen = $this->showXId($id);
         $examen = @json_decode(json_encode($examen), true);
-		$examen=$examen['original']['data'];
+        $examen = $examen['original']['data'];
         //return $subareas;
         //return $examen;
-		
-		//Paso 3: Calculamos la calificacion
-		foreach($examen['area'] as $key1=>$area)
-		{
-			foreach($area['subarea'] as $key2=>$subarea)
-			{
-				//return $subarea['subtema']['id'];
-				$pregunta = app('App\Http\Controllers\PreguntaController')->showXSubtema($subarea['subtema']['id']);
-				$pregunta = @json_decode(json_encode($pregunta), true);
-				$examen['area'][$key1]['subarea'][$key2]['puntos']=$pregunta['original']['data'][0]['error'];
-				//return $pregunta;
-			}
-		}
-		//return $examen;
         
-		//url de vuelta
-        session(['BC4' => '/exameninicio/'.$id]);
+        //Paso 3: Calculamos la calificacion
+        foreach($examen['area'] as $key1=>$area)
+        {
+            foreach($area['subarea'] as $key2=>$subarea)
+            {
+                //return $subarea['subtema']['id'];
+                $pregunta = app('App\Http\Controllers\PreguntaController')->showXSubtema($subarea['subtema']['id']);
+                $pregunta = @json_decode(json_encode($pregunta), true);
+                $examen['area'][$key1]['subarea'][$key2]['puntos'] = $pregunta['original']['data'][0]['error'];
+                //return $pregunta;
+            }
+        }
+        //return $examen;
+        
+        //url de vuelta
+        session(['BC4' => '/es/exameninicio/'.$id]);
         session(['BC4texto' => 'Areas']);
         
         //Paso 4: redirigimo a la vista
-        return view('paginas.examenes.exameninicio', compact('examen'));
+        return view('paginas.es.examenes.exameninicio', compact('examen'));
     }
 
     //Modifica un Registro
@@ -445,5 +445,181 @@ class ExamenController extends Controller
         //Paso 8: Redireccionamos a la página examen
         return redirect()->back();
     }
+
+
+
+//**********
+//* Viejos *
+//**********
+
+    public function crear($codigo)
+    {
+        try
+        { 
+           //Generamos variables
+            $totalExamen=0;
+            $ordensubarea=0;
+            $usu = $this->usuarioActual();
+            
+            //PASO 1: Buscamos el id del código de la prueba
+            $resPrueba = app('App\Http\Controllers\PruebaController')->showXCodigo($codigo);
+            $resPrueba = @json_decode(json_encode($resPrueba), true);
+            //return $resPrueba;
+
+            //PASO 2: Creamos el registro en la tabla examenes
+            $resExamen=$this->store($resPrueba['original']['data'][0]['id']);
+            $resExamen = @json_decode(json_encode($resExamen), true);
+            $examen = $resExamen['original']['data']; 
+            //return $examen;
+            //return $examen['original']['data']['id'];
+
+            //*********
+            //* Areas *
+            //*********
+            //PASO 3: Buscamos los temas
+            $resTemas = app('App\Http\Controllers\TemaController')->temasxpruebaapi($resPrueba['original']['data'][0]['id']);
+            $resTemas = @json_decode(json_encode($resTemas), true);
+            //return $resTemas;
+
+
+            //PASO 4: Creamos los registros de la tabla areas
+            foreach($resTemas['original']['data'] as $key1=>$tema)
+            {
+                $totalArea=0;
+                $resArea = app('App\Http\Controllers\AreaController')->store($resExamen['original']['data']['id'], $tema['id'], $tema['temanombre_id'], 0);
+                $resArea = @json_decode(json_encode($resArea), true);
+                $area = $resArea['original']['data'];
+                //return $resArea;
+                //return $resArea['original']['data']['id'];
+
+                //************
+                //* Subareas *
+                //************
+                //PASO 5: Buscamos los subtemas
+                $resSubtemas = app('App\Http\Controllers\SubtemaController')->showXArea($tema['id']);
+                $resSubtemas = @json_decode(json_encode($resSubtemas), true);
+                //return $resSubtemas;
+                //return $resSubtemas['original']['data'];
+
+                //PASO 6: Creamos los registros en la tabla subareas
+                foreach($resSubtemas['original']['data'] as $key2=>$subtema)
+                {
+                    //return $resSubtemas;
+                    $ordensubarea=$ordensubarea+1;
+
+                    $resSubarea = app('App\Http\Controllers\SubareaController')->store
+                    (
+                        $resArea['original']['data']['id'], 
+                        $subtema['id'], 
+                        $subtema['subtemanombre']['id'],
+                        0,
+                        0,
+                        $ordensubarea,
+                        0
+                    );
+                    $resSubarea = @json_decode(json_encode($resSubarea), true);
+                    $subarea=$resSubarea['original']['data'];
+                    //return $resSubarea;
+                    //return $resSubarea['original']['data']['subtema_id'];
+
+
+                    //**************
+                    //* Resultados *
+                    //**************
+                    //PASO 7: Buscamos las preguntas del subarea
+                    $resPreguntas = app('App\Http\Controllers\PreguntaController')->showXSubtema($resSubarea['original']['data']['subtema_id']);
+                    $resPreguntas = @json_decode(json_encode($resPreguntas), true);
+                    //return $resPreguntas;
+
+                    //Paso 8: Creamos el registro en la tabla resultados
+                    $totalSubarea=0;
+                    foreach ($resPreguntas['original']['data'] as $key3=>$pregunta)
+                    {
+                        $totalSubarea++;
+                        $resResultado = app('App\Http\Controllers\ResultadoController')->store($resSubarea['original']['data']['id'], $pregunta['id']);
+                        $resResultado = @json_decode(json_encode($resResultado), true);
+                        //return $resResultado;
+                    }
+
+                    //Paso 9: Actualizamos el total de preguntas del subarea
+                    $subarea['total']=$totalSubarea;
+                    $subarea = app('App\Http\Controllers\SubareaController')->update($subarea);
+                    $subarea = @json_decode(json_encode($subarea), true);
+                    //return $subarea;
+
+                    //Paso 10: Actualizamos las preguntas del area
+                    $totalArea=$totalArea + $totalSubarea;
+                    //return $totalSubarea;
+                }
+
+                  
+                //Paso 10: Actualizamos el total de preguntas del área
+                $area['total']=$totalArea;
+                $area = app('App\Http\Controllers\AreaController')->update($area);
+                $area = @json_decode(json_encode($area), true);
+                //return $area;
+
+                $totalExamen=$totalExamen + $totalArea;
+            }
+
+            //Paso 11: Actualizamos el total de preguntas del examen
+            $examen['total']=$totalExamen;
+            //return $examen['total'];
+            $examen = app('App\Http\Controllers\ExamenController')->update($examen);
+            $examen = @json_decode(json_encode($examen), true);
+            //return $examen;
+
+            return redirect('/exameninicio/'.$examen['original']['data']['id']);
+            //return redirect()->action('ExamenController@examenXId', ['id' => $examen['original']['data']['id']]);
+            //return"Estamos dentro";
+
+
+            //return view('paginas.examenes.exameninicio', compact('examen'));
+        } catch(\Exception $e){
+            return back();
+        } 
+    }
+
+    //Datos de un examen por id
+    public function examenXId($id)
+    {
+        //return "Estamos aquí en examenXId=".$id;
+
+        //Paso 1: Sanitizamos la variable
+        $id=(int)$id;
+        if ($id==0) {
+            return response()->json(['status' =>['error'=>3, 'message'=>'Error en datos iniciales'], 'data'=>null]);
+        }
+
+        //Paso 2: Obtenemos las contestadas por area y subarea
+        $examen = $this->showXId($id);
+        $examen = @json_decode(json_encode($examen), true);
+        $examen=$examen['original']['data'];
+        //return $subareas;
+        //return $examen;
+        
+        //Paso 3: Calculamos la calificacion
+        foreach($examen['area'] as $key1=>$area)
+        {
+            foreach($area['subarea'] as $key2=>$subarea)
+            {
+                //return $subarea['subtema']['id'];
+                $pregunta = app('App\Http\Controllers\PreguntaController')->showXSubtema($subarea['subtema']['id']);
+                $pregunta = @json_decode(json_encode($pregunta), true);
+                $examen['area'][$key1]['subarea'][$key2]['puntos']=$pregunta['original']['data'][0]['error'];
+                //return $pregunta;
+            }
+        }
+        //return $pregunta;
+        
+        //url de vuelta
+        session(['BC4' => '/exameninicio/'.$id]);
+        session(['BC4texto' => 'Areas']);
+        //return $examen;
+        
+        //Paso 4: redirigimo a la vista
+        return view('paginas.examenes.exameninicio', compact('id', 'examen'));
+    }
+
 
 }

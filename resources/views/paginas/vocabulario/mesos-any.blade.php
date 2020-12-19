@@ -1,73 +1,113 @@
-@extends('layouts.app')
+@extends('frontend.layouts.frontend')
 
-@section('contentheader_title'){{ html_entity_decode(trans('vocabulario.meses_titulo1') )}}@endsection
+@section('contentheader_title'){{ trans('vocabulario.meses_title') }}@endsection
 
-@section('contentheader_h1'){{ html_entity_decode(trans('vocabulario.meses_h1') )}}@endsection
+@section('contentheader_h1'){{ trans('vocabulario.meses_h1') }}@endsection
 
-@section('breadcrumb1')<a href="/vocabulario">{{ trans('vocabulario.vocabulario_breadcrumb') }}</a>@endsection
+@section('breadcrumb0')<a href="/{{session('lang')}}/">Inicio</a>@endsection
 
-@section('descripcion'){{ html_entity_decode(trans('vocabulario.meses_descripcion') )}}@endsection
+@section('breadcrumb1')<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>@endsection
 
-@section('keywords'){{ html_entity_decode(trans('vocabulario.meses_keywords') )}}@endsection
+@section('breadcrumb2'){{ session('BC2texto') }}@endsection
+
+@section('descripcion'){{ trans('vocabulario.parentesco_descripcion') }}@endsection
+
+@section('keywords'){{ trans('vocabulario.parentesco_keywords') }}@endsection
 
 @section('main_content')
 
-<div class="row">
-	<div class="col-5">
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-7412986561454436"
-		     data-ad-slot="6463281785"
-		     data-ad-format="auto"
-		     data-full-width-responsive="true"></ins>
-		<script>
-		     (adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-6 order-1 order-md-2 centraimg" data-aos="fade-left">
+				@include('paginas.vocabulario.publi.superior50')
+	        </div>
+	        <div class="col-md-6 pt-5 order-1">
+				<p>{{ trans('vocabulario.meses_texto1') }}</p>
+				<p>{{ trans('vocabulario.meses_texto2') }}</p>
+				<p>{{ trans('vocabulario.meses_texto3') }}</p>
+				<p>{{ trans('vocabulario.meses_texto4') }}</p>
+				<p>{{ trans('vocabulario.meses_texto5') }}</p>
+	        </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid">
+        <div class="row content h-100">
+	        <div class="col-md-4 order-1 order-md-2 centraimg" data-aos="fade-left">
+	           <img class="img-fluid" src="/img/practicav/vocabulario/mesos-any.svg" width="300px" title="{{ trans('vocabulario.meses_imgtitle20') }}" alt="{{ trans('vocabulario.meses_imgalt20') }}">
+	        </div>
+	        <div class="col-md-8 pt-5 order-2">
+	            <h2>{{ trans('vocabulario.meses_titulo20') }}</h2>
+	        	<div class="col-9">
+					<table class="table table-bordered" summary="tabla de {{trans('vocabulario.meses_titulo20')}}">
+						<thead>
+							<th>{{ trans('vocabulario.meses_titulo21') }}</th>
+							<th>{{ trans('vocabulario.meses_titulo22') }}</th>
+						</thead>
+						<tr>
+							<td>{{ trans('vocabulario.meses_texto20') }}</td>
+							<td>{{ trans('vocabulario.meses_texto21') }}</td>
+						</tr>
+						<tr>
+							<td>{{ trans('vocabulario.meses_texto22') }}</td>
+							<td>{{ trans('vocabulario.meses_texto23') }}</td>
+						</tr>
+						<tr>
+							<td>{{ trans('vocabulario.meses_texto24') }}</td>
+							<td>{{ trans('vocabulario.meses_texto25') }}</td>
+						</tr>
+						<tr>
+							<td>{{ trans('vocabulario.meses_texto26') }}</td>
+							<td>{{ trans('vocabulario.meses_texto27') }}</td>
+						</tr>
+						<tr>
+							<td>{{ trans('vocabulario.meses_texto28') }}</td>
+							<td>{{ trans('vocabulario.meses_texto29') }}</td>
+						</tr>
+						<tr>
+							<td>{{ trans('vocabulario.meses_texto30') }}</td>
+							<td>{{ trans('vocabulario.meses_texto31') }}</td>
+						</tr>
+						<tr>
+							<td>{{ trans('vocabulario.meses_texto32') }}</td>
+							<td>{{ trans('vocabulario.meses_texto33') }}</td>
+						</tr>
+						<tr>
+							<td>{{ trans('vocabulario.meses_texto34') }}</td>
+							<td>{{ trans('vocabulario.meses_texto35') }}</td>
+						</tr>
+						<tr>
+							<td>{{ trans('vocabulario.meses_texto36') }}</td>
+							<td>{{ trans('vocabulario.meses_texto37') }}</td>
+						</tr>
+						<tr>
+							<td>{{ trans('vocabulario.meses_texto38') }}</td>
+							<td>{{ trans('vocabulario.meses_texto39') }}</td>
+						</tr>
+						<tr>
+							<td>{{ trans('vocabulario.meses_texto40') }}</td>
+							<td>{{ trans('vocabulario.meses_texto41') }}</td>
+						</tr>
+						<tr>
+							<td>{{ trans('vocabulario.meses_texto42') }}</td>
+							<td>{{ trans('vocabulario.meses_texto43') }}</td>
+						</tr>
+					</table>
+				</div>
+            </div>
+        </div>
 	</div>
-	<div class="col-7">
-		<p>{{ html_entity_decode(trans('vocabulario.meses_texto1') )}}</p>
-		<p>{{ html_entity_decode(trans('vocabulario.meses_texto2') )}}</p>
-		<p>{{ html_entity_decode(trans('vocabulario.meses_texto3') )}}</p>
-		<p>{{ html_entity_decode(trans('vocabulario.meses_texto4') )}}</p>
-		<p>{{ html_entity_decode(trans('vocabulario.meses_texto5') )}}</p>
+</section>
+
+<div class="row mt-5 mb-5">
+	<div class="box-body pad table-responsive">
+		<div class="col-md-3">
+			<a href="/practicainicio/5"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
+		</div>
 	</div>
 </div>
-
-	<div class="box">
-		<div class="box-header">
-			<h3 class="box-title">{{ trans('vocabulario.meses_titulo2') }}</h3>
-		</div>
-
-		<div class="box-body no-padding">
-			<table class="table table-condensed" summary="tabla de los meses del año.">
-				<thead>
-					<tr>
-						<th id="columna1" scope="col">MESOS</th>
-						<th scope="col">DURACIÓ</th>
-					</tr>
-				</thead>
-				<tr><td>Gener</td>		<td>Té 31 dies.</td></tr>
-				<tr><td>Febrer</td>		<td>Té 28 dies, encara que també té 29 quan és bisext.</td></tr>
-				<tr><td>Març</td>		<td>Té 31 dies.</td></tr>
-				<tr><td>Abril</td>		<td>Té 30 dies</td></tr>
-				<tr><td>Maig </td>		<td>Té 31 dies.</td></tr>
-				<tr><td>Juny</td>		<td>Té 30 dies</td></tr>
-				<tr><td>Juliol</td>		<td>Té 31 dies.</td></tr>
-				<tr><td>Agost</td>		<td>Té 31 dies.</td></tr>
-				<tr><td>Setembre</td>	<td>Té 30 dies</td></tr>
-				<tr><td>Octubre</td>	<td>Té 31 dies.</td></tr>
-				<tr><td>Novembre</td>	<td>Té 30 dies</td></tr>
-				<tr><td>Desembre</td>	<td>Té 31 dies.</td></tr>
-			</table>
-		</div>
-	</div>
-
-	<div class="box-body pad table-responsive">
-		<p>Various types of buttons. Using the base class</p>
-		<div class="col-md-3">
-			<a href="/practicainicio/14"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
-		</div>
-	</div>
 
 @endsection

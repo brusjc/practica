@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="50"
+   height="50"
+   viewBox="0 0 13.229167 13.229167"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="eyo-R.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="27.950467"
+     inkscape:cy="14.316985"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1298"
+     inkscape:window-height="728"
+     inkscape:window-x="52"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#000080;fill-opacity:0.931727;stroke:#ffffff;stroke-width:0.0637251;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       d="M 5.5467436,13.140494 C 3.0641075,12.723808 0.94613466,10.819246 0.2729988,8.3981446 -0.36461289,6.1048137 0.27835951,3.665855 1.9652569,1.9789641 4.4931735,-0.5489408 8.5398528,-0.61403785 11.101052,1.8320006 c 0.926806,0.8851316 1.500456,1.8184078 1.859741,3.0256178 0.261744,0.8794745 0.308444,2.1238404 0.114799,3.0589621 -0.642631,3.1032895 -3.3604145,5.3212875 -6.4804024,5.2886885 -0.3885685,-0.004 -0.8603693,-0.03321 -1.048446,-0.06477 z"
+       id="path843" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none"
+       x="0.8018083"
+       y="8.0849037"
+       id="text863"><tspan
+         sodipodi:role="line"
+         id="tspan861"
+         x="0.8018083"
+         y="8.0849037"
+         style="font-size:4.93889px;fill:#ffffff;fill-opacity:1;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none">E i O</tspan></text>
+  </g>
+</svg>

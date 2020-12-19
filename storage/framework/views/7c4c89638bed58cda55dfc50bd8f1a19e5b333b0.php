@@ -1,36 +1,22 @@
 
 
-<?php $__env->startSection('contentheader_title'); ?>
-    <?php echo e(trans('examenes.superior_title')); ?>
+<?php $__env->startSection('contentheader_title'); ?><?php echo e(trans('examenes.superior_title')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('contentheader_h1'); ?><?php echo e(trans('examenes.superior_h1')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('contentheader_h1'); ?>
-    <?php echo e(trans('examenes.superior_h1')); ?>
+<?php $__env->startSection('breadcrumb1'); ?><a href="/examenes-jqcv"><?php echo e(trans('examenes.jqcv_breadcrumb')); ?></a><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('descripcion'); ?><?php echo e(trans('examenes.superior_descripcion')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('breadcrumb1'); ?>
-	<a href="/examenes-jqcv"><?php echo e(trans('examenes.jqcv_breadcrumb')); ?></a>
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('descripcion'); ?>
-    <?php echo e(trans('examenes.superior_descripcion')); ?>
-
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('keywords'); ?>
-    <?php echo e(trans('examenes.superior_keywords')); ?>
-
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('keywords'); ?><?php echo e(trans('examenes.superior_keywords')); ?><?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_content'); ?>
 
 <div class="comment-text">
-	<p><?php echo e(html_entity_decode(trans('examenes.superior_texto1') )); ?></p>
-	<p><?php echo e(html_entity_decode(trans('examenes.superior_texto2') )); ?></p>
-	<p><?php echo e(html_entity_decode(trans('examenes.superior_texto3') )); ?></p>
-	<p><?php echo e(html_entity_decode(trans('examenes.superior_texto4') )); ?></p>
+	<p><?php echo e(trans('examenes.superior_texto1')); ?></p>
+	<p><?php echo e(trans('examenes.superior_texto2')); ?></p>
+	<p><?php echo trans('examenes.superior_texto3'); ?></p>
+	<p><?php echo e(trans('examenes.superior_texto4')); ?></p>
 </div>
 
 <div class="row mt-5">
@@ -91,7 +77,7 @@
 											</td>
 											<td><span class="badge bg-red"><?php echo e($examen['porcentaje']); ?>%</span></td>
 										</tr>
-									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>					
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 							<?php endif; ?>
 						<?php endif; ?>
@@ -101,7 +87,6 @@
 		</div>
 	</div>
 </div>
-
 <?php $__env->stopSection(); ?>
 
 

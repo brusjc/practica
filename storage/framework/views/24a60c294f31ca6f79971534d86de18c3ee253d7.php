@@ -14,7 +14,7 @@
 <meta name="DC.Creator" content="Bruno Jiménez" />
 <meta name="google-site-verification" content="nG2hpUXdyDL_NjzC_PVq-WdbfMnDlcz_I3if5hcURhM" />
 
-<link  rel="icon"   href="img/favicon.png" type="image/png" />
+<link rel="icon" href="img/favicon.png" type="image/png" />
 
 <!-- Script de Google Analitics -->
 <script>
@@ -26,5 +26,4 @@
 <link rel="canonical" href="<?php echo e(Request::fullUrl()); ?>" />
 
 <title><?php echo $__env->yieldContent("contentheader_title"); ?></title>
-
 <?php /**PATH C:\xampp\htdocs\practica\resources\views/comunes/headHtml.blade.php ENDPATH**/ ?>

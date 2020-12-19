@@ -16,8 +16,7 @@ class EjercicioController extends Controller
 
     public function usuarioActual()
     {
-        $user = Auth::user();
-        $usuario = Auth::id();
+        $usuario = Auth::user()->id;
         return $usuario;
     }
 
@@ -28,16 +27,23 @@ class EjercicioController extends Controller
 
     public function store($ejercicio)
     {
-        //Paso 1:Comprobamos las variables
+        //Paso 1:Comprobamos si el usuario está registrado
+        if(\Auth::check())
+        {
+            $ejercicio['user']=$this->usuarioActual();
+        } else {
+            $ejercicio['user']=1;
+        }            
+
+        //Paso 2:Comprobamos las variables
         $ejercicio['pagina_id']=(int)$ejercicio['pagina_id'];
-        $ejercicio['user']=$this->usuarioActual();
         $ejercicio['contestadas']=0;
         $ejercicio['nota']=0.00;
         if($ejercicio['pagina_id']==0 || $ejercicio['user']==0){
             return response()->json(['status' =>['error'=>3, 'message'=>'Error en datos iniciales'], 'data'=>null]);
         }
 
-        //Paso2: ejecutamos la consulta
+        //Paso3: ejecutamos la consulta
         try {
             $newejercicio = new Ejercicio();
             $newejercicio->pagina_id = $ejercicio['pagina_id'];
@@ -50,12 +56,12 @@ class EjercicioController extends Controller
             return response()->json(['status'=>['error'=>1, 'message'=>'Error al obtener datos'], 'data'=>null]);
         }        
 
-        //Paso 3: enviamos el json
+        //Paso 4: enviamos el json
         if(!$registrofinal){
-            return response()->json(['status'=>['error'=>1, 'message'=>'No hay datos'], 'data'=>null]);
+            return response()->json(['status'=>['error'=>2, 'message'=>'No hay datos'], 'data'=>null]);
         } else {
             return response()->json(['status'=>['error'=>0, 'message'=>''], 'data'=>$registrofinal]);
-        } 
+        }
     }
 
     public function update($ejercicio, $id)
@@ -117,6 +123,38 @@ class EjercicioController extends Controller
             return response()->json(['status'=>['error'=>0, 'message'=>''], 'data'=>$dato]);
         }
     }
+
+    public function showXIdXUser($id)
+    {
+        //Paso 1: Sanetizamos las variables
+        $id=(int)$id;
+        if($id==0) {
+            return response()->json(['status' =>['error'=>1, 'message'=>'EjPXId:Error en datos iniciales'], 'data'=>null]);
+        }
+
+        //Paso 2: Obtenemos las preguntas sin contestar
+        try {
+            $dato = Ejercicio::where('pagina_id', $id)
+                ->where('user_id', $this->usuarioActual())
+                //->where('user_id', Auth::user()->id)
+                ->get();
+        } catch (\Exception $e) {
+            return response()->json(['status'=>['error'=>1, 'message'=>'EjPXId: Error al obtener los datos'], 'data'=>null]);
+        }
+
+        //Paso 3: devolvemos la respuesta
+        if(count($dato)==0){
+            return response()->json(['status'=>['error'=>2, 'message'=>'EjPXId: No hay ningún dato con estas características'], 'data'=>null]);
+        } else {
+            return response()->json(['status'=>['error'=>0, 'message'=>''], 'data'=>$dato]);
+        }
+    }
+
+
+//*******
+//* WEB *
+//*******
+
 
 
 

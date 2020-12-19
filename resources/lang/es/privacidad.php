@@ -5,7 +5,19 @@ return [
     /*
     | Páginas de la política de privacidad
     */
+
+
+
+    'consentimiento_texto1' => "Este sitio web utiliza cookies para que usted tenga la mejor experiencia de usuario. Si continúa navegando está dando su consentimiento a nuestra ",
+    'consentimiento_texto2' => " y la aceptación de nuestra ",
+    'consentimiento_texto3' => 'Aceptar',
+
+
+
+
+    'cookies_breadcrumb' => 'Política de cookies de www.practicavalenciano.es',
     'cookies_title' => 'Política de cookies de www.practicavalenciano.es',
+    'cookies_h1' => 'Política de cookies de www.practicavalenciano.es',
     'cookies_titulo01' => '¿Qué tipos de cookies utiliza esta página web?',
 
     'cookies_texto01' => 'Cookie es un fichero que se descarga en su ordenador al acceder a determinadas páginas web. Las cookies permiten a una página web, entre otras cosas, almacenar y recuperar información sobre los hábitos de navegación de un usuario o de su equipo y, dependiendo de la información que contengan y de la forma en que utilice su equipo, pueden utilizarse para reconocer al usuario. El navegador del usuario memoriza cookies en el disco duro solamente durante la sesión actual ocupando un espacio de memoria mínimo y no perjudicando al ordenador. Las cookies no contienen ninguna clase de información personal específica, y la mayoría de las mismas se borran del disco duro al finalizar la sesión de navegador (las denominadas cookies de sesión).',
@@ -29,7 +41,9 @@ return [
 
 
 
-	'privacidad_title' => 'Política de Privacidad de www.practicavalenciano.es',
+    'privacidad_breadcrumb' => 'Política de Privacidad de www.practicavalenciano.es',
+    'privacidad_title' => 'Política de Privacidad de www.practicavalenciano.es',
+	'privacidad_h1' => 'Política de Privacidad de www.practicavalenciano.es',
 
 	'privacidad_titulo01' => 'Introducción.',
 	'privacidad_titulo02' => 'Responsable legal',

@@ -42,7 +42,7 @@ class DictatController extends Controller
         $texto = str_replace("</p>", ' ', $texto);
 
         //Paso 3: eliminamos los carecteres especiales
-        $texto = preg_replace("([^A-Za-z0-9 !'áéíóúàèìòù-·çÇ])", ' ', $texto);
+        $texto = preg_replace("([^A-Za-z0-9 !'áéíóúÁÉÍÓÚàèìòùÀÈÌÒÙ-·çÇ])", ' ', $texto);
         
         //Paso 4: Eliminamos dobles espacios
         for ($x=1; $x<=3; $x++)
@@ -91,8 +91,6 @@ class DictatController extends Controller
         $resultado = @json_decode(json_encode($resultado), true);
         $resultado=$resultado['original']['data'][0];
         //return $resultado;
-
-
         
         //url de vuelta
         session(['BC1' => '/dictats/'.$id]);
@@ -105,21 +103,16 @@ class DictatController extends Controller
 
         //Paso 4: redirigimo a la vista
         //return view('paginas.examenes.exameninicio', compact('examen'));
-        
-
-
     }
-
 
     public function comprovaDictat(Request $request)
     {
 
         $respuesta=$request->all();
-//return $respuesta;
+        //return $respuesta;
+
         //Paso 1:Comprobamos las variables
         $respuesta['dictado_id']=(int)$respuesta['dictado_id'];
-
-
         if ($respuesta['dictado_id']==0) {
             return response()->json(["status" =>['error'=>3, "message"=>"Error en datos iniciales"], 'data'=>null]);
         }
@@ -128,7 +121,7 @@ class DictatController extends Controller
         $resultado=$this->showXId($respuesta['dictado_id']);
         $resultado = @json_decode(json_encode($resultado), true);
         $resultado=$resultado['original']['data'][0];
-//return $resultado;
+        //return $resultado;
 
         //Paso 3: limpiamos los textos
         $textoalumno=$this->limpiaTexto($respuesta['textoalumno']);
@@ -137,108 +130,537 @@ class DictatController extends Controller
         //Paso 4: Comparamos los textos
         $dictat=$this->parteTexto($textodictat);
         $alumno=$this->parteTexto($textoalumno);
-//return $dictat;
+        //return $dictat;
 
         $error=0;
         $errores[]="empezamos";
         $y=0;
         $res='<table border="1">';
         $res.='<tr><td>id</td><td>Texto X</td><td>Y</td><td>Texto Y</td><td>resultado</td><td>Errores</td><td>Texto Y</td><td>Z</td></tr>';
-
-
         $iguales=0;
+
+        //Revisamos cada palabra del dictado correcto
         for ($x=0; $x<=count($dictat)-1; $x++)
-        {
-            $z=0;
-            $res.='<tr>';
-            $res.='<td>'.$x.'</td>';
-            $res.='<td>'.$dictat[$x].'</td>';
-            $res.='<td>'.$y.'</td>';
-            $res.='<td>'.$alumno[$y].'</td>';
-            
-            if(isset($alumno[$x]))
+        {  
+            //A: Vemos si existe esa posición en alumno          
+            if(!isset($alumno[$y]))
             {
+                $errores[$x]=1;
+                $res.='<tr>';
+                $res.='<td>'.$x.'</td>';
+                $res.='<td>'.$dictat[$x].'</td>';
+                $res.='<td></td>';
+                $res.='<td></td>';
+                $res.='<td>'.$errores[$x].'</td>';
+                $res.='<td>Palabra no escrita</td>';
+                $res.='<td>'.$z.'</td>';
+            } else {
+                $res.='<tr>';
+                $res.='<td>'.$x.'</td>';
+                $res.='<td>'.$dictat[$x].'</td>';
+                $res.='<td>'.$y.'</td>';
+                $res.='<td>'.$alumno[$y].'</td>';
+
+                //B: Alumno = Dictado
                 if($dictat[$x]==$alumno[$y])
                 {
                     $errores[$x]=0;
                     $iguales++;
                     $res.='<td>ok</td><td>'.$error.'</td><td>'.$alumno[$y].'</td><td>'.$z.'</td>';
                 } else {
-                    $res.='<td>Error</td>';
+                    //C: No es igual Alumno que dictado
 
-                    //Vemos si hay palabras de más
                     //Si la misma palabra está más adelante
                     $encontrado=0;
                     $contador=0;
                     for($z=1; $z<=4; $z++)
                     {
-                        if(isset($alumno[$x+$z]))
+                        if(isset($alumno[$y+$z]))
                         {
                             if($dictat[$x]==$alumno[$y+$z])
                             {
                                 $y=$y+$z;
                                 $encontrado=1;
                                 break;
-                            } else {
-                                $contador++;
                             }
                         }
                     }
-                    if($encontrado==1)
+
+                    if($encontrado==0)
                     {
-                        $errores[$x]=1+$contador;
+                        //C1: No existe en el texto del alumno
+                        $errores[$x]=1;
+                        $res.='<td>'.$errores[$x].'</td>';
+                        $res.='<td>Palabra no escrita</td>';
+                        $res.='<td>'.$z.'</td>';
+                        $y--;
+                    } else {
+                        //C2: existe el texto en otra posición
+                        //Si el anterio es error no cuantificamos éste
+                        if($errores[$x-1]=1)
+                        {
+                            $errores[$x]=0;
+                        } else {
+                            $errores[$x]=1;
+                        }
                         $res.='<td>'.$errores[$x].'</td>';
                         $res.='<td>'.$alumno[$y].'</td>';
                         $res.='<td>'.$z.'</td>';
-                        //Falta cuantificar los errores
-                    } else {
-                        //Vemos si no ha escrito la palabra
-                        $encontrado=0;
-                        for($z=1; $z<=3; $z++)
-                        {
-                            if(isset($dictat[$x+$z]))
-                            {
-                                if($dictat[$x+$z]==$alumno[$y])
-                                {
-                                    $y--;
-                                    $encontrado=1;
-                                    break;
-                                }
-                            }
-                        }
-                        if($encontrado==1)
-                        {
-                            $errores[$x]=1;
-                            $res.='<td>'.$errores[$x].'</td>';
-                            $res.='<td>Palabra no escrita</td>';
-                            $res.='<td>'.$z.'</td>';
-                            //Falta cuantificar los errores
-                        }
                     }
                 }
-
             }
             $res.='</tr>';
             $y++;
         }
-       $res.='</table>'; 
-//return '<br/><br/>Número de errores='.array_sum($errores).$res;
+
+
+        //D: comprobamos si hay más palabras en el texto del alumno
+        if(isset($alumno[$y]))
+        {
+            $a=0;
+            //return 'Hay más palabras '.$y.' --- '.count($alumno);
+            for($z=$y; $z<=count($alumno)-1; $z++)
+            {
+                $a++;
+                $x++;
+                $errores[$x]=1;
+                $res.='<tr>';
+                $res.='<td>'.$x.'</td>';
+                $res.='<td></td>';
+                $res.='<td>'.$y.'</td>';
+                $res.='<td>'.$alumno[$z].'</td>';
+                $res.='<td>'.$errores[$x].'</td>';
+                $res.='<td>Palabra sobrante</td>';
+                $res.='<td>'.$z.'</td>';
+                $res.='</tr>';
+            }
+
+        }
+        $res.='</table>'; 
+        //return '<br/><br/>Número de errores='.array_sum($errores).$res;
 
         //Paso 5: url de vuelta
-        session(['BC1' => '/dictats/'.$respuesta['dictado_id']]);
-        session(['BC1texto' => 'trans("dictats_breadcrumb")']);
-        session(['BC2' => '/exameninicio/'.$respuesta['dictado_id']]);
-        session(['BC2texto' => 'Areas']);
-        session(['BC4' => '/exameninicio/'.$respuesta['dictado_id']]);
-        session(['BC4texto' => 'Areas']);
+        session(['BC3' => '/exameninicio/'.$respuesta['dictado_id']]);
+        session(['BC3texto' => 'Comprobador']);
         //return session('BC1texto');
 
         //Paso 6: redirigimo a la vista
         return view('paginas.dictats.comprovadictat', compact('dictat', 'alumno', 'errores' ));
-        
-
     }
 
+    public function dictats($idm)
+    {
+        //Paso 1: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            if(session('lang')=="es")
+            {
+               return redirect('/es/dictats');
+            } else {
+               return redirect('/va/dictats');
+            }
+        }
+
+        //Paso 2: Creamos los breadcrumbs
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/dictats']);
+                session(['BC1texto' => 'Dictados']);
+                break;
+            case "va":
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                break;
+            default:
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                break;
+        }
+
+        //Paso 3: Redirigimos a la vista
+        $miurl='/'.session('lang').'/dictats';
+        return view('paginas.dictats.index', compact('miurl'));
+    }
+
+    public function dictat200906mm($idm)
+    {
+        //Paso 1: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            if(session('lang')=="es")
+            {
+               return redirect('/es/dictat-mitja-junio-2009-mati');
+            } else {
+               return redirect('/va/dictat-mitja-junio-2009-mati');
+            }
+        }
+
+        //Paso 2: Creamos los breadcrumbs
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/dictats']);
+                session(['BC1texto' => 'Dictados']);
+                session(['BC2' => '/es/dictat-mitja-junio-2009-mati']);
+                session(['BC2texto' => 'Mitjà junio 2009 mañana']);
+                break;
+            case "va":
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-junio-2009-mati']);
+                session(['BC2texto' => 'juny 2009 Mitjà matí']);
+                break;
+            default:
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-junio-2009-mati']);
+                session(['BC2texto' => 'juny 2009 Mitjà matí']);
+                break;
+        }
+
+        //Paso 3: Redirigimos a la vista
+        $miurl='/'.session('lang').'/dictat-mitja-junio-2009-mati';
+        return view('paginas.dictats.dictat200906mm', compact('miurl'));
+    }
+
+    public function dictat200906mv($idm)
+    {
+        //Paso 1: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            if(session('lang')=="es")
+            {
+               return redirect('/es/dictat-mitja-junio-2009-vesprada');
+            } else {
+               return redirect('/va/dictat-mitja-junio-2009-vesprada');
+            }
+        }
+
+        //Paso 2: Creamos los breadcrumbs
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/dictats']);
+                session(['BC1texto' => 'Dictados']);
+                session(['BC2' => '/es/dictat-mitja-junio-2009-vesprada']);
+                session(['BC2texto' => 'Mitjà junio 2009 tarde']);
+                break;
+            case "va":
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-junio-2009-vesprada']);
+                session(['BC2texto' => 'juny 2009 Mitjà vesprada']);
+                break;
+            default:
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-junio-2009-vesprada']);
+                session(['BC2texto' => 'juny 2009 Mitjà vesprada']);
+                break;
+        }
+
+        //Paso 3: Redirigimos a la vista
+        $miurl='/'.session('lang').'/dictat-mitja-junio-2009-vesprada';
+        return view('paginas.dictats.dictat200906mv', compact('miurl'));
+    }
+
+    public function dictat201006mm($idm)
+    {
+        //Paso 1: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            if(session('lang')=="es")
+            {
+               return redirect('/es/dictat-mitja-junio-2010-mati');
+            } else {
+               return redirect('/va/dictat-mitja-junio-2010-mati');
+            }
+        }
+
+        //Paso 2: Creamos los breadcrumbs
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/dictats']);
+                session(['BC1texto' => 'Dictados']);
+                session(['BC2' => '/es/dictat-mitja-junio-2010-mati']);
+                session(['BC2texto' => 'Mitjà junio 2010 mañana']);
+                break;
+            case "va":
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-junio-2010-mati']);
+                session(['BC2texto' => 'juny 2010 Mitjà matí']);
+                break;
+            default:
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-junio-2010-mati']);
+                session(['BC2texto' => 'juny 2010 Mitjà matí']);
+                break;
+        }
+
+        //Paso 3: Redirigimos a la vista
+        $miurl='/'.session('lang').'/dictat-mitja-junio-2010-mati';
+        return view('paginas.dictats.dictat201006mm', compact('miurl'));
+    }
+
+    public function dictat201006mv($idm)
+    {
+        //Paso 1: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            if(session('lang')=="es")
+            {
+               return redirect('/es/dictat-mitja-junio-2010-vesprada');
+            } else {
+               return redirect('/va/dictat-mitja-junio-2010-vesprada');
+            }
+        }
+
+        //Paso 2: Creamos los breadcrumbs
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/dictats']);
+                session(['BC1texto' => 'Dictados']);
+                session(['BC2' => '/es/dictat-mitja-junio-2010-vesprada']);
+                session(['BC2texto' => 'Mitjà junio 2010 tarde']);
+                break;
+            case "va":
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-junio-2010-vesprada']);
+                session(['BC2texto' => 'juny 2010 Mitjà vesprada']);
+                break;
+            default:
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-junio-2010-vesprada']);
+                session(['BC2texto' => 'juny 2010 Mitjà vesprada']);
+                break;
+        }
+
+        //Paso 3: Redirigimos a la vista
+        $miurl='/'.session('lang').'/dictat-mitja-junio-2010-vesprada';
+        return view('paginas.dictats.dictat201006mv', compact('miurl'));
+    }
+
+    public function dictat201011mm($idm)
+    {
+        //Paso 1: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            if(session('lang')=="es")
+            {
+               return redirect('/es/dictat-mitja-novembre-2010-mati');
+            } else {
+               return redirect('/va/dictat-mitja-novembre-2010-mati');
+            }
+        }
+
+        //Paso 2: Creamos los breadcrumbs
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/dictats']);
+                session(['BC1texto' => 'Dictados']);
+                session(['BC2' => '/es/dictat-mitja-novembre-2010-mati']);
+                session(['BC2texto' => 'Mitjà noviembre 2010 mañana']);
+                break;
+            case "va":
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-novembre-2010-mati']);
+                session(['BC2texto' => 'novembre 2010 Mitjà matí']);
+                break;
+            default:
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-novembre-2010-mati']);
+                session(['BC2texto' => 'novembre 2010 Mitjà matí']);
+                break;
+        }
+
+        //Paso 3: Redirigimos a la vista
+        $miurl='/'.session('lang').'/dictat-mitja-novembre-2010-mati';
+        return view('paginas.dictats.dictat201011mm', compact('miurl'));
+    }
+
+    public function dictat201111mm($idm)
+    {
+        //Paso 1: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            if(session('lang')=="es")
+            {
+               return redirect('/es/dictat-mitja-novembre-2011-mati');
+            } else {
+               return redirect('/va/dictat-mitja-novembre-2011-mati');
+            }
+        }
+
+        //Paso 2: Creamos los breadcrumbs
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/dictats']);
+                session(['BC1texto' => 'Dictados']);
+                session(['BC2' => '/es/dictat-mitja-novembre-2011-mati']);
+                session(['BC2texto' => 'Mitjà noviembre 2011 mañana']);
+                break;
+            case "va":
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-novembre-2011-mati']);
+                session(['BC2texto' => 'novembre 2011 Mitjà matí']);
+                break;
+            default:
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-novembre-2011-mati']);
+                session(['BC2texto' => 'novembre 2011 Mitjà matí']);
+                break;
+        }
+
+        //Paso 3: Redirigimos a la vista
+        $miurl='/'.session('lang').'/dictat-mitja-novembre-2011-mati';
+        return view('paginas.dictats.dictat201111mm', compact('miurl'));
+    }
+
+    public function dictat201111mv($idm)
+    {
+        //Paso 1: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            if(session('lang')=="es")
+            {
+               return redirect('/es/dictat-mitja-novembre-2011-vesprada');
+            } else {
+               return redirect('/va/dictat-mitja-novembre-2011-vesprada');
+            }
+        }
+
+        //Paso 2: Creamos los breadcrumbs
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/dictats']);
+                session(['BC1texto' => 'Dictados']);
+                session(['BC2' => '/es/dictat-mitja-novembre-2011-vesprada']);
+                session(['BC2texto' => 'Mitjà noviembre 2011 tarde']);
+                break;
+            case "va":
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-novembre-2011-vesprada']);
+                session(['BC2texto' => 'novembre 2011 Mitjà vesprada']);
+                break;
+            default:
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-mitja-novembre-2011-vesprada']);
+                session(['BC2texto' => 'novembre 2011 Mitjà vesprada']);
+                break;
+        }
+
+        //Paso 3: Redirigimos a la vista
+        $miurl='/'.session('lang').'/dictat-mitja-novembre-2011-vesprada';
+        return view('paginas.dictats.dictat201111mv', compact('miurl'));
+    }
+
+    public function dictat200906sm($idm)
+    {
+        //Paso 1: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            if(session('lang')=="es")
+            {
+               return redirect('/es/dictat-superior-junio-2009-mati');
+            } else {
+               return redirect('/va/dictat-superior-junio-2009-mati');
+            }
+        }
+
+        //Paso 2: Creamos los breadcrumbs
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/dictats']);
+                session(['BC1texto' => 'Dictados']);
+                session(['BC2' => '/es/dictat-superior-junio-2009-mati']);
+                session(['BC2texto' => 'Superior junio 2009 mañana']);
+                break;
+            case "va":
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-superior-junio-2009-mati']);
+                session(['BC2texto' => 'juny 2009 Superior matí']);
+                break;
+            default:
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-superior-junio-2009-mati']);
+                session(['BC2texto' => 'juny 2009 Superior matí']);
+                break;
+        }
+
+        //Paso 3: Redirigimos a la vista
+        $miurl='/'.session('lang').'/dictat-superior-junio-2009-mati';
+        return view('paginas.dictats.dictat200906sm', compact('miurl'));
+    }
+
+    public function dictat201006sm($idm)
+    {
+        //Paso 1: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            if(session('lang')=="es")
+            {
+               return redirect('/es/dictat-superior-junio-2010-mati');
+            } else {
+               return redirect('/va/dictat-superior-junio-2010-mati');
+            }
+        }
+
+        //Paso 2: Creamos los breadcrumbs
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/dictats']);
+                session(['BC1texto' => 'Dictados']);
+                session(['BC2' => '/es/dictat-superior-junio-2010-mati']);
+                session(['BC2texto' => 'Superior junio 2010 mañana']);
+                break;
+            case "va":
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-superior-junio-2010-mati']);
+                session(['BC2texto' => 'juny 2010 Superior matí']);
+                break;
+            default:
+                session(['BC1' => '/va/dictats']);
+                session(['BC1texto' => 'Dictats']);
+                session(['BC2' => '/va/dictat-superior-junio-2010-mati']);
+                session(['BC2texto' => 'juny 2010 Superior matí']);
+                break;
+        }
+
+        //Paso 3: Redirigimos a la vista
+        $miurl='/'.session('lang').'/dictat-superior-junio-2010-mati';
+        return view('paginas.dictats.dictat201006sm', compact('miurl'));
+    }
 
 
 }

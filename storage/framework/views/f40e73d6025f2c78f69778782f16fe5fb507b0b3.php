@@ -1,24 +1,14 @@
 
 
-<?php $__env->startSection('contentheader_title'); ?>
-    Resultado de la práctica
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('contentheader_title'); ?><?php echo e(trans('practicas.practicas_breadcrumb')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('contentheader_h1'); ?>
-    Resultado de la práctica
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('contentheader_h1'); ?><?php echo e(trans('practicas.practicas_h1')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('breadcrumb1'); ?>
-	<a href="/vocabulario"><?php echo e(trans('vocabulario.vocabulario_breadcrumb')); ?></a>
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('breadcrumb1'); ?><a href="/vocabulario"><?php echo e(trans('vocabulario.vocabulario_breadcrumb')); ?></a> <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('descripcion'); ?>
-    "Resultado de la práctica"
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('descripcion'); ?><?php echo e(trans('practicas.practicas_descripcion')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('keywords'); ?>
-    "Realizando examen, realizando una práctica"
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('keywords'); ?><?php echo e(trans('practicas.practicas_keywords')); ?><?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_content'); ?>
 	<div class="callout callout-info">

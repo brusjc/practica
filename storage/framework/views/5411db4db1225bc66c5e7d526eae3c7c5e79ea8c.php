@@ -1,36 +1,22 @@
 
 
-<?php $__env->startSection('contentheader_title'); ?>
-    <?php echo e(trans('examenes.elemental_title')); ?>
+<?php $__env->startSection('contentheader_title'); ?><?php echo e(trans('examenes.elemental_title')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('contentheader_h1'); ?><?php echo e(trans('examenes.elemental_h1')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('contentheader_h1'); ?>
-    <?php echo e(trans('examenes.elemental_h1')); ?>
+<?php $__env->startSection('breadcrumb1'); ?><a href="/examenes-jqcv"><?php echo e(trans('examenes.jqcv_breadcrumb')); ?></a><?php $__env->stopSection(); ?>
 
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('descripcion'); ?><?php echo e(trans('examenes.elemental_descripcion')); ?><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('breadcrumb1'); ?>
-	<a href="/examenes-jqcv"><?php echo e(trans('examenes.jqcv_breadcrumb')); ?></a>
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('descripcion'); ?>
-    <?php echo e(trans('examenes.elemental_descripcion')); ?>
-
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('keywords'); ?>
-    <?php echo e(trans('examenes.elemental_keywords')); ?>
-
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('keywords'); ?><?php echo e(trans('examenes.elemental_keywords')); ?><?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_content'); ?>
 
 <div class="comment-text">
-	<p><?php echo e(html_entity_decode(trans('examenes.elemental_texto1') )); ?></p>
-	<p><?php echo e(html_entity_decode(trans('examenes.elemental_texto2') )); ?></p>
-	<p><?php echo e(html_entity_decode(trans('examenes.elemental_texto3') )); ?></p>
-	<p><?php echo e(html_entity_decode(trans('examenes.elemental_texto4') )); ?></p>
+	<p><?php echo trans('examenes.elemental_texto1'); ?></p>
+	<p><?php echo e(trans('examenes.elemental_texto2')); ?></p>
+	<p><?php echo e(trans('examenes.elemental_texto3')); ?></p>
+	<p><?php echo e(trans('examenes.elemental_texto4')); ?></p>
 </div>
 
 <div class="row mt-5">
@@ -81,7 +67,9 @@
 									<?php $__currentLoopData = $prueba['examen']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $examen): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 										<tr>
 											<td></td>
-											<td><a href="exameninicio/<?php echo e($examen['id']); ?>"><?php echo e(date('d-m-Y', strtotime($examen['created_at']))); ?></a></td>
+											<td>
+												<a href="exameninicio/<?php echo e($examen['id']); ?>"><?php echo e(date('d-m-Y', strtotime($examen['created_at']))); ?></a>
+											</td>
 											<td>
 												<div class="progress progress-xs">
 													<div class="progress-bar progress-bar-danger">
@@ -89,9 +77,11 @@
 													</div>
 												</div>
 											</td>
-											<td><span class="badge bg-red"><?php echo e($examen['porcentaje']); ?>%</span></td>
+											<td>
+												<span class="badge bg-red"><?php echo e($examen['porcentaje']); ?>%</span>
+											</td>
 										</tr>
-									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>					
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 							<?php endif; ?>
 						<?php endif; ?>
@@ -101,7 +91,6 @@
 		</div>
 	</div>
 </div>
-
 <?php $__env->stopSection(); ?>
 
 

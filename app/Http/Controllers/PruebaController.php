@@ -155,847 +155,1109 @@ class PruebaController extends Controller
         }
     }
 
+    public function mesano($codigo)
+    {
+        //Obtenemos el mes y el año en una matriz co ambos valores
+        $mes=substr($codigo, 4, 2);
+
+        switch ($mes) {
+            case 1:
+                $datos['mes']='gener';
+                break;
+            case 2:
+                $datos['mes']='febrer';
+                break;
+            case 3:
+                $datos['mes']='març';
+                break;
+            case 4:
+                $datos['mes']='abril';
+                break;
+            case 5:
+                $datos['mes']='maig';
+                break;
+            case 6:
+                $datos['mes']='juny';
+                break;
+            case 7:
+                $datos['mes']='juliol';
+                break;
+            case 8:
+                $datos['mes']='agost';
+                break;
+            case 9:
+                $datos['mes']='setembre';
+                break;
+            case 10:
+                $datos['mes']='octubre';
+                break;
+            case 11:
+                $datos['mes']='novembre';
+                break;
+            case 12:
+                $datos['mes']='desembre';
+                break;
+        }
+        
+        $datos['ano']=substr($codigo, 0,4);
+        return $datos;
+    }
+
+    public function examenes($codigo)
+    {
+        if(Auth::guest())
+        {
+            //return $datos;
+            $examenes=0; //Si no está registrado no se visualizan exámenes
+        } else {
+            //Obtenemos las pruebas del usuario
+            $usu = $this->usuarioActual();
+            
+            $examenes = app('App\Http\Controllers\ExamenController')->showXCodigo($codigo);
+            $examenes = @json_decode(json_encode($examenes), true);
+            //return $examenes;
+
+            if($examenes['original']['status']['error']==0)
+            {
+                foreach($examenes['original']['data'] as $key=>$examen) 
+                {
+                    if($examen['contestadas']==0)
+                    {
+                        $examenes['original']['data'][$key]['porcentaje']=0;
+                    } else {           
+                        $examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'], $examen['total'])/10;
+                    }
+                }
+            }
+        }
+        return $examenes;
+    }
+
 
 //****************************
 //* páginas de examenes JQCV *
 //****************************
 
 //Funciones para páginas de examenes JQCV
-    public function pruebasjqcv()
+ 
+    public function pruebasjqcv($idm)
     {
-        $dato = Grado::all();
-        $respuesta=["status" =>['error'=>0, "message"=>""], 'data'=>$dato];
+        //return $idm;
+        $respuesta = app('App\Http\Controllers\GradoController')->show();
+        $respuesta = @json_decode(json_encode($respuesta), true);
+        $respuesta=$respuesta['original']['data'];
         //return $respuesta;
+        
+        //Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('es/examenes-jqcv');
+            } else {
+               return redirect('va/examenes-jqcv');
+            }
+        }
 
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                break;
+        }
 
-        return view('paginas.examenes.index', compact('respuesta'));
+        return view('paginas.examenes.index', compact('exa', 'respuesta'));
+    }
+ 
+    public function pruebas_a1($idm)
+    {
+        //Paso 1: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('es/examenes-a1');
+            } else {
+               return redirect('va/examenes-a1');
+            }
+        }
+
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-a1']);
+                session(['BC2texto' => 'Exámenes A1']);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-a1']);
+                session(['BC2texto' => 'Exàmens A1']);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-a1']);
+                session(['BC2texto' => 'Exàmens A1']);
+                break;
+        }
+
+        $miurl='/'.session('lang').'/examen-a1';
+        //return $miurl;
+
+        //Paso 3: Redirigimos a la vista
+        return view('paginas.examenes.examenes-a1', compact('miurl'));
     }
 
-    public function pruebasa2()
+    public function pruebas_a2($idm)
     {
         //Paso 1: Obtenemos las distintas pruebas del grado elemental
         $pruebas = $this->showXGrado(6);
         $pruebas = @json_decode(json_encode($pruebas), true);
         //return $pruebas;
-        
-        /*
-        //Paso 2: Obtenemos los exámenes realizados por el alumno del grado elemental
-        $examenes = app('App\Http\Controllers\ExamenController')->showXGrado(1);
-        $examenes = @json_decode(json_encode($examenes), true);
-        //return $examenes;
-        if($examenes['original']['status']['error']==0)
-        {
-            foreach ($examenes['original']['data'] as $key=>$examen) {
-                $examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'],$examen['total'])/10;
-            }
-        }
-        //return $examenes;
-        */
                 
         $codigo=0;
+        
+        //Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('es/examenes-a2');
+            } else {
+               return redirect('va/examenes-a2');
+            }
+        }
 
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenb2']);
-        session(['BC2texto' => 'Exàmens B2']);
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-a2']);
+                session(['BC2texto' => 'Exámenes A2']);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-a2']);
+                session(['BC2texto' => 'Exàmens A2']);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-a2']);
+                session(['BC2texto' => 'Exàmens A2']);
+                break;
+        }
+
+        $miurl='/'.session('lang').'/examen-a2';
+        //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examena2', compact('pruebas', 'examenes', 'codigo'));
+        return view('paginas.examenes.examenes-a2', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
-    public function prueba_a2($codigo)
+    public function prueba_a2($idm, $codigo)
     {
-        //Obtenemos el mes y el año en una matriz co ambos valores
-        $mes=substr($codigo, 4, 2);
-		
-		switch ($mes) {
-			case 1:
-				$datos['mes']='gener';
-				break;
-			case 2:
-				$datos['mes']='febrer';
-				break;
-			case 3:
-				$datos['mes']='març';
-				break;
-			case 4:
-				$datos['mes']='abril';
-				break;
-			case 5:
-				$datos['mes']='maig';
-				break;
-			case 6:
-				$datos['mes']='juny';
-				break;
-			case 7:
-				$datos['mes']='juliol';
-				break;
-			case 8:
-				$datos['mes']='agost';
-				break;
-			case 9:
-				$datos['mes']='setembre';
-				break;
-			case 10:
-				$datos['mes']='octubre';
-				break;
-			case 11:
-				$datos['mes']='novembre';
-				break;
-			case 12:
-				$datos['mes']='desembre';
-				break;
-		}
-		
-        $datos['ano']=substr($codigo, 0,4);
+        //Paso 1: Obtenemos el mes y el año en una matriz co ambos valores
+        $datos = $this->mesano($codigo);
 
-		if(Auth::guest())
-		{
-			$examenes=null;  //Si no está registrado no se visualizan exámenes
-		} else {
-			//Obtenemos las pruebas del usuario
-			$usu = $this->usuarioActual();
-			
-			$examenes = app('App\Http\Controllers\ExamenController')->showXCodigo($codigo);
-			$examenes = @json_decode(json_encode($examenes), true);
-			//return $examenes;
+        //Paso 2: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('/es/examen-a2/'.$codigo);
+            } else {
+               return redirect('/va/examen-a2/'.$codigo);
+            }
+        }
 
-			if($examenes['original']['status']['error']==0)
-			{
-				foreach($examenes['original']['data'] as $key=>$examen) 
-				{
-					if($examen['contestadas']==0)
-					{
-						$examenes['original']['data'][$key]['porcentaje']=0;
-					} else {           
-						$examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'], $examen['total'])/10;
-					}
-				}
-			}
-		}
-		//return $examenes;
-		//return $ano;
-		//return $mes;
-		//return $datos;
+        //Paso 3: Obtenemos los exámenes realizados
+        $examenes = $this->examenes($codigo);
 
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examena2']);
-        session(['BC2texto' => 'Exàmens A2']);
-        session(['BC3' => '/examen_a2/'.$codigo]);
-        session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
-
-        return view('paginas.examenes.examen_a2', compact('datos', 'examenes', 'codigo'));
+        //Paso 4: url de vuelta
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-a2']);
+                session(['BC2texto' => 'Exámenes A2']);
+                session(['BC3' => '/es/examen-a2/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-a2']);
+                session(['BC2texto' => 'Exàmens A2']);
+                session(['BC3' => '/va/examen-a2/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-a2']);
+                session(['BC2texto' => 'Exàmens A2']);
+                session(['BC3' => '/va/examen-a2/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+        }
+        //Paso 5: Redirigimos al blade
+        return view('paginas.examenes.examen-a2', compact('datos', 'examenes', 'codigo'));
     }
 
-    public function pruebasb1()
+    public function pruebas_b1($idm)
     {
-
         //Paso 1: Obtenemos las distintas pruebas del grado elemental
         $pruebas = $this->showXGrado(7);
         $pruebas = @json_decode(json_encode($pruebas), true);
         //return $pruebas;
-        
-        /*
-        //Paso 2: Obtenemos los exámenes realizados por el alumno del grado elemental
-        $examenes = app('App\Http\Controllers\ExamenController')->showXGrado(1);
-        $examenes = @json_decode(json_encode($examenes), true);
-        //return $examenes;
-        if($examenes['original']['status']['error']==0)
-        {
-            foreach ($examenes['original']['data'] as $key=>$examen) {
-                $examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'],$examen['total'])/10;
-            }
-        }
-        //return $examenes;
-        */
                 
         $codigo=0;
+        
+        //Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return session('lang');
+            if(session('lang')=="es")
+            {
+                return redirect('/es/examenes-b1');
+            } else {
+                return redirect('/va/examenes-b1');
+            }
+        }
 
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenb1']);
-        session(['BC2texto' => 'Exàmens B1']);
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-b1']);
+                session(['BC2texto' => 'Exámenes B1']);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-b1']);
+                session(['BC2texto' => 'Exàmens B1']);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-b1']);
+                session(['BC2texto' => 'Exàmens B1']);
+                break;
+        }
+
+        $miurl='/'.session('lang').'/examen-b1';
+        //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenb1', compact('pruebas', 'examenes', 'codigo'));
+        return view('paginas.examenes.examenes-b1', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
-    public function prueba_b1($codigo)
+    public function prueba_b1($idm, $codigo)
     {
-        //Obtenemos el mes y el año en una matriz co ambos valores
-        $mes=substr($codigo, 4, 2);
-		
-		switch ($mes) {
-			case 1:
-				$datos['mes']='gener';
-				break;
-			case 2:
-				$datos['mes']='febrer';
-				break;
-			case 3:
-				$datos['mes']='març';
-				break;
-			case 4:
-				$datos['mes']='abril';
-				break;
-			case 5:
-				$datos['mes']='maig';
-				break;
-			case 6:
-				$datos['mes']='juny';
-				break;
-			case 7:
-				$datos['mes']='juliol';
-				break;
-			case 8:
-				$datos['mes']='agost';
-				break;
-			case 9:
-				$datos['mes']='setembre';
-				break;
-			case 10:
-				$datos['mes']='octubre';
-				break;
-			case 11:
-				$datos['mes']='novembre';
-				break;
-			case 12:
-				$datos['mes']='desembre';
-				break;
-		}
-		
-        $datos['ano']=substr($codigo, 0,4);
+        //Paso 1: Obtenemos el mes y el año en una matriz co ambos valores
+        $datos = $this->mesano($codigo);
 
-		if(Auth::guest())
-		{
-			$examenes=null;  //Si no está registrado no se visualizan exámenes
-		} else {
-			//Obtenemos las pruebas del usuario
-			$usu = $this->usuarioActual();
-			
-			$examenes = app('App\Http\Controllers\ExamenController')->showXCodigo($codigo);
-			$examenes = @json_decode(json_encode($examenes), true);
-			//return $examenes;
+        //Paso 2: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('/es/examen-b1/'.$codigo);
+            } else {
+               return redirect('/va/examen-b1/'.$codigo);
+            }
+        }
 
-			if($examenes['original']['status']['error']==0)
-			{
-				foreach($examenes['original']['data'] as $key=>$examen) 
-				{
-					if($examen['contestadas']==0)
-					{
-						$examenes['original']['data'][$key]['porcentaje']=0;
-					} else {           
-						$examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'], $examen['total'])/10;
-					}
-				}
-			}
-		}
-		//return $examenes;
-		//return $ano;
-		//return $mes;
-		//return $datos;
+        //Paso 3: Obtenemos los exámenes realizados
+        $examenes = $this->examenes($codigo);
 
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenb1']);
-        session(['BC2texto' => 'Exàmens B1']);
-        session(['BC3' => '/examen_b1/'.$codigo]);
-        session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
-
-        return view('paginas.examenes.examen_b1', compact('datos', 'examenes', 'codigo'));
+        //Paso 4: url de vuelta
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-b1']);
+                session(['BC2texto' => 'Exámenes B1']);
+                session(['BC3' => '/es/examen-b1/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-b1']);
+                session(['BC2texto' => 'Exàmens B1']);
+                session(['BC3' => '/va/examen-b1/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-b1']);
+                session(['BC2texto' => 'Exàmens B1']);
+                session(['BC3' => '/va/examen-b1/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+        }
+        //Paso 5: Redirigimos al blade
+        return view('paginas.examenes.examen-b1', compact('datos', 'examenes', 'codigo'));
     }
 
-    public function pruebasb2()
+    public function pruebas_b2($idm)
     {
-
         //Paso 1: Obtenemos las distintas pruebas del grado elemental
         $pruebas = $this->showXGrado(8);
         $pruebas = @json_decode(json_encode($pruebas), true);
         //return $pruebas;
-        
-        /*
-        //Paso 2: Obtenemos los exámenes realizados por el alumno del grado elemental
-        $examenes = app('App\Http\Controllers\ExamenController')->showXGrado(1);
-        $examenes = @json_decode(json_encode($examenes), true);
-        //return $examenes;
-        if($examenes['original']['status']['error']==0)
-        {
-            foreach ($examenes['original']['data'] as $key=>$examen) {
-                $examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'],$examen['total'])/10;
-            }
-        }
-        //return $examenes;
-        */
                 
         $codigo=0;
+        
+        //Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return session('lang');
+            if(session('lang')=="es")
+            {
+                return redirect('/es/examenes-b2');
+            } else {
+                return redirect('/va/examenes-b2');
+            }
+        }
 
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenb2']);
-        session(['BC2texto' => 'Exàmens B2']);
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-b2']);
+                session(['BC2texto' => 'Exámenes B2']);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-b2']);
+                session(['BC2texto' => 'Exàmens B2']);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-b2']);
+                session(['BC2texto' => 'Exàmens B2']);
+                break;
+        }
+
+        $miurl='/'.session('lang').'/examen-b2';
+        //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenb2', compact('pruebas', 'examenes', 'codigo'));
+        return view('paginas.examenes.examenes-b2', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
-    public function prueba_b2($codigo)
+    public function prueba_b2($idm, $codigo)
     {
-        //Obtenemos el mes y el año en una matriz co ambos valores
-        $mes=substr($codigo, 4, 2);
-		
-		switch ($mes) {
-			case 1:
-				$datos['mes']='gener';
-				break;
-			case 2:
-				$datos['mes']='febrer';
-				break;
-			case 3:
-				$datos['mes']='març';
-				break;
-			case 4:
-				$datos['mes']='abril';
-				break;
-			case 5:
-				$datos['mes']='maig';
-				break;
-			case 6:
-				$datos['mes']='juny';
-				break;
-			case 7:
-				$datos['mes']='juliol';
-				break;
-			case 8:
-				$datos['mes']='agost';
-				break;
-			case 9:
-				$datos['mes']='setembre';
-				break;
-			case 10:
-				$datos['mes']='octubre';
-				break;
-			case 11:
-				$datos['mes']='novembre';
-				break;
-			case 12:
-				$datos['mes']='desembre';
-				break;
-		}
-		
-        $datos['ano']=substr($codigo, 0,4);
+        //Paso 1: Obtenemos el mes y el año en una matriz co ambos valores
+        $datos = $this->mesano($codigo);
 
-		if(Auth::guest())
-		{
-			$examenes=null;  //Si no está registrado no se visualizan exámenes
-		} else {
-			//Obtenemos las pruebas del usuario
-			$usu = $this->usuarioActual();
-			
-			$examenes = app('App\Http\Controllers\ExamenController')->showXCodigo($codigo);
-			$examenes = @json_decode(json_encode($examenes), true);
-			//return $examenes;
+        //Paso 2: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('/es/examen-b2/'.$codigo);
+            } else {
+               return redirect('/va/examen-b2/'.$codigo);
+            }
+        }
 
-			if($examenes['original']['status']['error']==0)
-			{
-				foreach($examenes['original']['data'] as $key=>$examen) 
-				{
-					if($examen['contestadas']==0)
-					{
-						$examenes['original']['data'][$key]['porcentaje']=0;
-					} else {           
-						$examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'], $examen['total'])/10;
-					}
-				}
-			}
-		}
-		//return $examenes;
-		//return $ano;
-		//return $mes;
-		//return $datos;
+        //Paso 3: Obtenemos los exámenes realizados
+        $examenes = $this->examenes($codigo);
 
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenb2']);
-        session(['BC2texto' => 'Exàmens B2']);
-        session(['BC3' => '/examen_b2/'.$codigo]);
-        session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
-
-        return view('paginas.examenes.examen_b2', compact('datos', 'examenes', 'codigo'));
+        //Paso 4: url de vuelta
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-b2']);
+                session(['BC2texto' => 'Exámenes B2']);
+                session(['BC3' => '/es/examen-b2/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-b2']);
+                session(['BC2texto' => 'Exàmens B2']);
+                session(['BC3' => '/va/examen-b2/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-b2']);
+                session(['BC2texto' => 'Exàmens B2']);
+                session(['BC3' => '/va/examen-b2/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+        }
+        //Paso 5: Redirigimos al blade
+        return view('paginas.examenes.examen-b2', compact('datos', 'examenes', 'codigo'));
     }
 
-    public function pruebasc1()
+    public function pruebas_c1($idm)
     {
-
         //Paso 1: Obtenemos las distintas pruebas del grado elemental
         $pruebas = $this->showXGrado(9);
         $pruebas = @json_decode(json_encode($pruebas), true);
         //return $pruebas;
-        
-        /*
-        //Paso 2: Obtenemos los exámenes realizados por el alumno del grado elemental
-        $examenes = app('App\Http\Controllers\ExamenController')->showXGrado(1);
-        $examenes = @json_decode(json_encode($examenes), true);
-        //return $examenes;
-        if($examenes['original']['status']['error']==0)
-        {
-            foreach ($examenes['original']['data'] as $key=>$examen) {
-                $examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'],$examen['total'])/10;
-            }
-        }
-        //return $examenes;
-        */
                 
         $codigo=0;
+        
+        //Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return session('lang');
+            if(session('lang')=="es")
+            {
+                return redirect('/es/examenes-c1');
+            } else {
+                return redirect('/va/examenes-c1');
+            }
+        }
 
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenc1']);
-        session(['BC2texto' => 'Exàmens C1']);
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-c1']);
+                session(['BC2texto' => 'Exámenes C1']);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-c1']);
+                session(['BC2texto' => 'Exàmens C1']);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-c1']);
+                session(['BC2texto' => 'Exàmens C1']);
+                break;
+        }
+
+        $miurl='/'.session('lang').'/examen-c1';
+        //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenc1', compact('pruebas', 'examenes', 'codigo'));
+        return view('paginas.examenes.examenes-c1', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
-    public function prueba_c1($codigo)
+    public function prueba_c1($idm, $codigo)
     {
-        //Obtenemos el mes y el año en una matriz co ambos valores
-        $mes=substr($codigo, 4, 2);
-        if($mes == '06')
+        //Paso 1: Obtenemos el mes y el año en una matriz co ambos valores
+        $datos = $this->mesano($codigo);
+
+        //Paso 2: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
         {
-            $datos['mes'] = 'juny';
-        } else {
-            $datos['mes'] = 'novembre';
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('/es/examen-c1/'.$codigo);
+            } else {
+               return redirect('/va/examen-c1/'.$codigo);
+            }
         }
-        $datos['ano']=substr($codigo, 0,4);
 
-		if(Auth::guest())
-		{
-			$examenes=null;  //Si no está registrado no se visualizan exámenes
-		} else {
-			//Obtenemos las pruebas del usuario
-			$usu = $this->usuarioActual();
-			
-			$examenes = app('App\Http\Controllers\ExamenController')->showXCodigo($codigo);
-			$examenes = @json_decode(json_encode($examenes), true);
-			//return $examenes;
+        //Paso 3: Obtenemos los exámenes realizados
+        $examenes = $this->examenes($codigo);
 
-			if($examenes['original']['status']['error']==0)
-			{
-				foreach($examenes['original']['data'] as $key=>$examen) 
-				{
-					if($examen['contestadas']==0)
-					{
-						$examenes['original']['data'][$key]['porcentaje']=0;
-					} else {           
-						$examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'], $examen['total'])/10;
-					}
-				}
-			}
-		}
-		//return $examenes;
-		//return $ano;
-		//return $mes;
-
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenc1']);
-        session(['BC2texto' => 'Exàmens C1']);
-        session(['BC3' => '/examen_c1/'.$codigo]);
-        session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
-
-        return view('paginas.examenes.examen_c1', compact('datos', 'examenes', 'codigo'));
+        //Paso 4: url de vuelta
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-c1']);
+                session(['BC2texto' => 'Exámenes C1']);
+                session(['BC3' => '/es/examen-c1/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-c1']);
+                session(['BC2texto' => 'Exàmens C1']);
+                session(['BC3' => '/va/examen-c1/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-c1']);
+                session(['BC2texto' => 'Exàmens C1']);
+                session(['BC3' => '/va/examen-c1/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+        }
+        //Paso 5: Redirigimos al blade
+        return view('paginas.examenes.examen-c1', compact('datos', 'examenes', 'codigo'));
     }
 
-    public function pruebasc2()
+    public function pruebas_c2($idm)
     {
         //Paso 1: Obtenemos las distintas pruebas del grado elemental
         $pruebas = $this->showXGrado(10);
         $pruebas = @json_decode(json_encode($pruebas), true);
         //return $pruebas;
-        
-        /*
-        //Paso 2: Obtenemos los exámenes realizados por el alumno del grado elemental
-        $examenes = app('App\Http\Controllers\ExamenController')->showXGrado(1);
-        $examenes = @json_decode(json_encode($examenes), true);
-        //return $examenes;
-        if($examenes['original']['status']['error']==0)
-        {
-            foreach ($examenes['original']['data'] as $key=>$examen) {
-                $examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'],$examen['total'])/10;
-            }
-        }
-        return $examenes;
-        */
                 
         $codigo=0;
+        
+        //Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return session('lang');
+            if(session('lang')=="es")
+            {
+                return redirect('/es/examenes-c2');
+            } else {
+                return redirect('/va/examenes-c2');
+            }
+        }
 
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenc2']);
-        session(['BC2texto' => 'Exàmens C2']);
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-c2']);
+                session(['BC2texto' => 'Exámenes C2']);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-c2']);
+                session(['BC2texto' => 'Exàmens C2']);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-c2']);
+                session(['BC2texto' => 'Exàmens C2']);
+                break;
+        }
+
+        $miurl='/'.session('lang').'/examen-c2';
+        //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenc2', compact('pruebas', 'examenes', 'codigo'));
+        return view('paginas.examenes.examenes-c2', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
-    public function prueba_c2($codigo)
+    public function prueba_c2($idm, $codigo)
     {
-        //Obtenemos el mes y el año en una matriz co ambos valores
-        $mes=substr($codigo, 4, 2);
-        if($mes == '06')
+        //Paso 1: Obtenemos el mes y el año en una matriz co ambos valores
+        $datos = $this->mesano($codigo);
+
+        //Paso 2: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
         {
-            $datos['mes'] = 'juny';
-        } else {
-            $datos['mes'] = 'novembre';
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('/es/examen-c2/'.$codigo);
+            } else {
+               return redirect('/va/examen-c2/'.$codigo);
+            }
         }
-        $datos['ano']=substr($codigo, 0,4);
 
-		if(Auth::guest())
-		{
-			$examenes=null;  //Si no está registrado no se visualizan exámenes
-		} else {
-			//Obtenemos las pruebas del usuario
-			$usu = $this->usuarioActual();
-			
-			$examenes = app('App\Http\Controllers\ExamenController')->showXCodigo($codigo);
-			$examenes = @json_decode(json_encode($examenes), true);
-			//return $examenes;
+        //Paso 3: Obtenemos los exámenes realizados
+        $examenes = $this->examenes($codigo);
 
-			if($examenes['original']['status']['error']==0)
-			{
-				foreach($examenes['original']['data'] as $key=>$examen) 
-				{
-					if($examen['contestadas']==0)
-					{
-						$examenes['original']['data'][$key]['porcentaje']=0;
-					} else {           
-						$examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'], $examen['total'])/10;
-					}
-				}
-			}
-		}
-		//return $examenes;
-		//return $ano;
-		//return $mes;
-
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenc2']);
-        session(['BC2texto' => 'Exàmens C2']);
-        session(['BC3' => '/examen_c2/'.$codigo]);
-        session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
-
-        return view('paginas.examenes.examen_c2', compact('datos', 'examenes', 'codigo'));
+        //Paso 4: url de vuelta
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-c2']);
+                session(['BC2texto' => 'Exámenes C2']);
+                session(['BC3' => '/es/examen-c2/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-c2']);
+                session(['BC2texto' => 'Exàmens C2']);
+                session(['BC3' => '/va/examen-c2/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-c2']);
+                session(['BC2texto' => 'Exàmens C1']);
+                session(['BC3' => '/va/examen-c2/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+        }
+        //Paso 5: Redirigimos al blade
+        return view('paginas.examenes.examen-c2', compact('datos', 'examenes', 'codigo'));
     }
 
-
-
-    public function pruebaselemental()
+    public function pruebas_elemental($idm)
     {
-
         //Paso 1: Obtenemos las distintas pruebas del grado elemental
         $pruebas = $this->showXGrado(101);
         $pruebas = @json_decode(json_encode($pruebas), true);
         //return $pruebas;
-        
-        /*
-        //Paso 2: Obtenemos los exámenes realizados por el alumno del grado elemental
-        $examenes = app('App\Http\Controllers\ExamenController')->showXGrado(1);
-        $examenes = @json_decode(json_encode($examenes), true);
-        //return $examenes;
-        if($examenes['original']['status']['error']==0)
-        {
-            foreach ($examenes['original']['data'] as $key=>$examen) {
-                $examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'],$examen['total'])/10;
-            }
-        }
-        //return $examenes;
-        */
                 
         $codigo=0;
+        
+        //Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('es/examenes-elemental');
+            } else {
+               return redirect('va/examenes-elemental');
+            }
+        }
 
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenelemental']);
-        session(['BC2texto' => 'Exàmens Elemental']);
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-elemental']);
+                session(['BC2texto' => 'Exámenes Elemental']);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-elemental']);
+                session(['BC2texto' => 'Exàmens Elemental']);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-elemental']);
+                session(['BC2texto' => 'Exàmens Elemental']);
+                break;
+        }
+
+        $miurl='/'.session('lang').'/examen-elemental';
+        //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenelemental', compact('pruebas', 'examenes', 'codigo'));
+        return view('paginas.examenes.examenes-elemental', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
-    public function prueba_elemental($codigo)
+    public function prueba_elemental($idm, $codigo)
     {
-        //Obtenemos el mes y el año en una matriz co ambos valores
-        $mes=substr($codigo, 4, 2);
-        if($mes == '06')
+        //Paso 1: Obtenemos el mes y el año en una matriz co ambos valores
+        $datos = $this->mesano($codigo);
+
+        //Paso 2: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
         {
-            $datos['mes'] = 'juny';
-        } else {
-            $datos['mes'] = 'novembre';
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('/es/examen-elemental/'.$codigo);
+            } else {
+               return redirect('/va/examen-elemental/'.$codigo);
+            }
         }
-        $datos['ano']=substr($codigo, 0,4);
 
-		if(Auth::guest())
-		{
-			$examenes=null;  //Si no está registrado no se visualizan exámenes
-		} else {
-			//Obtenemos las pruebas del usuario
-			$usu = $this->usuarioActual();
-			
-			$examenes = app('App\Http\Controllers\ExamenController')->showXCodigo($codigo);
-			$examenes = @json_decode(json_encode($examenes), true);
-			//return $examenes;
+        //Paso 3: Obtenemos los exámenes realizados
+        $examenes = $this->examenes($codigo);
 
-			if($examenes['original']['status']['error']==0)
-			{
-				foreach($examenes['original']['data'] as $key=>$examen) 
-				{
-					if($examen['contestadas']==0)
-					{
-						$examenes['original']['data'][$key]['porcentaje']=0;
-					} else {           
-						$examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'], $examen['total'])/10;
-					}
-				}
-			}
-		}
-		//return $examenes;
-		//return $ano;
-		//return $mes;
-
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenelemental']);
-        session(['BC2texto' => 'Exàmens Elemental']);
-        session(['BC3' => '/examen_elemental/'.$codigo]);
-        session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
-
-        return view('paginas.examenes.examen_elemental', compact('datos', 'examenes', 'codigo'));
+        //Paso 4: url de vuelta
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-elemental']);
+                session(['BC2texto' => 'Exámenes Elemental']);
+                session(['BC3' => '/es/examen-elemental/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-elemental']);
+                session(['BC2texto' => 'Exàmens Elemental']);
+                session(['BC3' => '/va/examen-elemental/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-elemental']);
+                session(['BC2texto' => 'Exàmens Elemental']);
+                session(['BC3' => '/va/examen-elemental/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+        }
+        //Paso 5: Redirigimos al blade
+        return view('paginas.examenes.examen-elemental', compact('datos', 'examenes', 'codigo'));
     }
 
-    public function pruebasoral()
+    public function pruebas_oral($idm)
     {
         //Paso 1: Obtenemos las distintas pruebas del grado elemental
         $pruebas = $this->showXGrado(102);
         $pruebas = @json_decode(json_encode($pruebas), true);
         //return $pruebas;
-        
+                
         $codigo=0;
-
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenoral']);
-        session(['BC2texto' => 'Exàmens Oral']);
-
-        //Paso 2: Redirigimos a la vista
-        return view('paginas.examenes.examenoral', compact('pruebas', 'examenes', 'codigo'));
-    }
-
-    public function prueba_oral($codigo)
-    {
-        //Obtenemos el mes y el año en una matriz co ambos valores
-        $mes=substr($codigo, 4, 2);
-        if($mes == '06')
-        {
-            $datos['mes'] = 'juny';
-        } else {
-            $datos['mes'] = 'novembre';
-        }
-        $datos['ano']=substr($codigo, 0,4);
-
-		
-		if(Auth::guest())
-		{
-			$examenes=null;  //Si no está registrado no se visualizan exámenes
-		} else {
-			//Obtenemos las pruebas del usuario
-			$usu = $this->usuarioActual();
-			
-			$examenes = app('App\Http\Controllers\ExamenController')->showXCodigo($codigo);
-			$examenes = @json_decode(json_encode($examenes), true);
-			//return $examenes;
-
-			if($examenes['original']['status']['error']==0)
-			{
-				foreach($examenes['original']['data'] as $key=>$examen) 
-				{
-					if($examen['contestadas']==0)
-					{
-						$examenes['original']['data'][$key]['porcentaje']=0;
-					} else {           
-						$examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'], $examen['total'])/10;
-					}
-				}
-			}
-		}
-		//return $examenes;
-		//return $ano;
-		//return $mes;
-
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenoral']);
-        session(['BC2texto' => 'Exàmens Oral']);
-        session(['BC3' => '/examen_oral/'.$codigo]);
-        session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
         
-        return view('paginas.examenes.examen_oral', compact('datos', 'examenes', 'codigo'));
+        //Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('es/examenes-oral');
+            } else {
+               return redirect('va/examenes-oral');
+            }
+        }
+
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-oral']);
+                session(['BC2texto' => 'Exámenes Oral']);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-oral']);
+                session(['BC2texto' => 'Exàmens Oral']);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-oral']);
+                session(['BC2texto' => 'Exàmens Oral']);
+                break;
+        }
+
+        $miurl='/'.session('lang').'/examen-oral';
+        //return $miurl;
+
+        //Paso 3: Redirigimos a la vista
+        return view('paginas.examenes.examenes-oral', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
-    public function pruebasmitja()
+    public function prueba_oral($idm, $codigo)
+    {
+        //Paso 1: Obtenemos el mes y el año en una matriz co ambos valores
+        $datos = $this->mesano($codigo);
+
+        //Paso 2: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('/es/examen-oral/'.$codigo);
+            } else {
+               return redirect('/va/examen-oral/'.$codigo);
+            }
+        }
+
+        //Paso 3: Obtenemos los exámenes realizados
+        $examenes = $this->examenes($codigo);
+
+        //Paso 4: url de vuelta
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-oral']);
+                session(['BC2texto' => 'Exámenes Oral']);
+                session(['BC3' => '/es/examen-oral/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-oral']);
+                session(['BC2texto' => 'Exàmens Oral']);
+                session(['BC3' => '/va/examen-oral/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-oral']);
+                session(['BC2texto' => 'Exàmens Oral']);
+                session(['BC3' => '/va/examen-oral/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+        }
+        //Paso 5: Redirigimos al blade
+        return view('paginas.examenes.examen-oral', compact('datos', 'examenes', 'codigo'));
+    }
+
+    public function pruebas_mitja($idm)
     {
         //Paso 1: Obtenemos las distintas pruebas del grado elemental
         $pruebas = $this->showXGrado(103);
         $pruebas = @json_decode(json_encode($pruebas), true);
         //return $pruebas;
-        
+                
         $codigo=0;
-
-        //url de vuelta
-        session(['BC2' => '/examenmitja']);
-        session(['BC2texto' => 'Exàmens Mitjà']);
-
-        //Paso 2: Redirigimos a la vista
-        return view('paginas.examenes.examenmitja', compact('pruebas', 'examenes', 'codigo'));
-    }
-
-    public function prueba_mitja($codigo)
-    {
-        //Obtenemos el mes y el año en una matriz co ambos valores
-        $mes=substr($codigo, 4, 2);
-        if($mes == '06')
-        {
-            $datos['mes'] = 'juny';
-        } else {
-            $datos['mes'] = 'novembre';
-        }
-        $datos['ano']=substr($codigo, 0,4);
-
-
-		if(Auth::guest())
-		{
-			$examenes=null;  //Si no está registrado no se visualizan exámenes
-		} else {
-			$usu = $this->usuarioActual();
-			$examenes = app('App\Http\Controllers\ExamenController')->showXCodigo($codigo);
-			$examenes = @json_decode(json_encode($examenes), true);
-			//return $examenes;
-
-			if($examenes['original']['status']['error']==0)
-			{
-				foreach($examenes['original']['data'] as $key=>$examen) 
-				{
-					if($examen['contestadas']==0)
-					{
-						$examenes['original']['data'][$key]['porcentaje']=0;
-					} else {           
-						$examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'], $examen['total'])/10;
-					}
-				}
-			}
-			//return $examenes;
-			//return $ano;
-			//return $mes;
-		}
-		
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examenmitja']);
-        session(['BC2texto' => 'Exàmens Mitjà']);
-        session(['BC3' => '/examen_mitja/'.$codigo]);
-        session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
         
-        return view('paginas.examenes.examen_mitja', compact('datos', 'examenes', 'codigo'));
+        //Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('es/examenes-mitja');
+            } else {
+               return redirect('va/examenes-mitja');
+            }
+        }
+
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-mitja']);
+                session(['BC2texto' => 'Exámenes Mitjá']);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-mitja']);
+                session(['BC2texto' => 'Exàmens Mitjá']);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-mitja']);
+                session(['BC2texto' => 'Exàmens Mitjá']);
+                break;
+        }
+
+        $miurl='/'.session('lang').'/examen-mitja';
+        //return $miurl;
+
+        //Paso 3: Redirigimos a la vista
+        return view('paginas.examenes.examenes-mitja', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
-    public function pruebassuperior()
+    public function prueba_mitja($idm, $codigo)
+    {
+        //Paso 1: Obtenemos el mes y el año en una matriz co ambos valores
+        $datos = $this->mesano($codigo);
+
+        //Paso 2: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('/es/examen-mitja/'.$codigo);
+            } else {
+               return redirect('/va/examen-mitja/'.$codigo);
+            }
+        }
+
+        //Paso 3: Obtenemos los exámenes realizados
+        $examenes = $this->examenes($codigo);
+
+        //Paso 4: url de vuelta
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-mitja']);
+                session(['BC2texto' => 'Exámenes Mitjá']);
+                session(['BC3' => '/es/examen-mitja/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-mitja']);
+                session(['BC2texto' => 'Exàmens Mitjá']);
+                session(['BC3' => '/va/examen-mitja/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-mitja']);
+                session(['BC2texto' => 'Exàmens Mitjá']);
+                session(['BC3' => '/va/examen-mitja/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+        }
+        //Paso 5: Redirigimos al blade
+        return view('paginas.examenes.examen-mitja', compact('datos', 'examenes', 'codigo'));
+    }
+
+    public function pruebas_superior($idm)
     {
         //Paso 1: Obtenemos las distintas pruebas del grado elemental
         $pruebas = $this->showXGrado(104);
         $pruebas = @json_decode(json_encode($pruebas), true);
         //return $pruebas;
-        
+                
         $codigo=0;
+        
+        //Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
+        {
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('es/examenes-superior');
+            } else {
+               return redirect('va/examenes-superior');
+            }
+        }
 
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examensuperior']);
-        session(['BC2texto' => 'Exàmens Superior']);
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-superior']);
+                session(['BC2texto' => 'Exámenes Superior']);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-superior']);
+                session(['BC2texto' => 'Exàmens Superior']);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-superior']);
+                session(['BC2texto' => 'Exàmens Superior']);
+                break;
+        }
 
-        //Paso 2: Redirigimos a la vista
-        return view('paginas.examenes.examensuperior', compact('pruebas', 'examenes', 'codigo'));
+        $miurl='/'.session('lang').'/examen-superior';
+        //return $miurl;
+
+        //Paso 3: Redirigimos a la vista
+        return view('paginas.examenes.examenes-superior', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
-    public function prueba_superior($codigo)
+    public function prueba_superior($idm, $codigo)
     {
-        //Obtenemos el mes y el año en una matriz co ambos valores
-        $mes=substr($codigo, 4, 2);
-        if($mes == '06')
+        //Paso 1: Obtenemos el mes y el año en una matriz co ambos valores
+        $datos = $this->mesano($codigo);
+
+        //Paso 2: Comprobamos si la url corresponde al lenguaje
+        if(!session('lang')) { session(['lang' => 'va']); }
+        if($idm!=session('lang'))
         {
-            $datos['mes'] = 'juny';
-        } else {
-            $datos['mes'] = 'novembre';
+            //return $milang;
+            if(session('lang')=="es")
+            {
+               return redirect('/es/examen-superior/'.$codigo);
+            } else {
+               return redirect('/va/examen-superior/'.$codigo);
+            }
         }
-        $datos['ano']=substr($codigo, 0,4);
-		//return $codigo;
 
-		if(Auth::guest())
-		{
-			$examenes=null;  //Si no está registrado no se visualizan exámenes
-		} else {
-			//Obtenemos las pruebas del usuario
-			$usu = $this->usuarioActual();
-			//return $codigo;
-			$examenes = app('App\Http\Controllers\ExamenController')->showXCodigo($codigo);
-			$examenes = @json_decode(json_encode($examenes), true);
-			//return $examenes;
+        //Paso 3: Obtenemos los exámenes realizados
+        $examenes = $this->examenes($codigo);
 
-			if($examenes['original']['status']['error']==0)
-			{
-				foreach($examenes['original']['data'] as $key=>$examen) 
-				{
-					if($examen['contestadas']==0)
-					{
-						$examenes['original']['data'][$key]['porcentaje']=0;
-					} else {           
-						$examenes['original']['data'][$key]['porcentaje']=intdiv(1000*$examen['contestadas'], $examen['total'])/10;
-					}
-				}
-			}
-		}
-		//return $examenes;
-		//return $ano;
-		//return $mes;
-		
-        //url de vuelta
-        session(['BC1' => '/examenes-jqcv']);
-        session(['BC1texto' => 'Exàmens JQCV']);
-        session(['BC2' => '/examensuperior']);
-        session(['BC2texto' => 'Exàmens Superior']);
-        session(['BC3' => '/examen_superior/'.$codigo]);
-        session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
-        
-        return view('paginas.examenes.examen_superior', compact('datos', 'examenes', 'codigo'));
+        //Paso 4: url de vuelta
+        switch (session('lang'))
+        {
+            case "es":
+                session(['BC1' => '/es/examenes-jqcv']);
+                session(['BC1texto' => 'Exámenes JQCV']);
+                session(['BC2' => '/es/examenes-superior']);
+                session(['BC2texto' => 'Exámenes Superior']);
+                session(['BC3' => '/es/examen-superior/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            case "va":
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-superior']);
+                session(['BC2texto' => 'Exàmens Superior']);
+                session(['BC3' => '/va/examen-superior/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+            default:
+                session(['BC1' => '/va/examenes-jqcv']);
+                session(['BC1texto' => 'Exàmens JQCV']);
+                session(['BC2' => '/va/examenes-superior']);
+                session(['BC2texto' => 'Exàmens Superior']);
+                session(['BC3' => '/va/examen-superior/'.$codigo]);
+                session(['BC3texto' => $datos['mes'].'-'.$datos['ano']]);
+                break;
+        }
+        //Paso 5: Redirigimos al blade
+        return view('paginas.examenes.examen-superior', compact('datos', 'examenes', 'codigo'));
     }
 
 
@@ -1043,6 +1305,8 @@ class PruebaController extends Controller
         //Paso 3: Obtenemos las contestadas por area y subarea
         return view('paginas.master.examenmaster', compact('prueba'));
     }
+
+
 
 
 }
