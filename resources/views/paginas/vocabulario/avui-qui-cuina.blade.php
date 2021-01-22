@@ -1,4 +1,4 @@
-@extends('frontend.layouts.frontend')
+@extends('layouts.frontandia.general')
 
 @section('contentheader_title'){{ trans('vocabulario.cuina_title') }}@endsection
 
@@ -16,7 +16,7 @@
 
 @section('main_content')
 
-<section id="about" class="about">
+<section class="container justify">
     <div class="container-fluid">
 	    <div class="row content">
 	        <div class="col-md-6 pt-5 order-2">
@@ -29,7 +29,7 @@
     </div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
             <div class="col-md-4" data-aos="fade-right">
@@ -308,7 +308,7 @@
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-2 order-md-2" data-aos="fade-left">
@@ -533,7 +533,7 @@
 	</div>	
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
@@ -608,7 +608,7 @@
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-2 order-md-2" data-aos="fade-left">
@@ -773,7 +773,7 @@
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
@@ -1016,7 +1016,7 @@
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-2 order-md-2" data-aos="fade-left">
@@ -1145,553 +1145,557 @@
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
 				<img class="img-fluid" src="/img/practicav/vocabulario/pan.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle520') }}" alt="{{ trans('vocabulario.cuina_imgalt520') }}">
 			</div>
-		</div>
-		<div class="col-md-8 pt-5 order-2">
-			<h2>{{ trans('vocabulario.cuina_titulo520') }}</h2>
-			<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo520')}}">
-				<thead>
-					<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
-				</thead>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto520') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto521') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto522') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto523') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto524') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto525') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto526') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto527') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto528') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto529') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto530') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto531') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto532') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto533') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto534') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto535') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto536') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto537') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto538') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto539') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto540') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto541') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto542') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto543') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto544') }}</td>
-					<td>{{ trans('vocabulario.cuina_texto545') }}</td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto546') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto547') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto548') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto549') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto550') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto551') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto552') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto553') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto554') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto555') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto556') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto557') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto558') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto559') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto560') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto561') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto562') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto563') }}</td>
-					<td>{{ trans('vocabulario.cuina_texto564') }}</td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto565') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto566') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto567') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto568') }}</td>
-					<td>{{ trans('vocabulario.cuina_texto569') }}</td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto570') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto571') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto572') }}</td>
-				</tr>
-			</table>
+			<div class="col-md-8 pt-5 order-2">
+				<h2>{{ trans('vocabulario.cuina_titulo520') }}</h2>
+				<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo520')}}">
+					<thead>
+						<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+					</thead>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto520') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto521') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto522') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto523') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto524') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto525') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto526') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto527') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto528') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto529') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto530') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto531') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto532') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto533') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto534') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto535') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto536') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto537') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto538') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto539') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto540') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto541') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto542') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto543') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto544') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto545') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto546') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto547') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto548') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto549') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto550') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto551') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto552') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto553') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto554') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto555') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto556') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto557') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto558') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto559') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto560') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto561') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto562') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto563') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto564') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto565') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto566') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto567') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto568') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto569') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto570') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto571') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto572') }}</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-2 order-md-2" data-aos="fade-left">
 				<img class="img-fluid" src="/img/practicav/vocabulario/beber.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle600') }}" alt="{{ trans('vocabulario.cuina_imgalt600') }}">
 			</div>
-		</div>
-		<div class="col-md-8 pt-5 order-1">
-			<h2>{{ trans('vocabulario.cuina_titulo600') }}</h2>
-			<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo600')}}">
-				<thead>
-					<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
-				</thead>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto600') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto601') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto602') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto603') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto604') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto605') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto606') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto607') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto608') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto609') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto610') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto611') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto612') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto613') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto614') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto615') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto616') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto617') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto618') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto619') }}</td>
-				</tr>
-			</table>
+			<div class="col-md-8 pt-5 order-1">
+				<h2>{{ trans('vocabulario.cuina_titulo600') }}</h2>
+				<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo600')}}">
+					<thead>
+						<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+					</thead>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto600') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto601') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto602') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto603') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto604') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto605') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto606') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto607') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto608') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto609') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto610') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto611') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto612') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto613') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto614') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto615') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto616') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto617') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto618') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto619') }}</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
 				<img class="img-fluid" src="/img/practicav/vocabulario/condimentos.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle640') }}" alt="{{ trans('vocabulario.cuina_imgalt640') }}">
 			</div>
-		</div>
-		<div class="col-md-8 pt-5 order-2">
-			<h2>{{ trans('vocabulario.cuina_titulo640') }}</h2>
-			<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo640')}}">
-				<thead>
-					<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
-				</thead>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto640') }}</td>
-					<td>{{ trans('vocabulario.cuina_texto641') }}</td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto642') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto643') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto644') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto645') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto646') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto647') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto648') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto649') }}</td>
-					<td>{{ trans('vocabulario.cuina_texto650') }}</td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto651') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto652') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto653') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto654') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto655') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto656') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto657') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto658') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto659') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto660') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto661') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto662') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto663') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto664') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto665') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto666') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto667') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto668') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto669') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto670') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto671') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto672') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto673') }}</td>
-				</tr>
-			</table>
+			<div class="col-md-8 pt-5 order-2">
+				<h2>{{ trans('vocabulario.cuina_titulo640') }}</h2>
+				<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo640')}}">
+					<thead>
+						<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+					</thead>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto640') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto641') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto642') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto643') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto644') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto645') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto646') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto647') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto648') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto649') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto650') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto651') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto652') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto653') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto654') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto655') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto656') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto657') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto658') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto659') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto660') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto661') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto662') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto663') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto664') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto665') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto666') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto667') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto668') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto669') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto670') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto671') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto672') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto673') }}</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-2 order-md-2" data-aos="fade-left">
 				<img class="img-fluid" src="/img/practicav/vocabulario/bebidas.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle700') }}" alt="{{ trans('vocabulario.cuina_imgalt700') }}">
 			</div>
-		</div>
-		<div class="col-md-8 pt-5 order-1">
-			<h2>{{ trans('vocabulario.cuina_titulo700') }}</h2>
-			<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo700')}}">
-				<thead>
-					<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
-				</thead>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto700') }}</td>
-					<td>{{ trans('vocabulario.cuina_texto701') }}</td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto702') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto703') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto704') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto705') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto706') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto707') }}</td>
-					<td>{{ trans('vocabulario.cuina_texto708') }}</td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto709') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto710') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto711') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto712') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto713') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto714') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto715') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto716') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto717') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto718') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto719') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto720') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto721') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto722') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto723') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto724') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto725') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto726') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto727') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto728') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto729') }}</td>
-				</tr>
-			</table>
+			<div class="col-md-8 pt-5 order-1">
+				<h2>{{ trans('vocabulario.cuina_titulo700') }}</h2>
+				<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo700')}}">
+					<thead>
+						<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+					</thead>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto700') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto701') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto702') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto703') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto704') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto705') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto706') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto707') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto708') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto709') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto710') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto711') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto712') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto713') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto714') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto715') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto716') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto717') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto718') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto719') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto720') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto721') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto722') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto723') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto724') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto725') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto726') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto727') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto728') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto729') }}</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
 				<img class="img-fluid" src="/img/practicav/vocabulario/infusiones.svg" width="300px" title="{{ trans('vocabulario.cuina_imgtitle760') }}" alt="{{ trans('vocabulario.cuina_imgalt760') }}">
 			</div>
-		</div>
-		<div class="col-md-8 pt-5 order-2">
-			<h2>{{ trans('vocabulario.cuina_titulo760') }}</h2>
-			<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo760')}}">
-				<thead>
-					<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
-					<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
-				</thead>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto760') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto761') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto762') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto763') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto764') }}</td>
-					<td>{{ trans('vocabulario.cuina_texto765') }}</td>
-					<td>{{ trans('vocabulario.cuina_texto766') }}</td>
-					<td>{{ trans('vocabulario.cuina_texto767') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto768') }}</td>
-					<td>{{ trans('vocabulario.cuina_texto769') }}</td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto770') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto771') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto772') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto773') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto774') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto775') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto776') }}</td>
-				</tr>
-				<tr>
-					<td>{{ trans('vocabulario.cuina_texto777') }}</td>
-					<td></td>
-					<td></td>
-					<td>{{ trans('vocabulario.cuina_texto778') }}</td>
-				</tr>
-			</table>
+			<div class="col-md-8 pt-5 order-2">
+				<h2>{{ trans('vocabulario.cuina_titulo760') }}</h2>
+				<table class="table table-bordered" summary="tabla de {{trans('vocabulario.cuina_titulo760')}}">
+					<thead>
+						<th>{{ trans('vocabulario.cuina_titulo2') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo3') }}</th>
+						<th>{{ trans('vocabulario.cuina_titulo4') }}</th>
+					</thead>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto760') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto761') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto762') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto763') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto764') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto765') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto766') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto767') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto768') }}</td>
+						<td>{{ trans('vocabulario.cuina_texto769') }}</td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto770') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto771') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto772') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto773') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto774') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto775') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto776') }}</td>
+					</tr>
+					<tr>
+						<td>{{ trans('vocabulario.cuina_texto777') }}</td>
+						<td></td>
+						<td></td>
+						<td>{{ trans('vocabulario.cuina_texto778') }}</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 </section>
 
-<div class="row mt-5 mb-5 h-100">
-	<div class="box-body pad table-responsive">
-		<a href="/practicainicio/11"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
+<section class="container justify">
+    <div class="container-fluid">
+		<div class="row mt-5 mb-5 h-100">
+			<div class="col-md-4">
+				<a href="/practicainicio/11"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
+			</div>
+		</div>
 	</div>
-</div>
+</section>
 
 @endsection

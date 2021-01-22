@@ -97,6 +97,12 @@ class OrtografiaController extends Controller
                 break;
         }
 
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["contraccio"];
+        $enlaces[2]=$this->a["byv"];
+        $enlaces[3]=$this->a["diacritic"];
+        $enlaces[4]=$this->a["vocalisme"];
+
         $miurl='/'.session('lang').'/ortografia';
 
         //Paso 3: Redirigimos a la vista

@@ -16,7 +16,7 @@
 
 <?php $__env->startSection('main_content'); ?>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-5 order-1 centraimg">
@@ -57,7 +57,7 @@
     </div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-12 mb-5">
@@ -76,4 +76,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/ortografia/contraccio.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontandia.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/ortografia/contraccio.blade.php ENDPATH**/ ?>

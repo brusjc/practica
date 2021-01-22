@@ -14,7 +14,7 @@
 
 <?php $__env->startSection('main_content'); ?>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
             <div class="col-xl-5 col-lg-6 justify-content-center align-items-stretch" data-aos="fade-right">
@@ -28,62 +28,117 @@
     </div>
 </section>
 
-<section>
+<section class="container justify my-5">
     <div class="container-fluid">
-        <div class="row content h-100">
+        <div class="row">
 			<h2><?php echo e(trans('ortografia.ortografia_titulo2')); ?></h2>
-			<div class="row" data-aos="fade-left">
-				<div class="col-lg-3 col-md-4 mt-4">
-					<div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-						<h3><a href="/<?php echo e(session('lang')); ?>/byv"><?php echo e(trans('ortografia.byv_breadcrumb')); ?></a></h3>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 mt-4">
-					<div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
-						<h3><a href="/<?php echo e(session('lang')); ?>/acentuacion"><?php echo e(trans('ortografia.acentuacion_breadcrumb')); ?></a></h3>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 mt-4">
-					<div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
-						<h3><a href="/<?php echo e(session('lang')); ?>/eio"><?php echo e(trans('ortografia.eio_breadcrumb')); ?></a></h3>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 mt-4">
-					<div class="icon-box" data-aos="zoom-in" data-aos-delay="250">
-						<h3><a href="/<?php echo e(session('lang')); ?>/dieresis"><?php echo e(trans('ortografia.dieresis_breadcrumb')); ?></a></h3>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 mt-4">
-					<div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
-						<h3><a href="/<?php echo e(session('lang')); ?>/diftong"><?php echo e(trans('ortografia.diptongos_breadcrumb')); ?></a></h3>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 mt-4">
-					<div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
-						<h3><a href="/<?php echo e(session('lang')); ?>/diacritic"><?php echo e(trans('ortografia.diacritic_breadcrumb')); ?></a></h3>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 mt-4">
-					<div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
-						<h3><a href="/<?php echo e(session('lang')); ?>/apostrof"><?php echo e(trans('ortografia.apostrof_breadcrumb')); ?></a></h3>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 mt-4">
-					<div class="icon-box" data-aos="zoom-in" data-aos-delay="450">
-						<h3><a href="/<?php echo e(session('lang')); ?>/contraccio"><?php echo e(trans('ortografia.contraccio_breadcrumb')); ?></a></h3>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 mt-4">
-					<div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
-						<h3><a href="/<?php echo e(session('lang')); ?>/vocalisme"><?php echo e(trans('ortografia.vocalisme_breadcrumb')); ?></a></h3>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/byv">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" src="/img/practicav/ortografia/byv-R.svg"/>
+                        </div>
+                        <br/>
+                        <p class="center"><?php echo e(trans('ortografia.byv_breadcrumb')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/acentuacion">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" src="/img/practicav/ortografia/acentuacion-R.svg"/>
+                        </div>
+                        <br/>
+                        <p class="center"><?php echo e(trans('ortografia.acentuacion_breadcrumb')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/eio">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" src="/img/practicav/ortografia/eyo-R.svg"/>
+                        </div>
+                        <br/>
+                        <p class="center"><?php echo e(trans('ortografia.eio_breadcrumb')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/dieresis">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" src="/img/practicav/ortografia/dieresis-R.svg"/>
+                        </div>
+                        <br/>
+                        <p class="center"><?php echo e(trans('ortografia.dieresis_breadcrumb')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/diptong">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" src="/img/practicav/ortografia/diptong-R.svg"/>
+                        </div>
+                        <br/>
+                        <p class="center"><?php echo e(trans('ortografia.diptongos_breadcrumb')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/diacritic">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" src="/img/practicav/ortografia/diacritic-R.svg"/>
+                        </div>
+                        <br/>
+                        <p class="center"><?php echo e(trans('ortografia.diacritic_breadcrumb')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/apostrof">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" src="/img/practicav/ortografia/apostrof-R.svg"/>
+                        </div>
+                        <br/>
+                        <p class="center"><?php echo e(trans('ortografia.apostrof_breadcrumb')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/contraccio">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" src="/img/practicav/ortografia/contraccio-R.svg"/>
+                        </div>
+                        <br/>
+                        <p class="center"><?php echo e(trans('ortografia.contraccio_breadcrumb')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/vocalisme">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" src="/img/practicav/ortografia/vocalisme-R.svg"/>
+                        </div>
+                        <br/>
+                        <p class="center"><?php echo e(trans('ortografia.vocalisme_breadcrumb')); ?></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
+<?php echo $__env->make('paginas.ortografia.comunes.enlaces', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/ortografia/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontandia.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/ortografia/index.blade.php ENDPATH**/ ?>

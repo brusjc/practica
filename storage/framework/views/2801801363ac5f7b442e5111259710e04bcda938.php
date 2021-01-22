@@ -16,7 +16,7 @@
 
 <?php $__env->startSection('main_content'); ?>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-6 order-1 order-md-2 centraimg" data-aos="fade-left">
@@ -33,7 +33,7 @@
     </div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-1 order-md-2 centraimg" data-aos="fade-left">
@@ -102,14 +102,18 @@
 	</div>
 </section>
 
-<div class="row mt-5 mb-5">
-	<div class="box-body pad table-responsive">
-		<div class="col-md-3">
-			<a href="/practicainicio/5"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
+<section class="container justify">
+    <div class="container-fluid">
+		<div class="row mt-5 mb-5">
+			<div class="box-body pad table-responsive">
+				<div class="col-md-3">
+					<a href="/practicainicio/5"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+</section>
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/mesos-any.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontandia.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/mesos-any.blade.php ENDPATH**/ ?>

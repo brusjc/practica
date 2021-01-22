@@ -1,4 +1,4 @@
-@extends('frontend.layouts.frontend')
+@extends('layouts.frontandia.general')
 
 @section('contentheader_title'){{ trans('ortografia.byv_title') }}@endsection
 
@@ -16,7 +16,7 @@
 
 @section('main_content')
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 pt-5 order-2 centraimg">
@@ -50,7 +50,7 @@
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 pt-5 order-2 centraimg">
@@ -84,8 +84,8 @@
     </div>
 </section>
 
-<section>
-    <div class="container-fluid mt-5">
+<section class="container justify">
+    <div class="container-fluid">
         <div class="row content ml-2 mr-2">
          	<p>{{ trans('ortografia.byv_texto60') }}</p> 
         </div>
@@ -93,13 +93,11 @@
 </section>
 
 
-<div class="row mt-5 mb-5">
-	<div class="box-body pad table-responsive">
-		<div class="col-md-3">
-			<a href="/practicainicio/13"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
-		</div>
+<section class="container justify">
+    <div class="container-fluid center">
+		<a href="/practicainicio/13"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
 	</div>
-</div>
+</section>	
 
 @include('paginas.ortografia.comunes.enlaces')
 

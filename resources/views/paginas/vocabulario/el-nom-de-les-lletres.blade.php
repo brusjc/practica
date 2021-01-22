@@ -1,4 +1,4 @@
-@extends('frontend.layouts.frontend')
+@extends('layouts.frontandia.general')
 
 @section('contentheader_title'){{ trans('vocabulario.lletres_title') }}@endsection
 
@@ -16,23 +16,25 @@
 
 @section('main_content')
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
-        <div class="row content h-100">
-	        <div class="col-md-5 order-1 order-md-2 centraimg" data-aos="fade-left">
-				@include('paginas.vocabulario.publi.superior50')
+	    <div class="container-fluid">
+	        <div class="row content h-100">
+		        <div class="col-md-5 order-1 order-md-2 centraimg" data-aos="fade-left">
+					@include('paginas.vocabulario.publi.superior50')
+		        </div>
+		        <div class="col-md-7 pt-5 order-1 order-md-1" data-aos="fade-up">
+					<p>{{ trans('vocabulario.lletres_texto1') }}</p>
+					<p>{{ trans('vocabulario.lletres_texto2') }}</p>
+					<p>{{ trans('vocabulario.lletres_texto3') }}</p>
+					<p>{{ trans('vocabulario.lletres_texto4') }}</p>
+		        </div>
 	        </div>
-	        <div class="col-md-7 pt-5 order-1 order-md-1" data-aos="fade-up">
-				<p>{{ trans('vocabulario.lletres_texto1') }}</p>
-				<p>{{ trans('vocabulario.lletres_texto2') }}</p>
-				<p>{{ trans('vocabulario.lletres_texto3') }}</p>
-				<p>{{ trans('vocabulario.lletres_texto4') }}</p>
-	        </div>
-        </div>
-    </div>
+	    </div>
+   </div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-1 order-md-2 centraimg" data-aos="fade-left">

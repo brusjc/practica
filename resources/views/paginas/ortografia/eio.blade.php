@@ -1,4 +1,4 @@
-@extends('frontend.layouts.frontend')
+@extends('layouts.frontandia.general')
 
 @section('contentheader_title'){{ trans('ortografia.eio_title') }}@endsection
 
@@ -16,7 +16,7 @@
 
 @section('main_content')
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-5 order-1">
@@ -37,7 +37,7 @@
     </div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100 mb-5">
             <div class="col-md-5 pt-5 order-2 centraimg">

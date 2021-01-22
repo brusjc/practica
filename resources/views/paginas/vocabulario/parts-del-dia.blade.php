@@ -1,4 +1,4 @@
-@extends('frontend.layouts.frontend')
+@extends('layouts.frontandia.general')
 
 @section('contentheader_title'){{ trans('vocabulario.partsdía_title') }}@endsection
 
@@ -10,13 +10,13 @@
 
 @section('breadcrumb2'){{ session('BC2texto') }}@endsection
 
-@section('descripcion'){{ trans('vocabulario.parentesco_descripcion') }}@endsection
+@section('descripcion'){{ trans('vocabulario.partsdía_descripcion') }}@endsection
 
-@section('keywords'){{ trans('vocabulario.parentesco_keywords') }}@endsection
+@section('keywords'){{ trans('vocabulario.partsdía_keywords') }}@endsection
 
 @section('main_content')
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-5 order-2 order-md-2 centraimg" data-aos="fade-left">

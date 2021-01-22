@@ -16,23 +16,25 @@
 
 <?php $__env->startSection('main_content'); ?>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
-        <div class="row content h-100">
-	        <div class="col-md-5 order-1 order-md-2 centraimg" data-aos="fade-left">
-				<?php echo $__env->make('paginas.vocabulario.publi.superior50', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+	    <div class="container-fluid">
+	        <div class="row content h-100">
+		        <div class="col-md-5 order-1 order-md-2 centraimg" data-aos="fade-left">
+					<?php echo $__env->make('paginas.vocabulario.publi.superior50', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+		        </div>
+		        <div class="col-md-7 pt-5 order-1 order-md-1" data-aos="fade-up">
+					<p><?php echo e(trans('vocabulario.lletres_texto1')); ?></p>
+					<p><?php echo e(trans('vocabulario.lletres_texto2')); ?></p>
+					<p><?php echo e(trans('vocabulario.lletres_texto3')); ?></p>
+					<p><?php echo e(trans('vocabulario.lletres_texto4')); ?></p>
+		        </div>
 	        </div>
-	        <div class="col-md-7 pt-5 order-1 order-md-1" data-aos="fade-up">
-				<p><?php echo e(trans('vocabulario.lletres_texto1')); ?></p>
-				<p><?php echo e(trans('vocabulario.lletres_texto2')); ?></p>
-				<p><?php echo e(trans('vocabulario.lletres_texto3')); ?></p>
-				<p><?php echo e(trans('vocabulario.lletres_texto4')); ?></p>
-	        </div>
-        </div>
-    </div>
+	    </div>
+   </div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-1 order-md-2 centraimg" data-aos="fade-left">
@@ -187,4 +189,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/el-nom-de-les-lletres.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontandia.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/el-nom-de-les-lletres.blade.php ENDPATH**/ ?>

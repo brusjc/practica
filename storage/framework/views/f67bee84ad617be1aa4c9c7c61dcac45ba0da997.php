@@ -16,8 +16,8 @@
 
 <?php $__env->startSection('main_content'); ?>
 
-<section id="about" class="about">
-    <div class="row content">
+<section class="container justify">
+    <div class="container-fluid">
         <div class="col-md-6 pt-5 order-2">
 			<?php echo $__env->make('paginas.vocabulario.publi.superior50', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         </div>
@@ -29,7 +29,7 @@
     </div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
@@ -484,14 +484,18 @@
 	</div>
 </section>
 
-<div class="row mt-5 mb-5">
-	<div class="box-body pad table-responsive">
-		<div class="col-md-3">
-			<a href="/practicainicio/12"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
+<section class="container justify">
+    <div class="container-fluid">
+		<div class="row mt-5 mb-5">
+			<div class="box-body pad table-responsive">
+				<div class="col-md-3">
+					<a href="/practicainicio/12"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+</section>
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/ciutat.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontandia.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/ciutat.blade.php ENDPATH**/ ?>

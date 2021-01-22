@@ -16,7 +16,7 @@
 
 <?php $__env->startSection('main_content'); ?>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-5 order-1">
@@ -45,7 +45,7 @@
 </section>
 
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
             <div class="col-xl-4 col-lg-5 order-2 centraimg">
@@ -82,7 +82,7 @@
 </section>
 
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
             <div class="col-xl-4 col-lg-5 centraimg" data-aos="fade-right">
@@ -127,14 +127,14 @@
 	</div>
 </section>
 
-<div class="row mt-3">
-	<div class="box-body pad table-responsive">
-		<div class="col-md-3 mb-5">
-			<a href="/practicainicio/8"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
-		</div>
+<section class="container justify my-5">
+    <div class="container-fluid center">
+		<a href="/practicainicio/8"><button type="button" class="btn btn-primary btn-lg">Practica</button></a>
 	</div>
-</div>
+</section>
+
+<?php echo $__env->make('paginas.ortografia.comunes.enlaces', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/ortografia/dieresis.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontandia.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/ortografia/dieresis.blade.php ENDPATH**/ ?>

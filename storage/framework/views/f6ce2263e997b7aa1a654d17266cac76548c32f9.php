@@ -14,7 +14,7 @@
 
 <?php $__env->startSection('main_content'); ?>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-5 order-1 order-md-2 centraimg" data-aos="fade-left">
@@ -28,12 +28,8 @@
     </div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
-        <div class="row content h-100">
-	        <div class="col-md-5 order-1 order-md-2 centraimg" data-aos="fade-left">
-           <img class="img-fluid " src="/img/practicav/vocabulariovalenciano.svg" width="300px" title="<?php echo e(trans('vocabulario.vocabulario_imgtitle1')); ?>" alt="<?php echo e(trans('vocabulario.vocabulario_imgalt1')); ?>">
-        </div>
         <div class="col-md-7 pt-5 order-1 order-md-1" data-aos="fade-up">
             <h2><?php echo e(trans('vocabulario.vocabulario_titulo2')); ?></h2>
 			<p><?php echo e(trans('vocabulario.vocabulario_texto3')); ?></p>
@@ -41,97 +37,155 @@
 			<p><?php echo e(trans('vocabulario.vocabulario_texto5')); ?></p>
 			<p><?php echo e(trans('vocabulario.vocabulario_texto6')); ?></p>
         </div>
+        <div class="row content h-100 center">
+	        <div class="col-md-5 order-1 order-md-2 centraimg" data-aos="fade-left">
+           <img class="img-fluid " src="/img/practicav/vocabulariovalenciano.svg" width="300px" title="<?php echo e(trans('vocabulario.vocabulario_imgtitle1')); ?>" alt="<?php echo e(trans('vocabulario.vocabulario_imgalt1')); ?>">
+        </div>
     </div>
 </section>
 
 
-<section>
-	<div class="container">
-		<h2><?php echo e(trans('vocabulario.vocabulario_titulo3')); ?></h2>
-		<div class="row mt-5" data-aos="fade-left">
-			<div class="col-lg-3 col-md-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
-					<img src="/img/practicav/vocabulario/Nomslletres.svg" class="ri-store-line" style="color: #ffbb2c;"></img>
-					<p class="pl-4"><a href="/<?php echo e(session('lang')); ?>/el-nom-de-les-lletres"><?php echo e(trans('message.nombresletras')); ?></a></p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-					<img src="/img/practicav/vocabulario/partsdia.svg" class="ri-store-line" style="color: #ffbb2c;"></img>
-					<p class="pl-4"><a href="/<?php echo e(session('lang')); ?>/parts-del-dia"><?php echo e(trans('message.partesdia')); ?></a></p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
-					<img src="/img/practicav/vocabulario/diessetmana.svg" class="ri-store-line" style="color: #ffbb2c;"></img>
-					<p class="pl-4"><a href="/<?php echo e(session('lang')); ?>/dies-de-la-setmana"><?php echo e(trans('message.diassemana')); ?></a></p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
-					<img src="/img/practicav/vocabulario/hores.svg" class="ri-store-line" style="color: #ffbb2c;"></img>
-					<p class="pl-4"><a href="/<?php echo e(session('lang')); ?>/les-hores"><?php echo e(trans('message.horas')); ?></a></p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="250">
-					<img src="/img/practicav/vocabulario/numeros.svg" class="ri-store-line" style="color: #ffbb2c;"></img>
-					<p class="pl-4"><a href="/<?php echo e(session('lang')); ?>/numeros"><?php echo e(trans('message.numeros')); ?></a></p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
-					<img src="/img/practicav/vocabulario/coshuma.svg" class="ri-store-line" style="color: #ffbb2c;"></img>
-					<p class="pl-4"><a href="/<?php echo e(session('lang')); ?>/cos-huma"><?php echo e(trans('message.partescuerpo')); ?></a></p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
-					<img src="/img/practicav/vocabulario/cuina.svg" class="ri-store-line" style="color: #ffbb2c;"></img>
-					<p class="pl-4"><a href="/<?php echo e(session('lang')); ?>/avui-qui-cuina"><?php echo e(trans('message.hoyquecocinamos')); ?></a></p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
-					<img src="/img/practicav/vocabulario/taula.svg" class="ri-store-line" style="color: #ffbb2c;"></img>
-					<p class="pl-4"><a href="/<?php echo e(session('lang')); ?>/parem-taula"><?php echo e(trans('message.ponermesa')); ?></a></p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="450">
-					<img src="/img/practicav/vocabulario/ciutat.svg" class="ri-store-line" style="color: #ffbb2c;"></img>
-					<p class="pl-4"><a href="/<?php echo e(session('lang')); ?>/ciutat"><?php echo e(trans('message.ciudad')); ?></a></p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="500">
-					<img src="/img/practicav/vocabulario/ropa.svg" class="ri-store-line" style="color: #ffbb2c;"></img>
-					<p class="pl-4"><a href="/<?php echo e(session('lang')); ?>/entre-teles"><?php echo e(trans('message.entretelas')); ?></a></p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="550">
-					<img src="/img/practicav/vocabulario/hogar.svg" class="ri-store-line" style="color: #ffbb2c;"></img>
-					<p class="pl-4"><a href="/<?php echo e(session('lang')); ?>/hogar"><?php echo e(trans('message.casa')); ?></a></p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="550">
-					<img src="/img/practicav/vocabulario/mesos-any.svg" class="ri-store-line" style="color: #ffbb2c;"></img>
-					<p class="pl-4"><a href="/<?php echo e(session('lang')); ?>/mesos-any"><?php echo e(trans('message.mesesano')); ?></a></p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="600">
-					<img src="/img/practicav/vocabulario/parentiu.svg" class="ri-store-line" style="color: #ffbb2c;"></img>
-					<p class="pl-4"><a href="/<?php echo e(session('lang')); ?>/relacions-de-parentiu"><?php echo e(trans('message.relacionesconvencionales')); ?></a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+<section class="container justify my-5">
+    <div class="container-fluid">
+        <div class="row">
+			<h2><?php echo e(trans('vocabulario.vocabulario_titulo3')); ?></h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/el-nom-de-les-lletres">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" style="color: #ffbb2c;" src="/img/practicav/vocabulario/Nomslletres.svg"/>
+                        </div>
+                        <p><?php echo e(trans('message.nombresletras')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/parts-del-dia">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" style="color: #ffbb2c;" src="/img/practicav/vocabulario/partsdia.svg"/>
+                        </div>
+                        <p><?php echo e(trans('message.partesdia')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/dies-de-la-setmana">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" style="color: #ffbb2c;" src="/img/practicav/vocabulario/diessetmana.svg"/>
+                        </div>
+                        <p><?php echo e(trans('message.diassemana')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/les-hores">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" style="color: #ffbb2c;" src="/img/practicav/vocabulario/hores.svg"/>
+                        </div>
+                        <p><?php echo e(trans('message.horas')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/numeros">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" style="color: #ffbb2c;" src="/img/practicav/vocabulario/numeros.svg"/>
+                        </div>
+                        <p><?php echo e(trans('message.numeros')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/cos-huma">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" style="color: #ffbb2c;" src="/img/practicav/vocabulario/coshuma.svg"/>
+                        </div>
+                        <p><?php echo e(trans('message.partescuerpo')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/avui-qui-cuina">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" style="color: #ffbb2c;" src="/img/practicav/vocabulario/cuina.svg"/>
+                        </div>
+                        <p><?php echo e(trans('message.hoyquecocinamos')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/parem-taula">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" style="color: #ffbb2c;" src="/img/practicav/vocabulario/taula.svg"/>
+                        </div>
+                        <p><?php echo e(trans('message.ponermesa')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/ciutat">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" style="color: #ffbb2c;" src="/img/practicav/vocabulario/ciutat.svg"/>
+                        </div>
+                        <p><?php echo e(trans('message.ciudad')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/entre-teles">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" style="color: #ffbb2c;" src="/img/practicav/vocabulario/ropa.svg"/>
+                        </div>
+                        <p><?php echo e(trans('message.entretelas')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/hogar">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" style="color: #ffbb2c;" src="/img/practicav/vocabulario/hogar.svg"/>
+                        </div>
+                        <p><?php echo e(trans('message.casa')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/mesos-any">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" style="color: #ffbb2c;" src="/img/practicav/vocabulario/mesos-any.svg"/>
+                        </div>
+                        <p><?php echo e(trans('message.mesesano')); ?></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/relacions-de-parentiu">
+                        <div class="service-icon center">
+                        	<img class="ri-store-line" style="color: #ffbb2c;" src="/img/practicav/vocabulario/parentiu.svg"/>
+                        </div>
+                        <p><?php echo e(trans('message.relacionesconvencionales')); ?></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontandia.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/index.blade.php ENDPATH**/ ?>

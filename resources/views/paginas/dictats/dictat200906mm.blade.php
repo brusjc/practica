@@ -1,4 +1,4 @@
-@extends('frontend.layouts.frontend')
+@extends('layouts.frontandia.general')
 
 @section('contentheader_title'){{ trans('dictats.dictat200906mm_title') }}@endsection
 
@@ -16,52 +16,58 @@
 
 @section('main_content')
 
-<section>
-    <div class="row content h-100">
-        <div class="col-md-4 pt-5 order-1 centraimg" data-aos="fade-left">
-			@include('paginas.dictats.publi.superior50')
-        </div>
-        <div class="col-md-7 pt-5 order-1 order-md-1" data-aos="fade-up">
-			<p>{{ trans('dictats.dictat200906mm_texto11') }}</p>
-			<ul>
-				<li>{{ trans('dictats.dictat200906mm_texto12') }}</li>
-				<li>{{ trans('dictats.dictat200906mm_texto13') }}</li>
-				<li>{{ trans('dictats.dictat200906mm_texto14') }}</li>
-			</ul>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="row content h-100">
-        <div class="col-md-4 pt-5 order-1 centraimg" data-aos="fade-left">
-           <img class="img-fluid " src="/img/practicav/examenes/bocadillomitja.svg" width="250px" title="{{ trans('dictats.dictats_imgtitle2') }}" alt="{{ trans('dictats.dictats_imgalt2') }}">
-        </div>
-        <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-right">
-			<h2>{{ trans('dictats.dictat200906mm_titulo1') }}</h2>
-			<p>{{ trans('dictats.dictat200906mm_texto21') }}</p>
-			<ol>
-				<li>{{ trans('dictats.dictat200906mm_texto22') }}</li>
-				<audio src="/sonido/dictados/dictados200906mm.mp3" preload="none" controls></audio>
-				<li>{{ trans('dictats.dictat200906mm_texto23') }}</li>
-				<audio src="/sonido/dictados/dictados200906mmp.mp3" preload="none" controls></audio>
-				<li>{{ trans('dictats.dictat200906mm_texto24') }}</li>
-				<audio src="/sonido/dictados/dictados200906mm.mp3" preload="none" controls></audio>
-			</ol>
+<section class="container justify">
+    <div class="container-fluid">
+        <div class="row content h-100">
+            <div class="col-md-4 pt-5 order-1 centraimg" data-aos="fade-left">
+    			@include('paginas.dictats.publi.superior50')
+            </div>
+            <div class="col-md-7 pt-5 order-1 order-md-1" data-aos="fade-up">
+    			<p>{{ trans('dictats.dictat200906mm_texto11') }}</p>
+    			<ul>
+    				<li>{{ trans('dictats.dictat200906mm_texto12') }}</li>
+    				<li>{{ trans('dictats.dictat200906mm_texto13') }}</li>
+    				<li>{{ trans('dictats.dictat200906mm_texto14') }}</li>
+    			</ul>
+            </div>
         </div>
     </div>
 </section>
 
-<section>
-    <div class="row content">
-        <div class="col-12 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
-			<p>{{ trans('dictats.dictat200906mm_texto31') }}</p>
-			<p>{{ trans('dictats.dictat200906mm_texto32') }}</p>
+<section class="container justify">
+    <div class="container-fluid">
+        <div class="row content h-100">
+            <div class="col-md-4 pt-5 order-1 centraimg" data-aos="fade-left">
+               <img class="img-fluid " src="/img/practicav/examenes/bocadillomitja.svg" width="250px" title="{{ trans('dictats.dictats_imgtitle2') }}" alt="{{ trans('dictats.dictats_imgalt2') }}">
+            </div>
+            <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-right">
+    			<h2>{{ trans('dictats.dictat200906mm_titulo1') }}</h2>
+    			<p>{{ trans('dictats.dictat200906mm_texto21') }}</p>
+    			<ol>
+    				<li>{{ trans('dictats.dictat200906mm_texto22') }}</li>
+    				<audio src="/sonido/dictados/dictados200906mm.mp3" preload="none" controls></audio>
+    				<li>{{ trans('dictats.dictat200906mm_texto23') }}</li>
+    				<audio src="/sonido/dictados/dictados200906mmp.mp3" preload="none" controls></audio>
+    				<li>{{ trans('dictats.dictat200906mm_texto24') }}</li>
+    				<audio src="/sonido/dictados/dictados200906mm.mp3" preload="none" controls></audio>
+    			</ol>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="about" class="about">
+<section class="container justify">
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-12 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
+    			<p>{{ trans('dictats.dictat200906mm_texto31') }}</p>
+    			<p>{{ trans('dictats.dictat200906mm_texto32') }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container justify">
     <div class="container-fluid">
 	    <div class="row content counts">
 			<div class="col-md-1">

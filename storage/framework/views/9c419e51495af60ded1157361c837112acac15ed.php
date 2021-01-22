@@ -16,7 +16,7 @@
 
 <?php $__env->startSection('main_content'); ?>
 
-<section>
+<section class="justify">
     <div class="row content h-100">
         <div class="col-md-4 pt-5 order-1 centraimg">
              <?php echo $__env->make('paginas.publi.superior50', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -33,7 +33,7 @@
     </div>
 </section>
 
-<section class="about">
+<section class="justify">
 	<div class="row content">
 		<div class="col-12">
 			<p><?php echo e(trans('examenes.A1_texto7')); ?></p>
@@ -50,4 +50,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/examenes/examenes-a1.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontandia.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/examenes/examenes-a1.blade.php ENDPATH**/ ?>

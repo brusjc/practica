@@ -1,4 +1,4 @@
-@extends('frontend.layouts.frontend')
+@extends('layouts.frontandia.general')
 
 @section('contentheader_title'){{ trans('vocabulario.parentesco_title') }}@endsection
 
@@ -16,24 +16,7 @@
 
 @section('main_content')
 
-<section>
-    <div class="container-fluid">
-        <div class="row content h-100">
-	        <div class="col-md-6 order-1 order-md-2 centraimg" data-aos="fade-left">
-				@include('paginas.vocabulario.publi.superior50')
-	        </div>
-	        <div class="col-md-6 pt-5 order-1">
-				<p>{{ trans('vocabulario.parentesco_texto1') }}</p>
-				<p>{{ trans('vocabulario.parentesco_texto2') }}</p>
-				<p>{{ trans('vocabulario.parentesco_texto3') }}</p>
-				<p>{{ trans('vocabulario.parentesco_texto4') }}</p>
-				<p>{{ trans('vocabulario.parentesco_texto5') }}</p>
-	        </div>
-        </div>
-    </div>
-</section>
-
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 order-1 order-md-2 centraimg" data-aos="fade-left">
@@ -308,12 +291,16 @@
 	</div>
 </section>
 
-<div class="row mt-5 mb-5">
-	<div class="box-body pad table-responsive">
-		<div class="col-md-3">
-			<a href="/practicainicio/3"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
+<section class="container justify">
+    <div class="container-fluid">
+		<div class="row mt-5 mb-5">
+			<div class="box-body pad table-responsive">
+				<div class="col-md-3">
+					<a href="/practicainicio/3"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+</section>
 
 @endsection

@@ -1,6 +1,6 @@
-<section class="counts">
-    <div class="container">
-        <h2>{{ trans('message.pueden_interesar') }}</h2>
+<section class="container justify mt-5">
+    <div class="container-fluid">
+        <h2 class="my-5 center">{{ trans('message.pueden_interesar') }}</h2>
         <div class="row" data-aos="fade-left">
             <div class="col-lg-3 col-md-4">
                 <div class="count-box">

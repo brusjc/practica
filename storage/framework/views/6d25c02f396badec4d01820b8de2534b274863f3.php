@@ -16,52 +16,58 @@
 
 <?php $__env->startSection('main_content'); ?>
 
-<section>
-    <div class="row content h-100">
-        <div class="col-md-4 pt-5 order-1 centraimg" data-aos="fade-left">
-			<?php echo $__env->make('paginas.dictats.publi.superior50', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        </div>
-        <div class="col-md-7 pt-5 order-1 order-md-1" data-aos="fade-up">
-			<p><?php echo e(trans('dictats.dictat201006sm_texto11')); ?></p>
-			<ul>
-				<li><?php echo e(trans('dictats.dictat201006sm_texto12')); ?></li>
-				<li><?php echo e(trans('dictats.dictat201006sm_texto13')); ?></li>
-				<li><?php echo e(trans('dictats.dictat201006sm_texto14')); ?></li>
-			</ul>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="row content h-100">
-        <div class="col-md-4 pt-5 order-1 centraimg" data-aos="fade-left">
-           <img class="img-fluid " src="/img/practicav/examenes/bocadillomitja.svg" width="250px" title="<?php echo e(trans('dictats.dictats_imgtitle2')); ?>" alt="<?php echo e(trans('dictats.dictats_imgalt2')); ?>">
-        </div>
-        <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-right">
-			<h2><?php echo e(trans('dictats.dictat201006sm_titulo1')); ?></h2>
-			<p><?php echo e(trans('dictats.dictat201006sm_texto21')); ?></p>
-			<ol>
-				<li><?php echo e(trans('dictats.dictat201006sm_texto22')); ?></li>
-				<audio src="/sonido/dictados/dictados201006sm.mp3" preload="none" controls></audio>
-				<li><?php echo e(trans('dictats.dictat201006sm_texto23')); ?></li>
-				<audio src="/sonido/dictados/dictados201006smp.mp3" preload="none" controls></audio>
-				<li><?php echo e(trans('dictats.dictat201006sm_texto24')); ?></li>
-				<audio src="/sonido/dictados/dictados201006sm.mp3" preload="none" controls></audio>
-			</ol>
+<section class="container justify">
+    <div class="container-fluid">
+        <div class="row content h-100">
+            <div class="col-md-4 pt-5 order-1 centraimg" data-aos="fade-left">
+    			<?php echo $__env->make('paginas.dictats.publi.superior50', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            </div>
+            <div class="col-md-7 pt-5 order-1 order-md-1" data-aos="fade-up">
+    			<p><?php echo e(trans('dictats.dictat201006sm_texto11')); ?></p>
+    			<ul>
+    				<li><?php echo e(trans('dictats.dictat201006sm_texto12')); ?></li>
+    				<li><?php echo e(trans('dictats.dictat201006sm_texto13')); ?></li>
+    				<li><?php echo e(trans('dictats.dictat201006sm_texto14')); ?></li>
+    			</ul>
+            </div>
         </div>
     </div>
 </section>
 
-<section>
-    <div class="row content">
-        <div class="col-12 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
-			<p><?php echo e(trans('dictats.dictat201006sm_texto31')); ?></p>
-			<p><?php echo e(trans('dictats.dictat201006sm_texto32')); ?></p>
+<section class="container justify">
+    <div class="container-fluid">
+        <div class="row content h-100">
+            <div class="col-md-4 pt-5 order-1 centraimg" data-aos="fade-left">
+               <img class="img-fluid " src="/img/practicav/examenes/bocadillomitja.svg" width="250px" title="<?php echo e(trans('dictats.dictats_imgtitle2')); ?>" alt="<?php echo e(trans('dictats.dictats_imgalt2')); ?>">
+            </div>
+            <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-right">
+    			<h2><?php echo e(trans('dictats.dictat201006sm_titulo1')); ?></h2>
+    			<p><?php echo e(trans('dictats.dictat201006sm_texto21')); ?></p>
+    			<ol>
+    				<li><?php echo e(trans('dictats.dictat201006sm_texto22')); ?></li>
+    				<audio src="/sonido/dictados/dictados201006sm.mp3" preload="none" controls></audio>
+    				<li><?php echo e(trans('dictats.dictat201006sm_texto23')); ?></li>
+    				<audio src="/sonido/dictados/dictados201006smp.mp3" preload="none" controls></audio>
+    				<li><?php echo e(trans('dictats.dictat201006sm_texto24')); ?></li>
+    				<audio src="/sonido/dictados/dictados201006sm.mp3" preload="none" controls></audio>
+    			</ol>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="about" class="about">
+<section class="container justify">
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-12 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
+    			<p><?php echo e(trans('dictats.dictat201006sm_texto31')); ?></p>
+    			<p><?php echo e(trans('dictats.dictat201006sm_texto32')); ?></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container justify">
     <div class="container-fluid">
 	    <div class="row content counts">
 			<div class="col-md-1">
@@ -106,4 +112,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/dictats/dictat201006sm.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontandia.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/dictats/dictat201006sm.blade.php ENDPATH**/ ?>

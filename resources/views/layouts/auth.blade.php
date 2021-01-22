@@ -5,12 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Practicavalenciano | Log in</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  @include('comunes.css')
+  @include('layouts.frontAdmin.comunes.css')
 </head>
 <body class="hold-transition login-page">
   
     @yield('content')
   
-  @include('comunes.scripts')
+  @include('layouts.frontAdmin.comunes.scripts')
 </body>
 </html>

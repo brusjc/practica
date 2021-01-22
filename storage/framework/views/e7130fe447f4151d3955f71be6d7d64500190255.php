@@ -16,7 +16,7 @@
 
 <?php $__env->startSection('main_content'); ?>
 
-<section id="about" class="about">
+<section class="container justify">
     <div class="container-fluid">
 	    <div class="row content">
 	        <div class="col-md-6 pt-5 order-2">
@@ -30,7 +30,7 @@
     </div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-5 order-1 order-md-2 centraimg" data-aos="fade-left">
@@ -273,30 +273,31 @@
 
 <h2><?php echo e(trans('vocabulario.cos_titulo140')); ?></h2>
 
-<section class="about h-100">
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content  justify-content-center h-100">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/gh5d-RNQ0UE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	        <div class="col-md-6">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/gh5d-RNQ0UE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    	    </div>
+	        <div class="col-md-6">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/iCN-GMQ8BGA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	        </div>
         </div>
 	</div>
 </section>
 
-<section class="about h-100">
+<section class="container justif my-5">
     <div class="container-fluid">
-        <div class="row content  justify-content-center h-100">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/iCN-GMQ8BGA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-	</div>
-</section>
-
-<div class="row mt-5 mb-5">
-	<div class="box-body pad table-responsive">
-		<div class="col-md-3">
-			<a href="/practicainicio/11"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
+		<div class="row mt-5 mb-5">
+			<div class="box-body pad table-responsive">
+				<div class="col-md-4">
+					<a href="/practicainicio/11"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+</section>
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/cos-huma.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontandia.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/vocabulario/cos-huma.blade.php ENDPATH**/ ?>

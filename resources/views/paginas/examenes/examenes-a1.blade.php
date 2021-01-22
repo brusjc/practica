@@ -1,4 +1,4 @@
-@extends('frontend.layouts.frontend')
+@extends('layouts.frontandia.general')
 
 @section('contentheader_title'){{ trans('examenes.A1_title') }}@endsection
 
@@ -8,7 +8,7 @@
 
 @section('breadcrumb1')<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>@endsection
 
-@section('breadcrumb2')<a href="{{session('BC2')}}">{{ session('BC2texto') }}</a>@endsection
+@section('breadcrumb2'){{ session('BC2texto') }}@endsection
 
 @section('descripcion'){{ trans('examenes.A1_descripcion') }}@endsection
 
@@ -16,7 +16,7 @@
 
 @section('main_content')
 
-<section>
+<section class="justify">
     <div class="row content h-100">
         <div class="col-md-4 pt-5 order-1 centraimg">
              @include('paginas.publi.superior50')
@@ -33,7 +33,7 @@
     </div>
 </section>
 
-<section class="about">
+<section class="justify">
 	<div class="row content">
 		<div class="col-12">
 			<p>{{ trans('examenes.A1_texto7') }}</p>

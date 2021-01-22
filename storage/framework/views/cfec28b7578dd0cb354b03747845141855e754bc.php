@@ -19,51 +19,62 @@
 
 <?php $__env->startSection('main_content'); ?>
 
-	<div class="row">
-		<div class="col-md-12">
-	  		<div class="box box-primary direct-chat direct-chat-primary">
-				<div class="box-header with-border">
-					<h3 class="box-title">Texto del dictado</h3>
-				</div>
-				<div class="box-body">
-
-							<?php $__currentLoopData = $dictat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $palabra): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-								<?php echo e($palabra); ?> 
-							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="row mt-5">
-		<div class="col-md-12">
-			<div class="card">
-				<div class="card-header">
-					<h3 class="box-title">Texto del dictado del alumno</h3>
-				</div>
-				<div class="box-body">
-
-							<?php $__currentLoopData = $alumno; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $palabra): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-								<?php echo e($palabra); ?> 
-							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+<section class="container justify">
+    <div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+		  		<div class="box box-primary direct-chat direct-chat-primary">
+					<div class="box-header with-border">
+						<h3 class="box-title">Texto del dictado</h3>
+					</div>
+					<div class="box-body">
+						<?php $__currentLoopData = $dictat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $palabra): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+							<?php echo e($palabra); ?> 
+						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="row mt-0">
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- Examenes - Bajo Introduccion - 728x90 -->
-		<ins class="adsbygoogle"
-		     style="display:inline-block;width:728px;height:90px"
-		     data-ad-client="ca-pub-7412986561454436"
-		     data-ad-slot="1171860113">
-		</ins>
-		<script>
-		     (adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+</section>
+
+<section class="container justify">
+    <div class="container-fluid">
+		<div class="row mt-5">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<h3 class="box-title">Texto del dictado del alumno</h3>
+					</div>
+					<div class="box-body">
+						<?php $__currentLoopData = $alumno; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $palabra): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+							<?php echo e($palabra); ?> 
+						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+</section>
+
+<section class="container justify">
+    <div class="container-fluid">
+		<div class="row mt-0">
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Examenes - Bajo Introduccion - 728x90 -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:90px"
+			     data-ad-client="ca-pub-7412986561454436"
+			     data-ad-slot="1171860113">
+			</ins>
+			<script>
+			     (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
+</section>
 
 <?php $__env->stopSection(); ?>
 
 
-<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/dictats/comprovadictat.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontandia.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/dictats/comprovadictat.blade.php ENDPATH**/ ?>

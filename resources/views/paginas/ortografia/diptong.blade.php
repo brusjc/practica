@@ -1,4 +1,4 @@
-@extends('frontend.layouts.frontend')
+@extends('layouts.frontandia.general')
 
 @section('contentheader_title'){{ trans('ortografia.diptongos_title') }}@endsection
 
@@ -16,7 +16,7 @@
 
 @section('main_content')
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-5 order-1">
@@ -48,7 +48,7 @@
     </div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
             <div class="col-xl-4 col-lg-5 order-2 centraimg">
@@ -61,7 +61,7 @@
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
             <div class="col-xl-4 col-lg-5 centraimg" data-aos="fade-right">
@@ -100,7 +100,7 @@
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
             <div class="col-xl-4 col-lg-5 centraimg" data-aos="fade-right">
@@ -144,7 +144,7 @@
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
             <div class="col-12">

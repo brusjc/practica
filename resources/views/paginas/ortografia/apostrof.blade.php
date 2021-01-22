@@ -1,4 +1,4 @@
-@extends('frontend.layouts.frontend')
+@extends('layouts.frontandia.general')
 
 @section('contentheader_title'){{ trans('ortografia.apostrof_title') }}@endsection
 
@@ -16,7 +16,7 @@
 
 @section('main_content')
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-6 order-1 order-md-2 centraimg" data-aos="fade-left">
@@ -29,7 +29,7 @@
     </div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-6 order-1 order-md-2 centraimg" data-aos="fade-left">
@@ -63,7 +63,7 @@
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-5 order-2 order-md-2 centraimg" data-aos="fade-left">
@@ -106,7 +106,7 @@
     </div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-6 order-1 order-md-2 centraimg" data-aos="fade-left">
@@ -143,7 +143,7 @@
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-6 order-1 order-md-2 centraimg" data-aos="fade-left">

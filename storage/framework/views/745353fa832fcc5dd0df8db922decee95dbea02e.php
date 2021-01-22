@@ -16,7 +16,7 @@
 
 <?php $__env->startSection('main_content'); ?>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-5 order-2 order-md-2" data-aos="fade-left">
@@ -30,7 +30,7 @@
     </div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
             <div class="col-xl-4 col-lg-5  centraimg" data-aos="fade-right">
@@ -67,7 +67,7 @@
 	</div>
 </section>
 
-<section>
+<section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-5 order-2 order-md-2 centraimg" data-aos="fade-left">
@@ -105,8 +105,8 @@
     </div>
 </section>
 
-<section>
-    <div class="container-fluid  mt-5">
+<section class="container justify">
+    <div class="container-fluid mt-5">
         <div class="row content h-100">
 	        <div class="col-md-6 order-1 order-md-2 centraimg" data-aos="fade-left">
 	           <img class="img-fluid" src="/img/practicav/ortografia/acentuacion0.gif" width="350px" title="<?php echo e(trans('ortografia.acentuacion_imgtitle60')); ?>" alt="<?php echo e(trans('ortografia.acentuacion_imgalt60')); ?>">
@@ -120,8 +120,8 @@
 	</div>
 </section>
 
-<section>
-    <div class="container-fluid  mt-5">
+<section class="container justify">
+    <div class="container-fluid mt-5">
         <div class="row content h-100">
 	        <div class="col-md-6 order-1 order-md-2 centraimg" data-aos="fade-left">
 	           <img class="img-fluid" src="/img/practicav/ortografia/acentuacion1.gif" width="350px" title="<?php echo e(trans('ortografia.acentuacion_imgtitle70')); ?>" alt="<?php echo e(trans('ortografia.acentuacion_imgalt70')); ?>">
@@ -134,8 +134,8 @@
 	</div>
 </section>
 
-<section>
-    <div class="container-fluid  mt-5">
+<section class="container justify">
+    <div class="container-fluid mt-5">
         <div class="row content h-100">
 	        <div class="col-md-6 order-1 order-md-2 centraimg" data-aos="fade-left">
 	           <img class="img-fluid" src="/img/practicav/ortografia/acentuacion2.gif" width="350px" title="<?php echo e(trans('ortografia.acentuacion_imgtitle80')); ?>" alt="<?php echo e(trans('ortografia.acentuacion_imgalt80')); ?>">
@@ -150,8 +150,8 @@
 	</div>
 </section>
 
-<section>
-    <div class="container-fluid  mt-5">
+<section class="container justify">
+    <div class="container-fluid mt-5">
         <div class="row content h-100">
 	        <div class="col-md-6 order-1 order-md-2 centraimg" data-aos="fade-left">
 	           <img class="img-fluid" src="/img/practicav/ortografia/acentuacion3.gif" width="350px" title="<?php echo e(trans('ortografia.acentuacion_imgtitle90')); ?>" alt="<?php echo e(trans('ortografia.acentuacion_imgalt90')); ?>">
@@ -164,16 +164,14 @@
 	</div>
 </section>
 
-<div class="row mt-5 mb-5">
-	<div class="box-body pad table-responsive">
-		<div class="col-md-3">
-			<a href="/practicainicio/15"><button type="button" class="btn btn-block btn-primary btn-lg">Practica</button></a>
-		</div>
+<section class="container justify">
+    <div class="container-fluid mt-5 center">
+		<a href="/practicainicio/15"><button type="button" class="btn btn-primary btn-lg">Practica</button></a>
 	</div>
-</div>
+</section>
 
 <?php echo $__env->make('paginas.ortografia.comunes.enlaces', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/ortografia/acentuacion.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontandia.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/ortografia/acentuacion.blade.php ENDPATH**/ ?>

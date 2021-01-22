@@ -14,7 +14,7 @@
 
 <?php $__env->startSection('main_content'); ?>
 
-<section id="about" class="about">
+<section class="container justify">
     <div class="container-fluid">
 	    <div class="row content">
 	        <div class="col-md-5 order-2 order-md-2" data-aos="fade-left">
@@ -34,6 +34,11 @@
 				<p><?php echo e(trans('dictats.dictats_texto3')); ?></p>
 	        </div>
         </div>
+    </div>
+</section>
+
+<section class="container justify">
+    <div class="container-fluid">
         <div class="row content">
             <div class="col-xl-5 col-lg-6 justify-content-center align-items-stretch" data-aos="fade-right">
 	           <img class="img-fluid" src="/img/practicav/dictats.svg" width="250px" title="<?php echo e(trans('dictats.dictats_imgtitle1')); ?>" alt="<?php echo e(trans('dictats.dictats_imgalt1')); ?>">
@@ -48,7 +53,11 @@
 				</ul>
             </div>
         </div>
+    </div>
+</section>
 
+<section class="container justify">
+    <div class="container-fluid">
 	    <div class="row content">
 	        <div class="col-md-5 order-2 order-md-2" data-aos="fade-left">
 	           <img class="img-fluid " src="/img/practicav/dictats/dictats.svg" width="250px" title="<?php echo e(trans('dictats.dictats_imgtitle2')); ?>" alt="<?php echo e(trans('dictats.dictats_imgalt2')); ?>">
@@ -68,61 +77,88 @@
    </div> 
 </section>
 
-
-<section id="features" class="features">
-	<div class="container">
-		<h2><?php echo e(trans('dictats.dictats_titulo3')); ?></h2>
-		<div class="row" data-aos="fade-left">
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
-					<h3><a href="/<?php echo e(session('lang')); ?>/dictat-mitja-junio-2009-mati">Dictat examen mitjà<br/><br/> juny 2009 matí</a></h3>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-					<h3><a href="/<?php echo e(session('lang')); ?>/dictat-mitja-junio-2009-vesprada">Dictat examen mitjà<br/><br/> juny 2009 vesprada</a></h3>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-					<h3><a href="/<?php echo e(session('lang')); ?>/dictat-mitja-junio-2010-mati">Dictat examen mitjà<br/><br/> juny 2010 matí</a></h3>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-					<h3><a href="/<?php echo e(session('lang')); ?>/dictat-mitja-junio-2010-vesprada">Dictat examen mitjà<br/><br/> juny 2010 vesprada</a></h3>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-					<h3><a href="/<?php echo e(session('lang')); ?>/dictat-mitja-novembre-2010-mati">Dictat examen mitjà<br/><br/> novembre 2010 matí</a></h3>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-					<h3><a href="/<?php echo e(session('lang')); ?>/dictat-mitja-novembre-2011-mati">Dictat examen mitjà<br/><br/> novembre 2011 matí</a></h3>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-					<h3><a href="/<?php echo e(session('lang')); ?>/dictat-mitja-novembre-2011-vesprada"><?php echo e(trans('dictats.dictat201111mv_breadcrumb')); ?></a></h3>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
-					<h3><a href="/<?php echo e(session('lang')); ?>/dictat-superior-junio-2009-mati"><?php echo e(trans('dictats.dictat200906sm_breadcrumb')); ?></a></h3>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-4 mt-4">
-				<div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-					<h3><a href="/<?php echo e(session('lang')); ?>/dictat-superior-junio-2010-mati"><?php echo e(trans('dictats.dictat201006sm_breadcrumb')); ?></a></h3>
-				</div>
-			</div>
-		</div>
-	</div>
+<section class="container justify my-5">
+    <div class="container-fluid">
+        <div class="row">
+			<h2><?php echo e(trans('dictats.dictats_titulo3')); ?></h2>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/dictat-mitja-junio-2009-mati">
+                        <p class="center">Examen mitjà</p>
+                    	<p class="center">juny 2009 matí</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/dictat-mitja-junio-2009-vesprada">
+                        <p class="center">Examen mitjà</p>
+                    	<p class="center">juny 2009 vesprada</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/dictat-mitja-junio-2010-mati">
+                        <p class="center">Examen mitjà</p>
+                    	<p class="center">juny 2009 matí</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/dictat-mitja-junio-2010-vesprada">
+                        <p class="center">Examen mitjà</p>
+                    	<p class="center">juny 2010 vesprada</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/dictat-mitja-novembre-2010-mati">
+                        <p class="center">Examen mitjà</p>
+                    	<p class="center">novembre 2010 matí</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/dictat-mitja-novembre-2011-mati">
+                        <p class="center">Examen mitjà</p>
+                    	<p class="center">novembre 2011 matí</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/dictat-mitja-novembre-2011-vesprada">
+                        <p class="center">Examen mitjà</p>
+                    	<p class="center">novembre 2011 vesprada</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/dictat-superior-junio-2009-mati">
+                        <p class="center">Examen superior</p>
+                    	<p class="center">juny 2009 matí</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 center">
+                <div class="service wow fadeInUp">
+                    <a href="/<?php echo e(session('lang')); ?>/dictat-superior-junio-2010-mati">
+                        <p class="center">Examen superior</p>
+                    	<p class="center">juny 2010 matí</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('frontend.layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/dictats/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontandia.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/dictats/index.blade.php ENDPATH**/ ?>

@@ -139,7 +139,7 @@ return [
 
 
     "examenes_JQCV"             => "Exàmens",
-    "vocabulario"               => "Vocabulario",
+    "vocabulario"               => "Vocabulari",
     "ortografia"                => "Ortografia",
     "dictados"                  => "Dictados",
     "nombres"                   => "Noms",
