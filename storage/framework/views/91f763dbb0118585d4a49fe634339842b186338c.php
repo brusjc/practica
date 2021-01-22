@@ -2,7 +2,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 wow fadeIn">
-                <i class="fa fa-camera"></i>
                 <h1>
                     <?php echo $__env->yieldContent("contentheader_h1"); ?>
                 </h1>

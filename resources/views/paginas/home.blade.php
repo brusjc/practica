@@ -52,36 +52,36 @@
             <div class="col-sm-3">
                 <div class="service wow fadeInUp">
                     <a href="/{{ session('lang') }}/examenes-jqcv">
-                        <div class="service-icon"><i class="fa fa-graduation-cap"></i></div>
-                        <h3>{{ trans('home.home_titulo7') }}</h3>
-                        <p>{{ trans('home.home_texto7') }}</p>
+                        <div class="service-icon center"><i class="fa fa-graduation-cap"></i></div>
+                        <h3 class="center">{{ trans('home.home_titulo7') }}</h3>
+                        <p class="center">{{ trans('home.home_texto7') }}</p>
                     </a>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="service wow fadeInUp">
                     <a href="/{{ session('lang') }}/vocabulario">
-                        <div class="service-icon"><i class="fa fa-font"></i></div>
-                        <h3>{{ trans('home.home_titulo8') }}</h3>
-                        <p>{{ trans('home.home_texto8') }}</p>
+                        <div class="service-icon center"><i class="fa fa-font"></i></div>
+                        <h3 class="center">{{ trans('home.home_titulo8') }}</h3>
+                        <p class="center">{{ trans('home.home_texto8') }}</p>
                     </a>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="service wow fadeInUp">
                     <a href="/{{ session('lang') }}/ortografia">
-                        <div class="service-icon"><i class="fa fa-book"></i></div>
-                        <h3>{{ trans('home.home_titulo9') }}</h3>
-                        <p>{{ trans('home.home_texto9') }}</p>
+                        <div class="service-icon center"><i class="fa fa-book"></i></div>
+                        <h3 class="center">{{ trans('home.home_titulo9') }}</h3>
+                        <p class="center">{{ trans('home.home_texto9') }}</p>
                     </a>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="service wow fadeInUp">
                     <a href="/{{ session('lang') }}/dictats">
-                        <div class="service-icon"><i class="fa fa-play"></i></div>
-                        <h3>{{ trans('home.home_titulo10') }}</h3>
-                        <p>{{ trans('home.home_texto10') }}</p>
+                        <div class="service-icon center"><i class="fa fa-play"></i></div>
+                        <h3 class="center">{{ trans('home.home_titulo10') }}</h3>
+                        <p class="center">{{ trans('home.home_texto10') }}</p>
                     </a>
                 </div>
             </div>
