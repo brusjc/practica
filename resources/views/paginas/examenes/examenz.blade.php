@@ -20,6 +20,27 @@
 
 @section('main_content')
 
+@if(isset($message))
+    <section class="container justify">
+        <div class="container-fluid">
+            <div class="alert alert-danger mt-5" role="alert">
+                <div class="row mt-5">
+                    <div class="col-md-2">
+                        <i class="fa fa-exclamation-triangle fa-2x"></i>
+                    </div>
+                    <div class="col-md-8">
+                        {{ trans('message.nouser') }}
+                    </div>
+                    <div class="col-md-2">
+                        <a class="mb-2 btn btn-info" href="/login">{{ trans('message.login') }}</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+@endif
+
 <section class="container justify">
     <div class="container-fluid">
         <div class="row">

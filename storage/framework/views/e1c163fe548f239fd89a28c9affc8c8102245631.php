@@ -18,6 +18,28 @@
 
 <?php $__env->startSection('main_content'); ?>
 
+<?php if(isset($message)): ?>
+    <section class="container justify">
+        <div class="container-fluid">
+            <div class="alert alert-danger mt-5" role="alert">
+                <div class="row mt-5">
+                    <div class="col-md-2">
+                        <i class="fa fa-exclamation-triangle fa-2x"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <?php echo e(trans('message.nouser')); ?>
+
+                    </div>
+                    <div class="col-md-2">
+                        <a class="mb-2 btn btn-info" href="/login"><?php echo e(trans('message.login')); ?></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
+
 <section class="container justify">
     <div class="container-fluid">
         <div class="row mt-5">

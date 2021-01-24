@@ -133,13 +133,10 @@ return [
     'registered'              => 'Usuario registrado!',
     'solo usuarios registrados' => 'solo usuarios registrados',
     'sinlogin'                => 'Acceder sin registro',
+    'nouser'                  => 'Para disponer del histórico de intentos es necesario que te registres',
     'aceptola'                => 'Acepto la',
     'apellido1'               => 'Primer apellido',
     'apellido2'               => 'Segundo apellido',
-
-
-
-    
 
 
     'examenes_JQCV'         => 'Exámenes',

@@ -68,6 +68,7 @@
                                   <button type="button" class="btn btn-primary"><?php echo e(trans('message.examen_nuevo')); ?></button>
                                </a>
                             <?php else: ?>
+                                <a class="mb-2 btn btn-info" href="/examennuevo/<?php echo e($codigo); ?>"><?php echo e(trans('message.sinlogin')); ?></a>
                                 <a class="mb-2 btn btn-info" href="/login"><?php echo e(trans('message.login')); ?></a>
                             <?php endif; ?>
                         </div>

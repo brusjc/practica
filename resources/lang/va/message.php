@@ -132,10 +132,11 @@ return [
     "entering"                => "Entrando...",
     "registered"              => "Usuario registrat! ",
 	'solo usuarios registrados' => 'només usuaris registrats',
-
-
-
-
+    'sinlogin'                => 'Accedir sense registre',
+    'nouser'                  => "Per a disposar de l'històric d'intents és necessari que et registres",
+    'aceptola'                => 'Accepte la',
+    'apellido1'               => 'Primer cognom',
+    'apellido2'               => 'Segon cognom',
 
 
     "examenes_JQCV"             => "Exàmens",

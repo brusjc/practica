@@ -115,6 +115,18 @@ Route::get('/{idm}/examen-mitja/{codigo}', 'PruebaController@prueba_mitja')->nam
 Route::get('/{idm}/examen-superior/{codigo}', 'PruebaController@prueba_superior')->name('Examen_Superior');
 
 
+
+//************************
+//* Examenes con usuario *
+//************************
+Route::get('/examennuevo/{codigo}', 'ExamenController@crear')->name('ExamenCrear');
+Route::get('/exameninicio/{id}', 'ExamenController@examenXId')->name('ExamenXId');
+Route::get('/examen/{id}/{subarea}', 'PreguntaController@preguntaXSubarea')->name('Examen');
+Route::get('/examenz/{id}/{subarea}', 'PreguntaController@preguntaXSubareaz')->name('Examenz');
+Route::put('/examen2/{id}', 'ResultadoController@examen2')->name('ResultadoExamen2');
+Route::put('/examenz2/{id}', 'ResultadoController@examenz2')->name('ResultadoExamenz2');
+
+
 //***********************
 //* Páginas con usuario *
 //***********************
@@ -124,13 +136,7 @@ Route::group(['middleware' => 'auth'], function()
     //************
     //* Examenes *
     //************
-    Route::get('/examennuevo/{codigo}', 'ExamenController@crear')->name('ExamenCrear')->middleware('verified');
     Route::get('/examenes/{prueba}', 'ExamenController@show');
-    Route::get('/exameninicio/{id}', 'ExamenController@examenXId')->name('ExamenXId');
-    Route::get('/examen/{id}/{subarea}', 'PreguntaController@preguntaXSubarea')->name('Examen');
-    Route::get('/examenz/{id}/{subarea}', 'PreguntaController@preguntaXSubareaz')->name('Examenz');
-    Route::put('/examen2/{id}', 'ResultadoController@examen2')->name('ResultadoExamen2');
-    Route::put('/examenz2/{id}', 'ResultadoController@examenz2')->name('ResultadoExamenz2');
     Route::get('/examensubareas/{prueba}', 'SubareaTemaController@showXExamen')->name('ShowXExamen');
 
 

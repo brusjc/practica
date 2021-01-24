@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pregunta;
+use Auth;
 use Mail;
 
 class PreguntaController extends Controller
@@ -171,7 +172,12 @@ class PreguntaController extends Controller
         //return $pregunta;
         //return $subarea;
         
-        return view('paginas.examenes.examen', compact('$id', 'subarea', 'ressubarea', 'pregunta'));
+        if(!isset(Auth::user()->id))
+        {
+            $message="notUser";
+        }
+        
+        return view('paginas.examenes.examen', compact('$id', 'subarea', 'ressubarea', 'pregunta', 'message'));
     }
 
 
@@ -194,7 +200,12 @@ class PreguntaController extends Controller
         $preguntas=$preguntas['original']['data'];
         //return $preguntas;
         
-        return view('paginas.examenes.examenz', compact('id', 'subarea', 'ressubarea', 'preguntas'));
+        if(!isset(Auth::user()->id))
+        {
+            $message="notUser";
+        }
+        
+        return view('paginas.examenes.examenz', compact('id', 'subarea', 'ressubarea', 'preguntas', 'message'));
     }
 
     public function preguntasXSubtema($subtema)
