@@ -63,6 +63,20 @@
 
 <section class="container justify">
     <div class="container-fluid">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Examenes - Bajo Introduccion - 728x90 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-7412986561454436"
+             data-ad-slot="1171860113"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</section>
+
+<section class="container justify">
+    <div class="container-fluid">
         <div class="row content h-100">
             <div class="col-xl-4 col-lg-5 centraimg" data-aos="fade-right">
 	           <img class="img-fluid" src="/img/practicav/ortografia/diptongo-creciente.gif" width="300px" title="{{ trans('ortografia.diptongos_imgtitle40') }}" alt="{{ trans('ortografia.diptongos_imgalt40') }}">
@@ -152,6 +166,20 @@
 			</div>
         </div>
 	</div>
+</section>
+
+<section class="container justify">
+    <div class="container-fluid">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Examenes - Bajo Introduccion - 728x90 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-7412986561454436"
+             data-ad-slot="1171860113"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 </section>
 
 @include('paginas.ortografia.comunes.enlaces')
