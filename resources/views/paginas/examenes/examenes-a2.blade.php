@@ -99,9 +99,9 @@
                     <div class="card-body">
                         <table class="table table-bordered">
                             <tr>
-                                <th>{{ trans('examenes.Examen') }}</th>
-                                <th>{{ trans('examenes.Fecha') }}</th>
-                                <th>{{ trans('examenes.Progreso') }}</th>
+                                <th>{{ ucfirst(trans('examenes.examen')) }}</th>
+                                <th>{{ ucfirst(trans('examenes.fecha')) }}</th>
+                                <th>{{ ucfirst(trans('examenes.progreso')) }}</th>
                                 <th style="width: 5%">%</th>
                             </tr>
                             @if(!Auth::guest())

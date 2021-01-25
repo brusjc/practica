@@ -4,12 +4,12 @@ return [
 
     
 //Tablas
-'Examen' => 'Examen',
-'Fecha' => 'Fecha',
-'Progreso' => 'Progreso',
-'Area' => 'Área',
-'Subarea' => 'Subárea',
-'Nivel' => 'Nivel',
+'examen' => 'examen',
+'fecha' => 'fecha',
+'progreso' => 'progreso',
+'area' => 'área',
+'subarea' => 'subárea',
+'nivel' => 'nivel',
 
 
 

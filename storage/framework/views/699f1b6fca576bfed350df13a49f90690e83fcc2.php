@@ -90,9 +90,9 @@
                     <div class="card-body">
                         <table class="table table-bordered">
                             <tr>
-                                <th><?php echo e(trans('examenes.Examen')); ?></th>
-                                <th><?php echo e(trans('examenes.Fecha')); ?></th>
-                                <th><?php echo e(trans('examenes.Progreso')); ?></th>
+                                <th><?php echo e(ucfirst(trans('examenes.examen'))); ?></th>
+                                <th><?php echo e(ucfirst(trans('examenes.fecha'))); ?></th>
+                                <th><?php echo e(ucfirst(trans('examenes.progreso'))); ?></th>
                                 <th style="width: 5%">%</th>
                             </tr>
                             <?php if(!Auth::guest()): ?>
