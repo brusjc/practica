@@ -9,6 +9,10 @@ return [
 'Progreso' => 'Progrés',
 'Area' => 'Área',
 'Subarea' => 'Subárea',
+'Nivel' => 'Nivel',
+
+
+
 'jqcv_breadcrumb' => "Exàmens JQCV",
 'jqcv_h1' => "Exàmens de la JQCV d'anteriors convocatòries", 
 'jqcv_title' => "Exàmens JQCV", 
@@ -524,6 +528,11 @@ return [
 'exaC2_texto104' => " de la JQCV.",
 'exaC2_texto105' => "L'examen C2 és equivalent al nivell Superior però adaptat al ",
 'exaC2_texto106' => "Marco Comú Europeu de Referència per a les Llengües",
+
+
+
+'exameninicio_title' => "Estructura del ", 
+'exameninicio_h1' => "Estructura del ", 
 
 
 
