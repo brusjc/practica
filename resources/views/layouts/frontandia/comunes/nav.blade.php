@@ -30,7 +30,7 @@
                     <a href="/{{ session('lang') }}/ortografia"><i class="fa fa-book fa-2x"></i><br>{{ trans('message.ortografia') }}</a>
                 </li>
                 <li>
-                    <a href="/{{ session('lang') }}/dictats"><i class="fa fa-play fa-2x misvg"></i><br>{{ trans('dictats.dictats_url') }}</a>
+                    <a href="/{{ session('lang') }}/dictats"><i class="fa fa-play fa-2x misvg"></i><br>{{ trans('message.dictados') }}</a>
                 </li>
                 <li>
                     <a href="/{{ session('lang') }}/noms"><i class="fa fa-male fa-2x"></i><br>{{ trans('message.nombres') }}</a>

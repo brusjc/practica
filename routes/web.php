@@ -145,11 +145,14 @@ Route::group(['middleware' => 'auth'], function()
     //* Master *
     //**********
     Route::get('/pruebasmaster', 'PruebaController@pruebasmaster')->name('PruebasMaster');
+    Route::get('/es/master', 'PruebaController@pruebasmaster')->name('Master');
     Route::get('/temasmaster/{prueba}', 'TemaController@temasmaster')->name('TemasMaster');
     Route::get('/masterExamen/{id}', 'ExamenController@examenMasterXId')->name('MasterExamen');
     Route::get('/masterPreguntas/{subtema}', 'PreguntaController@preguntasXSubtema')->name('MasterPreguntas');
     Route::get('/masterVerificador/{subtema}', 'PreguntaController@verificadorXSubtema')->name('MasterVerificador');
     Route::put('/masterVerificador2/{subtema}', 'PreguntaController@verificador2')->name('MasterVerificador2');
+
+
 
 
     //***************

@@ -30,7 +30,7 @@
                     <a href="/<?php echo e(session('lang')); ?>/ortografia"><i class="fa fa-book fa-2x"></i><br><?php echo e(trans('message.ortografia')); ?></a>
                 </li>
                 <li>
-                    <a href="/<?php echo e(session('lang')); ?>/dictats"><i class="fa fa-play fa-2x misvg"></i><br><?php echo e(trans('dictats.dictats_url')); ?></a>
+                    <a href="/<?php echo e(session('lang')); ?>/dictats"><i class="fa fa-play fa-2x misvg"></i><br><?php echo e(trans('message.dictados')); ?></a>
                 </li>
                 <li>
                     <a href="/<?php echo e(session('lang')); ?>/noms"><i class="fa fa-male fa-2x"></i><br><?php echo e(trans('message.nombres')); ?></a>
