@@ -31,13 +31,6 @@
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
     ),
   ),
-  'laravel/ui' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Ui\\UiServiceProvider',
-    ),
-  ),
   'nesbot/carbon' => 
   array (
     'providers' => 
@@ -50,13 +43,6 @@
     'providers' => 
     array (
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    ),
-  ),
-  'spatie/laravel-cookie-consent' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Spatie\\CookieConsent\\CookieConsentServiceProvider',
     ),
   ),
 );
