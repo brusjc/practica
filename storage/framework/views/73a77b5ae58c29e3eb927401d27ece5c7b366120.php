@@ -1,17 +1,5 @@
 
 
-<?php $__env->startSection('contentheader_title'); ?><?php echo e(trans('examenes.jqcv_title')); ?><?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('contentheader_h1'); ?><?php echo e(trans('examenes.jqcv_h1')); ?><?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('breadcrumb0'); ?><a href="/<?php echo e(session('lang')); ?>/">Inicio</a><?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('breadcrumb1'); ?><?php echo e(session('BC1texto')); ?><?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('descripcion'); ?><?php echo e(trans('examenes.jqcv_descripcion')); ?><?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('keywords'); ?><?php echo e(trans('examenes.jqcv_keywords')); ?><?php $__env->stopSection(); ?>
-
 <?php $__env->startSection('main_content'); ?>
 
 <section class="container justify">
