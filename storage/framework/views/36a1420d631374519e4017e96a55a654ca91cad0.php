@@ -99,14 +99,15 @@
 							<input type="hidden" name="id" value=<?php echo e($datos['id']); ?>>
 							<input type="hidden" name="verdiv" value=<?php echo e($datos['verdiv']); ?>>
 							<input type="hidden" name="orden" value=<?php echo e($datos['orden']); ?>>
-							<div class="box-footer row invoice-info">
+							<div class="box-footer row invoice-info mb-5">
 								<div class="col-sm-6 invoice-col">
-									<button type="submit" class="btn btn-info pull-right">Enviar</button>
+									<button type="submit" class="btn btn-lg btn-info pull-right">Enviar</button>
 								</div>
 								<div class="col-sm-6 invoice-col">
-									<a href="<?php echo e(session('urlback')); ?>">Go Back</button></a>
+									<a href="<?php echo e(session('BC2')); ?>" class="btn btn-lg btn-info pull-right">Tornar</a>
 								</div>
 							</div>
+							<?php echo $__env->make("paginas.publi.examenes_bajo_introduccion_728x90", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 						</form>
 					<?php else: ?>
 						<form action="<?php echo e(action('PracticaController@practica2')); ?>" method="POST" class="form-horizontal">
@@ -160,6 +161,7 @@
 									<a href="<?php echo e(session('BC2')); ?>" class="btn btn-info pull-right">Tornar</a>
 								</div>
 							</div>
+							<?php echo $__env->make("paginas.publi.examenes_bajo_introduccion_728x90", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 						</form>
 					<?php endif; ?>
 				</div>

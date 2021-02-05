@@ -137,6 +137,8 @@
     </div>
 </section>
 
+@include("paginas.publi.examenes_bajo_introduccion_728x90")
+
 <section class="container justify">
     <div class="container-fluid">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
