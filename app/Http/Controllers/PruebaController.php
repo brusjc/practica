@@ -277,7 +277,7 @@ class PruebaController extends Controller
                 break;
         }
 
-        return view('paginas.examenes.index', compact('exa', 'respuesta'));
+        return view('paginas.examenes.index', compact('respuesta'));
     }
  
     public function pruebas_a1($idm)
