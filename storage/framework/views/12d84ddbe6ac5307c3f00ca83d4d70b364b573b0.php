@@ -49,6 +49,20 @@
 
 <section class="container justify">
     <div class="container-fluid">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Examenes - Bajo Introduccion - 728x90 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-7412986561454436"
+             data-ad-slot="1171860113"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</section>
+
+<section class="container justify">
+    <div class="container-fluid">
         <?php if($pruebas): ?>
             <h2><?php echo e(trans('examenes.C2_titulo200')); ?></h2>
             <div class="row content mt-5">
@@ -86,9 +100,9 @@
                     <div class="card-body">
                         <table class="table table-bordered">
                             <tr>
-                                <th><?php echo e(trans('examenes.Examen')); ?></th>
-                                <th><?php echo e(trans('examenes.Fecha')); ?></th>
-                                <th><?php echo e(trans('examenes.Progreso')); ?></th>
+                                <th><?php echo e(ucfirst(trans('examenes.examen'))); ?></th>
+                                <th><?php echo e(ucfirst(trans('examenes.fecha'))); ?></th>
+                                <th><?php echo e(ucfirst(trans('examenes.progreso'))); ?></th>
                                 <th style="width: 5%">%</th>
                             </tr>
                             <?php if(!Auth::guest()): ?>

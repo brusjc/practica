@@ -80,6 +80,7 @@
                                   <button type="button" class="btn btn-primary">{{ trans('message.examen_nuevo') }}</button>
                                </a>
                             @else
+                                <a class="mb-2 btn btn-info" href="/examennuevo/{{$codigo}}">{{ trans('message.sinlogin') }}</a>
                                 <a class="mb-2 btn btn-info" href="/login">{{ trans('message.login') }}</a>
                             @endif
                         </div>

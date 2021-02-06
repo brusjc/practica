@@ -8,7 +8,7 @@
 
 <?php $__env->startSection('breadcrumb1'); ?><a href="<?php echo e(session('BC1')); ?>"><?php echo e(session('BC1texto')); ?></a><?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('breadcrumb2'); ?><a href="<?php echo e(session('BC2')); ?>"><?php echo e(session('BC2texto')); ?></a><?php $__env->stopSection(); ?>
+<?php $__env->startSection('breadcrumb2'); ?><?php echo e(session('BC2texto')); ?><?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('descripcion'); ?><?php echo e(trans('examenes.oral_descripcion')); ?><?php $__env->stopSection(); ?>
 
@@ -44,6 +44,20 @@
                 <p><?php echo e(trans('examenes.oral_texto103')); ?> <a href="/<?php echo e(session('lang')); ?>/examenes-a2"><?php echo e(trans('examenes.oral_texto104')); ?></a> <?php echo e(trans('examenes.oral_texto105')); ?> <a href="https://cvc.cervantes.es/ensenanza/biblioteca_ele/marco/" rel="nofollow" target="_blank"><?php echo e(trans('examenes.oral_texto106')); ?></a></p>
     		</div>
     	</div>
+    </div>
+</section>
+
+<section class="container justify">
+    <div class="container-fluid">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Examenes - Bajo Introduccion - 728x90 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-7412986561454436"
+             data-ad-slot="1171860113"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 </section>
 
@@ -86,9 +100,9 @@
                     <div class="card-body">
                         <table class="table table-bordered">
                             <tr>
-                                <th><?php echo e(trans('examenes.Examen')); ?></th>
-                                <th><?php echo e(trans('examenes.Fecha')); ?></th>
-                                <th><?php echo e(trans('examenes.Progreso')); ?></th>
+                                <th><?php echo e(ucfirst(trans('examenes.examen'))); ?></th>
+                                <th><?php echo e(ucfirst(trans('examenes.fecha'))); ?></th>
+                                <th><?php echo e(ucfirst(trans('examenes.progreso'))); ?></th>
                                 <th style="width: 5%">%</th>
                             </tr>
                             <?php if(!Auth::guest()): ?>
