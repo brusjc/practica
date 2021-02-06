@@ -72,4 +72,10 @@
 	</div>
 </section>
 
+<section class="container justify">
+    <div class="container-fluid">
+        @include("paginas.publi.examenes_bajo_introduccion_728x90")
+    </div>
+</section>
+
 @endsection

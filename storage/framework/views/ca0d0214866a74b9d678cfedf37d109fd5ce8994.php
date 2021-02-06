@@ -52,6 +52,12 @@
 
 <section class="container justify">
     <div class="container-fluid">
+        <?php echo $__env->make("paginas.publi.examenes_bajo_introduccion_728x90", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    </div>
+</section>
+
+<section class="container justify">
+    <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-4 pt-5 order-2 centraimg">
 	           <img class="img-fluid" src="/img/practicav/ortografia/v.svg" width="250px" title="<?php echo e(trans('ortografia.byv_imgtitle40')); ?>" alt="<?php echo e(trans('ortografia.byv_imgalt40')); ?>">
@@ -92,6 +98,11 @@
 	</div>
 </section>
 
+<section class="container justify">
+    <div class="container-fluid">
+        <?php echo $__env->make("paginas.publi.examenes_bajo_introduccion_728x90", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    </div>
+</section>
 
 <section class="container justify">
     <div class="container-fluid center">

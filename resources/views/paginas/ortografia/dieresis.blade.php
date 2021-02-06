@@ -44,7 +44,6 @@
     </div>
 </section>
 
-
 <section class="container justify">
     <div class="container-fluid">
         <div class="row content h-100">
@@ -77,7 +76,6 @@
         </div>
 	</div>
 </section>
-
 
 <section class="container justify">
     <div class="container-fluid">
@@ -120,6 +118,12 @@
 	</div>
 </section>
 
+<section class="container justify">
+    <div class="container-fluid">
+        @include("paginas.publi.examenes_bajo_introduccion_728x90")
+    </div>
+</section>
+
 <section class="container justify my-5">
     <div class="container-fluid center">
 		<a href="/practicainicio/8"><button type="button" class="btn btn-primary btn-lg">Practica</button></a>
@@ -127,5 +131,11 @@
 </section>
 
 @include('paginas.ortografia.comunes.enlaces')
+
+<section class="container justify">
+    <div class="container-fluid">
+        @include("paginas.publi.examenes_bajo_introduccion_728x90")
+    </div>
+</section>
 
 @endsection

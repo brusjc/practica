@@ -121,6 +121,12 @@
 </section>
 
 <section class="container justify">
+    <div class="container-fluid">
+        <?php echo $__env->make("paginas.publi.examenes_bajo_introduccion_728x90", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    </div>
+</section>
+
+<section class="container justify">
     <div class="container-fluid mt-5">
         <div class="row content h-100">
 	        <div class="col-md-6 order-1 order-md-2 centraimg" data-aos="fade-left">
@@ -165,12 +171,24 @@
 </section>
 
 <section class="container justify">
+    <div class="container-fluid">
+        <?php echo $__env->make("paginas.publi.examenes_bajo_introduccion_728x90", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    </div>
+</section>
+
+<section class="container justify">
     <div class="container-fluid mt-5 center">
 		<a href="/practicainicio/15"><button type="button" class="btn btn-primary btn-lg">Practica</button></a>
 	</div>
 </section>
 
 <?php echo $__env->make('paginas.ortografia.comunes.enlaces', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+<section class="container justify">
+    <div class="container-fluid">
+        <?php echo $__env->make("paginas.publi.examenes_bajo_introduccion_728x90", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    </div>
+</section>
 
 <?php $__env->stopSection(); ?>
 
