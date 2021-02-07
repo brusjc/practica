@@ -63,9 +63,6 @@ class RegisterController extends Controller
         $data['confirmation_code'] = Str::random(25);
         $data['fecha'] = Carbon::now()->toTimeString();
 
-var_dump($data);
-
-
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -73,6 +70,7 @@ var_dump($data);
             'password' => Hash::make($data['password']),
             'apellido1' => $data['apellido1'],
             'apellido2' => $data['apellido2'],
+            'confirmation_code' => $data['confirmation_code'],
             'privacidad' => $data['fecha'],
         ]);
 

@@ -31,7 +31,7 @@
 
 <section class="container justify">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row mb-5">
             <h2>{{ trans('home.home_titulo1') }}</h2>
         </div>
         <div class="row">

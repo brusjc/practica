@@ -93,7 +93,7 @@
                             <div class="col-md-2">
                                 <input id="privacidad" type="checkbox" class="form-control" name="privacidad" required autocomplete="new-password">
                             </div>
-                            <label for="privacidad" class="col-md-10 col-form-label text-md-left">{{trans('message.aceptola') }} <a href="/politica_de_privacidad">{{trans('message.politicaprivacidad') }}</a></label>
+                            <label for="privacidad" class="col-md-10 col-form-label text-md-left">{{trans('message.aceptola') }} <a href="/{{session('lang')}}/politica_de_privacidad" target="_blak">{{trans('message.politicaprivacidad') }}</a></label>
 
                         </div>
 
