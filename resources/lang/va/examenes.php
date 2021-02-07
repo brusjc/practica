@@ -313,17 +313,12 @@ return [
 'exaA2_titulo200' => "Proves d'usuari - Nivell A2 de ",
 'exaA2_imgtitle100' => "Proves d'usuari - Nivell A2 de ",
 'exaA2_imgalt100' => "Proves d'usuari - Nivell A2 de ",
-'exaA2_texto1' => "En Examen A2 de ",
-'exaA2_texto2' => " de la JQCV (Junta Qualificadora de Coneixements de Valencià) , pots realitzar l'examen del Nivell A2 de ",
-'exaA2_texto3' => "  com si estigueres en la mateixa prova.",
-'exaA2_texto4' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'Examen A2 de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià) , és a dir, tres respostes amb una verdadera.",
-'exaA2_texto5' => "A més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant des dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV) , puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el Nivell A2 de la JQCV.",
-'exaA2_texto101' => "Ja que l'Examen A2 de ",
-'exaA2_texto102' => " de la JQCV (Junta Qualificadora de Coneixements de Valencià) compta amb les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
-'exaA2_texto103' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a obtindre confiança, eficàcia i aconseguir resoldre satisfactòriament l'Examen A2 de ",
-'exaA2_texto104' => " de la JQCV.",
-'exaA2_texto105' => "L'examen A2 és equivalent al nivell Oral però adaptat al ",
-'exaA2_texto106' => "Marco Comú Europeu de Referència per a les Llengües",
+'exaA2_texto1' => "En <b>Examen A2 de :mes de :ano de la JQCV</b> (Junta Qualificadora de Coneixements de Valencià) , pots realitzar l'examen del Nivell A2 de :mes de :ano com si estigueres en la mateixa prova.",
+'exaA2_texto2' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'Examen A2 de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià) , és a dir, tres respostes amb una verdadera.",
+'exaA2_texto3' => "A més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant des dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV) , puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el Nivell A2 de la JQCV.",
+
+'exaA2_texto101' => "Ja que <b>l'Examen A2 de :mes de :ano de la JQCV (Junta Qualificadora de Coneixements de Valencià)</b> compta amb les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
+'exaA2_texto102' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a obtindre confiança, eficàcia i aconseguir resoldre satisfactòriament l'Examen A2 de :mes de :ano de la JQCV.",
 
 
 
@@ -366,17 +361,11 @@ return [
 'exaB1_titulo200' => "Proves d'usuari - Nivell B1 de ",
 'exaB1_imgtitle100' => "Proves d'usuari - Nivell B1 de ",
 'exaB1_imgalt100' => "Proves d'usuari - Nivell B1 de ",
-'exaB1_texto1' => "En Examen B1 de ",
-'exaB1_texto2' => " de la JQCV (Junta Qualificadora de Coneixements de Valencià) , pots realitzar l'examen del Nivell B1 de ",
-'exaB1_texto3' => "  com si estigueres en la mateixa prova.",
-'exaB1_texto4' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'Examen B1 de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià) , és a dir, tres respostes amb una verdadera.",
-'exaB1_texto5' => "A més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant des dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV) , puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el Nivell B1 de la JQCV.",
-'exaB1_texto101' => "Ja que l'Examen B1 de ",
-'exaB1_texto102' => " de la JQCV (Junta Qualificadora de Coneixements de Valencià) compta amb les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
-'exaB1_texto103' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a obtindre confiança, eficàcia i aconseguir resoldre satisfactòriament l'Examen B1 de ",
-'exaB1_texto104' => " de la JQCV.",
-'exaB1_texto105' => "L'examen B1 és equivalent al nivell Elemental però adaptat al ",
-'exaB1_texto106' => "Marco Comú Europeu de Referència per a les Llengües",
+'exaB1_texto1' => "En <b>Examen B1 de :mes de :ano de la JQCV</b> (Junta Qualificadora de Coneixements de Valencià) , pots realitzar l'examen del Nivell B1 de :mes de :ano com si estigueres en la mateixa prova.",
+'exaB1_texto2' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'Examen B1 de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià) , és a dir, tres respostes amb una verdadera.",
+'exaB1_texto3' => "A més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant des dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV) , puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el Nivell B1 de la JQCV.",
+'exaB1_texto101' => "Ja que <b>l'Examen B1 de :mes de :ano de la JQCV (Junta Qualificadora de Coneixements de Valencià)</b> compta amb les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
+'exaB1_texto102' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a obtindre confiança, eficàcia i aconseguir resoldre satisfactòriament l'Examen B1 de :mes de :ano de la JQCV.",
 
 
 
@@ -415,17 +404,12 @@ return [
 'exaB2_titulo200' => "Proves d'usuari - Nivell B2 de ",
 'exaB2_imgtitle100' => "Proves d'usuari - Nivell B2 de ",
 'exaB2_imgalt100' => "Proves d'usuari - Nivell B2 de ",
-'exaB2_texto1' => "En Examen B2 de ",
-'exaB2_texto2' => " de la JQCV (Junta Qualificadora de Coneixements de Valencià) , pots realitzar l'examen del Nivell B2 de ",
-'exaB2_texto3' => "  com si estigueres en la mateixa prova.",
-'exaB2_texto4' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'Examen B2 de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià) , és a dir, tres respostes amb una verdadera.",
-'exaB2_texto5' => "A més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant des dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV) , puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el Nivell B2 de la JQCV.",
-'exaB2_texto101' => "Ja que l'Examen B2 de ",
-'exaB2_texto102' => " de la JQCV (Junta Qualificadora de Coneixements de Valencià) compta amb les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
-'exaB2_texto103' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a obtindre confiança, eficàcia i aconseguir resoldre satisfactòriament l'Examen B2 de ",
-'exaB2_texto104' => " de la JQCV.",
+'exaB2_texto1' => "En <b>Examen B2 de :mes de :ano de la JQCV</b> (Junta Qualificadora de Coneixements de Valencià) , pots realitzar l'examen del Nivell B2 de :mes de :ano com si estigueres en la mateixa prova.",
+'exaB2_texto2' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'Examen B2 de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià) , és a dir, tres respostes amb una verdadera.",
+'exaB2_texto3' => "A més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant des dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV) , puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el Nivell B2 de la JQCV.",
 
-
+'exaB2_texto101' => "Ja que <b>l'Examen B2 de :mes de :ano de la JQCV (Junta Qualificadora de Coneixements de Valencià)</b> compta amb les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
+'exaB2_texto102' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a obtindre confiança, eficàcia i aconseguir resoldre satisfactòriament l'Examen B2 de :mes de :ano de la JQCV.",
 
 
 
@@ -466,17 +450,11 @@ return [
 'exaC1_titulo200' => "Proves d'usuari - Nivell C1 de ",
 'exaC1_imgtitle100' => "Proves d'usuari - Nivell C1 de ",
 'exaC1_imgalt100' => "Proves d'usuari - Nivell C1 de ",
-'exaC1_texto1' => "En Examen C1 de ",
-'exaC1_texto2' => " de la JQCV (Junta Qualificadora de Coneixements de Valencià) , pots realitzar l'examen del Nivell C1 de ",
-'exaC1_texto3' => "  com si estigueres en la mateixa prova.",
-'exaC1_texto4' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'Examen C1 de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià) , és a dir, tres respostes amb una verdadera.",
-'exaC1_texto5' => "A més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant des dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV) , puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el Nivell C1 de la JQCV.",
-'exaC1_texto101' => "Ja que l'Examen C1 de ",
-'exaC1_texto102' => " de la JQCV (Junta Qualificadora de Coneixements de Valencià) compta amb les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
-'exaC1_texto103' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a obtindre confiança, eficàcia i aconseguir resoldre satisfactòriament l'Examen C1 de ",
-'exaC1_texto104' => " de la JQCV.",
-'exaC1_texto105' => "L'examen C1 és equivalent al nivell Mitjà però adaptat al ",
-'exaC1_texto106' => "Marco Comú Europeu de Referència per a les Llengües",
+'exaC1_texto1' => "En <b>Examen C1 de :mes de :ano de la JQCV</b> (Junta Qualificadora de Coneixements de Valencià) , pots realitzar l'examen del Nivell C1 de :mes de :ano com si estigueres en la mateixa prova.",
+'exaC1_texto2' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'Examen C1 de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià) , és a dir, tres respostes amb una verdadera.",
+'exaC1_texto3' => "A més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant des dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV) , puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el Nivell C1 de la JQCV.",
+'exaC1_texto101' => "Ja que <b>l'Examen C1 de :mes de :ano de la JQCV (Junta Qualificadora de Coneixements de Valencià)</b> compta amb les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
+'exaC1_texto102' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a obtindre confiança, eficàcia i aconseguir resoldre satisfactòriament l'Examen C1 de :mes de :ano de la JQCV.",
 
 
 
@@ -517,17 +495,11 @@ return [
 'exaC2_titulo200' => "Proves d'usuari - Nivell C2 de ",
 'exaC2_imgtitle100' => "Proves d'usuari - Nivell C2 de ",
 'exaC2_imgalt100' => "Proves d'usuari - Nivell C2 de ",
-'exaC2_texto1' => "En Examen C2 de ",
-'exaC2_texto2' => " de la JQCV (Junta Qualificadora de Coneixements de Valencià) , pots realitzar l'examen del Nivell C2 de ",
-'exaC2_texto3' => "  com si estigueres en la mateixa prova.",
-'exaC2_texto4' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'Examen C2 de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià) , és a dir, tres respostes amb una verdadera.",
-'exaC2_texto5' => "A més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant des dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV) , puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el Nivell C2 de la JQCV.",
-'exaC2_texto101' => "Ja que l'Examen C2 de ",
-'exaC2_texto102' => " de la JQCV (Junta Qualificadora de Coneixements de Valencià) compta amb les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
-'exaC2_texto103' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a obtindre confiança, eficàcia i aconseguir resoldre satisfactòriament l'Examen C2 de ",
-'exaC2_texto104' => " de la JQCV.",
-'exaC2_texto105' => "L'examen C2 és equivalent al nivell Superior però adaptat al ",
-'exaC2_texto106' => "Marco Comú Europeu de Referència per a les Llengües",
+'exaC2_texto1' => "En <b>Examen C2 de :mes de :ano de la JQCV</b> (Junta Qualificadora de Coneixements de Valencià) , pots realitzar l'examen del Nivell C2 de :mes de :ano com si estigueres en la mateixa prova.",
+'exaC2_texto2' => "Perquè no trobes diferències amb l'examen real, la nostra pàgina www.practicavalenciano.es, estructura l'Examen C2 de la mateixa manera que els exàmens de la JQCV (Junta Qualificadora de Coneixements de Valencià) , és a dir, tres respostes amb una verdadera.",
+'exaC2_texto3' => "A més, amb la novetat del nostre sistema d'autoavaluació, pel qual l'usuari de la nostra pàgina, estudiant des dels exàmens de la Junta Qualificadora de Coneixements de Valencià (Exàmens JQCV) , puga saber a l'instant la seua puntuació respecte al seu examen, en este cas, el Nivell C2 de la JQCV.",
+'exaC2_texto101' => "Ja que <b>l'Examen C2 de :mes de :ano de la JQCV (Junta Qualificadora de Coneixements de Valencià)</b> compta amb les mateixes preguntes que l'examen real i en el mateix orde, t'aconsellem que utilitzes esta opció únicament quan hages practicat prou amb els nostres exercicis pràctics.",
+'exaC2_texto102' => "T'animem així, a l'estudi de les lliçons incloses en el nostre curs per a obtindre confiança, eficàcia i aconseguir resoldre satisfactòriament l'Examen C2 de :mes de :ano de la JQCV.",
 
 
 

@@ -25,9 +25,9 @@
                  @include('paginas.publi.superior50')
             </div>
             <div class="col-md-8 pt-5 order-2">
-                <p>{!! trans('examenes.exaA2_texto1') !!} {{$datos['mes']}} {{$datos['ano']}} {!! trans('examenes.exaA2_texto2') !!} {{$datos['mes']}} {{$datos['ano']}} {!! trans('examenes.exaA2_texto3') !!}</p>
-                <p>{!! trans('examenes.exaA2_texto4') !!}</p>
-                <p>{!! trans('examenes.exaA2_texto5') !!}</p>
+                <p>{!! trans('examenes.exaA2_texto1', ['mes'=>$datos['mes'], 'ano'=>$datos['ano'] ]) !!} </p>
+                <p>{!! trans('examenes.exaA2_texto2') !!}</p>
+                <p>{!! trans('examenes.exaA2_texto3') !!}</p>
             </div>
         </div>
     </div>
@@ -41,9 +41,8 @@
             </div>
             <div class="col-md-8 pt-5 order-1">
                 <h2>{{ trans('examenes.exaA2_titulo100') }} {{$datos['mes']}} {{ trans('examenes.exaA2_titulo101') }} {{$datos['ano']}}</h2>
-                <p>{!! trans('examenes.exaA2_texto101') !!} {{$datos['mes']}} {{$datos['ano']}} {!! trans('examenes.exaA2_texto102') !!}</p>
-                <p>{{trans('examenes.exaA2_texto103')}} {{$datos['mes']}} {{$datos['ano']}} {{trans('examenes.exaA2_texto104')}}</p>
-                <p>{{ trans('examenes.exaA2_texto105') }} <a href="https://cvc.cervantes.es/ensenanza/biblioteca_ele/marco/" rel="nofollow" target="_blank">{{ trans('examenes.exaA2_texto106') }}</a></p>
+                <p>{!! trans('examenes.exaA2_texto101', ['mes'=>$datos['mes'], 'ano'=>$datos['ano'] ]) !!} </p>
+                <p>{!! trans('examenes.exaA2_texto102', ['mes'=>$datos['mes'], 'ano'=>$datos['ano'] ]) !!} </p>
             </div>
         </div>
     </div>

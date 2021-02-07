@@ -25,9 +25,9 @@
                  <?php echo $__env->make('paginas.publi.superior50', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
             <div class="col-md-8 pt-5 order-2">
-                <p><?php echo trans('examenes.exaA2_texto1'); ?> <?php echo e($datos['mes']); ?> <?php echo e($datos['ano']); ?> <?php echo trans('examenes.exaA2_texto2'); ?> <?php echo e($datos['mes']); ?> <?php echo e($datos['ano']); ?> <?php echo trans('examenes.exaA2_texto3'); ?></p>
-                <p><?php echo trans('examenes.exaA2_texto4'); ?></p>
-                <p><?php echo trans('examenes.exaA2_texto5'); ?></p>
+                <p><?php echo trans('examenes.exaA2_texto1', ['mes'=>$datos['mes'], 'ano'=>$datos['ano'] ]); ?> </p>
+                <p><?php echo trans('examenes.exaA2_texto2'); ?></p>
+                <p><?php echo trans('examenes.exaA2_texto3'); ?></p>
             </div>
         </div>
     </div>
@@ -41,9 +41,8 @@
             </div>
             <div class="col-md-8 pt-5 order-1">
                 <h2><?php echo e(trans('examenes.exaA2_titulo100')); ?> <?php echo e($datos['mes']); ?> <?php echo e(trans('examenes.exaA2_titulo101')); ?> <?php echo e($datos['ano']); ?></h2>
-                <p><?php echo trans('examenes.exaA2_texto101'); ?> <?php echo e($datos['mes']); ?> <?php echo e($datos['ano']); ?> <?php echo trans('examenes.exaA2_texto102'); ?></p>
-                <p><?php echo e(trans('examenes.exaA2_texto103')); ?> <?php echo e($datos['mes']); ?> <?php echo e($datos['ano']); ?> <?php echo e(trans('examenes.exaA2_texto104')); ?></p>
-                <p><?php echo e(trans('examenes.exaA2_texto105')); ?> <a href="https://cvc.cervantes.es/ensenanza/biblioteca_ele/marco/" rel="nofollow" target="_blank"><?php echo e(trans('examenes.exaA2_texto106')); ?></a></p>
+                <p><?php echo trans('examenes.exaA2_texto101', ['mes'=>$datos['mes'], 'ano'=>$datos['ano'] ]); ?> </p>
+                <p><?php echo trans('examenes.exaA2_texto102', ['mes'=>$datos['mes'], 'ano'=>$datos['ano'] ]); ?> </p>
             </div>
         </div>
     </div>

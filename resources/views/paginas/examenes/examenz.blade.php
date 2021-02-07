@@ -20,6 +20,12 @@
 
 @section('main_content')
 
+<section class="container justify">
+    <div class="container-fluid">
+        @include("paginas.publi.examenes_bajo_introduccion_728x90")
+    </div>
+</section>
+
 @if(isset($message))
     <section class="container justify">
         <div class="container-fluid">
@@ -102,5 +108,12 @@
         </div>
     </div>
 </section>
+
+<section class="container justify">
+    <div class="container-fluid">
+        @include("paginas.publi.examenes_bajo_introduccion_728x90")
+    </div>
+</section>
+
 @endsection
 
