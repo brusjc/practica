@@ -16,7 +16,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'roll_id', 'confirmation_code',
+        'name', 'apellido1', 'apellido2', 'email', 'password', 'roll_id', 'confirmation_code', 'privacidad',
     ];
 
     /**
@@ -41,9 +41,9 @@ class User extends Authenticatable implements MustVerifyEmail
     //* Relaciones *
     //**************
 
-    //Creamos relación con la tabla Usermeta
-    public function usermeta() {
-        return $this->hasOne('App\Usermeta');
-    }
+    //Creamos relación con la tabla roll
+    public function roll() { 
+        return $this->belongsTo('App\Roll'); 
+    } 
 
 }

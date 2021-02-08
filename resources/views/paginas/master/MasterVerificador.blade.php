@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.frontAdmin.general')
 
 @section('contentheader_title'){{trans('message.informacion_examen_master')}}@endsection
 
 @section('contentheader_h1'){{trans('message.informacion_examen_master')}}@endsection
 
-@section('breadcrumb1')<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>@endsection
+@section('breadcrumb1')<a href="/es/master">{{ session('BC1texto') }}</a>@endsection
 
 @section('breadcrumb2')<a href="{{session('BC2')}}">{{ session('BC2texto') }}</a>@endsection
 

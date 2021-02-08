@@ -2,9 +2,9 @@
 
 <?php $__env->startSection('contentheader_title'); ?>Todos los exámenes@endsection
 
-<?php $__env->startSection('descripcion'); ?>"Todos los examenes"<?php $__env->stopSection(); ?>
+<?php $__env->startSection('descripcion'); ?>Todos los examenes@endsection
 
-<?php $__env->startSection('keywords'); ?>"Examenes"<?php $__env->stopSection(); ?>
+<?php $__env->startSection('keywords'); ?>Examenes@endsection
 
 <?php $__env->startSection('main_content'); ?>
 
@@ -59,4 +59,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/master/MasterPruebas.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.frontAdmin.general', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\practica\resources\views/paginas/master/MasterPruebas.blade.php ENDPATH**/ ?>

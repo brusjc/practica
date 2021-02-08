@@ -130,6 +130,7 @@ Route::put('/examenz2/{id}', 'ResultadoController@examenz2')->name('ResultadoExa
 //***********************
 //* Páginas con usuario *
 //***********************
+
 Route::group(['middleware' => 'auth'], function()
 {
 
@@ -137,14 +138,14 @@ Route::group(['middleware' => 'auth'], function()
     //* Examenes *
     //************
     Route::get('/examenes/{prueba}', 'ExamenController@show');
-    Route::get('/examensubareas/{prueba}', 'SubareaTemaController@showXExamen')->name('ShowXExamen');
+    //Route::get('/examensubareas/{prueba}', 'SubareaTemaController@showXExamen')->name('ShowXExamen');
 
 
 
     //**********
     //* Master *
     //**********
-    Route::get('/pruebasmaster', 'PruebaController@pruebasmaster')->name('PruebasMaster');
+    Route::get('/{idm}/master', 'PruebaController@pruebasmaster')->name('PruebasMaster');
     Route::get('/temasmaster/{prueba}', 'TemaController@temasmaster')->name('TemasMaster');
     Route::get('/masterExamen/{id}', 'ExamenController@examenMasterXId')->name('MasterExamen');
     Route::get('/masterPreguntas/{subtema}', 'PreguntaController@preguntasXSubtema')->name('MasterPreguntas');
@@ -155,13 +156,14 @@ Route::group(['middleware' => 'auth'], function()
     //***************
     //* Comentarios *
     //***************
+    /*
     Route::get('/posts', 'PostController@posts')->name('posts');
     Route::get('/post/{id}', 'PostController@postXId')->name('postXId');
     Route::post('/nuevocomentario/{post}', 'PostcommentController@store')->name('postNuevo');
     Route::get('/comentarios', 'ComentarioController@comentarios')->name('comentarios');
     Route::get('/comentario0', function(){ return view('paginas.comentarios.comentario0'); });
     Route::post('/comentario1', 'ComentarioController@comentario1')->name('comentario1');
-
+    */
 });
 
 

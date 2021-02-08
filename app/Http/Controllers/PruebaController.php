@@ -1272,10 +1272,10 @@ class PruebaController extends Controller
         //return $pruebas;
 
         //url de vuelta
-        session(['BC1' => '/pruebasmaster']);
-        session(['BC1texto' => 'Pruebas master']);
+        session(['BC1' => '/es/master']);
+        session(['BC1texto' => 'Master']);
 
-        return view('paginas.master.MasterPruebas', compact('pruebas'));
+        return view('paginas.master.index', compact('pruebas'));
     }
 
     public function MasterPruebaXId($id)

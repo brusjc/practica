@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.frontAdmin.general')
 
 @section('contentheader_title'){{trans('message.informacion_examen_master')}}@endsection
 
 @section('contentheader_h1'){{trans('message.informacion_examen_master')}}@endsection
 
-@section('breadcrumb1')<a href="{{session('BC1')}}">{{ session('BC1texto') }}</a>@endsection
+@section('breadcrumb1')<a href="/es/master">{{ session('BC1texto') }}</a>@endsection
 
 @section('descripcion')"Todos los examenes"@endsection
 
@@ -21,7 +21,7 @@
 	                        <th style="width: 8%">Área</th>
 	                        <th style="width: 62%">Subarea</th>
 	                        <th style="width: 5%">Verificado</th>
-	                        <th><a href="{{session('urlback')}}">Go Back</button></a></th>
+	                        <th><a href="/es/master">Go Back</button></a></th>
 	                    </tr>
 						@if(!is_null($miprueba['original']['data']))
 							@foreach($miprueba['original']['data'] as $key1=>$area)

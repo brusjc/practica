@@ -71,7 +71,7 @@ class RegisterController extends Controller
             'apellido1' => $data['apellido1'],
             'apellido2' => $data['apellido2'],
             'confirmation_code' => $data['confirmation_code'],
-            'privacidad' => $data['fecha'],
+            'privacidad' => $data['fecha']
         ]);
 
         // Enviamos el email de confirmación

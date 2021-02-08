@@ -8,14 +8,6 @@ use App\Enunciado;
 
 class EnunciadoController extends Controller
 {
-    private $cliente;
-    
-    public function __construct(){
-        $this->cliente = new Client([
-            'base_uri'=>'http://localhost/api/',  // Base URI is used with relative requests
-            'timeout'=>2.0,
-        ]);
-    }
 
     public function show($id)
     {

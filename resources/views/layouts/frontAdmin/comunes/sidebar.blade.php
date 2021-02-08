@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <a href="/" class="brand-link">
-    <span class="brand-text font-weight-light">Tourismine.com</span>
+    <span class="brand-text font-weight-light">Practicavalenciano.es</span>
   </a>
 
   <div class="sidebar">
