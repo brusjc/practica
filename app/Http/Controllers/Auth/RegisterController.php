@@ -48,7 +48,6 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'apellido1' => ['required', 'string', 'max:255'],
             'apellido2' => ['nullable','string','max:255'],
-            'privacidad' => ['required'],
         ]);
     }
 
@@ -61,7 +60,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $data['confirmation_code'] = Str::random(25);
-        $data['fecha'] = Carbon::now()->toTimeString();
+        $data['fecha'] = Carbon::now()->toDateTimeString();
 
         $user = User::create([
             'name' => $data['name'],
@@ -71,7 +70,31 @@ class RegisterController extends Controller
             'apellido1' => $data['apellido1'],
             'apellido2' => $data['apellido2'],
             'confirmation_code' => $data['confirmation_code'],
-            'privacidad' => $data['fecha']
+            'privacidad' => $data['fecha'],
+        ]);
+
+        // Enviamos el email de confirmación
+        Mail::send('paginas.emails.confirmation_code', $data, function($message) use ($data) {
+            $message->to($data['email'], $data['name'])->subject('Por favor confirma tu correo');
+        });
+
+        return $user;
+    }
+
+    protected function register(array $data)
+    {
+        $data['confirmation_code'] = Str::random(25);
+        $data['fecha'] = Carbon::now()->toDateTimeString();
+
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'roll_id' => '1',
+            'password' => Hash::make($data['password']),
+            'apellido1' => $data['apellido1'],
+            'apellido2' => $data['apellido2'],
+            'confirmation_code' => $data['confirmation_code'],
+            'privacidad' => $data['fecha'],
         ]);
 
         // Enviamos el email de confirmación
