@@ -179,7 +179,7 @@ Route::group(['middleware' => 'auth'], function()
 //Route::get('/cos-huma', function(){ return view('paginas.vocabulario.cos-huma'); });
 //Route::get('/{idm}/prueba', 'OrtografiaController@prueba');
 
-Route::get('/es/pruebafecha', 'ExamenController@create');
+Route::get('/es/pruebafecha', 'MispruebasController@fechaActual');
 
 
 

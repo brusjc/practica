@@ -80,28 +80,4 @@ class RegisterController extends Controller
 
         return $user;
     }
-
-    protected function register(array $data)
-    {
-        $data['confirmation_code'] = Str::random(25);
-        $data['fecha'] = Carbon::now()->toDateTimeString();
-
-        $user = User::create([
-            'name' => $data['name'],
-            'apellido1' => 'A',
-            'apellido2' => $data['apellido2'],
-            'email' => $data['email'],
-            'roll_id' => '1',
-            'password' => Hash::make($data['password']),
-            'confirmation_code' => $data['confirmation_code'],
-            'privacidad' => $data['fecha'],
-        ]);
-
-        // Enviamos el email de confirmación
-        Mail::send('paginas.emails.confirmation_code', $data, function($message) use ($data) {
-            $message->to($data['email'], $data['name'])->subject('Por favor confirma tu correo');
-        });
-
-        return $user;
-    }
 }
