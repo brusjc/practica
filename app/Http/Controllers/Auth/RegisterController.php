@@ -9,7 +9,6 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Carbon\Carbon;  //Para obtener fecha actual
 use Mail;
 
 class RegisterController extends Controller
@@ -60,7 +59,8 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $data['confirmation_code'] = Str::random(25);
-        $data['fechaprivacidad'] = Carbon::now()->toDateTimeString();
+        $now = new \DateTime();
+        $data['fechaprivacidad'] = $now->format('d-m-Y H:i:s');
 
         $user = User::create([
             'name' => $data['name'],
