@@ -61,7 +61,8 @@ class RegisterController extends Controller
         $data['confirmation_code'] = Str::random(25);
         $now = new \DateTime();
         $data['fechaprivacidad'] = $now->format('d-m-Y H:i:s');
-
+echo $data['fechaprivacidad'];
+echo die();
         $user = User::create([
             'name' => $data['name'],
             'apellido1' => $data['apellido1'],
@@ -69,7 +70,6 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'roll_id' => '1',
             'password' => Hash::make($data['password']),
-            'privacidad' => $data['fechaprivacidad'],
             'confirmation_code' => $data['confirmation_code'],
         ]);
 
