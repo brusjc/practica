@@ -34,6 +34,7 @@ return array(
     'App\\Http\\Controllers\\FuncionController' => $baseDir . '/App/Http/Controllers/FuncionController.php',
     'App\\Http\\Controllers\\GradoController' => $baseDir . '/App/Http/Controllers/GradoController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/App/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\MispruebasController' => $baseDir . '/App/Http/Controllers/MispruebasController.php',
     'App\\Http\\Controllers\\NomController' => $baseDir . '/App/Http/Controllers/NomController.php',
     'App\\Http\\Controllers\\OrtografiaController' => $baseDir . '/App/Http/Controllers/OrtografiaController.php',
     'App\\Http\\Controllers\\PostController' => $baseDir . '/App/Http/Controllers/PostController.php',
