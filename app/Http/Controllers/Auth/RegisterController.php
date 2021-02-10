@@ -43,10 +43,10 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
             'apellido1' => ['required', 'string', 'max:255'],
             'apellido2' => ['nullable','string','max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
@@ -62,12 +62,12 @@ class RegisterController extends Controller
         $now = new \DateTime();
         $data['fechaprivacidad'] = $now->format('d-m-Y H:i:s');
         $user = User::create([
-            'name' => $data['name'],
-            'apellido1' => $data['apellido1'],
-            'apellido2' => $data['apellido2'],
-            'email' => $data['email'],
-            'roll_id' => '1',
-            'password' => Hash::make($data['password']),
+            'name'              => $data['name'],
+            'apellido1'         => $data['apellido1'],
+            'apellido2'         => $data['apellido2'],
+            'email'             => $data['email'],
+            'roll_id'           => '1',
+            'password'          => Hash::make($data['password']),
             'confirmation_code' => $data['confirmation_code'],
         ]);
 
@@ -78,6 +78,7 @@ class RegisterController extends Controller
 
         return $user;
     }
+
 
     protected function register(array $data)
     {
@@ -92,15 +93,16 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'roll_id' => '1',
             'password' => Hash::make($data['password']),
+            'privacidad' => $data['fechaprivacidad'],
             'confirmed' => '0',
             'confirmation_code' => $data['confirmation_code'],
         ]);
-
+/*
         // Enviamos el email de confirmación
         Mail::send('paginas.emails.confirmation_code', $data, function($message) use ($data) {
             $message->to($data['email'], $data['name'])->subject('Por favor confirma tu correo');
         });
-
+*/
         return $user;
     }
 
