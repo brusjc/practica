@@ -95,7 +95,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'privacidad' => $data['fechaprivacidad'],
             'confirmed' => '0',
-            'confirmation_code' => $data['confirmation_code'],
+            'confirmation_code' => $data['confirmation_code']
         ]);
 /*
         // Enviamos el email de confirmación
