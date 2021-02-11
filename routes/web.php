@@ -189,4 +189,4 @@ Route::get('/plantilla', function(){ return view('themes/lte/plantilla'); });
 
 // Ruta registro
 
-Route::post('/registro', 'Auth\RegisterController@register')->name('registro');
+Route::get('/registro', 'Auth\RegisterController@register')->name('registro');
