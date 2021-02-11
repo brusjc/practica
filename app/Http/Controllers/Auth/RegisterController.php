@@ -85,6 +85,9 @@ class RegisterController extends Controller
         $data['confirmation_code'] = Str::random(25);
         $data['fechaprivacidad'] = date("d-m-Y H:i:s");
 
+        echo"Error";
+        print_r($data);
+        echo die();
         $user = User::create([
             'name' => $data['name'],
             'apellido1' => $data['apellido1'],
@@ -97,8 +100,8 @@ class RegisterController extends Controller
             'confirmation_code' => $data['confirmation_code']
         ]);
 
-        print_r($user);
-        echo die();
+        
+        
 /*
         // Enviamos el email de confirmación
         Mail::send('paginas.emails.confirmation_code', $data, function($message) use ($data) {
