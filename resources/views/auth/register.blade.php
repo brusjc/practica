@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('auth.Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('registroTest') }}">
+                    <form method="POST" action="/registro-test">
                         @csrf
 
                         <div class="form-group row">
