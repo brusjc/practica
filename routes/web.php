@@ -30,7 +30,6 @@ Route::put('/practica2', 'PracticaController@practica2')->name('Practica2');
 Route::put('/practica3', 'PracticaController@practica3')->name('Practica3');
 Route::get('/practicaVuelta/{ejercicio}', 'PracticaController@practicaVuelta')->name('PracticaVuelta');
 
-
 //***************
 //* Vocabulario *
 //***************
@@ -188,4 +187,6 @@ Route::get('/es/pruebafecha', 'MispruebasController@fechaActual');
 //*************
 Route::get('/plantilla', function(){ return view('themes/lte/plantilla'); });
 
+// Ruta registro
 
+Route::post('/registro-test', 'RegisterController@create')->name('registroTest');

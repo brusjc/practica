@@ -11,8 +11,7 @@ class MispruebasController extends Controller
     //Incluir fecha actual en una variable
     function fechaActual()
     {
-        $now = new \DateTime();
-        $data['fechaprivacidad'] = $now->format('d-m-Y H:i:s');
+        $data['fechaprivacidad'] = date("d-m-Y H:i:s");
         return $data['fechaprivacidad'];
     }
 
