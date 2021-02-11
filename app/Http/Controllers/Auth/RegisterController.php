@@ -83,8 +83,7 @@ class RegisterController extends Controller
     protected function register(array $data)
     {
         $data['confirmation_code'] = Str::random(25);
-        $now = new \DateTime();
-        $data['fechaprivacidad'] = $now->format('d-m-Y H:i:s');
+        $data['fechaprivacidad'] = date("d-m-Y H:i:s");
 
         $user = User::create([
             'name' => $data['name'],
