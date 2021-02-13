@@ -128,7 +128,7 @@ class PreguntaController extends Controller
         } else {
             $numresultados=count($preguntas['original']['data']);
         }
-        return $numresultados;
+        //return $numresultados;
 
         //Paso 3: Si count(preguntas)=0 --> Creamos las preguntas
         if($totalSubarea>$numresultados)
@@ -169,7 +169,7 @@ class PreguntaController extends Controller
             //return redirect()->action('PruebaController@pruebasjqcv');
         }
         $pregunta=$respreguntassin['original']['data'][0];
-        //return $pregunta;
+        return $pregunta;
         //return $subarea;
         
         if(!isset(Auth::user()->id))
