@@ -277,8 +277,8 @@ class PruebaController extends Controller
                 session(['BC1texto' => 'Exàmens JQCV']);
                 break;
         }
-        return 'estamos aqui';
-        return view('paginas.examenes.index', compact('exa', 'respuesta'));
+        //return 'estamos aqui';
+        return view('paginas.examenes.index', compact('respuesta'));
     }
  
     public function pruebas_a1($idm)
