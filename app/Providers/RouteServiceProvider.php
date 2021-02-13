@@ -21,7 +21,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/'.session('lang').'/home';
+    public const HOME = '/va/home';
 
     /**
      * Define your route model bindings, pattern filters, etc.
