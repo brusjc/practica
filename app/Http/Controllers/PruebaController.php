@@ -373,7 +373,7 @@ class PruebaController extends Controller
         //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenes-a2', compact('pruebas', 'examenes', 'miurl'));
+        return view('paginas.examenes.examenes-a2', compact('pruebas', 'codigo', 'miurl'));
     }
 
     public function prueba_a2($idm, $codigo)
