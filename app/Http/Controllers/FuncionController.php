@@ -31,5 +31,5 @@ class FuncionController extends Controller
             }
         }
     }
-    
+
 }

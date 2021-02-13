@@ -1272,7 +1272,7 @@ class PruebaController extends Controller
         //return $pruebas;
 
         //url de vuelta
-        session(['BC1' => '/pruebasmaster']);
+        session(['BC1' => '/'.session('lang').'/pruebasmaster']);
         session(['BC1texto' => 'Pruebas master']);
 
         return view('paginas.master.MasterPruebas', compact('pruebas'));
