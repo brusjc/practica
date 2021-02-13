@@ -14,12 +14,14 @@ class EmailsController extends Controller
 	    $user = User::where('confirmation_code', $code)->first();
 
 	    if (!$user)
-	        return redirect('/');
+	    {
+	        return redirect('/'.session('lang').'/home');
+	    }
 
 	    $user->confirmed = true;
 	    $user->confirmation_code = null;
 	    $user->save();
 
-	    return redirect('/home')->with('notification', 'Has confirmado correctamente tu correo!');
+	    return redirect('/'.session('lang').'/home')->with('notification', 'Has confirmado correctamente tu correo!');
 	}
 }

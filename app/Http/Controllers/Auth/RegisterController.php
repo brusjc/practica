@@ -13,6 +13,16 @@ use Mail;
 
 class RegisterController extends Controller
 {
+    /*
+    |--------------------------------------------------------------------------
+    | Register Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles the registration of new users as well as their
+    | validation and creation. By default this controller uses a trait to
+    | provide this functionality without requiring any additional code.
+    |
+    */
 
     use RegistersUsers;
 
@@ -43,10 +53,11 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'apellido1' => ['required', 'string', 'max:255'],
-            'apellido2' => ['nullable','string','max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'apellido1' => ['required', 'string', 'max:255'],
+            'apellido2' => ['nullable','string','max:255'],
+            'privacidad' => ['required'],
         ]);
     }
 
@@ -60,13 +71,15 @@ class RegisterController extends Controller
     {
         $data['confirmation_code'] = Str::random(25);
         $now = new \DateTime();
-        $data['fechaprivacidad'] = $now->format('d-m-Y H:i:s');
+        $data['fechaprivacidad'] = date("Y-m-d H:i:s");
+
         $user = User::create([
             'name'              => $data['name'],
             'apellido1'         => $data['apellido1'],
             'apellido2'         => $data['apellido2'],
             'email'             => $data['email'],
-            'roll_id'           => '1',
+            'roll_id'           => 1,
+            'privacidad'        => $data['fechaprivacidad'],
             'password'          => Hash::make($data['password']),
             'confirmation_code' => $data['confirmation_code'],
         ]);
@@ -78,13 +91,4 @@ class RegisterController extends Controller
 
         return $user;
     }
-
-
-    public function register(array $data)
-    {
-        
-        echo "Llega";
-       
-    }
-
 }

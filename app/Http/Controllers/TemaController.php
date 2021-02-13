@@ -264,4 +264,5 @@ class TemaController extends Controller
         return view('paginas.master.MasterTemas', compact('miprueba'));
     }
 
+
 }

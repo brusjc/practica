@@ -98,7 +98,32 @@
 
 <section class="container justify">
     <div class="container-fluid">
-        @include("paginas.publi.examenes_bajo_introduccion_728x90")
+		<div class="row">
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Vocabulario - Bajo Marcas - 728x90 -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:90px"
+			     data-ad-client="ca-pub-7412986561454436"
+			     data-ad-slot="8783629312">
+			</ins>
+			<script>
+			     (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
+</section>
+
+<section class="container justify">
+    <div class="container-fluid">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Examenes - Bajo Introduccion - 728x90 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-7412986561454436"
+             data-ad-slot="1171860113"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 </section>
 
@@ -175,8 +200,19 @@
 
 <section class="container justify">
     <div class="container-fluid">
-        @include("paginas.publi.examenes_bajo_introduccion_728x90")
-    </div>
+		<div class="row">
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Vocabulario - Bajo Marcas - 728x90 -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:90px"
+			     data-ad-client="ca-pub-7412986561454436"
+			     data-ad-slot="8783629312">
+			</ins>
+			<script>
+			     (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
 </section>
 
 <section class="container justify">
@@ -233,8 +269,33 @@
 
 <section class="container justify">
     <div class="container-fluid">
-        @include("paginas.publi.examenes_bajo_introduccion_728x90")
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Examenes - Bajo Introduccion - 728x90 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-7412986561454436"
+             data-ad-slot="1171860113"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
+</section>
+
+<section class="container justify">
+    <div class="container-fluid">
+		<div class="row">
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Vocabulario - Bajo Marcas - 728x90 -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:90px"
+			     data-ad-client="ca-pub-7412986561454436"
+			     data-ad-slot="8783629312">
+			</ins>
+			<script>
+			     (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
 </section>
 
 <section class="container justify">
@@ -301,8 +362,19 @@
 
 <section class="container justify">
     <div class="container-fluid">
-        @include("paginas.publi.examenes_bajo_introduccion_728x90")
-    </div>
+		<div class="row">
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Vocabulario - Bajo Marcas - 728x90 -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:90px"
+			     data-ad-client="ca-pub-7412986561454436"
+			     data-ad-slot="8783629312">
+			</ins>
+			<script>
+			     (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
 </section>
 
 <section class="container justify">
@@ -379,6 +451,23 @@
 <section class="container justify">
     <div class="container-fluid">
 		<div class="row">
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Vocabulario - Bajo Marcas - 728x90 -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:90px"
+			     data-ad-client="ca-pub-7412986561454436"
+			     data-ad-slot="8783629312">
+			</ins>
+			<script>
+			     (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
+</section>
+
+<section class="container justify">
+    <div class="container-fluid">
+		<div class="row">
 			<div class="col-md-5">
 				<div class="card">
 					<div class="card-header  with-border">
@@ -402,5 +491,6 @@
 		</div>
 	</div>
 </section>
+
 
 @endsection

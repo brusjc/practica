@@ -97,15 +97,14 @@
 							<input type="hidden" name="id" value={{$datos['id']}}>
 							<input type="hidden" name="verdiv" value={{$datos['verdiv']}}>
 							<input type="hidden" name="orden" value={{$datos['orden']}}>
-							<div class="box-footer row invoice-info mb-5">
+							<div class="box-footer row invoice-info">
 								<div class="col-sm-6 invoice-col">
-									<button type="submit" class="btn btn-lg btn-info pull-right">Enviar</button>
+									<button type="submit" class="btn btn-info pull-right">Enviar</button>
 								</div>
 								<div class="col-sm-6 invoice-col">
-									<a href="{{ session('BC2') }}" class="btn btn-lg btn-info pull-right">Tornar</a>
+									<a href="{{session('urlback')}}">Go Back</button></a>
 								</div>
 							</div>
-							@include("paginas.publi.examenes_bajo_introduccion_728x90")
 						</form>
 					@else
 						<form action="{{ action('PracticaController@practica2') }}" method="POST" class="form-horizontal">
@@ -157,7 +156,6 @@
 									<a href="{{ session('BC2') }}" class="btn btn-info pull-right">Tornar</a>
 								</div>
 							</div>
-							@include("paginas.publi.examenes_bajo_introduccion_728x90")
 						</form>
 					@endif
 				</div>

@@ -277,7 +277,7 @@ class PruebaController extends Controller
                 break;
         }
 
-        return view('paginas.examenes.index', compact('respuesta'));
+        return view('paginas.examenes.index', compact('exa', 'respuesta'));
     }
  
     public function pruebas_a1($idm)
@@ -372,7 +372,7 @@ class PruebaController extends Controller
         //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenes-a2', compact('pruebas', 'codigo', 'miurl'));
+        return view('paginas.examenes.examenes-a2', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
     public function prueba_a2($idm, $codigo)
@@ -476,7 +476,7 @@ class PruebaController extends Controller
         //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenes-b1', compact('pruebas', 'codigo', 'miurl'));
+        return view('paginas.examenes.examenes-b1', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
     public function prueba_b1($idm, $codigo)
@@ -580,7 +580,7 @@ class PruebaController extends Controller
         //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenes-b2', compact('pruebas', 'codigo', 'miurl'));
+        return view('paginas.examenes.examenes-b2', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
     public function prueba_b2($idm, $codigo)
@@ -684,7 +684,7 @@ class PruebaController extends Controller
         //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenes-c1', compact('pruebas', 'codigo', 'miurl'));
+        return view('paginas.examenes.examenes-c1', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
     public function prueba_c1($idm, $codigo)
@@ -788,7 +788,7 @@ class PruebaController extends Controller
         //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenes-c2', compact('pruebas', 'codigo', 'miurl'));
+        return view('paginas.examenes.examenes-c2', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
     public function prueba_c2($idm, $codigo)
@@ -892,7 +892,7 @@ class PruebaController extends Controller
         //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenes-elemental', compact('pruebas', 'codigo', 'miurl'));
+        return view('paginas.examenes.examenes-elemental', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
     public function prueba_elemental($idm, $codigo)
@@ -996,7 +996,7 @@ class PruebaController extends Controller
         //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenes-oral', compact('pruebas', 'codigo', 'miurl'));
+        return view('paginas.examenes.examenes-oral', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
     public function prueba_oral($idm, $codigo)
@@ -1100,7 +1100,7 @@ class PruebaController extends Controller
         //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenes-mitja', compact('pruebas', 'codigo', 'miurl'));
+        return view('paginas.examenes.examenes-mitja', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
     public function prueba_mitja($idm, $codigo)
@@ -1204,7 +1204,7 @@ class PruebaController extends Controller
         //return $miurl;
 
         //Paso 3: Redirigimos a la vista
-        return view('paginas.examenes.examenes-superior', compact('pruebas', 'codigo', 'miurl'));
+        return view('paginas.examenes.examenes-superior', compact('pruebas', 'examenes', 'codigo', 'miurl'));
     }
 
     public function prueba_superior($idm, $codigo)
@@ -1272,10 +1272,10 @@ class PruebaController extends Controller
         //return $pruebas;
 
         //url de vuelta
-        session(['BC1' => '/es/master']);
-        session(['BC1texto' => 'Master']);
+        session(['BC1' => '/pruebasmaster']);
+        session(['BC1texto' => 'Pruebas master']);
 
-        return view('paginas.master.index', compact('pruebas'));
+        return view('paginas.master.MasterPruebas', compact('pruebas'));
     }
 
     public function MasterPruebaXId($id)
@@ -1305,6 +1305,7 @@ class PruebaController extends Controller
         //Paso 3: Obtenemos las contestadas por area y subarea
         return view('paginas.master.examenmaster', compact('prueba'));
     }
+
 
 
 

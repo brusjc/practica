@@ -16,18 +16,6 @@ class ExamenController extends Controller
         return $usuario;
     }
 
-    protected function validator(array $examen)
-    {
-        return Validator::make($examen, [
-            'id' => ['required', 'integer'],
-            'prueba_id' => ['required', 'integer'],
-            'user_id' => ['required', 'integer'],
-            'total' => ['required', 'integer'],
-            'contestadas' => ['required', 'integer'],
-            'nota' => ['required', 'integer'],
-        ]);
-    }
-
 
 //*******
 //* API *
@@ -87,6 +75,10 @@ class ExamenController extends Controller
         $modexamen->total=(int)$examen['total'];
         $modexamen->contestadas=(int)$examen['contestadas'];
         $modexamen->nota=(int)$examen['nota'];
+
+        if($modexamen->prueba_id==0 || $modexamen->user_id==0){
+            return response()->json(['status' =>['error'=>1, 'message'=>'Error en datos iniciales2'], 'data'=>null]);
+        }
         //return $modexamen;
         
         //Paso 3: Creamos el registro en la tabla areas

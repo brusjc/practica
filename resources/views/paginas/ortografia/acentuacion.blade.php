@@ -122,7 +122,15 @@
 
 <section class="container justify">
     <div class="container-fluid">
-        @include("paginas.publi.examenes_bajo_introduccion_728x90")
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Examenes - Bajo Introduccion - 728x90 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-7412986561454436"
+             data-ad-slot="1171860113"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 </section>
 
@@ -171,23 +179,25 @@
 </section>
 
 <section class="container justify">
-    <div class="container-fluid">
-        @include("paginas.publi.examenes_bajo_introduccion_728x90")
-    </div>
-</section>
-
-<section class="container justify">
     <div class="container-fluid mt-5 center">
 		<a href="/practicainicio/15"><button type="button" class="btn btn-primary btn-lg">Practica</button></a>
 	</div>
 </section>
 
-@include('paginas.ortografia.comunes.enlaces')
-
 <section class="container justify">
     <div class="container-fluid">
-        @include("paginas.publi.examenes_bajo_introduccion_728x90")
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Examenes - Bajo Introduccion - 728x90 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-7412986561454436"
+             data-ad-slot="1171860113"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 </section>
+
+@include('paginas.ortografia.comunes.enlaces')
 
 @endsection

@@ -21,13 +21,10 @@ class SubareaController extends Controller
 
     public function create()
     {
-        return "Función que usa Guzzle y lo hemos quitado";
-        /*
         $mirest='tiposGet';
         $response = $this->cliente->request('get', $mirest);
         $tipos = json_decode( $response->getBody()->getContents(), true );
         //return $tipos;
-        */
     }
 
     public function store($area_id, $subtema_id, $nombre_id, $total, $contestadas, $orden, $nota)

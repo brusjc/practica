@@ -25,9 +25,9 @@
                  @include('paginas.publi.superior50')
             </div>
             <div class="col-md-8 pt-5 order-2">
-                <p>{!! trans('examenes.exaC1_texto1', ['mes'=>$datos['mes'], 'ano'=>$datos['ano'] ]) !!} </p>
-                <p>{!! trans('examenes.exaC1_texto2') !!}</p>
-                <p>{!! trans('examenes.exaC1_texto3') !!}</p>
+                <p>{!! trans('examenes.exaC1_texto1') !!} {{$datos['mes']}} {{$datos['ano']}} {!! trans('examenes.exaC1_texto2') !!} {{$datos['mes']}} {{$datos['ano']}} {!! trans('examenes.exaC1_texto3') !!}</p>
+                <p>{!! trans('examenes.exaC1_texto4') !!}</p>
+                <p>{!! trans('examenes.exaC1_texto5') !!}</p>
             </div>
         </div>
     </div>
@@ -41,8 +41,9 @@
             </div>
             <div class="col-md-8 pt-5 order-1">
                 <h2>{{ trans('examenes.exaC1_titulo100') }} {{$datos['mes']}} {{ trans('examenes.exaC1_titulo101') }} {{$datos['ano']}}</h2>
-                <p>{!! trans('examenes.exaC1_texto101', ['mes'=>$datos['mes'], 'ano'=>$datos['ano'] ]) !!} </p>
-                <p>{!! trans('examenes.exaC1_texto102', ['mes'=>$datos['mes'], 'ano'=>$datos['ano'] ]) !!} </p>
+                <p>{!! trans('examenes.exaC1_texto101') !!} {{$datos['mes']}} {{$datos['ano']}} {!! trans('examenes.exaC1_texto102') !!}</p>
+                <p>{{trans('examenes.exaC1_texto103')}} {{$datos['mes']}} {{$datos['ano']}} {{trans('examenes.exaC1_texto104')}}</p>
+                <p>{{ trans('examenes.exaC1_texto105') }} <a href="https://cvc.cervantes.es/ensenanza/biblioteca_ele/marco/" rel="nofollow" target="_blank">{{ trans('examenes.exaC1_texto106') }}</a></p>
             </div>
         </div>
     </div>
@@ -50,7 +51,15 @@
 
 <section class="container justify">
     <div class="container-fluid">
-        @include("paginas.publi.examenes_bajo_introduccion_728x90")
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Examenes - Bajo Introduccion - 728x90 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-7412986561454436"
+             data-ad-slot="1171860113"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 </section>
 
@@ -72,7 +81,6 @@
                                   <button type="button" class="btn btn-primary">{{ trans('message.examen_nuevo') }}</button>
                                </a>
                             @else
-                                <a class="mb-2 btn btn-info" href="/examennuevo/{{$codigo}}">{{ trans('message.sinlogin') }}</a>
                                 <a class="mb-2 btn btn-info" href="/login">{{ trans('message.login') }}</a>
                             @endif
                         </div>
@@ -106,12 +114,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="container justify">
-    <div class="container-fluid">
-        @include("paginas.publi.examenes_bajo_introduccion_728x90")
     </div>
 </section>
 

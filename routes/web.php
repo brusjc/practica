@@ -1,8 +1,8 @@
 <?php
 
     
-//Auth::routes();
-//Auth::routes(['verify' => true, 'register' => true]);  //Para verificación de emails
+Auth::routes();
+//Auth::routes(['verify' => true]);  //Para verificación de emails
 
 //Confirmación registro usuario
 Route::get('/register/verify/{code}', 'EmailsController@verify');
@@ -29,6 +29,7 @@ Route::put('/practica1', 'PracticaController@practica1')->name('Practica1');
 Route::put('/practica2', 'PracticaController@practica2')->name('Practica2');
 Route::put('/practica3', 'PracticaController@practica3')->name('Practica3');
 Route::get('/practicaVuelta/{ejercicio}', 'PracticaController@practicaVuelta')->name('PracticaVuelta');
+
 
 //***************
 //* Vocabulario *
@@ -129,7 +130,6 @@ Route::put('/examenz2/{id}', 'ResultadoController@examenz2')->name('ResultadoExa
 //***********************
 //* Páginas con usuario *
 //***********************
-
 Route::group(['middleware' => 'auth'], function()
 {
 
@@ -137,14 +137,15 @@ Route::group(['middleware' => 'auth'], function()
     //* Examenes *
     //************
     Route::get('/examenes/{prueba}', 'ExamenController@show');
-    //Route::get('/examensubareas/{prueba}', 'SubareaTemaController@showXExamen')->name('ShowXExamen');
+    Route::get('/examensubareas/{prueba}', 'SubareaTemaController@showXExamen')->name('ShowXExamen');
 
 
 
     //**********
     //* Master *
     //**********
-    Route::get('/{idm}/master', 'PruebaController@pruebasmaster')->name('PruebasMaster');
+    Route::get('/pruebasmaster', 'PruebaController@pruebasmaster')->name('PruebasMaster');
+    Route::get('/es/master', 'PruebaController@pruebasmaster')->name('Master');
     Route::get('/temasmaster/{prueba}', 'TemaController@temasmaster')->name('TemasMaster');
     Route::get('/masterExamen/{id}', 'ExamenController@examenMasterXId')->name('MasterExamen');
     Route::get('/masterPreguntas/{subtema}', 'PreguntaController@preguntasXSubtema')->name('MasterPreguntas');
@@ -152,17 +153,18 @@ Route::group(['middleware' => 'auth'], function()
     Route::put('/masterVerificador2/{subtema}', 'PreguntaController@verificador2')->name('MasterVerificador2');
 
 
+
+
     //***************
     //* Comentarios *
     //***************
-    /*
     Route::get('/posts', 'PostController@posts')->name('posts');
     Route::get('/post/{id}', 'PostController@postXId')->name('postXId');
     Route::post('/nuevocomentario/{post}', 'PostcommentController@store')->name('postNuevo');
     Route::get('/comentarios', 'ComentarioController@comentarios')->name('comentarios');
     Route::get('/comentario0', function(){ return view('paginas.comentarios.comentario0'); });
     Route::post('/comentario1', 'ComentarioController@comentario1')->name('comentario1');
-    */
+
 });
 
 
@@ -178,7 +180,6 @@ Route::group(['middleware' => 'auth'], function()
 //Route::get('/cos-huma', function(){ return view('paginas.vocabulario.cos-huma'); });
 //Route::get('/{idm}/prueba', 'OrtografiaController@prueba');
 
-Route::get('/es/pruebafecha', 'MispruebasController@fechaActual');
 
 
 
@@ -187,6 +188,4 @@ Route::get('/es/pruebafecha', 'MispruebasController@fechaActual');
 //*************
 Route::get('/plantilla', function(){ return view('themes/lte/plantilla'); });
 
-// Ruta registro
 
-Route::get('/registro', 'Auth\RegisterController@register')->name('registro');
