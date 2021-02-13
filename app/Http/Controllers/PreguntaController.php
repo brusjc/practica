@@ -175,6 +175,8 @@ class PreguntaController extends Controller
         if(!isset(Auth::user()->id))
         {
             $message="notUser";
+        } else {
+            $message=null;
         }
         
         return view('paginas.examenes.examen', compact('$id', 'subarea', 'ressubarea', 'pregunta', 'message'));
