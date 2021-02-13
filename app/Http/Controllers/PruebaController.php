@@ -260,6 +260,7 @@ class PruebaController extends Controller
                return redirect('/va/examenes-jqcv');
             }
         }
+        return 'estamos aqui';
 
         switch (session('lang'))
         {
