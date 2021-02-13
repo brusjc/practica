@@ -22,15 +22,7 @@
 
 <section class="container justify">
     <div class="container-fluid">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Examenes - Bajo Introduccion - 728x90 -->
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:728px;height:90px"
-             data-ad-client="ca-pub-7412986561454436"
-             data-ad-slot="1171860113"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        @include('paginas.publi.examenes_bajo_introduccion_728x90')
     </div>
 </section>
 
@@ -131,16 +123,7 @@
 				</div>
 			</div>
 			<div class="col-md-3">
-				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- Adaptable Vertical -->
-				<ins class="adsbygoogle"
-					 style="display:block"
-		 			 data-ad-client="ca-pub-7412986561454436"
-		 			 data-ad-slot="4155848498"
-		 			 data-ad-format="auto"
-		 			 data-full-width-responsive="true">
-	 			 </ins>
-				<script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+                @include('paginas.publi.adaptable_vertical')
 			</div>
 		</div>
 	</div>
@@ -148,28 +131,10 @@
 <section class="container justify">
     <div class="container-fluid">
 		<div class="row mt-0">
-			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- Examenes - Bajo Introduccion - 728x90 -->
-			<ins class="adsbygoogle"	     style="display:inline-block;width:728px;height:90px"	     data-ad-client="ca-pub-7412986561454436"	     data-ad-slot="1171860113">	</ins>
-			<script>	     (adsbygoogle = window.adsbygoogle || []).push({});	</script>
+            @include('paginas.publi.examenes_bajo_introduccion_728x90')
 		</div>
 	</div>
 </section>
-
-<section class="container justify">
-    <div class="container-fluid">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Examenes - Bajo Introduccion - 728x90 -->
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:728px;height:90px"
-             data-ad-client="ca-pub-7412986561454436"
-             data-ad-slot="1171860113"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-</section>
-
 
 
 @endsection

@@ -179,9 +179,8 @@ class PreguntaController extends Controller
             $message=0;
         }
         
-        return view('paginas.examenes.examen', compact('$id', 'subarea', 'ressubarea', 'pregunta', 'message'));
+        return view('paginas.examenes.examen', compact('id', 'subarea', 'ressubarea', 'pregunta', 'message'));
     }
-
 
     public function preguntaXSubareaz($id, $subarea)
     {
