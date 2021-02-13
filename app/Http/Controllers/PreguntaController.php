@@ -169,14 +169,14 @@ class PreguntaController extends Controller
             //return redirect()->action('PruebaController@pruebasjqcv');
         }
         $pregunta=$respreguntassin['original']['data'][0];
-        return $pregunta;
+        //return $pregunta;
         //return $subarea;
         
         if(!isset(Auth::user()->id))
         {
             $message="notUser";
         } else {
-            $message=null;
+            $message=0;
         }
         
         return view('paginas.examenes.examen', compact('$id', 'subarea', 'ressubarea', 'pregunta', 'message'));
