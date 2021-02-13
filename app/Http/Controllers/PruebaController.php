@@ -246,7 +246,7 @@ class PruebaController extends Controller
         $respuesta = app('App\Http\Controllers\GradoController')->show();
         $respuesta = @json_decode(json_encode($respuesta), true);
         $respuesta=$respuesta['original']['data'];
-        //return $respuesta;
+        return $respuesta;
         
         //Comprobamos si la url corresponde al lenguaje
         if(!session('lang')) { session(['lang' => 'va']); }
@@ -255,9 +255,9 @@ class PruebaController extends Controller
             //return $milang;
             if(session('lang')=="es")
             {
-               return redirect('es/examenes-jqcv');
+               return redirect('/es/examenes-jqcv');
             } else {
-               return redirect('va/examenes-jqcv');
+               return redirect('/va/examenes-jqcv');
             }
         }
 
