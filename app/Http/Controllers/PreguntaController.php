@@ -121,14 +121,14 @@ class PreguntaController extends Controller
         //Paso 2: Obtenemos las preguntas del subtema
         $preguntas=$this->showXSubtema($ressubarea['original']['data'][0]['subtema_id']);
         $preguntas = @json_decode(json_encode($preguntas), true);
-        return $preguntas;
+        //return $preguntas;
 
         if($preguntas['original']['status']['error']==2){
             $numresultados=0;
         } else {
             $numresultados=count($preguntas['original']['data']);
         }
-        //return $numresultados;
+        return $numresultados;
 
         //Paso 3: Si count(preguntas)=0 --> Creamos las preguntas
         if($totalSubarea>$numresultados)
