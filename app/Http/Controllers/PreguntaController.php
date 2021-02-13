@@ -116,7 +116,7 @@ class PreguntaController extends Controller
         $ressubarea = app('App\Http\Controllers\SubareaController')->show($subarea);
         $ressubarea = @json_decode(json_encode($ressubarea), true);
         $totalSubarea=$ressubarea['original']['data'][0]['total'];
-        //return $ressubarea;
+        return $ressubarea;
 
         //Paso 2: Obtenemos las preguntas del subtema
         $preguntas=$this->showXSubtema($ressubarea['original']['data'][0]['subtema_id']);
