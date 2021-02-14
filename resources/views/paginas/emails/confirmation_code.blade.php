@@ -9,7 +9,7 @@
     <p>{{ __('auth.Por favor confirma tu correo electrónico') }}.</p>
     <p>{{ __('auth.Para ello simplemente debes hacer click en el siguiente enlace') }}:</p>
 
-    <a href="{{ url('/register/verify/' . $confirmation_code) }}">
+    <a href="{{ url('/register/verify/' . $id.'/'.$confirmation_code) }}">
         {{ __('auth.Clic para confirmar tu email') }}
     </a>
 </body>

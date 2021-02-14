@@ -8,10 +8,12 @@ use App\User;
 class EmailsController extends Controller
 {
 	//Función que verifica a un usuarios que se está registrando
-	public function verify($code)
+	public function verify($id, $code)
 	{
 		//return 'Estamos en verify';
-	    $user = User::where('confirmation_code', $code)->first();
+	    $user = User::where('confirmation_code', $code)
+	    	->where('id', $id)
+	    	->first();
 
 	    if (!$user)
 	    {

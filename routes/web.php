@@ -5,7 +5,7 @@ Auth::routes();
 Auth::routes(['verify' => true]);  //Para verificación de emails
 
 //Confirmación registro usuario
-Route::get('/register/verify/{code}', 'EmailsController@verify');
+Route::get('/register/verify/{id}/{code}', 'EmailsController@verify');
 
 //Cambio de idioma
 Route::get('lang/{lang}', function($lang) {
