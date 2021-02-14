@@ -83,12 +83,12 @@ class RegisterController extends Controller
             'password'          => Hash::make($data['password']),
             'confirmation_code' => $data['confirmation_code'],
         ]);
-
+/*
         // Enviamos el email de confirmación
         Mail::send('paginas.emails.confirmation_code', $data, function($message) use ($data) {
             $message->to($data['email'], $data['name'])->subject('Por favor confirma tu correo');
         });
-
+*/
         return $user;
     }
 }
