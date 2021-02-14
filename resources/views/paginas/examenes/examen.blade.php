@@ -120,7 +120,7 @@
 							</div>
 						</div>
 					</form>
-                    <div class="row mt-0">
+                    <div class="row mt-1">
                         @include('paginas.publi.examenes_bajo_introduccion_728x90')
                     </div>
 				</div>
