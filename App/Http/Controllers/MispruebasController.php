@@ -11,7 +11,7 @@ class MispruebasController extends Controller
     //Incluir fecha actual en una variable
     function fechaActual()
     {
-        $data['fechaprivacidad'] = date("d-m-Y H:i:s");
+        $data['fechaprivacidad'] = date("Y-m-d H:i:s");
         return $data['fechaprivacidad'];
     }
 
