@@ -88,7 +88,7 @@ class RegisterController extends Controller
             $message->to($data['email'], $data['name'])->subject('Por favor confirma tu correo');
         });
 */
-        return 'conseguido';
+
         return $user;
     }
 }
