@@ -120,20 +120,16 @@
 							</div>
 						</div>
 					</form>
+                    <div class="row mt-0">
+                        @include('paginas.publi.examenes_bajo_introduccion_728x90')
+                    </div>
 				</div>
 			</div>
 			<div class="col-md-3">
                 @include('paginas.publi.adaptable_vertical')
 			</div>
 		</div>
-	</div>
-</section>
-<section class="container justify">
-    <div class="container-fluid">
-		<div class="row mt-0">
-            @include('paginas.publi.examenes_bajo_introduccion_728x90')
-		</div>
-	</div>
+    </div>
 </section>
 
 
