@@ -2,7 +2,7 @@
 
     
 Auth::routes();
-//Auth::routes(['verify' => true]);  //Para verificación de emails
+Auth::routes(['verify' => false]);  //Para verificación de emails
 
 //Confirmación registro usuario
 Route::get('/register/verify/{id}/{code}', 'EmailsController@verify');
