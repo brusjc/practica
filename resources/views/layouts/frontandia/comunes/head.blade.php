@@ -19,9 +19,9 @@
         <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
         <link rel="stylesheet" href="/frontandia/assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="/frontandia/assets/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="/frontandia/assets/css/animate.css">

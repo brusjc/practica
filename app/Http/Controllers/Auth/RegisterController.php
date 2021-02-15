@@ -82,13 +82,30 @@ class RegisterController extends Controller
             'password'          => Hash::make($data['password']),
             'confirmation_code' => $data['confirmation_code'],
         ]);
-/*
+        return $user;
+    }
+
+   protected function create(array $data)
+    {
+        $data['confirmation_code'] = Str::random(25);
+        $data['fechaprivacidad'] = date("Y-m-d H:i:s");
+
+        $user = User::create([
+            'name'              => $data['name'],
+            'apellido1'         => $data['apellido1'],
+            'apellido2'         => $data['apellido2'],
+            'email'             => $data['email'],
+            'roll_id'           => 1,
+            'privacidad'        => $data['fechaprivacidad'],
+            'password'          => Hash::make($data['password']),
+            'confirmation_code' => $data['confirmation_code'],
+        ]);
+
         // Enviamos el email de confirmación
         Mail::send('paginas.emails.confirmation_code', $data, function($message) use ($data) {
             $message->to($data['email'], $data['name'])->subject('Por favor confirma tu correo');
         });
-*/
 
         return $user;
     }
-}
+}}
