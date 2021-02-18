@@ -120,6 +120,9 @@
                 </label>
             </div>
 
+            <div class="mt-6">
+                <a class="underline text-gray-600 hover:text-gray-900" href="<?php echo e(route('register')); ?>"><?php echo e(__(ucfirst('register'))); ?></a>
+            </div>
             <div class="flex items-center justify-end mt-4">
                 <?php if(Route::has('password.request')): ?>
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="<?php echo e(route('password.request')); ?>">
