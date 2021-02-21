@@ -2,7 +2,7 @@ APP_NAME=practicavalenciano.es
 APP_ENV=production
 APP_KEY=base64:pn5BVz9xWjlQmvmWAFzhIcXEWzW/1g9nNT1Z7fMJPXA=
 APP_DEBUG=false
-APP_URL=https://www.api.practicavalenciano.es/
+APP_URL=http://localhost
 
 LOG_CHANNEL=stack
 
