@@ -30,7 +30,7 @@ MAIL_USERNAME=administrador@practicavalenciano.es
 MAIL_PASSWORD=eteagus00005
 MAIL_ENCRYPTION=no
 MAIL_FROM_ADDRESS=administrador@practicavalenciano.es
-MAIL_FROM_NAME=administrador@practicavalenciano.es
+MAIL_FROM_NAME=Practicavalenciano.es
 
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
