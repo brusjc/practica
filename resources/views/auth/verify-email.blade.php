@@ -5,7 +5,7 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('authpra.Verify_texto1')) }}
+            {{ __('authpra.Verify_texto1') }}
         </div>
 
         @if (session('status') == 'verification-link-sent')

@@ -15,12 +15,6 @@ return [
     'Verify_texto2' => 'Se ha enviado un nuevo enlace de verificación a la dirección de correo electrónico que proporcionó durante el registro.',
     'Verify_texto3' => 'Reenviar Email de verificación',
     'Verify_texto4' => 'Cerrar sesión',
-    'Verify_texto5' => '',
-    'Verify_texto6' => '',
-    'Verify_texto7' => '',
-    'Verify_texto8' => '',
-    'Verify_texto9' => '',
-    'Verify_texto10' => '',
 
 
 
