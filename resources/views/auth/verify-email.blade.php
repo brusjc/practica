@@ -10,7 +10,7 @@
 
         @if (session('status') == 'verification-link-sent')
             <div class="mb-4 font-medium text-sm text-green-600">
-                {{ __(authpra.Verify_texto2) }}
+                {{ __('authpra.Verify_texto2') }}
             </div>
         @endif
 
@@ -20,7 +20,7 @@
 
                 <div>
                     <x-jet-button type="submit">
-                        {{ __(authpra.Verify_texto3) }}
+                        {{ __('authpra.Verify_texto3') }}
                     </x-jet-button>
                 </div>
             </form>
@@ -29,7 +29,7 @@
                 @csrf
 
                 <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    {{ __(authpra.Verify_texto4) }}
+                    {{ __('authpra.Verify_texto4') }}
                 </button>
             </form>
         </div>
