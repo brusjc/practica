@@ -20,7 +20,7 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="apellido2" value="{{ __('Primer apellido') }}" />
+                <x-jet-label for="apellido2" value="{{ __('Segundo apellido') }}" />
                 <x-jet-input id="apellido2" class="block mt-1 w-full" type="text" name="apellido2" :value="old('apellido2')" required />
             </div>
 

@@ -10,8 +10,8 @@ return [
     'register' => 'registro',
     
     //Páginas de verificación de email
-    'Verify_texto1' => 'Gracias por registrarte! Antes de comenzar, ¿podría verificar su dirección de correo electrónico haciendo clic en el enlace que le acabamos de enviar? Si no recibió el correo electrónico, con gusto le enviaremos otro.',
-    'Verify_texto2' => 'Se ha enviado un nuevo enlace de verificación a la dirección de correo electrónico que proporcionó durante el registro.',
+    'Verify_texto1' => 'Gracias por registrarte! Antes de comenzar, debes verificar tu dirección de correo electrónico haciendo clic en el enlace que te acabamos de enviar. Si no recibiste el correo electrónico, con gusto te enviaremos otro.',
+    'Verify_texto2' => 'Hemos enviado un nuevo enlace de verificación a la dirección de correo electrónico que nos has proporcionado durante el registro.',
     'Verify_texto3' => 'Reenviar Email de verificación',
     'Verify_texto4' => 'Cerrar sesión',
 
