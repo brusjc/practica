@@ -1271,7 +1271,7 @@ return [
 
 'taula_breadcrumb' => "Vocabulario de la mesa",
 'taula_title' => "Vocabulario de la mesa",
-'taula_h1' => "parem-taulaocabulario de la mesa",
+'taula_h1' => "Vocabulario de la mesa",
 'taula_descripcion' => "Pongamos la mesa (vocabulario valenciano): detallaremos los distintos alimentos y utensilios de la mesa en valenciano. Conócelos haciendo ejercicios.",
 'taula_keywords' => "mesa en valenciano, vocabulario de mesa en valenciano, ejercicios de mesa en valenciano",
 'taula_titulo1' => "vocabulario de la mesa",

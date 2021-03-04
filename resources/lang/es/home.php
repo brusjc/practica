@@ -5,7 +5,7 @@ return [
 
 'home_breadcrumb' => "Inicio",
 'home_title' => "Curso de valenciano online - practicavalenciano", 
-'home_h1' => "Curs de valencià online", 
+'home_h1' => "Curso de valenciano online", 
 'home_descripcion' =>"En este curso de valenciono pretendemos, con ejercicios y explicaciones, introducirte de manera entretenida en la lengua valenciana siguiendo el programa de la Junta Qualificadora de Coneixements de Valencià (JQCV). Vocabulario, ortografía, gramática, curiosidades, …, son nuestras propuestas educativas para que puedas superar los exámenes de los distintos niveles.",
 'home_keywords' =>"Curso de valenciano, Curso online, Curso de valenciano online",
 'home_imgalt1' => "Curso de valenciano online", 
@@ -15,7 +15,7 @@ return [
 'home_titulo1' => "Temario del curso de valenciano online",
 'home_titulo2' => "Propuestas del curso de valenciano online",
 
-'home_titulo7' => "Practica exàmens",
+'home_titulo7' => "Practica exámenes",
 'home_titulo8' => "Practica vocabulario",
 'home_titulo9' => "Practica ortografía",
 'home_titulo10' => "Practica dictados",
@@ -38,7 +38,7 @@ return [
 
 'home_texto1' => "Con este curso de valenciano online pretendemos, a través de ejercicios y explicaciones introducirte de forma entretenida en la lengua valenciana siguiendo el programa de la Junta Qualificadora de Coneixements de Valencià (JQCV).",
 'home_texto2' => "Vocabulario, ortografía, gramática, curiosidades, …, son nuestras propuestas educativas para que puedas superar los exámenes de nivel oral, nivel elemental, nivel mitja, y nivel superior de la JQCV; o para que adquieras conocimientos de la lengua de la Comunidad Valenciana.",
-'home_texto3' => "Aprende valenciano gratis. Teoría, ejercicios autoevaluables, curiosidades, cultura,…",
+'home_texto3' => "Aprende valenciano gratis. Teoría, ejercicios autoevaluables, curiosidades, cultura, …",
 'home_texto4' => "Nuestra propuesta pedagógica: sumergirnos poco a poco en la lengua valenciana conociendo a la vez su cultura mediante un aprendizaje programado y por niveles.",
 'home_texto5' => "Nuestro consejo: practica a diario, trabaja y entiende las correcciones sin prisas.",
 'home_texto6' => "Nuestra condición: ya que nuestra página es gratuita, informa a tus compañeros, colabora aportando ideas y corrige erratas si las encuentras que nosotros también somos humanos.",

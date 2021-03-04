@@ -60,7 +60,7 @@ return [
 	'privacidad_titulo13' => 'Cambios en la Política de Privacidad',
 
 
-	'privacidad_texto01' => 'Bruno Jiménez Cifuentes (03845173X), en adelante PRACTICAVALENCIANO.ES, recopila, trata y almacena información personal a través de la web de su propiedad HTTPS://WWW.PRACTICAVALENCIANO.ES.',
+	'privacidad_texto01' => 'Practicavalenciano.es recopila, trata y almacena información personal a través de la web de su propiedad https://www.practicavalenciano.es',
 	'privacidad_texto02' => 'Esta información será relativa a los usuarios de la web. La información se recopilará, tratará y almacenará conforme a la presente Política de Privacidad.',
 	'privacidad_texto03' => 'Esta Política de Privacidad fue actualizada el 01/10/2018.',
 	'privacidad_texto04' => 'Denominación comercial: PRACTICAVALENCIANO.ES',

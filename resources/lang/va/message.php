@@ -2,17 +2,6 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
-
     "logged"                  => "Vosté està en el sistema!",
     "someproblems"            => "Hay alguns problemes amb la seua entrada.",
     "siginsession"            => "Inicia sessió per a acceder",
@@ -166,7 +155,7 @@ return [
     'diassemana' => 'dies de la setmana',
     'mesesano' => 'mesos de l\'any',
     'horas' => 'les hores',
-    'relacionesconvencionales' => 'relacions convencionals i parentius',
+    'relacionesconvencionales' => 'relacions convencionals',
     'partescuerpo' => 'parts del cos',
     'hoyquecocinamos' => 'hui qui cuina',
     'ponermesa' => 'parem taula',
@@ -176,5 +165,5 @@ return [
     'numeros' => 'els números',
 
     "informacion_examen_master" => "información d'un examen (Màster) ",
-    'examen_nuevo' => 'nou examen',
+    'nuevoexamen' => 'nou examen',
 ];
