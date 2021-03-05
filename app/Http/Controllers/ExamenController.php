@@ -248,7 +248,6 @@ class ExamenController extends Controller
             {
                 $totalArea=0;
                 $resArea = app('App\Http\Controllers\AreaController')->store($resExamen['id'], $tema['id'], $tema['temanombre_id'], 0);
-                //return $resArea;
                 $resArea = @json_decode(json_encode($resArea), true)['original']['data'];
                 //return $resArea;
 
@@ -263,9 +262,7 @@ class ExamenController extends Controller
                 //PASO 6: Creamos los registros en la tabla subareas
                 foreach($resSubtemas as $key2=>$subtema)
                 {
-                    //return $resSubtemas;
                     $ordensubarea=$ordensubarea+1;
-
                     $resSubarea = app('App\Http\Controllers\SubareaController')->store
                     (
                         $resArea['id'], 
