@@ -116,7 +116,7 @@
                                             @foreach($prueba['examen'] as $examen)
                                                 <tr>
                                                     <td></td>
-                                                    <td><a href="/{{session('locale')}}/examennuevo{{$examen['id']}}">{{date('d-m-Y', strtotime($examen['created_at']))}}</a></td>
+                                                    <td><a href="/{{session('locale')}}/exameninicio/{{$examen['id']}}">{{date('d-m-Y', strtotime($examen['created_at']))}}</a></td>
                                                     <td>
                                                         <div class="progress progress-xs">
                                                             <div class="progress-bar progress-bar-danger">
