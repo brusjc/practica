@@ -29,6 +29,7 @@ class ExamenController extends Controller
         if ($id==0) {
             return response()->json(['status' =>['error'=>3, 'message'=>'Error en datos iniciales'], 'data'=>null]);
         }
+        
         if(isset(Auth::user()->id))
         {
             $usu = Auth::user()->id;
@@ -341,6 +342,7 @@ class ExamenController extends Controller
         if ($id==0) {
             return response()->json(['status' =>['error'=>3, 'message'=>'Error en datos iniciales'], 'data'=>null]);
         }
+        //return $id;
 
         $urlblade='/exameninicio/'.$id;
         $miurl=$urlblade;
@@ -359,8 +361,8 @@ class ExamenController extends Controller
             {
                 //return $subarea['subtema']['id'];
                 $pregunta = app('App\Http\Controllers\PreguntaController')->showXSubtema($subarea['subtema']['id']);
-                $pregunta = @json_decode(json_encode($pregunta), true);
-                $examen['area'][$key1]['subarea'][$key2]['puntos']=$pregunta['original']['data'][0]['error'];
+                $pregunta = @json_decode(json_encode($pregunta), true)['original']['data'][0];
+                $examen['area'][$key1]['subarea'][$key2]['puntos']=$pregunta['error'];
                 //return $pregunta;
             }
         }

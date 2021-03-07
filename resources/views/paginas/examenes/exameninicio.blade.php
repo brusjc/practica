@@ -81,7 +81,7 @@
                                     </tr>
                                     @foreach($area['subarea'] as $key2=>$subarea)
                                         <tr>
-                                            <td>{{$id}}</td>
+                                            <td></td>
                                             @if($subarea['contestadas']>=$subarea['total'])
                                                 <td>{{$subarea['subtemanombre']['nombre']}}</td>
                                                 <td>
