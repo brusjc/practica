@@ -29,9 +29,9 @@ class VocabularioController extends Controller
         $urlblade='vocabulario';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch (session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -56,9 +56,9 @@ class VocabularioController extends Controller
         $urlblade='el-nom-de-les-lletres';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -88,9 +88,9 @@ class VocabularioController extends Controller
         $urlblade='parts-del-dia';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -121,9 +121,9 @@ class VocabularioController extends Controller
         $urlblade='dies-de-la-setmana';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -154,9 +154,9 @@ class VocabularioController extends Controller
         $urlblade='les-hores';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -187,9 +187,9 @@ class VocabularioController extends Controller
         $urlblade='numeros';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -220,9 +220,9 @@ class VocabularioController extends Controller
         $urlblade='cos-huma';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -253,9 +253,9 @@ class VocabularioController extends Controller
         $urlblade='avui-qui-cuina';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -286,9 +286,9 @@ class VocabularioController extends Controller
         $urlblade='parem-taula';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -319,9 +319,9 @@ class VocabularioController extends Controller
         $urlblade='ciutat';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -352,9 +352,9 @@ class VocabularioController extends Controller
         $urlblade='entre-teles';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -385,9 +385,9 @@ class VocabularioController extends Controller
         $urlblade='hogar';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -418,9 +418,9 @@ class VocabularioController extends Controller
         $urlblade='relacions-de-parentiu';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -451,9 +451,9 @@ class VocabularioController extends Controller
         $urlblade='mesos-any';
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);
@@ -484,9 +484,9 @@ class VocabularioController extends Controller
         $urlblade='tabla-ejercicios/'.$id;
         App::setLocale($idm);
         session(['locale' => $idm]);
-        $miurl='/'."/{{session('locale'"/{{session('locale')}}/examennuevo.'/'.$urlblade;
+        $miurl="/{{session('locale')}}/examennuevo/".$urlblade;
 
-        switch ("/{{session('locale'"/{{session('locale')}}/examennuevo)
+        switch(session('locale'))
         {
             case "es":
                 session(['BC1' => '/es/vocabulario']);

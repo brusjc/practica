@@ -10,6 +10,10 @@ use App\Http\Controllers\PruebaController;
 use App\Http\Controllers\ExamenController;
 use App\Http\Controllers\PreguntaController;
 use App\Http\Controllers\ResultadoController;
+use Illuminate\Support\Facades\View;
+
+
+Route::get('/pruebacomponent', function(){ return view('paginas.pruebacomponent'); });
 
 
 Route::get('/', [HomeController::class, 'home2'])->name('Home2');
@@ -186,7 +190,4 @@ Route::group(['middleware' => 'auth'], function()
 
 
 
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/dashboard', function() { return view('dashboard');})->middleware(['auth:sanctum', 'verified'])->name('dashboard');
