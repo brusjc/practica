@@ -22,13 +22,20 @@ body {
 }
 
 .center {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .cajaflex {
-   display: flex;
-   align-items: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cajaflex img {
+  margin-top: 20%;
+  width: 60% !important;
+  height: 60% !important;
 }
 
 .justify {

@@ -6,8 +6,8 @@
             <div class="col-md-8 pt-8">
                 {{$slot}}
             </div>
-            <div class="col-md-4" data-aos="fade-right">
-                <img class="img-fluid" src="{{$url}}" width="60%" title="{{$title}}" alt="{{$alt}}"/>
+            <div class="col-md-4 cajaflex" data-aos="fade-right">
+                <img src="{{$url}}" width="60%" title="{{$title}}" alt="{{$alt}}"/>
             </div>
         </div>
     </div>  

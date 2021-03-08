@@ -30,9 +30,12 @@
     alt="{{ trans('vocabulario.casa_imgalt20') }}">
 	<p>{{ trans('vocabulario.casa_texto1') }}</p>
 	<p>{{ trans('vocabulario.casa_texto2') }}</p>
-	<p>{{ trans('vocabulario.casa_texto3') }}</p>
-	<p>{{ trans('vocabulario.casa_texto4') }}</p>
-	<p>{{ trans('vocabulario.casa_texto5') }}</p>
+	<p>{{ trans('vocabulario.casa_texto1') }}</p>
+	<p>{{ trans('vocabulario.casa_texto2') }}</p>
+	<p>{{ trans('vocabulario.casa_texto1') }}</p>
+	<p>{{ trans('vocabulario.casa_texto2') }}</p>
+	<p>{{ trans('vocabulario.casa_texto1') }}</p>
+	<p>{{ trans('vocabulario.casa_texto2') }}</p>
 </x-franjafotoizq>
 
 <x-franjafotodcha 
@@ -41,9 +44,12 @@
     alt="{{ trans('vocabulario.casa_imgalt20') }}">
 	<p>{{ trans('vocabulario.casa_texto1') }}</p>
 	<p>{{ trans('vocabulario.casa_texto2') }}</p>
-	<p>{{ trans('vocabulario.casa_texto3') }}</p>
-	<p>{{ trans('vocabulario.casa_texto4') }}</p>
-	<p>{{ trans('vocabulario.casa_texto5') }}</p>
+	<p>{{ trans('vocabulario.casa_texto1') }}</p>
+	<p>{{ trans('vocabulario.casa_texto2') }}</p>
+	<p>{{ trans('vocabulario.casa_texto1') }}</p>
+	<p>{{ trans('vocabulario.casa_texto2') }}</p>
+	<p>{{ trans('vocabulario.casa_texto1') }}</p>
+	<p>{{ trans('vocabulario.casa_texto2') }}</p>
 </x-franjafotodcha>
 
 <x-franjafotoizq 
@@ -52,9 +58,12 @@
     alt="{{ trans('vocabulario.casa_imgalt20') }}">
 	<p>{{ trans('vocabulario.casa_texto1') }}</p>
 	<p>{{ trans('vocabulario.casa_texto2') }}</p>
-	<p>{{ trans('vocabulario.casa_texto3') }}</p>
-	<p>{{ trans('vocabulario.casa_texto4') }}</p>
-	<p>{{ trans('vocabulario.casa_texto5') }}</p>
+	<p>{{ trans('vocabulario.casa_texto1') }}</p>
+	<p>{{ trans('vocabulario.casa_texto2') }}</p>
+	<p>{{ trans('vocabulario.casa_texto1') }}</p>
+	<p>{{ trans('vocabulario.casa_texto2') }}</p>
+	<p>{{ trans('vocabulario.casa_texto1') }}</p>
+	<p>{{ trans('vocabulario.casa_texto2') }}</p>
 </x-franjafotoizq>
 
 
