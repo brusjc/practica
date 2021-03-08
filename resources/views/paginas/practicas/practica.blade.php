@@ -69,7 +69,7 @@
 					</div>
 
 					@if(!$datos['practica']['r2'])
-						<form action="{{ action('PracticaController@practica1') }}" method="POST" class="form-horizontal">
+						<form action="/practica1" method="POST" class="form-horizontal">
 							{{csrf_field()}}
 
 							<input type="hidden" name="_method" value="PUT">
@@ -99,15 +99,15 @@
 							<input type="hidden" name="orden" value={{$datos['orden']}}>
 							<div class="box-footer row invoice-info">
 								<div class="col-sm-6 invoice-col">
-									<button type="submit" class="btn btn-info pull-right">Enviar</button>
+									<button type="submit" class="btn btn-info btn-lg pull-right">Enviar</button>
 								</div>
 								<div class="col-sm-6 invoice-col">
-									<a href="{{session('urlback')}}">Go Back</button></a>
+									<a href="{{session('urlback')}}" class="btn btn-info pull-right">Tornar</a>
 								</div>
 							</div>
 						</form>
 					@else
-						<form action="{{ action('PracticaController@practica2') }}" method="POST" class="form-horizontal">
+						<form action="/practica2" method="POST" class="form-horizontal">
 							{{csrf_field()}}
 
 							<input type="hidden" name="_method" value="PUT">
@@ -150,7 +150,7 @@
 							<input type="hidden" name="orden" value={{$datos['orden']}}>
 							<div class="box-footer row invoice-info mb-5">
 								<div class="col-sm-6 invoice-col">
-									<button type="submit" class="btn btn-info pull-right">Enviar</button>
+									<button type="submit" class="btn btn-info btn-lg pull-right">Enviar</button>
 								</div>
 								<div class="col-sm-6 invoice-col">
 									<a href="{{ session('BC2') }}" class="btn btn-info pull-right">Tornar</a>

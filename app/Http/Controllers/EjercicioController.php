@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Auth;
 use User;
-use App\Ejercicio;
+use App\Models\Ejercicio;
 
 
 class EjercicioController extends Controller

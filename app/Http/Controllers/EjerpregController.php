@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Ejerpreg;
+use App\Models\Ejerpreg;
 
 class EjerpregController extends Controller
 {

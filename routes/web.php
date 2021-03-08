@@ -10,6 +10,7 @@ use App\Http\Controllers\PruebaController;
 use App\Http\Controllers\ExamenController;
 use App\Http\Controllers\PreguntaController;
 use App\Http\Controllers\ResultadoController;
+use App\Http\Controllers\PracticaController;
 use Illuminate\Support\Facades\View;
 
 
@@ -29,17 +30,18 @@ Route::get('/{idm}/politica-de-privacidad', [HomeController::class, 'privacidad'
 
 Route::get('/{idm}/tabla-ejercicios/{id}', [VocabularioController::class, 'tabla']);
 
-
-
-
-Route::get('/practicainicio/{pagina}', 'PracticaController@inicioPracticas')->name('InicioPracticas');
-Route::get('/practica/{id}', 'PracticaController@practicaXId')->name('PracticaXId');
-Route::put('/practica1', 'PracticaController@practica1')->name('Practica1');
-Route::put('/practica2', 'PracticaController@practica2')->name('Practica2');
-Route::put('/practica3', 'PracticaController@practica3')->name('Practica3');
-Route::get('/practicaVuelta/{ejercicio}', 'PracticaController@practicaVuelta')->name('PracticaVuelta');
-
 */
+
+
+Route::get('/practicainicio/{pagina}', [PracticaController::class, 'inicioPracticas'])->name('InicioPracticas');
+Route::get('/practica/{id}', [PracticaController::class, 'practicaXId'])->name('PracticaXId');
+Route::put('/practica1', [PracticaController::class, 'practica1'])->name('Practica1');
+Route::post('/practica1', [PracticaController::class, 'practica1'])->name('practica1');
+Route::put('/practica2', [PracticaController::class, 'practica2'])->name('Practica2');
+Route::put('/practica3', [PracticaController::class, 'practica3'])->name('Practica3');
+Route::get('/practicaVuelta/{ejercicio}', [PracticaController::class, 'practicaVuelta'])->name('PracticaVuelta');
+
+
 //***************
 //* Vocabulario *
 //***************

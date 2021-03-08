@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Practica;
+use App\Models\Practica;
 
 class PracticaController extends Controller
 {
@@ -107,14 +107,14 @@ class PracticaController extends Controller
 		//return $ejercicio['preguntas'];
 
         $resejercicio = app('App\Http\Controllers\EjercicioController')->store($ejercicio);
-        $resejercicio = @json_decode(json_encode($resejercicio), true);
+        $resejercicio = @json_decode(json_encode($resejercicio), true)['original']['data'];
         //return $resejercicio;
 
 
         //Paso 5: creamos los registros en la tabla ejerpreg
         for($x=1; $x<=10; $x++)
         {
-            $ejerpreg['ejercicio_id']=$resejercicio['original']['data']['id'];
+            $ejerpreg['ejercicio_id']=$resejercicio['id'];
             $ejerpreg['practica_id']=$elegidos[$x];
             $ejerpreg['orden']=$x;
             $resejerpreg = app('App\Http\Controllers\EjerpregController')->store($ejerpreg);
@@ -124,7 +124,7 @@ class PracticaController extends Controller
         //return $resejercicio;
 
         //Paso 6: redirigimos a la, vista
-        return redirect()->action('PracticaController@practicaXId', ['id'=>$resejercicio['original']['data']['id']]);
+        return redirect()->action([PracticaController::class, 'practicaXId'], ['id'=>$resejercicio['id']]);
     }
 
     public function practicaXId($id)
@@ -214,7 +214,7 @@ class PracticaController extends Controller
 
         //Paso 5: Pasamos a la siguiente pregunta
         if($resejerpreg['original']['status']['error']==2){
-            return redirect()->action('PracticaController@practicaVuelta', ['ejercicio'=>$respuesta['ejercicio_id']]);
+            return redirect()->action([PracticaController::class, 'practicaVuelta'], ['ejercicio'=>$respuesta['ejercicio_id']]);
         } else {
             $datos = $resejerpreg['original']['data'][0];
             return view('paginas.practicas.practica', compact('datos'));
@@ -290,7 +290,7 @@ class PracticaController extends Controller
 
         //Paso 5: Pasamos a la siguiente pregunta
         if($resejerpreg['original']['status']['error']==2){
-            return redirect()->action('PracticaController@practicaVuelta', ['ejercicio'=>$respuesta['ejercicio_id']]);
+            return redirect()->action([PracticaController::class, 'practicaVuelta'], ['ejercicio'=>$respuesta['ejercicio_id']]);
         } else {
             $datos = $resejerpreg['original']['data'][0];
 
@@ -334,7 +334,7 @@ class PracticaController extends Controller
 
         //Paso 3: Pasamos a la siguiente pregunta
         if($resejerpreg['original']['status']['error']==2){
-            return redirect()->action('PracticaController@practicaVuelta', ['ejercicio'=>$respuesta['ejercicio_id']]);
+            return redirect()->action([PracticaController::class, 'practicaVuelta'], ['ejercicio'=>$respuesta['ejercicio_id']]);
         } else {
             $datos = $resejerpreg['original']['data'][0];
             $datos['verdiv']=$verdiv;
