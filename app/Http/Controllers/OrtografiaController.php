@@ -9,60 +9,6 @@ class OrtografiaController extends Controller
 {
 
 
-//*********************
-//* Variables enlaces *
-//*********************
-
-    protected $a = [
-        "byv" => [
-            "url" => "byv",
-            "nombre" => "B y V",
-            "imagen" => "/img/practicav/ortografia/byv-R.svg",
-        ],
-        "contraccio" => [
-            "url" => "contraccio",
-            "nombre" => "contraccio",
-            "imagen" => "/img/practicav/ortografia/contraccio-R.svg",
-        ],
-        "apostrof" => [
-            "url" => "apostrof",
-            "nombre" => "L'apòstrof",
-            "imagen" => "/img/practicav/ortografia/apostrof-R.svg",
-        ],
-        "eio" => [
-            "url" => "eio",
-            "nombre" => "E i O obertes",
-            "imagen" => "/img/practicav/ortografia/eyo-R.svg",
-        ],
-        "acentuacion" => [
-            "url" => "acentuacion",
-            "nombre" => "L'accentuació",
-            "imagen" => "/img/practicav/ortografia/acentuacion-R.svg",
-        ],
-        "dieresis" => [
-            "url" => "dieresis",
-            "nombre" => "La dièresi",
-            "imagen" => "/img/practicav/ortografia/dieresis-R.svg",
-        ],
-        "diptong" => [
-            "url" => "diptong",
-            "nombre" => "Els diptongs",
-            "imagen" => "/img/practicav/ortografia/diptong-R.svg",
-        ],
-        "diacritic" => [
-            "url" => "diacritic",
-            "nombre" => "L'accent diacrític",
-            "imagen" => "/img/practicav/ortografia/diacritic-R.svg",
-        ],
-        "vocalisme" => [
-            "url" => "vocalisme",
-            "nombre" => "Vocalisme",
-            "imagen" => "/img/practicav/ortografia/vocalisme-R.svg",
-        ],
-    ];
-
-
-
 
 //*******
 //* Web *
@@ -440,5 +386,59 @@ class OrtografiaController extends Controller
 
         return view('paginas.ortografia.contraccio', compact('miurl', 'enlaces', 'urlblade'));
     }
+
+
+//*********************
+//* Variables enlaces *
+//*********************
+
+    protected $a = [
+        "byv" => [
+            "url" => "byv",
+            "nombre" => "B i V",
+            "imagen" => "/img/practicav/ortografia/byv-R.svg",
+        ],
+        "contraccio" => [
+            "url" => "contraccio",
+            "nombre" => "contraccio",
+            "imagen" => "/img/practicav/ortografia/contraccio-R.svg",
+        ],
+        "apostrof" => [
+            "url" => "apostrof",
+            "nombre" => "L'apòstrof",
+            "imagen" => "/img/practicav/ortografia/apostrof-R.svg",
+        ],
+        "eio" => [
+            "url" => "eio",
+            "nombre" => "E i O obertes",
+            "imagen" => "/img/practicav/ortografia/eyo-R.svg",
+        ],
+        "acentuacion" => [
+            "url" => "acentuacion",
+            "nombre" => "L'accentuació",
+            "imagen" => "/img/practicav/ortografia/acentuacion-R.svg",
+        ],
+        "dieresis" => [
+            "url" => "dieresis",
+            "nombre" => "La dièresi",
+            "imagen" => "/img/practicav/ortografia/dieresis-R.svg",
+        ],
+        "diptong" => [
+            "url" => "diptong",
+            "nombre" => "Els diptongs",
+            "imagen" => "/img/practicav/ortografia/diptong-R.svg",
+        ],
+        "diacritic" => [
+            "url" => "diacritic",
+            "nombre" => "L'accent diacrític",
+            "imagen" => "/img/practicav/ortografia/diacritic-R.svg",
+        ],
+        "vocalisme" => [
+            "url" => "vocalisme",
+            "nombre" => "Vocalisme",
+            "imagen" => "/img/practicav/ortografia/vocalisme-R.svg",
+        ],
+    ];
+
 
 }

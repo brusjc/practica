@@ -80,7 +80,13 @@ class VocabularioController extends Controller
                 break;
         }
 
-        return view('paginas.vocabulario.el-nom-de-les-lletres', compact('miurl', 'urlblade'));
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["partsdia"];
+        $enlaces[2]=$this->a["diessetmana"];
+        $enlaces[3]=$this->a["taula"];
+        $enlaces[4]=$this->a["mesosany"];
+
+        return view('paginas.vocabulario.el-nom-de-les-lletres', compact('miurl', 'enlaces',  'urlblade'));
     }
 
     public function partsDia($idm)
@@ -112,8 +118,14 @@ class VocabularioController extends Controller
                 break;
         }
 
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["lletres"];
+        $enlaces[2]=$this->a["diessetmana"];
+        $enlaces[3]=$this->a["taula"];
+        $enlaces[4]=$this->a["mesosany"];
+
         //Paso 3: Redirigimos a la vista
-        return view('paginas.vocabulario.parts-del-dia', compact('miurl', 'urlblade'));
+        return view('paginas.vocabulario.parts-del-dia', compact('miurl', 'enlaces',  'urlblade'));
     }
 
     public function diesSetmana($idm)
@@ -145,8 +157,14 @@ class VocabularioController extends Controller
                 break;
         }
 
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["lletres"];
+        $enlaces[2]=$this->a["numeros"];
+        $enlaces[3]=$this->a["taula"];
+        $enlaces[4]=$this->a["mesosany"];
+
         //Paso 3: Redirigimos a la vista
-        return view('paginas.vocabulario.dies-de-la-setmana', compact('miurl', 'urlblade'));
+        return view('paginas.vocabulario.dies-de-la-setmana', compact('miurl', 'enlaces',  'urlblade'));
     }
 
     public function hores($idm)
@@ -178,8 +196,14 @@ class VocabularioController extends Controller
                 break;
         }
 
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["lletres"];
+        $enlaces[2]=$this->a["numeros"];
+        $enlaces[3]=$this->a["cuina"];
+        $enlaces[4]=$this->a["mesosany"];
+
         //Paso 3: Redirigimos a la vista
-        return view('paginas.vocabulario.les-hores', compact('miurl', 'urlblade'));
+        return view('paginas.vocabulario.les-hores', compact('miurl', 'enlaces',  'urlblade'));
     }
 
     public function numeros($idm)
@@ -211,8 +235,14 @@ class VocabularioController extends Controller
                 break;
         }
 
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["lletres"];
+        $enlaces[2]=$this->a["parentiu"];
+        $enlaces[3]=$this->a["cuina"];
+        $enlaces[4]=$this->a["mesosany"];
+
         //Paso 3: Redirigimos a la vista
-        return view('paginas.vocabulario.numeros', compact('miurl', 'urlblade'));
+        return view('paginas.vocabulario.numeros', compact('miurl', 'enlaces',  'urlblade'));
     }
 
     public function cosHuma($idm)
@@ -244,8 +274,14 @@ class VocabularioController extends Controller
                 break;
         }
 
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["partsdia"];
+        $enlaces[2]=$this->a["parentiu"];
+        $enlaces[3]=$this->a["cuina"];
+        $enlaces[4]=$this->a["mesosany"];
+
         //Paso 3: Redirigimos a la vista
-        return view('paginas.vocabulario.cos-huma', compact('miurl', 'urlblade'));
+        return view('paginas.vocabulario.cos-huma', compact('miurl', 'enlaces',  'urlblade'));
     }
 
     public function cuina($idm)
@@ -277,8 +313,14 @@ class VocabularioController extends Controller
                 break;
         }
 
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["partsdia"];
+        $enlaces[2]=$this->a["parentiu"];
+        $enlaces[3]=$this->a["casa"];
+        $enlaces[4]=$this->a["mesosany"];
+
         //Paso 3: Redirigimos a la vista
-        return view('paginas.vocabulario.avui-qui-cuina', compact('miurl', 'urlblade'));
+        return view('paginas.vocabulario.avui-qui-cuina', compact('miurl', 'enlaces',  'urlblade'));
     }
 
     public function taula($idm)
@@ -310,8 +352,14 @@ class VocabularioController extends Controller
                 break;
         }
 
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["partsdia"];
+        $enlaces[2]=$this->a["parentiu"];
+        $enlaces[3]=$this->a["casa"];
+        $enlaces[4]=$this->a["mesosany"];
+
         //Paso 3: Redirigimos a la vista
-        return view('paginas.vocabulario.parem-taula', compact('miurl', 'urlblade'));
+        return view('paginas.vocabulario.parem-taula', compact('miurl', 'enlaces',  'urlblade'));
     }
 
     public function ciutat($idm)
@@ -343,8 +391,14 @@ class VocabularioController extends Controller
                 break;
         }
 
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["partsdia"];
+        $enlaces[2]=$this->a["parentiu"];
+        $enlaces[3]=$this->a["casa"];
+        $enlaces[4]=$this->a["parentiu"];
+
         //Paso 3: Redirigimos a la vista
-        return view('paginas.vocabulario.ciutat', compact('miurl', 'urlblade'));
+        return view('paginas.vocabulario.ciutat', compact('miurl', 'enlaces',  'urlblade'));
     }
 
     public function teles($idm)
@@ -376,8 +430,14 @@ class VocabularioController extends Controller
                 break;
         }
 
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["partsdia"];
+        $enlaces[2]=$this->a["numeros"];
+        $enlaces[3]=$this->a["casa"];
+        $enlaces[4]=$this->a["parentiu"];
+
         //Paso 3: Redirigimos a la vista
-        return view('paginas.vocabulario.entre-teles', compact('miurl', 'urlblade'));
+        return view('paginas.vocabulario.entre-teles', compact('miurl', 'enlaces',  'urlblade'));
     }
 
     public function casa($idm)
@@ -409,8 +469,14 @@ class VocabularioController extends Controller
                 break;
         }
 
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["partsdia"];
+        $enlaces[2]=$this->a["parentiu"];
+        $enlaces[3]=$this->a["coshuma"];
+        $enlaces[4]=$this->a["parentiu"];
+
         //Paso 3: Redirigimos a la vista
-        return view('paginas.vocabulario.casa', compact('miurl', 'urlblade'));
+        return view('paginas.vocabulario.casa', compact('miurl', 'enlaces',  'urlblade'));
     }
 
     public function parentiu($idm)
@@ -442,8 +508,14 @@ class VocabularioController extends Controller
                 break;
         }
 
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["partsdia"];
+        $enlaces[2]=$this->a["parentiu"];
+        $enlaces[3]=$this->a["coshuma"];
+        $enlaces[4]=$this->a["teles"];
+
         //Paso 3: Redirigimos a la vista
-        return view('paginas.vocabulario.relacions-de-parentiu', compact('miurl', 'urlblade'));
+        return view('paginas.vocabulario.relacions-de-parentiu', compact('miurl', 'enlaces',  'urlblade'));
     }
 
     public function mesos($idm)
@@ -475,8 +547,14 @@ class VocabularioController extends Controller
                 break;
         }
 
+        //Generamos los enlaces a otras páginas
+        $enlaces[1]=$this->a["partsdia"];
+        $enlaces[2]=$this->a["parentiu"];
+        $enlaces[3]=$this->a["coshuma"];
+        $enlaces[4]=$this->a["teles"];
+
         //Paso 3: Redirigimos a la vista
-        return view('paginas.vocabulario.mesos-any', compact('miurl', 'urlblade'));
+        return view('paginas.vocabulario.mesos-any', compact('miurl', 'enlaces',  'urlblade'));
     }
 
     public function tabla($idm, $id)
@@ -516,6 +594,79 @@ class VocabularioController extends Controller
         //Paso 3: Redirigimos a la vista
         return view('paginas.pruebas.tabla-ejercicios', compact('miurl', 'id', 'datos', 'urlblade'));
     }
+
+
+//*********************
+//* Variables enlaces *
+//*********************
+
+    protected $a = [
+        "lletres" => [
+            "url" => "el-nom-de-les-lletres",
+            "nombre" => "El nom de les lletres",
+            "imagen" => "/img/practicav/vocabulario/Nomslletres.svg",
+        ],
+        "partsdia" => [
+            "url" => "parts-del-dia",
+            "nombre" => "Parts del dia",
+            "imagen" => "/img/practicav/vocabulario/partsdia.svg",
+        ],
+        "diessetmana" => [
+            "url" => "dies-de-la-setmana",
+            "nombre" => "Dies de la setmana",
+            "imagen" => "/img/practicav/vocabulario/diessetmana.svg",
+        ],
+        "hores" => [
+            "url" => "les-hores",
+            "nombre" => "Les hores",
+            "imagen" => "/img/practicav/vocabulario/hores.svg",
+        ],
+        "numeros" => [
+            "url" => "numeros",
+            "nombre" => "Els números",
+            "imagen" => "/img/practicav/vocabulario/numeros.svg",
+        ],
+        "coshuma" => [
+            "url" => "cos-huma",
+            "nombre" => "Parts del cos humà",
+            "imagen" => "/img/practicav/vocabulario/coshuma.svg",
+        ],
+        "cuina" => [
+            "url" => "avui-qui-cuina",
+            "nombre" => "Hui qui cuina",
+            "imagen" => "/img/practicav/vocabulario/cuina.svg",
+        ],
+        "taula" => [
+            "url" => "parem-taula",
+            "nombre" => "Parem taula",
+            "imagen" => "/img/practicav/vocabulario/taula.svg",
+        ],
+        "ciutat" => [
+            "url" => "ciutat",
+            "nombre" => "La ciutat",
+            "imagen" => "/img/practicav/vocabulario/ciutat.svg",
+        ],
+        "teles" => [
+            "url" => "entre-teles",
+            "nombre" => "Entre teles",
+            "imagen" => "/img/practicav/vocabulario/ropa.svg",
+        ],
+        "casa" => [
+            "url" => "hogar",
+            "nombre" => "La casa",
+            "imagen" => "/img/practicav/vocabulario/hogar.svg",
+        ],
+        "mesosany" => [
+            "url" => "mesos-any",
+            "nombre" => "Mesos de l'any",
+            "imagen" => "/img/practicav/vocabulario/mesos-any.svg",
+        ],
+        "parentiu" => [
+            "url" => "relacions-de-parentiu",
+            "nombre" => "Relacions convencionals",
+            "imagen" => "/img/practicav/vocabulario/parentiu.svg",
+        ],
+    ];
 
 
 

@@ -34,7 +34,7 @@
     <div class="container-fluid">
         <div class="row content h-100">
 	        <div class="col-md-5 order-1 order-md-2 centraimg" data-aos="fade-left">
-	           <img class="img-fluid" src="/img/practicav/vocabulario/cos-huma.svg" width="300px" title="{{ trans('vocabulario.cos_imgtitle20') }}" alt="{{ trans('vocabulario.cos_imgalt20') }}">
+	           <img class="img-fluid" src="/img/practicav/vocabulario/coshuma.svg" width="300px" title="{{ trans('vocabulario.cos_imgtitle20') }}" alt="{{ trans('vocabulario.cos_imgalt20') }}">
 	        </div>
 	        <div class="col-md-7 pt-5 order-2">
 	            <h2>{{ trans('vocabulario.cos_titulo20') }}</h2>
@@ -325,5 +325,7 @@
         </script>
     </div>
 </section>
+
+<x-enlacesbajos :enlaces=$enlaces></x-enlacesbajos>
 
 @endsection

@@ -42,22 +42,24 @@
      showgrid="false"
      inkscape:showpageshadow="false"
      inkscape:zoom="3.4066667"
-     inkscape:cx="150"
-     inkscape:cy="75"
+     inkscape:cx="58.569966"
+     inkscape:cy="2.6908033"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg5" />
+     inkscape:current-layer="svg5"
+     inkscape:document-rotation="0"
+     showborder="false" />
   <path
      id="path11341"
-     style="fill:#000080;fill-rule:evenodd;stroke:#000080;stroke-width:1.6845;stroke-linecap:round;stroke-linejoin:round"
-     d="M 24.994673,1.0515277 0.84143902,22.151438 H 49.147908 L 38.915467,13.215597 V 1.9930738 l -6.850803,-9.57e-5 V 7.222887 L 24.994673,1.051432 Z" />
+     style="fill:#000080;fill-rule:evenodd;stroke:#000080;stroke-width:1.68466;stroke-linecap:round;stroke-linejoin:round"
+     d="M 24.999997,0.84232301 0.84218822,21.942164 H 49.157807 L 38.923428,13.006352 V 1.783866 l -6.852101,-9.57e-5 V 7.013662 l -7.07133,-6.17143469 z" />
   <path
      id="rect11344"
-     style="fill:#000080;fill-rule:evenodd;stroke:#000080;stroke-width:1.72215;stroke-linecap:round;stroke-linejoin:round"
-     d="M 7.8880632,24.975599 V 49.348207 H 41.867632 V 24.975599 Z m 5.2386088,5.574202 h 7.985311 v 10.2958 h -7.985311 z m 14.151108,3.078077 h 8.217478 V 49.228662 H 27.27778 Z" />
+     style="fill:#000080;fill-rule:evenodd;stroke:#000080;stroke-width:1.72231;stroke-linecap:round;stroke-linejoin:round"
+     d="M 7.890147,24.766316 V 49.138844 H 41.876151 V 24.766316 Z m 5.239601,5.574183 h 7.986824 v 10.295767 h -7.986824 z m 14.153788,3.078067 h 8.219035 v 15.600733 h -8.219035 z" />
   <path
      id="path11352"
-     style="fill:#000080;fill-rule:evenodd;stroke-width:0.421126"
-     d="m 16.325471,30.684171 v 4.049748 h -3.430593 v 1.91274 h 3.430593 v 4.348136 h 1.483499 v -4.348136 h 3.1873 v -1.91274 h -3.1873 v -4.049748 z" />
+     style="fill:#000080;fill-rule:evenodd;stroke-width:0.421165"
+     d="m 16.329153,30.474869 v 4.049735 H 12.89791 v 1.912734 h 3.431243 v 4.348121 h 1.48378 v -4.348121 h 3.187903 v -1.912734 h -3.187903 v -4.049735 z" />
 </svg>

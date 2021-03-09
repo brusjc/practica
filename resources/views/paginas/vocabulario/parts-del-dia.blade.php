@@ -75,4 +75,6 @@
     </div>
 </section>
 
+<x-enlacesbajos :enlaces=$enlaces></x-enlacesbajos>
+
 @endsection

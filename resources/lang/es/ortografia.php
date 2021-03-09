@@ -15,7 +15,7 @@ return [
 
 
 
-'vocalisme_breadcrumb' => "Vocalismo en valenciano",
+'vocalisme_breadcrumb' => "Vocalismo",
 'vocalisme_h1' => "Vocalismo en valenciano", 
 'vocalisme_title' => "Vocalismo en valenciano", 
 'vocalisme_descripcion' => "Vocalismo en valenciano: la equivalencia que encontramos entre el castellano y el valenciano se dificulta a la hora de escribir",
