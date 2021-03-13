@@ -11,6 +11,16 @@ return [
     "volver" => "volver",
 
 
+    //Menú de navegación
+    'examenes_JQCV'         => 'Exámenes',
+    "vocabulario"           => "Vocabulario",
+    "ortografia"            => "Ortografía",
+    "dictados"              => "Dictados",
+    "nombres"               => "Nombres",
+    "usuario"               => "Usuario",
+    'idiomas'               => 'Idiomas',
+    'master'                => 'Máster',
+
 
 
 

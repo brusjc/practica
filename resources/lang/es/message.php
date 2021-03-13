@@ -128,19 +128,12 @@ return [
     'apellido2'               => 'Segundo apellido',
 
 
-    'examenes_JQCV'         => 'Exámenes',
-    "vocabulario"           => "Vocabulario",
-    "ortografia"            => "Ortografía",
-    "dictados"              => "Dictados",
-    "nombres"               => "Nombres",
-    "usuario"               => "Usuario",
-    'idiomas'               => 'Idiomas',
-    'master'                => 'Máster',
     'politicacookies'       => 'política de cookies',
     'politicaprivacidad'    => 'política de privacidad',
     'volver'                => 'Volver',
     'pueden_interesar'      => 'Páginas que te pueden interesar',
-
+    'y'                     => 'y',
+    'yaestasregistrado?'    => '¿Ya estás registrado?',
 
     'vocalismo' => 'Vocalismo',
     'byv' => 'B y V',

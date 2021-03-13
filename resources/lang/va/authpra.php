@@ -7,7 +7,8 @@ return [
     'E-Mail Address' => 'correo electrónico',
     'Password' => 'contraseña',
     'Confirm Password' => 'confirmación contraseña',
-    'register' => 'registro',
+    'register' => 'registre',
+    "recuerdame"    => "Recorda'm",
 
     
     //Páginas de verificación de email

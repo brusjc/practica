@@ -10,6 +10,10 @@
 
 @section('main_content')
 
+@if(isset($errors))
+    <x-errores :errors=$errors></x-errores>
+@endif
+
 <section class="container justify">
     <div class="container-fluid">
         <div class="row">

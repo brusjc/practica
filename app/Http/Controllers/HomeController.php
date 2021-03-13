@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -22,6 +23,16 @@ class HomeController extends Controller
         $urlblade='home';
         App::setLocale($idm);
         session(['locale' => $idm]);
+        $user = Auth::user();
+        if(isset($user))
+        {
+            //return 'estamos aqui';
+            if(!$user->email_verified_at)
+            {
+                $errors[] = '<h2>Confirma tu dirección de correo electrónico</h2><br/><p>Para poder hacer uso de todas las ventajas de usuario registrado debes confirmar tu dirección de correo electrónico.</p>';
+                return view('paginas.home', compact('urlblade', 'errors'));
+            }
+        }        
         return view('paginas.home', compact('urlblade'));
     }
 

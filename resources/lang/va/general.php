@@ -12,6 +12,16 @@ return [
 
 
 
+    //Menú de navegación
+    "examenes_JQCV"     => "exàmens",
+    "vocabulario"       => "vocabulari",
+    "ortografia"        => "ortografia",
+    "dictados"          => "dictados",
+    "nombres"           => "noms",
+    "usuario"           => "usuari",
+    "master"            => "master",
+
+
 
 
 

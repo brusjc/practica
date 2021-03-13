@@ -14,15 +14,11 @@ use App\Http\Controllers\PracticaController;
 use Illuminate\Support\Facades\View;
 
 
+
 Route::get('/pruebacomponent', function(){ return view('paginas.pruebacomponent'); });
+Route::get('/prueba22', function(){ return view('paginas.prueba22'); });
 
-
-Route::get('/', [HomeController::class, 'home2'])->name('Home2');
-Route::get('/home', [HomeController::class, 'home2'])->name('Home2');
-Route::get('/{idm}', [HomeController::class, 'home'])->name('Home3');
-Route::get('/{idm}/home', [HomeController::class, 'home'])->name('Home');
-Route::get('/{idm}/politica-de-cookies', [HomeController::class, 'cookies'])->name('cookies');
-Route::get('/{idm}/politica-de-privacidad', [HomeController::class, 'privacidad'])->name('privacidad');
+Route::get('/pruebaemail', function(){ return view('auth.verify-email');})->middleware('auth:sanctum');
 
 
 
@@ -191,5 +187,12 @@ Route::group(['middleware' => 'auth'], function()
 
 
 
+Route::get('/dashboard2', function() { return view('dashboard');})->middleware(['auth:sanctum', 'verified'])->name('dashboard');
 
-Route::get('/dashboard', function() { return view('dashboard');})->middleware(['auth:sanctum', 'verified'])->name('dashboard');
+
+Route::get('/', [HomeController::class, 'home2'])->name('Home2');
+Route::get('/home', [HomeController::class, 'home2'])->name('Home2');
+Route::get('/{idm}', [HomeController::class, 'home'])->name('Home3');
+Route::get('/{idm}/home', [HomeController::class, 'home'])->name('Home');
+Route::get('/{idm}/politica-de-cookies', [HomeController::class, 'cookies'])->name('cookies');
+Route::get('/{idm}/politica-de-privacidad', [HomeController::class, 'privacidad'])->name('privacidad');

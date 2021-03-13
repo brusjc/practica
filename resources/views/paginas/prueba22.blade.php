@@ -10,5 +10,13 @@ Hola
 <p>{{ __('home.home_texto3') }}</p>
 
 {{session('locale')}} {{App::currentLocale()}}
+<br/>
+<br/>
 
+Imprimimos la imagen
+<br/>
+@if(!Auth::guest())
+    <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+@endif
+<br/>
 @endsection

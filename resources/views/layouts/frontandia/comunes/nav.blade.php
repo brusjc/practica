@@ -16,35 +16,46 @@
                 @if(!Auth::guest())
                     @if(Auth::user()->roll_id>=50)
                         <li>
-                            <a href="/es/master"><i class="fa fa-key fa-2x misvg"></i><br>{{ trans('message.master') }}</a>
+                            <a href="/es/master"><i class="fa fa-key fa-2x misvg"></i><br>{{ trans('general.master') }}</a>
                         </li>
                     @endif
                 @endif
                 <li>
-                    <a href="/{{ session('locale') }}/examenes-jqcv"><i class="fa fa-graduation-cap fa-2x misvg"></i><br>{{ trans('message.examenes_JQCV') }}</a>
+                    <a href="/{{ session('locale') }}/examenes-jqcv"><i class="fa fa-graduation-cap fa-2x misvg"></i><br>{{ trans('general.examenes_JQCV') }}</a>
                 </li>
                 <li>
-                    <a href="/{{ session('locale') }}/vocabulario"><i class="fa fa-font fa-2x misvg"></i><br>{{ trans('message.vocabulario') }}</a>
+                    <a href="/{{ session('locale') }}/vocabulario"><i class="fa fa-font fa-2x misvg"></i><br>{{ trans('general.vocabulario') }}</a>
                 </li>
                 <li>
-                    <a href="/{{ session('locale') }}/ortografia"><i class="fa fa-book fa-2x"></i><br>{{ trans('message.ortografia') }}</a>
+                    <a href="/{{ session('locale') }}/ortografia"><i class="fa fa-book fa-2x"></i><br>{{ trans('general.ortografia') }}</a>
                 </li>
                 <li>
                     <a href="/{{ session('locale') }}/dictats"><i class="fa fa-play fa-2x misvg"></i><br>{{ trans('dictats.dictats_url') }}</a>
                 </li>
                 <li>
-                    <a href="/{{ session('locale') }}/noms"><i class="fa fa-male fa-2x"></i><br>{{ trans('message.nombres') }}</a>
+                    <a href="/{{ session('locale') }}/noms"><i class="fa fa-male fa-2x"></i><br>{{ trans('general.nombres') }}</a>
                 </li>
+
                 @if(Auth::guest())
-                    <li><a href="/login" rel="nofollow"><i class="fa fa-user fa-2x"></i><br>{{ trans('message.usuario') }}</a></li>
+                    <li><a href="/login" rel="nofollow"><i class="fa fa-user fa-2x"></i><br>{{ trans('general.usuario') }}</a></li>
                 @else
-                    <li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">
+                            <i class="fa fa-user fa-2x"></i><br>{{ trans('general.usuario') }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                            <li class="active">
+                                <a href="/user/profile">{{ __('Profile') }}</a>
+                            </li>
+                            <li>
                       <a href="{{ url('/logout') }}" id="logout"
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-user-times fa-2x"></i><br>{{ trans('message.signout') }}</a>
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-user-times fa-2x"></i><br>{{ trans('general.signout') }}</a>
                       <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                           {{ csrf_field() }}
                           <input type="submit" value="logout" style="display: none;">
                       </form>
+                            </li>
+                        </ul>
                     </li>
                 @endif
 
@@ -55,6 +66,7 @@
                       <li><a href="/es/{{$urlblade}}"><i class="fa fa-flag fa-2x"></i><br>Es</a></li>
                     @endif
                 @endif
+
             </ul>
         </div>
     </div>

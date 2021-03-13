@@ -8,6 +8,7 @@ return [
     'Password' => 'contraseña',
     'Confirm Password' => 'confirmación contraseña',
     'register' => 'registro',
+    "recuerdame"    => "Recuérdame",
     
     //Páginas de verificación de email
     'Verify_texto1' => 'Gracias por registrarte! Antes de comenzar, debes verificar tu dirección de correo electrónico haciendo clic en el enlace que te acabamos de enviar. Si no recibiste el correo electrónico, con gusto te enviaremos otro.',
