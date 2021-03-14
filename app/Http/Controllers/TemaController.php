@@ -121,7 +121,6 @@ class TemaController extends Controller
         if ($valor==0) {
             return response()->json(["status" =>['error'=>3, "message"=>"Error en datos iniciales"], 'data'=>null]);
         }
-
         try {
             $temas = Tema::where('prueba_id', $valor)
                 ->with('Prueba')
@@ -133,7 +132,7 @@ class TemaController extends Controller
         } catch (\Exception $e) {
             return response()->json(["status"=>['error'=>1, "message"=>"TC_TMA01: Error al obtener las pruebas"], 'data'=>$e]);
         }
-        
+
         if(count($temas)==0){
             return response()->json(["status"=>['error'=>2, "message"=>"TC_TMA02: No hay aún ningún examen"], 'data'=>null]);
         } else {

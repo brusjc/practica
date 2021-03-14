@@ -32,12 +32,12 @@
 							</div>
 						@endif
 					</div>
-					<form action="/masterVerificador2/{{$subtema['original']['data'][0]['id']}}" method="POST" class="form-horizontal">
+					<form action="/masterVerificador2/{{$subtema['id']}}" method="POST" class="form-horizontal">
 						{{csrf_field()}}
 						<input type="hidden" name="_method" value="PUT">
 						<div class="box box-success">
 							<div class="box-header">
-								<h4>{{$subtema['original']['data'][0]['prueba']['nombre']}} - {{$subtema['original']['data'][0]['subtemanombre']['nombre']}}</h4>
+								<h4>{{$subtema['prueba']['nombre']}} - {{$subtema['subtemanombre']['nombre']}}</h4>
 							</div>
 							<div class="box-body">
 								<div class="form-group col-sm-4">
@@ -82,7 +82,7 @@
     <div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				@foreach($subtema['original']['data'][0]['preguntas'] as $key=>$pregunta)
+				@foreach($subtema['preguntas'] as $key=>$pregunta)
 					<div class="box box-default collapsed-box">
 						<!-- Título -->
 						<div class="box-header with-border">

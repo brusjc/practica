@@ -11,6 +11,7 @@ use App\Http\Controllers\ExamenController;
 use App\Http\Controllers\PreguntaController;
 use App\Http\Controllers\ResultadoController;
 use App\Http\Controllers\PracticaController;
+use App\Http\Controllers\TemaController;
 use Illuminate\Support\Facades\View;
 
 
@@ -136,29 +137,29 @@ Route::put('/examenz2/{id}', [ResultadoController::class, 'examenz2'])->name('Re
 //***********************
 //* Páginas con usuario *
 //***********************
-/*
 Route::group(['middleware' => 'auth'], function()
 {
+
+
+    //**********
+    //* Master *
+    //**********
+    Route::get('/pruebasmaster', [PruebaController::class, 'pruebasmaster'])->name('PruebasMaster');
+    Route::get('/master', [PruebaController::class, 'pruebasmaster'])->name('Master');
+    Route::get('/temasmaster/{prueba}', [TemaController::class, 'temasmaster'])->name('TemasMaster');
+    Route::get('/masterExamen/{id}', 'ExamenController@examenMasterXId')->name('MasterExamen');
+    Route::get('/masterPreguntas/{subtema}', 'PreguntaController@preguntasXSubtema')->name('MasterPreguntas');
+    Route::get('/masterVerificador/{subtema}', [PreguntaController::class, 'verificadorXSubtema'])->name('MasterVerificador');
+    Route::put('/masterVerificador2/{subtema}', [PreguntaController::class, 'verificador2'])->name('MasterVerificador2');
+
+
+/*
 
     //************
     //* Examenes *
     //************
     Route::get('/examenes/{prueba}', 'ExamenController@show');
     Route::get('/examensubareas/{prueba}', 'SubareaTemaController@showXExamen')->name('ShowXExamen');
-
-
-
-    //**********
-    //* Master *
-    //**********
-    Route::get('/pruebasmaster', 'PruebaController@pruebasmaster')->name('PruebasMaster');
-    Route::get('/es/master', 'PruebaController@pruebasmaster')->name('Master');
-    Route::get('/temasmaster/{prueba}', 'TemaController@temasmaster')->name('TemasMaster');
-    Route::get('/masterExamen/{id}', 'ExamenController@examenMasterXId')->name('MasterExamen');
-    Route::get('/masterPreguntas/{subtema}', 'PreguntaController@preguntasXSubtema')->name('MasterPreguntas');
-    Route::get('/masterVerificador/{subtema}', 'PreguntaController@verificadorXSubtema')->name('MasterVerificador');
-    Route::put('/masterVerificador2/{subtema}', 'PreguntaController@verificador2')->name('MasterVerificador2');
-
 
 
 
@@ -171,6 +172,7 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/comentarios', 'ComentarioController@comentarios')->name('comentarios');
     Route::get('/comentario0', function(){ return view('paginas.comentarios.comentario0'); });
     Route::post('/comentario1', 'ComentarioController@comentario1')->name('comentario1');
+*/
 
 });
 
@@ -182,7 +184,6 @@ Route::group(['middleware' => 'auth'], function()
 //Route::get('/enpruebas2', function(){ return view('paginas.pruebas.cortina'); });
 //Route::get('/cos-huma', function(){ return view('paginas.vocabulario.cos-huma'); });
 
-*/
 
 
 

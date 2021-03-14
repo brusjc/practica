@@ -20,10 +20,8 @@ return [
     "usuario"               => "Usuario",
     'idiomas'               => 'Idiomas',
     'master'                => 'Máster',
-
-
-
-
+    'signout'               => 'Salir',
+    'Profile'               => 'Perfil',
 
 
 ];

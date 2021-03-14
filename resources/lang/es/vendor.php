@@ -97,7 +97,7 @@ return [
 "Please confirm access to your account by entering the authentication code provided by your authenticator application."=>"Confirme el acceso a su cuenta ingresando el código de autenticación proporcionado por su aplicación de autenticación.",
 "Please confirm your password before continuing."=>"Confirme su contraseña antes de continuar.",
 "Please copy your new API token. For your security, it won't be shown again."=>"Copie su nuevo token de API. Por su seguridad, no se mostrará de nuevo.",
-"Please enter your password to confirm you would like to logout of your other browser sessions across all of your devices."=>"Ingrese su contraseña para confirmar que desea cerrar la sesión de sus otras sesiones de navegador en todos sus dispositivos",
+"Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices."=>"Ingrese su contraseña para confirmar que desea cerrar la sesión de sus otras sesiones de navegador en todos sus dispositivos",
 "Please provide the email address of the person you would like to add to this team. The email address must be associated with an existing account."=>"Proporcione la dirección de correo electrónico de la persona que le gustaría agregar a este equipo. La dirección de correo electrónico debe estar asociada a una cuenta existente",
 "Profile Information"=>"Información del perfil",
 "Profile"=>"Perfil",

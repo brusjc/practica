@@ -239,32 +239,29 @@ class PreguntaController extends Controller
 
     public function verificadorXSubtema($subtema)
     {
-        //Función que se ejecuta con la url examen
-
         //Sanitizamos la variable
         $subtema=(int)$subtema;
         
-        //Paso 1: Obtenemos los resultados del subtema
-        $preguntas=$this->showXsubtema($subtema);
-        $preguntas = @json_decode(json_encode($preguntas), true);
-        //return $preguntas;
-		
-        //Paso 2: Obtenemos los datos del subtema
-        $subtema = app('App\Http\Controllers\SubtemaController')->showXId($preguntas['original']['data'][0]['subtema_id']);
-        $subtema = @json_decode(json_encode($subtema), true);
+        //Paso 1: Obtenemos los datos del subtema
+        $subtema = app('App\Http\Controllers\SubtemaController')->showXId($subtema);
+        $subtema = @json_decode(json_encode($subtema), true)['original']['data'][0];
         //return $subtema;
 
-        $subtema['original']['data'][0]['preguntas'] = $preguntas['original']['data'];
+        //Paso 2: Obtenemos las preguntas
+        $preguntas=$this->showXsubtema($subtema['id']);
+        $preguntas = @json_decode(json_encode($preguntas), true)['original']['data'];
+        //return $preguntas;
+        $subtema['preguntas'] = $preguntas;
         //return $subtema;
 
         //Paso 3: obtenemos los datos del tema
-        $prueba = app('App\Http\Controllers\PruebaController')->showXId($subtema['original']['data'][0]['tema']['prueba_id']);
-        $prueba = @json_decode(json_encode($prueba), true);
-        $subtema['original']['data'][0]['prueba']=$prueba['original']['data'][0];
+        $prueba = app('App\Http\Controllers\PruebaController')->showXId($subtema['tema']['prueba_id']);
+        $prueba = @json_decode(json_encode($prueba), true)['original']['data'][0];
+        $subtema['prueba']=$prueba;
         //return $subtema;
 
         //Paso 3: Creamos la variable volver        
-        session(['urlback' => '/temasmaster/'.$subtema['original']['data'][0]['tema']['prueba_id']]);
+        session(['urlback' => '/temasmaster/'.$subtema['tema']['prueba_id']]);
 
         //Paso 3: Obtenemos las preguntas del subtema
         return view('paginas.master.MasterVerificador', compact('subtema'));
@@ -292,8 +289,7 @@ class PreguntaController extends Controller
         //Paso 2: Actualizamos la tabla Subtemas
         //Obtenemos datos del subtema
         $subtema = app('App\Http\Controllers\SubtemaController')->showXId($id);
-        $subtema = @json_decode(json_encode($subtema), true);
-        $subtema=$subtema['original']['data'][0];
+        $subtema = @json_decode(json_encode($subtema), true)['original']['data'][0];
         //return $subtema;
 
         //Actualizamos la tabla Subtemas
@@ -305,8 +301,7 @@ class PreguntaController extends Controller
         //Paso 3:  Actualizamos la tabla Temas
         //Obtenemos datos del tema
         $tema = app('App\Http\Controllers\TemaController')->showXId($subtema['tema_id']);
-        $tema = @json_decode(json_encode($tema), true);
-        $tema=$tema['original']['data'][0];
+        $tema = @json_decode(json_encode($tema), true)['original']['data'][0];
         //return $tema;
 
         //Actualizamos la tabla Subtemas
@@ -324,15 +319,13 @@ class PreguntaController extends Controller
         }
         //return $tema;
         $restema = app('App\Http\Controllers\TemaController')->update($tema);
-        $restema = @json_decode(json_encode($restema), true);
-        $restema=$restema['original']['data'];
+        $restema = @json_decode(json_encode($restema), true)['original']['data'];
         //return $restema;
 
         //Paso 4:  Actualizamos la tabla Pruebas
         //Obtenemos datos del prueba
         $prueba = app('App\Http\Controllers\PruebaController')->showXId($restema['prueba_id']);
-        $prueba = @json_decode(json_encode($prueba), true);
-        $prueba=$prueba['original']['data'][0];
+        $prueba = @json_decode(json_encode($prueba), true)['original']['data'][0];
         //return $prueba;
 
         //Actualizamos la tabla Subpruebas
@@ -350,12 +343,11 @@ class PreguntaController extends Controller
         }
         //return $prueba;
         $resprueba = app('App\Http\Controllers\pruebaController')->update($prueba);
-        $resprueba = @json_decode(json_encode($resprueba), true);
-        $resprueba=$resprueba['original']['data'];
+        $resprueba = @json_decode(json_encode($resprueba), true)['original']['data'];
         //return $resprueba;
 
         //Paso 8: Redireccionamos a la página TemasMaster
-        return redirect()->action('TemaController@temasmaster', ['prueba'=>$restema['prueba_id']]);
+        return redirect()->action([TemaController::class, 'temasmaster'], ['prueba'=>$restema['prueba_id']]);
 
     }
 

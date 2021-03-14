@@ -50,21 +50,23 @@
                               {{ csrf_field() }}
                               <input type="submit" value="logout" style="display: none;">
                           </form>
-
                       </div>
                   </li>
               </ul>
           </li>
       @endif
+
       <li>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="{{ route('change_lang', ['lang' => 'en']) }}"><button type="button" class="btn btn-default ml-1 mr-1">En</button></a></li>
-            <li><a href="{{ route('change_lang', ['lang' => 'es']) }}"><button type="button" class="btn btn-default ml-1 mr-1">Es</button></a></li>
-            <li><a href="{{ url('lang', ['fr']) }}"><button type="button" class="btn btn-default ml-1 mr-1">Fr</button></a></li>
-          </ul>
-        </div>
+        @if(isset($urlblade))
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/va/{{$urlblade}}"><button type="button" class="btn btn-default ml-1 mr-1">VA</button></a></li>
+              <li><a href="/es/{{$urlblade}}"><button type="button" class="btn btn-default ml-1 mr-1">ES</button></a></li>
+            </ul>
+          </div>
+        @endif
       </li>
+
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="fa fa-chart-line"></i> Estadísticas

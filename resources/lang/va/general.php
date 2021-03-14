@@ -20,6 +20,8 @@ return [
     "nombres"           => "noms",
     "usuario"           => "usuari",
     "master"            => "master",
+    'signout'           => 'Eixir',
+    'Profile'           => 'Perfil',
 
 
 

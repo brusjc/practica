@@ -12,10 +12,10 @@ return [
 
     
     //Páginas de verificación de email
-    'Verify_texto1' => 'Gracias por registrarte! Antes de comenzar, ¿podría verificar su dirección de correo electrónico haciendo clic en el enlace que le acabamos de enviar? Si no recibió el correo electrónico, con gusto le enviaremos otro.',
-    'Verify_texto2' => 'Se ha enviado un nuevo enlace de verificación a la dirección de correo electrónico que proporcionó durante el registro.',
-    'Verify_texto3' => 'Reenviar Email de verificación',
-    'Verify_texto4' => 'Cerrar sesión',
+    'Verify_texto1' => 'Gràcies per registrar-te! Abans de començar, has de verificar la teua adreça de correu electrònic fent clic en l\'enllaç que t\'acabem d\'enviar. Si no vas rebre el correu electrònic, amb gust t\'enviarem un altre.',
+    'Verify_texto2' => 'Hem enviat un nou enllaç de verificació a l\'adreça de correu electrònic que nos vas proporcionar durant el registre.',
+    'Verify_texto3' => 'Reenviar Email de verificació',
+    'Verify_texto4' => 'Tancar sessió',
 
 
 

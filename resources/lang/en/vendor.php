@@ -97,7 +97,7 @@ return [
     "Please confirm access to your account by entering the authentication code provided by your authenticator application."=> "Please confirm access to your account by entering the authentication code provided by your authenticator application.",
     "Please confirm your password before continuing."=> "Please confirm your password before continuing.",
     "Please copy your new API token. For your security, it won't be shown again."=> "Please copy your new API token. For your security, it won't be shown again.",
-    "Please enter your password to confirm you would like to logout of your other browser sessions across all of your devices."=> "Please enter your password to confirm you would like to logout of your other browser sessions across all of your devices.",
+    "Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices."=> "Please enter your password to confirm you would like to logout of your other browser sessions across all of your devices.",
     "Please provide the email address of the person you would like to add to this team. The email address must be associated with an existing account."=> "Please provide the email address of the person you would like to add to this team. The email address must be associated with an existing account.",
     "Profile Information"=> "Profile Information",
     "Profile"=> "Profile",

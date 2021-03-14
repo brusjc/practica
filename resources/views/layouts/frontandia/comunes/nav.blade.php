@@ -16,7 +16,7 @@
                 @if(!Auth::guest())
                     @if(Auth::user()->roll_id>=50)
                         <li>
-                            <a href="/es/master"><i class="fa fa-key fa-2x misvg"></i><br>{{ trans('general.master') }}</a>
+                            <a href="/master"><i class="fa fa-key fa-2x misvg"></i><br>{{ trans('general.master') }}</a>
                         </li>
                     @endif
                 @endif
@@ -45,7 +45,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-left" role="menu">
                             <li class="active">
-                                <a href="/user/profile">{{ __('Profile') }}</a>
+                                <a href="/user/profile">{{ __('general.Profile') }}</a>
                             </li>
                             <li>
                       <a href="{{ url('/logout') }}" id="logout"

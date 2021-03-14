@@ -1101,7 +1101,7 @@ class PruebaController extends Controller
         session(['BC1' => '/pruebasmaster']);
         session(['BC1texto' => 'Pruebas master']);
 
-        return view('paginas.master.MasterPruebas', compact('pruebas', 'urlblade'));
+        return view('paginas.master.MasterPruebas', compact('pruebas'));
     }
 
     public function MasterPruebaXId($id)
